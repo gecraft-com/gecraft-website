@@ -1,7 +1,7 @@
-import "./App.css";
+import './App.css'
 
 function App() {
-  return <div>GeCraft</div>;
+  return <div className="text-2xl">GeCraft</div>
 }
 
-export default App;
+export default App
