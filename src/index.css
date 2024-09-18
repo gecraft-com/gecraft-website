@@ -18,16 +18,10 @@ body {
     font-family: "Almarai", system-ui;
     font-weight: 400;
     font-style: normal;
-    
 
     color: rgb(23,23,23);
     background: #F4F4F4;
 
-}
-
-
-.bgcolor-header {
-    background: #EBEBEB;
 }
 
 .title-gradient {

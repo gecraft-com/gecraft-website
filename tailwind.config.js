@@ -1,4 +1,4 @@
-const { nextui } = require('@nextui-org/react')
+const { nextui, button } = require('@nextui-org/react')
 /** @type {import('tailwindcss').Config} */
 
 export default {
@@ -8,6 +8,13 @@ export default {
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    colors: {
+      bgHeader: '#EBEBEB',
+      basic: '#1A1A1A',
+      buttonGroup: '#AFAFAF4D',
+      buttonHover: '#BEE0FF',
+      ourServicesBtn: '#C3C3C3',
+    },
     extend: {
       screens: {
         sm: '391px',
@@ -15,11 +22,6 @@ export default {
 
       fontFamily: {
         sans: 'Be Vietnam Pro',
-      },
-
-      from: {
-        first: 'rgb(210, 142, 160)',
-        second: 'rgb(224, 121, 116)',
       },
     },
   },
