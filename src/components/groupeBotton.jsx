@@ -2,7 +2,7 @@ import { Button, Link } from '@nextui-org/react'
 
 const GroupeBotton = () => {
   return (
-    <div className="bg-buttonGroup z-10 mt-32 flex h-12 items-center gap-2.5 rounded-full p-1.5 lg:mt-40 lg:h-24 2xl:mt-72">
+    <div className="bg-buttonGroup z-10 mt-32 hidden h-12 items-center gap-2.5 rounded-full p-1.5 sm:flex lg:mt-40 lg:h-24 2xl:mt-72">
       <Button
         radius="full"
         className="hover:bg-buttonHover z-20 h-full bg-transparent"
