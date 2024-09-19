@@ -6,7 +6,7 @@ import GroupeBotton from './groupeBotton'
 
 const Header = () => {
   return (
-    <header className="bg-bgHeader relative flex w-full flex-col items-center px-5 pb-20 sm:px-0 lg:pb-72">
+    <header className="bg-bgHeader relative flex w-full flex-col items-center px-5 pb-20 sm:px-0 2xl:pb-72">
       <h1 className="title-gradient hidden bg-clip-text font-sans text-[22vw] font-black not-italic leading-none text-transparent sm:block">
         GeCraft
       </h1>
@@ -43,7 +43,7 @@ const Header = () => {
         vision to life.
       </p>
 
-      <div className="absolute bottom-0 left-0 h-1/3 w-full bg-[url(img/gradient_background_header_section.svg)] bg-cover md:h-[1400px]"></div>
+      <div className="absolute bottom-0 left-0 h-1/2 w-full bg-[url(img/gradient_background_header_section.svg)] bg-cover"></div>
 
       {/* <Cursor /> */}
     </header>
