@@ -1,5 +1,8 @@
-const { nextui, button } = require('@nextui-org/react')
 /** @type {import('tailwindcss').Config} */
+
+import { transparent, white } from 'tailwindcss/colors'
+
+const { nextui, button } = require('@nextui-org/react')
 
 export default {
   content: [
@@ -9,6 +12,8 @@ export default {
   ],
   theme: {
     colors: {
+      white,
+      transparent,
       bgHeader: '#EBEBEB',
       basic: '#1A1A1A',
       buttonGroup: '#AFAFAF4D',
@@ -18,6 +23,7 @@ export default {
     extend: {
       screens: {
         sm: '391px',
+        '2xl': '1922px',
       },
 
       fontFamily: {
