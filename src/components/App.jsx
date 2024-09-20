@@ -1,12 +1,9 @@
-import Header from './header'
-
-// import Services from './services'
+import Header from './Header'
 
 function App() {
   return (
     <>
       <Header />
-      {/* <Services /> */}
     </>
   )
 }
