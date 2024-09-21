@@ -26,7 +26,7 @@ const Services = () => {
           <Button
             key={index}
             radius="full"
-            className="hover:text-black relative z-10 h-64 justify-start bg-transparent px-20 text-[180px] text-ourServicesBtn hover:before:absolute hover:before:-left-4 hover:before:h-[348px] hover:before:w-[2200px] hover:before:rounded-full hover:before:bg-[rgba(59,160,255,0.1)]"
+            className="hover:text-black z-10 h-64 justify-start bg-buttonHover px-20 text-[180px] text-ourServicesBtn"
           >
             {label}
           </Button>
