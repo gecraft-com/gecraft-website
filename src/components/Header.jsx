@@ -4,7 +4,7 @@ import GroupBotton from './GroupBotton'
 
 const Header = () => {
   return (
-    <header className="relative flex w-full flex-col items-center bg-bgHeader px-5 pb-20 sm:px-0 2xl:pb-72">
+    <header className="relative flex w-full flex-col items-center px-5 pb-20 sm:bg-bgHeader sm:px-0 2xl:pb-72">
       <h1 className="title-gradient hidden bg-clip-text font-sans text-[22vw] font-black not-italic leading-none text-transparent sm:block">
         GeCraft
       </h1>
