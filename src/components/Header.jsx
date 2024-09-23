@@ -41,7 +41,7 @@ const Header = () => {
         vision to life.
       </p>
 
-      <div className="absolute bottom-0 left-0 h-1/3 w-full bg-[url(img/gradient_background_header_section.svg)] bg-cover sm:h-1/2"></div>
+      <div className="absolute bottom-0 left-0 h-1/3 w-full bg-[url(/img/gradient_background_header_section.svg)] bg-cover sm:h-1/2"></div>
     </header>
   )
 }
