@@ -24,7 +24,7 @@ const Header = () => {
       </p>
 
       <Button
-        className="z-20 mt-40 h-20 w-full border-basic text-base font-semibold text-basic hover:border-buttonHover hover:bg-buttonHover sm:mt-32 sm:w-[540px] sm:text-2xl 2xl:mt-52 2xl:h-36 2xl:w-[1062px] 2xl:text-5xl"
+        className="z-10 mt-40 h-20 w-full border-basic text-base font-semibold text-basic hover:border-buttonHover hover:bg-buttonHover sm:mt-32 sm:w-[540px] sm:text-2xl 2xl:mt-52 2xl:h-36 2xl:w-[1062px] 2xl:text-5xl"
         radius="full"
         variant="bordered"
         href="#"
@@ -35,13 +35,13 @@ const Header = () => {
 
       <GroupBotton />
 
-      <p className="z-20 mt-24 w-full text-2xl leading-tight text-white sm:w-[600px] sm:text-3xl lg:w-[969px] lg:text-5xl 2xl:w-[1450px] 2xl:text-7xl">
+      <p className="z-10 mt-24 w-full text-2xl leading-tight text-white sm:w-[600px] sm:text-3xl lg:w-[969px] lg:text-5xl 2xl:w-[1450px] 2xl:text-7xl">
         Harnessing cutting-edge technology and years of industry expertise, GeCraft
         designs and develops custom, end-to-end solutions that bring your unique software
         vision to life.
       </p>
 
-      <div className="absolute bottom-0 left-0 z-10 h-1/3 w-full bg-[url(/img/gradient_background_header_section.svg)] bg-cover sm:h-1/2"></div>
+      <div className="absolute bottom-0 left-0 h-1/3 w-full bg-[url(/img/gradient_background_header_section.svg)] bg-cover sm:h-1/2"></div>
     </header>
   )
 }
