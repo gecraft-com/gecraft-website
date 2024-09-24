@@ -1,16 +1,11 @@
-import './App.css'
-
-import { Button, ButtonGroup } from '@nextui-org/button'
+import Header from './components/header'
+import Services from './components/Services'
 
 function App() {
   return (
     <>
-      <div className="text-2xl">GeCraft</div>
-      <ButtonGroup>
-        <Button>One</Button>
-        <Button>Two</Button>
-        <Button>Three</Button>
-      </ButtonGroup>
+      <Header />
+      <Services />
     </>
   )
 }
