@@ -1,5 +1,5 @@
-import Header from './Header'
-import Services from './Services'
+import Header from './components/Header'
+import Services from './components/Services'
 
 function App() {
   return (
