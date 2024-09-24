@@ -26,7 +26,8 @@ const Header = () => {
       </p>
 
       <Button
-        className="z-10 mt-40 h-20 w-full border-basic text-base font-semibold text-basic hover:border-buttonHover hover:bg-buttonHover sm:mt-32 sm:w-[540px] sm:text-2xl 2xl:mt-52 2xl:h-36 2xl:w-[1062px] 2xl:text-5xl"
+        data-hover="false"
+        className="z-10 mt-40 h-20 w-full border-basic text-base font-semibold text-basic hover:border-buttonHover hover:bg-buttonHover hover:opacity-100 sm:mt-32 sm:w-[540px] sm:text-2xl 2xl:mt-52 2xl:h-36 2xl:w-[1062px] 2xl:text-5xl"
         radius="full"
         variant="bordered"
         href="#"

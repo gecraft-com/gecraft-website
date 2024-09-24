@@ -4,6 +4,7 @@ const MobileGroupButton = () => {
   return (
     <div className="fixed left-0 top-10 z-20 flex h-11 w-11/12 items-center justify-between sm:hidden">
       <Button
+        data-hover="false"
         radius="full"
         className="z-20 h-full bg-transparent hover:bg-buttonHover"
         href="#"
@@ -16,6 +17,7 @@ const MobileGroupButton = () => {
         />
       </Button>
       <Button
+        data-hover="false"
         radius="full"
         className="h-full rounded-full bg-buttonGroup text-sm font-bold text-basic hover:bg-buttonHover"
         as={Link}
