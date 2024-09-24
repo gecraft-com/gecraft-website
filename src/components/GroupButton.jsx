@@ -9,7 +9,7 @@ const GroupButton = () => {
         href="#"
         as={Link}
       >
-        <img src="img/logo.svg" alt="" className="h-14 w-14" />
+        <img src="img/logo.svg" alt="logo of GeCraft" className="h-14 w-14" />
       </Button>
       {['Services', 'Our Projects', 'Contact Us', 'Request a Consultation'].map(
         (label, index) => (

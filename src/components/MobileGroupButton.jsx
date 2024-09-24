@@ -9,7 +9,11 @@ const MobileGroupButton = () => {
         href="#"
         as={Link}
       >
-        <img src="img/logo-mobile.svg" alt="" className="h-11 w-11" />
+        <img
+          src="img/logo-mobile.svg"
+          alt="mobile logo of GeCraft"
+          className="h-11 w-11"
+        />
       </Button>
       <Button
         radius="full"
