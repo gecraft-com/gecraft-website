@@ -5,31 +5,31 @@ import { Button, Link } from '@nextui-org/react'
 import appBarButtons from '../../data/appBarButtons.json'
 
 const GroupButton = () => {
-  const [width, setWidth] = useState(0)
+  // const [width, setWidth] = useState(0)
 
-  const getStickyGroupButton = () => {
-    const groupButton = document.getElementById('groupButton')
-    const text = document.getElementById('text')
+  // const getStickyGroupButton = () => {
+  //   const groupButton = document.getElementById('groupButton')
+  //   const text = document.getElementById('text')
 
-    const coord = groupButton.getBoundingClientRect().top
+  //   const coord = groupButton.getBoundingClientRect().top
 
-    window.addEventListener('resize', () => {
-      const width = document.body.clientWidth
-      setWidth(width)
-    })
+  //   window.addEventListener('resize', () => {
+  //     const width = document.body.clientWidth
+  //     setWidth(width)
+  //   })
 
-    window.onscroll = () => {
-      if (window.scrollY > coord - 40) {
-        groupButton.classList.add('fixed')
-        text.classList.add('mt-48')
-      } else if (window.scrollY <= 1270) {
-        groupButton.classList.remove('fixed')
-        text.classList.remove('mt-48')
-      }
-    }
-  }
+  //   window.onscroll = () => {
+  //     if (window.scrollY > coord - 40) {
+  //       groupButton.classList.add('fixed')
+  //       text.classList.add('mt-48')
+  //     } else if (window.scrollY <= 1270) {
+  //       groupButton.classList.remove('fixed')
+  //       text.classList.remove('mt-48')
+  //     }
+  //   }
+  // }
 
-  useEffect(getStickyGroupButton, [width])
+  // useEffect(getStickyGroupButton, [width])
 
   return (
     <div
