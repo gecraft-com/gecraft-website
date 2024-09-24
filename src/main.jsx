@@ -3,7 +3,7 @@ import { StrictMode } from 'react'
 import { NextUIProvider } from '@nextui-org/react'
 import { createRoot } from 'react-dom/client'
 
-import App from './App.jsx'
+import App from './App'
 
 import './index.css'
 
