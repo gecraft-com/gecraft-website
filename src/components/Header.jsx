@@ -1,10 +1,12 @@
 import { Button, Link } from '@nextui-org/react'
 
-import GroupBotton from './GroupBotton'
+import GroupButton from './GroupButton'
+import MobileGroupButton from './MobileGroupButton'
 
 const Header = () => {
   return (
     <header className="relative flex w-full flex-col items-center px-5 pb-20 sm:bg-bgHeader sm:px-0 2xl:pb-72">
+      <MobileGroupButton />
       <h1 className="title-gradient hidden bg-clip-text font-sans text-[22vw] font-black not-italic leading-none text-transparent sm:block">
         GeCraft
       </h1>
@@ -33,7 +35,7 @@ const Header = () => {
         Request a Consultation
       </Button>
 
-      <GroupBotton />
+      <GroupButton />
 
       <p className="z-10 mt-24 w-full text-2xl leading-tight text-white sm:w-[600px] sm:text-3xl lg:w-[969px] lg:text-5xl 2xl:w-[1450px] 2xl:text-7xl">
         Harnessing cutting-edge technology and years of industry expertise, GeCraft

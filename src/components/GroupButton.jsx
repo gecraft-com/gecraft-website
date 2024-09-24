@@ -1,6 +1,6 @@
 import { Button, Link } from '@nextui-org/react'
 
-const GroupBotton = () => {
+const GroupButton = () => {
   return (
     <div className="z-10 mt-32 hidden h-24 items-center gap-2.5 rounded-full bg-buttonGroup p-1.5 sm:flex lg:mt-40 2xl:mt-72">
       <Button
@@ -28,4 +28,4 @@ const GroupBotton = () => {
   )
 }
 
-export default GroupBotton
+export default GroupButton

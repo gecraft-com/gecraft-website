@@ -43,7 +43,7 @@ const ModalWindow = ({ label, description, isOpen, onOpenChange }) => {
             </ModalHeader>
             <ModalBody>
               <div className="block justify-between sm:flex">
-                <div className="w-full sm:w-5/12">
+                <div className="w-full sm:w-2/12 3xl:w-3/12">
                   <h4 className="text-4xl sm:text-3xl 2xl:text-5xl 3xl:text-7xl 4xl:text-9xl">
                     {label}
                   </h4>
@@ -51,7 +51,7 @@ const ModalWindow = ({ label, description, isOpen, onOpenChange }) => {
                     {service}
                   </p>
                 </div>
-                <div className="mt-10 w-full pl-96 sm:mt-0 sm:w-full">
+                <div className="mt-10 w-full sm:mt-0 sm:w-8/12">
                   <p className="text-2xl sm:text-4xl 3xl:text-6xl 3xl:leading-tight">
                     {description}
                   </p>
@@ -62,7 +62,7 @@ const ModalWindow = ({ label, description, isOpen, onOpenChange }) => {
                     {projects.map(({ id, client, img, service }) => (
                       <>
                         {setService(service)}
-                        <li key={id} className="w-full sm:w-[872px]">
+                        <li key={id} className="w-full sm:w-8/12">
                           <img src={img} alt={client} />
                           <div className="mt-4 block sm:mt-5 sm:flex sm:gap-x-10 2xl:gap-x-5">
                             <div className="w-5/12 2xl:w-2/6">
