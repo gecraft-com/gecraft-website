@@ -7,13 +7,13 @@
 
 
 #root {
-    max-width: 3444px;
+    width: 100%;
     margin: 0 auto;
     text-align: center;
   }
 
 body {
-    max-width: 3444px;
+    width: 100%;
 
     font-family: "Almarai", system-ui;
     font-weight: 400;
