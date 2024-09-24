@@ -20,10 +20,10 @@ const Services = () => {
   return (
     <div className="block justify-between px-2 pb-20 pt-48 sm:flex sm:px-14 sm:pb-32 sm:pt-32">
       <div className="flex w-1/4 flex-col items-start">
-        <h3 className="ml-4 mt-0 w-36 text-left text-xs uppercase before:mr-1.5 before:inline-flex before:h-2.5 before:w-2.5 before:rounded-full before:bg-basic sm:ml-0 sm:mt-12">
+        <h3 className="sticky top-10 ml-4 mt-0 w-36 text-left text-xs uppercase before:mr-1.5 before:inline-flex before:h-2.5 before:w-2.5 before:rounded-full before:bg-basic sm:ml-0 sm:mt-12">
           Our services
         </h3>
-        <h4 className="ml-4 mt-10 w-72 text-left text-3xl sm:ml-0 sm:mt-12 sm:w-[28rem] sm:text-4xl 2xl:text-5xl 3xl:w-[33.6rem] 3xl:text-5xl">
+        <h4 className="sticky top-28 ml-4 mt-10 w-72 text-left text-3xl sm:ml-0 sm:mt-12 sm:w-[28rem] sm:text-4xl 2xl:text-5xl 3xl:w-[33.6rem] 3xl:text-5xl">
           Skills to enhance your performance
         </h4>
       </div>
