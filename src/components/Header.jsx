@@ -40,7 +40,7 @@ const Header = () => {
 
       <p
         id="text"
-        className="z-10 mt-24 w-full cursor-default select-none text-2xl leading-tight text-white sm:w-[600px] sm:text-3xl lg:w-[969px] lg:text-5xl 2xl:w-[1450px] 2xl:text-7xl"
+        className="z-20 mt-24 w-full cursor-default select-none text-2xl leading-tight text-white sm:w-[600px] sm:text-3xl lg:w-[969px] lg:text-5xl 2xl:w-[1450px] 2xl:text-7xl"
       >
         Harnessing cutting-edge technology and years of industry expertise, GeCraft
         designs and develops custom, end-to-end solutions that bring your unique software
