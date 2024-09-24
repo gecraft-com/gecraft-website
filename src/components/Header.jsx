@@ -1,6 +1,6 @@
 import { Button, Link } from '@nextui-org/react'
 
-import GroupBotton from './GroupBotton'
+import GroupButton from './GroupButton'
 
 const Header = () => {
   return (
@@ -33,7 +33,7 @@ const Header = () => {
         Request a Consultation
       </Button>
 
-      <GroupBotton />
+      <GroupButton />
 
       <p className="z-10 mt-24 w-full text-2xl leading-tight text-white sm:w-[600px] sm:text-3xl lg:w-[969px] lg:text-5xl 2xl:w-[1450px] 2xl:text-7xl">
         Harnessing cutting-edge technology and years of industry expertise, GeCraft
