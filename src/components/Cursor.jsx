@@ -1,59 +1,28 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const Cursor = () => {
   const [cursorX, setCursorX] = useState(0)
   const [cursorY, setCursorY] = useState(0)
 
+  const cursorRef = useRef(null)
+
   useEffect(() => {
-    const cursor = document.getElementById('cursor')
+    const cursor = cursorRef.current
     const links = Array.from(document.getElementsByTagName('a'))
     const buttons = Array.from(document.getElementsByTagName('button'))
 
     links.forEach((link) => {
-      link.addEventListener('mouseover', () => {
-        cursor.classList.add('scale-150', 'bg-[#1A1A1A99]')
-      })
-    })
-
-    links.forEach((link) => {
-      link.addEventListener('mouseleave', () => {
-        cursor.classList.remove('scale-150', 'bg-[#1A1A1A99]')
-      })
+      link.addEventListener('mouseover', handleMouseOver)
+      link.addEventListener('mouseleave', handleMouseLeave)
+      link.addEventListener('mousedown', handleMouseDown)
+      link.addEventListener('mouseup', handleMouseUp)
     })
 
     buttons.forEach((button) => {
-      button.addEventListener('mouseover', () => {
-        cursor.classList.add('scale-150', 'bg-[#1A1A1A99]')
-      })
-    })
-
-    buttons.forEach((button) => {
-      button.addEventListener('mouseleave', () => {
-        cursor.classList.remove('scale-150', 'bg-[#1A1A1A99]')
-      })
-    })
-    links.forEach((link) => {
-      link.addEventListener('mousedown', () => {
-        cursor.classList.add('scale-50')
-      })
-    })
-
-    links.forEach((link) => {
-      link.addEventListener('mouseup', () => {
-        cursor.classList.remove('scale-50')
-      })
-    })
-
-    buttons.forEach((button) => {
-      button.addEventListener('mousedown', () => {
-        cursor.classList.add('scale-50')
-      })
-    })
-
-    buttons.forEach((button) => {
-      button.addEventListener('mouseup', () => {
-        cursor.classList.remove('scale-50')
-      })
+      button.addEventListener('mouseover', handleMouseOver)
+      button.addEventListener('mouseleave', handleMouseLeave)
+      button.addEventListener('mousedown', handleMouseDown)
+      button.addEventListener('mouseup', handleMouseUp)
     })
 
     window.addEventListener('mousemove', (e) => {
@@ -68,13 +37,39 @@ const Cursor = () => {
     document.addEventListener('mouseover', () => {
       cursor.classList.remove('hidden')
     })
+
+    function handleMouseOver() {
+      cursor.classList.add('scale-150', 'bg-cursorHover')
+    }
+
+    function handleMouseLeave() {
+      cursor.classList.remove('scale-150', 'bg-cursorHover')
+    }
+
+    function handleMouseDown() {
+      cursor.classList.add('scale-50')
+    }
+
+    function handleMouseUp() {
+      cursor.classList.remove('scale-50')
+    }
+
+    return () => {
+      links.forEach((link) => {
+        link.removeEventListener('mouseover', handleMouseOver)
+        link.removeEventListener('mouseleave', handleMouseLeave)
+        link.removeEventListener('mousedown', handleMouseDown)
+        link.removeEventListener('mouseup', handleMouseUp)
+      })
+    }
   }, [])
 
   return (
     <div
+      ref={cursorRef}
       style={{ left: cursorX + 'px', top: cursorY + 'px' }}
       id="cursor"
-      className="pointer-events-none absolute z-50 h-7 w-7 -translate-x-1/2 -translate-y-1/2 select-none rounded-full border border-solid border-bgHeader bg-[#1A1A1ACC]"
+      className="bg-cursor pointer-events-none absolute z-50 h-7 w-7 -translate-x-1/2 -translate-y-1/2 select-none rounded-full border border-solid border-bgHeader"
     ></div>
   )
 }

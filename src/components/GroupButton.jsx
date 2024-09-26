@@ -1,39 +1,39 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef } from 'react'
 
 import { Button, Link } from '@nextui-org/react'
 
 import appBarButtons from '../../data/appBarButtons.json'
 
 const GroupButton = () => {
-  const [width, setWidth] = useState(0)
+  const groupButtonRef = useRef(null)
 
-  const getStickyGroupButton = () => {
-    const groupButton = document.getElementById('groupButton')
+  useEffect(() => {
+    const groupButton = groupButtonRef.current
     const text = document.getElementById('text')
 
-    const coord = groupButton.getBoundingClientRect().top
+    const coordAppBar = groupButton.getBoundingClientRect().top
+    const coordText = text.getBoundingClientRect().top
 
-    window.addEventListener('resize', () => {
-      const width = document.body.clientWidth
-      setWidth(width)
-    })
+    window.addEventListener('scroll', handleScroll)
 
-    window.onscroll = () => {
-      if (window.scrollY > coord - 40) {
+    function handleScroll() {
+      if (window.scrollY > coordAppBar - 40) {
         groupButton.classList.add('fixed')
         text.classList.add('mt-48')
-      } else if (window.scrollY <= 1270) {
+      } else if (window.scrollY <= coordText) {
         groupButton.classList.remove('fixed')
         text.classList.remove('mt-48')
       }
     }
-  }
 
-  useEffect(getStickyGroupButton, [width])
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   return (
     <div
-      id="groupButton"
+      ref={groupButtonRef}
       className="top-10 z-50 hidden h-24 items-center gap-2.5 rounded-full bg-buttonGroup p-1.5 sm:flex"
     >
       <Button
