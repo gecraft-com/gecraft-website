@@ -11,6 +11,7 @@ import {
 } from '@nextui-org/react'
 
 import projects from '../../data/projects.json'
+import Cursor from './Cursor'
 
 const ModalWindow = ({ label, description, isOpen, onOpenChange }) => {
   const [service, setService] = useState('')
@@ -60,24 +61,22 @@ const ModalWindow = ({ label, description, isOpen, onOpenChange }) => {
                   </h5>
                   <ul className="mt-4 flex flex-col gap-y-10 sm:mt-12 sm:flex-row sm:justify-items-start sm:gap-x-2.5 sm:gap-y-0">
                     {projects.map(({ id, client, img, service }) => (
-                      <>
-                        {setService(service)}
-                        <li key={id} className="w-full sm:w-8/12">
-                          <img src={img} alt={client} />
-                          <div className="mt-4 block sm:mt-5 sm:flex sm:gap-x-10 2xl:gap-x-5">
-                            <div className="w-5/12 2xl:w-2/6">
-                              <p className="text-xs uppercase">client</p>
-                              <p className="mt-1 text-base uppercase sm:mt-4">{client}</p>
-                            </div>
-                            <div>
-                              <p className="mt-3 text-xs uppercase sm:mt-0">service</p>
-                              <p className="mt-1 text-sm uppercase sm:mt-4 sm:text-base">
-                                {service}
-                              </p>
-                            </div>
+                      <li key={id} className="w-full sm:w-8/12">
+                        <img src={img} alt={client} />
+                        <div className="mt-4 block sm:mt-5 sm:flex sm:gap-x-10 2xl:gap-x-5">
+                          <div className="w-5/12 2xl:w-2/6">
+                            <p className="text-xs uppercase">client</p>
+                            <p className="mt-1 text-base uppercase sm:mt-4">{client}</p>
                           </div>
-                        </li>
-                      </>
+                          <div>
+                            <p className="mt-3 text-xs uppercase sm:mt-0">service</p>
+                            <p className="mt-1 text-sm uppercase sm:mt-4 sm:text-base">
+                              {service}
+                            </p>
+                          </div>
+                        </div>
+                        {setService(service)}
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -105,6 +104,7 @@ const ModalWindow = ({ label, description, isOpen, onOpenChange }) => {
           </>
         )}
       </ModalContent>
+      <Cursor />
     </Modal>
   )
 }
