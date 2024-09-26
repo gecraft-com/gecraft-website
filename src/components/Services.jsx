@@ -10,11 +10,15 @@ const Services = () => {
 
   const [label, setLabel] = useState('')
   const [description, setDescription] = useState('')
+  const [projects, setProjects] = useState([])
+  const [service, setService] = useState('')
 
-  const handleClick = (label, description) => {
+  const handleClick = (label, description, projects, service) => {
     onOpen()
     setLabel(label)
     setDescription(description)
+    setProjects(projects)
+    setService(service)
   }
 
   return (
@@ -29,10 +33,10 @@ const Services = () => {
       </div>
 
       <div className="mt-14 hover:text-ourServicesBtn hover:duration-300 sm:mt-0">
-        {services.map(({ label, description }, index) => (
+        {services.map(({ label, description, id, projects, service }) => (
           <button
-            key={index}
-            onClick={() => handleClick(label, description)}
+            key={id}
+            onClick={() => handleClick(label, description, projects, service)}
             className="relative z-10 table px-4 text-center text-3xl leading-relaxed after:absolute after:left-0 after:top-0 after:z-[-1] after:box-content after:h-full after:w-full after:rounded-full after:bg-buttonHover after:opacity-0 after:duration-300 hover:text-basic hover:duration-300 hover:after:opacity-100 sm:px-4 sm:text-4xl sm:leading-snug sm:after:pointer-events-none sm:after:-translate-x-[710px] sm:after:rotate-12 sm:after:scale-[3] sm:after:transform sm:after:transition sm:after:hover:translate-x-0 sm:hover:after:rotate-[0] sm:hover:after:scale-100 lg:px-7 lg:after:-translate-x-[800px] xl:text-5xl xl:leading-normal xl:after:-translate-x-[710px] 2xl:text-8xl 2xl:leading-snug 2xl:after:-translate-x-[1250px] 3xl:text-[150px] 3xl:after:-translate-x-[2250px] 4xl:text-[190px]"
           >
             {label}
@@ -41,6 +45,8 @@ const Services = () => {
         <ModalWindow
           label={label}
           description={description}
+          projects={projects}
+          service={service}
           isOpen={isOpen}
           onOpenChange={onOpenChange}
         />

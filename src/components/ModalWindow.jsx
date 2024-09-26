@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 import {
   Button,
   Link,
@@ -10,12 +8,9 @@ import {
   ModalHeader,
 } from '@nextui-org/react'
 
-import projects from '../../data/projects.json'
 import Cursor from './Cursor'
 
-const ModalWindow = ({ label, description, isOpen, onOpenChange }) => {
-  const [service, setService] = useState('')
-
+const ModalWindow = ({ label, description, projects, service, isOpen, onOpenChange }) => {
   return (
     <Modal
       radius="sm"
@@ -60,7 +55,7 @@ const ModalWindow = ({ label, description, isOpen, onOpenChange }) => {
                     Related Projects
                   </h5>
                   <ul className="mt-4 flex flex-col gap-y-10 sm:mt-12 sm:flex-row sm:justify-items-start sm:gap-x-2.5 sm:gap-y-0">
-                    {projects.map(({ id, client, img, service }) => (
+                    {projects.map(({ id, client, img }) => (
                       <li key={id} className="w-full sm:w-8/12">
                         <img src={img} alt={client} />
                         <div className="mt-4 block sm:mt-5 sm:flex sm:gap-x-10 2xl:gap-x-5">
@@ -75,7 +70,6 @@ const ModalWindow = ({ label, description, isOpen, onOpenChange }) => {
                             </p>
                           </div>
                         </div>
-                        {setService(service)}
                       </li>
                     ))}
                   </ul>
