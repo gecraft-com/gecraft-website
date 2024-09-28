@@ -1,7 +1,5 @@
 import { useEffect, useRef } from 'react'
 
-import { Button, Link } from '@nextui-org/react'
-
 import appBarButtons from '../../data/appBarButtons.json'
 
 const GroupButton = () => {
@@ -34,28 +32,22 @@ const GroupButton = () => {
   return (
     <div
       ref={groupButtonRef}
-      className="top-10 z-50 hidden h-24 items-center gap-2.5 rounded-full bg-buttonGroup p-1.5 sm:flex"
+      className="top-10 z-50 hidden items-center gap-2.5 rounded-full bg-buttonGroup p-1.5 sm:flex"
     >
-      <Button
-        data-hover="false"
-        radius="full"
-        className="z-20 h-full bg-buttonHover hover:opacity-100"
+      <a
+        className="z-20 flex h-20 w-20 items-center justify-center rounded-full bg-buttonHover"
         href="#"
-        as={Link}
       >
         <img src="img/logo.svg" alt="logo GeCraft" className="h-14 w-14" />
-      </Button>
-      {appBarButtons.map(({ label }, index) => (
-        <Button
-          data-hover="false"
+      </a>
+      {appBarButtons.map(({ label, href }, index) => (
+        <a
           key={index}
-          radius="full"
-          className="h-full bg-transparent px-11 text-xl font-bold text-basic last:bg-buttonHover hover:bg-buttonHover hover:opacity-100"
-          as={Link}
-          href="#"
+          className="flex h-20 items-center justify-center rounded-full bg-transparent px-11 text-xl font-bold text-basic last:bg-buttonHover hover:bg-buttonHover"
+          href={href}
         >
           {label}
-        </Button>
+        </a>
       ))}
     </div>
   )

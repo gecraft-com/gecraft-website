@@ -22,7 +22,10 @@ const Services = () => {
   }
 
   return (
-    <div className="block justify-between px-2 pb-20 pt-48 sm:flex sm:px-14 sm:pb-32 sm:pt-32">
+    <div
+      id="services"
+      className="block justify-between px-2 pb-20 pt-48 sm:flex sm:px-14 sm:pb-32 sm:pt-32"
+    >
       <div className="flex w-1/4 flex-col items-start">
         <h3 className="sticky top-10 ml-4 mt-0 w-36 text-left text-xs uppercase before:mr-1.5 before:inline-flex before:h-2.5 before:w-2.5 before:rounded-full before:bg-basic sm:ml-0 sm:mt-12">
           Our services

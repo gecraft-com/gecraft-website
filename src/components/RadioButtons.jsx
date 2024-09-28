@@ -3,10 +3,10 @@ import { Radio, RadioGroup } from '@nextui-org/react'
 const RadioButtons = () => {
   return (
     <RadioGroup orientation="horizontal">
-      <Radio color="default" className="text-white" value="buenos-aires">
+      <Radio className="text-white" value="buenos-aires">
         Buenos Aires
       </Radio>
-      <Radio className="text-white" value="sydney">
+      <Radio className="label:text-white" value="sydney">
         Sydney
       </Radio>
       <Radio className="text-white" value="san-francisco">

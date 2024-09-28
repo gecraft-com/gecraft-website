@@ -1,5 +1,3 @@
-import { Button, Link } from '@nextui-org/react'
-
 import GroupButton from './GroupButton'
 import MobileGroupButton from './MobileGroupButton'
 
@@ -29,17 +27,12 @@ const Header = () => {
         for Assured Software Delivery
       </p>
 
-      <Button
-        id="test"
-        data-hover="false"
-        className="z-10 mt-40 h-20 w-full border-basic text-base font-semibold text-basic hover:border-buttonHover hover:bg-buttonHover hover:opacity-100 sm:mb-72 sm:mt-32 sm:w-[540px] sm:text-2xl 2xl:mt-52 2xl:h-36 2xl:w-[1062px] 2xl:text-5xl"
-        radius="full"
-        variant="bordered"
+      <a
+        className="z-10 mt-40 flex h-20 w-full items-center justify-center rounded-full border-2 border-basic text-base font-semibold text-basic hover:border-buttonHover hover:bg-buttonHover sm:mb-72 sm:mt-32 sm:w-[540px] sm:text-2xl 2xl:mt-52 2xl:h-36 2xl:w-[1062px] 2xl:text-5xl"
         href="#"
-        as={Link}
       >
         Request a Consultation
-      </Button>
+      </a>
 
       <GroupButton />
 
