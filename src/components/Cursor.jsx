@@ -10,6 +10,7 @@ const Cursor = () => {
     const cursor = cursorRef.current
     const links = Array.from(document.getElementsByTagName('a'))
     const buttons = Array.from(document.getElementsByTagName('button'))
+    const labels = Array.from(document.getElementsByTagName('label'))
 
     links.forEach((link) => {
       link.addEventListener('mouseover', handleMouseOver)
@@ -23,6 +24,13 @@ const Cursor = () => {
       button.addEventListener('mouseleave', handleMouseLeave)
       button.addEventListener('mousedown', handleMouseDown)
       button.addEventListener('mouseup', handleMouseUp)
+    })
+
+    labels.forEach((label) => {
+      label.addEventListener('mouseover', handleMouseOver)
+      label.addEventListener('mouseleave', handleMouseLeave)
+      label.addEventListener('mousedown', handleMouseDown)
+      label.addEventListener('mouseup', handleMouseUp)
     })
 
     window.addEventListener('mousemove', (e) => {
@@ -60,6 +68,20 @@ const Cursor = () => {
         link.removeEventListener('mouseleave', handleMouseLeave)
         link.removeEventListener('mousedown', handleMouseDown)
         link.removeEventListener('mouseup', handleMouseUp)
+      })
+
+      buttons.forEach((button) => {
+        button.removeEventListener('mouseover', handleMouseOver)
+        button.removeEventListener('mouseleave', handleMouseLeave)
+        button.removeEventListener('mousedown', handleMouseDown)
+        button.removeEventListener('mouseup', handleMouseUp)
+      })
+
+      labels.forEach((label) => {
+        label.removeEventListener('mouseover', handleMouseOver)
+        label.removeEventListener('mouseleave', handleMouseLeave)
+        label.removeEventListener('mousedown', handleMouseDown)
+        label.removeEventListener('mouseup', handleMouseUp)
       })
     }
   }, [])

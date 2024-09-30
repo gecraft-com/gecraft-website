@@ -1,24 +1,28 @@
-import { Radio, RadioGroup } from '@nextui-org/react'
+import services from '../../data/services.json'
 
 const RadioButtons = () => {
   return (
-    <RadioGroup orientation="horizontal">
-      <Radio className="text-white" value="buenos-aires">
-        Buenos Aires
-      </Radio>
-      <Radio className="label:text-white" value="sydney">
-        Sydney
-      </Radio>
-      <Radio className="text-white" value="san-francisco">
-        San Francisco
-      </Radio>
-      <Radio className="text-white" value="london">
-        London
-      </Radio>
-      <Radio className="text-white" value="tokyo">
-        Tokyo
-      </Radio>
-    </RadioGroup>
+    <div className="mt-20 flex gap-10 2xl:gap-20">
+      {services.map(({ id, label }) => (
+        <label
+          key={id}
+          htmlFor={label}
+          className="flex items-center text-2xl text-ourServicesBtn peer-checked:text-white 2xl:text-4xl"
+        >
+          <input
+            key={id}
+            name="services"
+            id={label}
+            type="radio"
+            value={label}
+            className="peer sr-only"
+          />
+          <span className="relative mr-3 inline-block h-5 w-5 items-center rounded-full border-3 border-ourServicesBtn bg-basic before:absolute before:left-1/2 before:top-1/2 before:hidden before:h-3 before:w-3 before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:bg-white peer-checked:border-white peer-checked:before:block 2xl:h-10 2xl:w-10 2xl:before:h-8 2xl:before:w-8"></span>
+
+          {label}
+        </label>
+      ))}
+    </div>
   )
 }
 
