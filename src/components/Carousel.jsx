@@ -1,4 +1,4 @@
-import RadioGroup from './RadioButtons'
+import RadioGroup from './Filter'
 
 const Carousel = () => {
   return (
