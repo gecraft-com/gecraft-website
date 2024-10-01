@@ -57,7 +57,11 @@ const Services = () => {
           </button>
         ))}
         {modalIsOpen && (
-          <ModalWindow onCloseModal={handleCloseModal} modalIsOpen={modalIsOpen}>
+          <ModalWindow
+            label={label}
+            onCloseModal={handleCloseModal}
+            modalIsOpen={modalIsOpen}
+          >
             <ServiceModal
               label={label}
               description={description}
