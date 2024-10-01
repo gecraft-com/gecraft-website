@@ -17,7 +17,7 @@ const Carousel = () => {
   return (
     <div className="animate-wiggle absolute left-0 top-24 flex items-center ease-in">
       <p className="flex items-center text-[380px] text-white" ref={textRef}>
-        <p ref={spanRef} className="flex w-[1750px] items-center">
+        <span ref={spanRef} className="flex w-[1750px] items-center">
           Our work
           <svg
             className="ml-16"
@@ -32,8 +32,8 @@ const Carousel = () => {
               fill="white"
             />
           </svg>
-        </p>
-        <p ref={spanRef} className="flex w-[1750px] items-center">
+        </span>
+        <span ref={spanRef} className="flex w-[1750px] items-center">
           Our work
           <svg
             className="ml-16"
@@ -48,8 +48,8 @@ const Carousel = () => {
               fill="white"
             />
           </svg>
-        </p>
-        <p ref={spanRef} className="flex w-[1750px] items-center">
+        </span>
+        <span ref={spanRef} className="flex w-[1750px] items-center">
           Our work
           <svg
             className="ml-16"
@@ -64,8 +64,8 @@ const Carousel = () => {
               fill="white"
             />
           </svg>
-        </p>
-        <p ref={spanRef} className="flex w-[1750px] items-center">
+        </span>
+        <span ref={spanRef} className="flex w-[1750px] items-center">
           Our work
           <svg
             className="ml-16"
@@ -80,7 +80,7 @@ const Carousel = () => {
               fill="white"
             />
           </svg>
-        </p>
+        </span>
       </p>
     </div>
   )
