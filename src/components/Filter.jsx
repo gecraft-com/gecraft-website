@@ -2,7 +2,7 @@ import services from '../../data/services.json'
 
 const Filter = () => {
   return (
-    <div className="mt-20 flex gap-10 2xl:gap-20">
+    <div className="mt-[552px] flex gap-10 2xl:gap-20">
       {services.map(({ id, label }) => (
         <label
           key={id}

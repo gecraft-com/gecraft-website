@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "client": "V-CANA",          
+        "img": "img/MacBook.jpg",
+        "service": "Custom Software Development, API Development, Data Engineering, Infrastructure & DevOps, AI Development"
+    },
+    {
+        "id": 3,
+        "client": "BibleVis",
+        "img": "img/bibleVis.jpg",
+        "service": "Custom Software Development, API Development, Data Engineering, Infrastructure & DevOps, AI Development"
+    },
+    {
+        "id": 2,
+        "client": "Glokas",
+        "img": "img/aidi.jpg",
+        "service": "Custom Software Development, API Development, Data Engineering, Infrastructure & DevOps, AI Development"
+    }
+]
