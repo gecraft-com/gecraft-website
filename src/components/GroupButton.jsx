@@ -32,10 +32,10 @@ const GroupButton = () => {
   return (
     <div
       ref={groupButtonRef}
-      className="top-10 z-50 hidden items-center gap-2.5 rounded-full bg-buttonGroup p-1.5 sm:flex"
+      className="top-10 z-30 hidden items-center gap-2.5 rounded-full bg-buttonGroup p-1.5 sm:flex"
     >
       <a
-        className="z-20 flex h-20 w-20 items-center justify-center rounded-full bg-buttonHover"
+        className="flex h-20 w-20 items-center justify-center rounded-full bg-buttonHover"
         href="#"
       >
         <img src="img/logo.svg" alt="logo GeCraft" className="h-14 w-14" />
