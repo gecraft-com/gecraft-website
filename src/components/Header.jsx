@@ -1,7 +1,7 @@
 import GroupButton from './GroupButton'
 import MobileGroupButton from './MobileGroupButton'
 
-const Header = () => {
+function Header() {
   window.onbeforeunload = function () {
     window.scrollTo(0, 0)
   }

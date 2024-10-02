@@ -2,7 +2,7 @@ import Modal from 'react-modal'
 
 Modal.setAppElement('#root')
 
-const ModalWindow = ({ modalIsOpen, onCloseModal, children, label }) => {
+function ModalWindow({ modalIsOpen, onCloseModal, children, label }) {
   return (
     <Modal
       isOpen={modalIsOpen}

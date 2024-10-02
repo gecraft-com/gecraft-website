@@ -4,7 +4,7 @@ import services from '../../data/services.json'
 import ModalWindow from './ModalWindow'
 import ServiceModal from './ServiceModal'
 
-const Services = () => {
+function Services() {
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
   useEffect(() => {

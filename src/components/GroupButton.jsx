@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 
 import appBarButtons from '../../data/appBarButtons.json'
 
-const GroupButton = () => {
+function GroupButton() {
   const groupButtonRef = useRef(null)
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-const ServiceModal = ({ label, description, projects, service }) => {
+function ServiceModal({ label, description, projects, service }) {
   return (
     <>
       <div className="block justify-between px-36 pt-24 sm:flex">

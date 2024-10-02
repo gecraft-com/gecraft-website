@@ -1,6 +1,6 @@
 import services from '../../data/services.json'
 
-const Filter = () => {
+function Filter() {
   return (
     <div className="mt-[34.5rem] hidden gap-10 sm:flex 2xl:gap-20">
       {services.map(({ id, label }) => (

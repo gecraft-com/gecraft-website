@@ -1,4 +1,4 @@
-const MobileGroupButton = () => {
+function MobileGroupButton() {
   return (
     <div className="fixed left-0 top-10 z-50 flex w-full items-center justify-between px-5 sm:hidden">
       <a className="z-20 rounded-full bg-transparent hover:bg-buttonHover" href="#">

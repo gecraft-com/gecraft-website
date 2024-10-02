@@ -1,4 +1,4 @@
-const Carousel = () => {
+function Carousel() {
   return (
     <div className="absolute left-0 top-32 flex w-full items-center ease-in sm:top-24">
       <p className="flex w-full items-center overflow-hidden whitespace-nowrap text-7xl text-white sm:text-[23.75rem]">
