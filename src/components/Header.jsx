@@ -28,7 +28,7 @@ const Header = () => {
       </p>
 
       <a
-        className="z-10 mt-40 flex h-20 w-full items-center justify-center rounded-full border-2 border-basic text-base font-semibold text-basic hover:border-buttonHover hover:bg-buttonHover sm:mb-72 sm:mt-32 sm:w-[540px] sm:text-2xl 2xl:mt-52 2xl:h-36 2xl:w-[1062px] 2xl:text-5xl"
+        className="z-10 mt-40 flex h-20 w-full items-center justify-center rounded-full border-2 border-basic text-base font-semibold text-basic hover:border-buttonHover hover:bg-buttonHover sm:mb-72 sm:mt-32 sm:w-[33.75rem] sm:text-2xl 2xl:mt-52 2xl:h-36 2xl:w-[66.375rem] 2xl:text-5xl"
         href="#"
       >
         Request a Consultation
@@ -38,7 +38,7 @@ const Header = () => {
 
       <p
         id="text"
-        className="z-20 mt-24 w-full select-none text-2xl leading-tight text-white sm:w-[600px] sm:text-3xl lg:w-[969px] lg:text-5xl 2xl:w-[1450px] 2xl:text-7xl"
+        className="z-20 mt-24 w-full select-none text-2xl leading-tight text-white sm:w-[37.5rem] sm:text-3xl lg:w-[60.563rem] lg:text-5xl 2xl:w-[90.625rem] 2xl:text-7xl"
       >
         Harnessing cutting-edge technology and years of industry expertise, GeCraft
         designs and develops custom, end-to-end solutions that bring your unique software
