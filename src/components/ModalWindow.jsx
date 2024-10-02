@@ -11,10 +11,10 @@ const ModalWindow = ({ modalIsOpen, onCloseModal, children, label }) => {
       shouldCloseOnEsc={true}
       ariaHideApp={true}
       shouldReturnFocusAfterClose={false}
-      className="relative z-50 w-full max-w-[3343px]"
+      className="relative z-50 w-full max-w-[3343px] rounded-lg bg-white"
       overlayClassName="fixed flex items-center flex-col px-10 py-10 top-0 left-0 w-full h-full bg-[#2E2E2ECC] overflow-hidden overflow-y-auto z-40 before:after:block before:after:h-px before:after:grow"
     >
-      <div className="reltive rounded-lg bg-bgHeader pt-20 shadow-lg">
+      <div className="reltive rounded-lg pt-20 shadow-lg">
         <button
           type="button"
           onClick={onCloseModal}
