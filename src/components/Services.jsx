@@ -42,7 +42,7 @@ function Services() {
           <h3 className="ml-4 w-36 text-left text-xs font-extrabold uppercase before:mr-1.5 before:inline-flex before:h-2.5 before:w-2.5 before:rounded-full before:bg-basic sm:ml-0">
             Our services
           </h3>
-          <h4 className="ml-4 mt-10 w-72 text-left text-3xl sm:ml-0 sm:mt-8 md:w-[21.5rem] md:text-2xl 1076:text-4xl lg:mt-12 2xl:w-[23rem] 2xl:text-5xl 3xl:w-[33.6rem]">
+          <h4 className="ml-4 mt-10 w-72 text-left text-3xl sm:ml-0 sm:mt-8 md:w-[21.5rem] md:text-2xl 1076:text-4xl lg:mt-12 2xl:w-[30rem] 2xl:text-5xl 3xl:w-[33.6rem]">
             Skills to enhance your performance
           </h4>
         </div>
