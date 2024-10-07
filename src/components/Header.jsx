@@ -7,9 +7,9 @@ function Header() {
   }
 
   return (
-    <header className="relative flex w-full flex-col items-center px-5 pb-20 sm:bg-bgHeader sm:px-0 2xl:pb-72">
+    <header className="relative flex w-full flex-col items-center px-5 pb-20 sm:bg-bgHeader md:px-0 2xl:pb-72">
       <MobileGroupButton />
-      <h1 className="title-gradient hidden select-none bg-clip-text font-sans text-[22vw] font-black not-italic leading-none text-transparent sm:block">
+      <h1 className="title-gradient mt-24 hidden select-none bg-clip-text font-sans text-[22vw] font-black not-italic leading-none text-transparent sm:block md:mt-0">
         GeCraft
       </h1>
 
@@ -20,15 +20,15 @@ function Header() {
         Craft
       </h2>
 
-      <p className="mt-10 select-none text-2xl text-basic sm:mt-0 sm:text-4xl 2xl:text-8xl">
+      <p className="mt-10 select-none text-2xl text-basic sm:mt-0 sm:text-2xl 2xl:text-8xl">
         Your Reliable Partner
       </p>
-      <p className="select-none text-2xl text-basic sm:text-4xl 2xl:text-8xl">
+      <p className="select-none text-2xl text-basic sm:text-2xl 2xl:text-8xl">
         for Assured Software Delivery
       </p>
 
       <a
-        className="z-10 mt-40 flex h-20 w-full items-center justify-center rounded-full border-2 border-basic text-base font-semibold text-basic hover:border-buttonHover hover:bg-buttonHover sm:mb-72 sm:mt-32 sm:w-[33.75rem] sm:text-2xl 2xl:mt-52 2xl:h-36 2xl:w-[66.375rem] 2xl:text-5xl"
+        className="z-10 mt-40 flex h-20 w-full items-center justify-center rounded-full border-2 border-basic text-base font-semibold text-basic hover:border-buttonHover hover:bg-buttonHover sm:mt-24 sm:w-[23.125rem] sm:text-xl md:mb-28 2xl:mt-52 2xl:h-36 2xl:w-[66.375rem] 2xl:text-5xl"
         href="#"
       >
         Request a Consultation
@@ -38,7 +38,7 @@ function Header() {
 
       <p
         id="text"
-        className="z-20 mt-24 w-full select-none text-2xl leading-tight text-white sm:w-[37.5rem] sm:text-3xl lg:w-[60.563rem] lg:text-5xl 2xl:w-[90.625rem] 2xl:text-7xl"
+        className="z-20 mt-24 w-full select-none text-2xl leading-tight text-white md:w-[37.5rem] md:text-3xl lg:w-[60.563rem] lg:text-5xl 2xl:w-[90.625rem] 2xl:text-7xl"
       >
         Harnessing cutting-edge technology and years of industry expertise, GeCraft
         designs and develops custom, end-to-end solutions that bring your unique software

@@ -2,12 +2,12 @@ import services from '../../data/services.json'
 
 function Filter() {
   return (
-    <div className="mt-[34.5rem] hidden gap-10 sm:flex 2xl:gap-20">
+    <div className="hidden md:mt-48 md:flex md:flex-wrap md:gap-5 lg:mt-[26rem] lg:gap-10 2xl:gap-20">
       {services.map(({ id, label }) => (
         <label
           key={id}
           htmlFor={label}
-          className="flex items-center text-2xl text-ourServicesBtn peer-checked:text-white 2xl:text-4xl"
+          className="flex items-center whitespace-nowrap text-ourServicesBtn peer-checked:text-white sm:text-base lg:text-2xl 2xl:text-4xl"
         >
           <input
             key={id}

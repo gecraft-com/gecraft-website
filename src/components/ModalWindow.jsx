@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import Modal from 'react-modal'
 
 Modal.setAppElement('#root')
@@ -57,6 +58,13 @@ function ModalWindow({ modalIsOpen, onCloseModal, children, label }) {
       </div>
     </Modal>
   )
+}
+
+ModalWindow.propTypes = {
+  modalIsOpen: PropTypes.bool.isRequired,
+  onCloseModal: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
+  label: PropTypes.string.isRequired,
 }
 
 export default ModalWindow

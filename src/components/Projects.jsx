@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 
+import PropTypes from 'prop-types'
+
 import projects from '../../data/projects.json'
 import ModalWindow from './ModalWindow'
 import Project from './Project'
@@ -34,7 +36,7 @@ function Projects({ location }) {
 
   return (
     <>
-      <ul className="mt-4 flex flex-col gap-y-10 sm:mt-12 sm:flex-row sm:gap-x-2.5 sm:gap-y-0">
+      <ul className="mt-40 flex w-full flex-col gap-y-10 md:mt-14 md:flex-row md:flex-wrap md:gap-x-2.5 md:gap-y-10 lg:mt-12">
         {projects.map((project) => (
           <Project
             key={project.id}
@@ -55,6 +57,10 @@ function Projects({ location }) {
       )}
     </>
   )
+}
+
+Projects.propTypes = {
+  location: PropTypes.string.isRequired,
 }
 
 export default Projects
