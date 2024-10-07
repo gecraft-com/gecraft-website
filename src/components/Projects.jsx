@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import projects from '../../data/projects.json'
 import ModalWindow from './ModalWindow'
 import Project from './Project'
+import ProjectsModal from './ProjectsModal'
 
 function Projects({ location }) {
   const [color, setColor] = useState({})
@@ -52,7 +53,7 @@ function Projects({ location }) {
           onCloseModal={handleCloseModal}
           modalIsOpen={modalIsOpen}
         >
-          <h3>Hello</h3>
+          <ProjectsModal />
         </ModalWindow>
       )}
     </>

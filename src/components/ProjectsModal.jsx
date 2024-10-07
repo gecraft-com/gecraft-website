@@ -17,12 +17,12 @@ const ProjectsModal = ({
   return (
     <div className="px-36 pt-24">
       <div className="flex justify-between pb-24">
-        <div className="w-[872px]">
+        <div className="w-[54.5rem]">
           <h2 className="text-9xl">{client}</h2>
           <p className="mt-5 text-3xl uppercase">{service}</p>
-          <img className="mt-12 h-[600px] w-[872px]" src={img} alt={client} />
+          <img className="mt-12 h-[37.5rem] w-[54.5rem]" src={img} alt={client} />
         </div>
-        <div className="flex w-[1817px] flex-col justify-between">
+        <div className="flex w-[113.563rem] flex-col justify-between">
           <div>
             <p className="text-5xl">{description}</p>
             <p className="mt-10 text-5xl">{description2}</p>
@@ -37,12 +37,12 @@ const ProjectsModal = ({
           <h3 className="text-4xl font-extrabold uppercase">{title1}</h3>
           <img src={descktop} alt="MacBook" />
         </div>
-        <div className="relative flex h-[1046px] flex-col items-center rounded-md bg-gradient-to-b from-[#F0F0F0] to-[#D7D7D7] pb-24 pt-20">
+        <div className="relative flex h-[65.375rem] flex-col items-center rounded-md bg-gradient-to-b from-[#F0F0F0] to-[#D7D7D7] pb-24 pt-20">
           <h3 className="text-4xl font-extrabold uppercase">Mobile version</h3>
           <img src={iPhone1} alt={iPhone1} className="absolute right-60" />
           <img src={iPhone2} alt={iPhone2} className="absolute left-64" />
         </div>
-        <div className="relative left-0 top-0 flex flex-col items-center rounded-md bg-gradient-to-b from-[#F0F0F0] to-[#D7D7D7] pb-[482px]">
+        <div className="relative left-0 top-0 flex flex-col items-center rounded-md bg-gradient-to-b from-[#F0F0F0] to-[#D7D7D7] pb-[30.125rem]">
           <h3 className="z-10 mt-20 text-4xl font-extrabold uppercase">{title2}</h3>
           <img src={pages} alt="pages" className="absolute h-full w-full" />
         </div>
