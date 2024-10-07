@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-const Cursor = () => {
+function Cursor() {
   const [cursorX, setCursorX] = useState(0)
   const [cursorY, setCursorY] = useState(0)
 
@@ -91,7 +91,7 @@ const Cursor = () => {
       ref={cursorRef}
       style={{ left: cursorX + 'px', top: cursorY + 'px' }}
       id="cursor"
-      className="bg-cursor pointer-events-none absolute z-50 h-7 w-7 -translate-x-1/2 -translate-y-1/2 select-none rounded-full border border-solid border-bgHeader"
+      className="pointer-events-none absolute z-50 h-7 w-7 -translate-x-1/2 -translate-y-1/2 select-none rounded-full border border-solid border-bgHeader bg-cursor"
     ></div>
   )
 }

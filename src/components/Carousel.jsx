@@ -1,13 +1,11 @@
-const Carousel = () => {
+function Carousel() {
   return (
-    <div className="absolute left-0 top-24 flex w-full items-center ease-in">
-      <p className="flex w-full items-center overflow-hidden whitespace-nowrap text-[380px] text-white">
+    <div className="absolute left-0 top-32 flex w-full items-center ease-in sm:top-28 lg:top-32">
+      <p className="flex w-full items-center overflow-hidden whitespace-nowrap text-7xl text-white sm:text-8xl lg:text-[23.75rem]">
         <span className="flex items-center">
           Our work
           <svg
-            className="mx-16"
-            width="116"
-            height="116"
+            className="mx-4 h-5 w-5 sm:mx-6 sm:h-8 sm:w-8 lg:mx-16 lg:h-28 lg:w-28"
             viewBox="0 0 116 116"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -21,9 +19,7 @@ const Carousel = () => {
         <span className="flex items-center">
           Our work
           <svg
-            className="mx-16"
-            width="116"
-            height="116"
+            className="mx-4 h-5 w-5 sm:mx-6 sm:h-8 sm:w-8 lg:mx-16 lg:h-28 lg:w-28"
             viewBox="0 0 116 116"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -37,9 +33,7 @@ const Carousel = () => {
         <span className="flex items-center">
           Our work
           <svg
-            className="mx-16"
-            width="116"
-            height="116"
+            className="mx-4 h-5 w-5 sm:mx-6 sm:h-8 sm:w-8 lg:mx-16 lg:h-28 lg:w-28"
             viewBox="0 0 116 116"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

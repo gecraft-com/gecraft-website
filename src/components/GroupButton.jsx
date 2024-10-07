@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 
 import appBarButtons from '../../data/appBarButtons.json'
 
-const GroupButton = () => {
+function GroupButton() {
   const groupButtonRef = useRef(null)
 
   useEffect(() => {
@@ -17,10 +17,10 @@ const GroupButton = () => {
     function handleScroll() {
       if (window.scrollY > coordAppBar - 40) {
         groupButton.classList.add('fixed')
-        text.classList.add('mt-48')
+        text.classList.add('lg:mt-48', 'md:mt-40')
       } else if (window.scrollY <= coordText) {
         groupButton.classList.remove('fixed')
-        text.classList.remove('mt-48')
+        text.classList.remove('lg:mt-48', 'md:mt-40')
       }
     }
 
@@ -32,18 +32,22 @@ const GroupButton = () => {
   return (
     <div
       ref={groupButtonRef}
-      className="top-10 z-30 hidden items-center gap-2.5 rounded-full bg-buttonGroup p-1.5 sm:flex"
+      className="top-10 z-30 hidden items-center gap-2.5 rounded-full bg-buttonGroup p-1.5 md:flex"
     >
       <a
-        className="flex h-20 w-20 items-center justify-center rounded-full bg-buttonHover"
+        className="flex items-center justify-center rounded-full bg-buttonHover sm:h-14 sm:w-14 lg:h-20 lg:w-20"
         href="#"
       >
-        <img src="img/logo.svg" alt="logo GeCraft" className="h-14 w-14" />
+        <img
+          src="img/logo.svg"
+          alt="logo GeCraft"
+          className="sm:h-11 sm:w-11 lg:h-14 lg:w-14"
+        />
       </a>
       {appBarButtons.map(({ label, href }, index) => (
         <a
           key={index}
-          className="flex h-20 items-center justify-center rounded-full bg-transparent px-11 text-xl font-bold text-basic last:bg-buttonHover hover:bg-buttonHover"
+          className="flex items-center justify-center whitespace-nowrap rounded-full bg-transparent font-bold text-basic last:bg-buttonHover hover:bg-buttonHover sm:h-14 sm:px-5 sm:text-base lg:h-20 lg:px-11 lg:text-xl"
           href={href}
         >
           {label}
