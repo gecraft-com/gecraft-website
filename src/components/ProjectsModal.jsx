@@ -7,13 +7,10 @@ const ProjectsModal = ({
   title1,
   title2,
   title3,
-  descktop,
-  iPhone1,
-  iPhone2,
-  pages,
-  logo,
-  advantage,
+  screenshots,
 }) => {
+  const { iPhone1, iPhone2, descktop, pages, logo, advantage } = screenshots
+  console.log('🚀 ~ client:', client)
   return (
     <div className="px-36 pt-24">
       <div className="flex justify-between pb-24">

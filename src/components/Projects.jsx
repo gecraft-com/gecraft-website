@@ -48,12 +48,8 @@ function Projects({ location }) {
         ))}
       </ul>
       {selectedProject && (
-        <ModalWindow
-          {...selectedProject}
-          onCloseModal={handleCloseModal}
-          modalIsOpen={modalIsOpen}
-        >
-          <ProjectsModal />
+        <ModalWindow onCloseModal={handleCloseModal} modalIsOpen={modalIsOpen}>
+          <ProjectsModal {...selectedProject} />
         </ModalWindow>
       )}
     </>
