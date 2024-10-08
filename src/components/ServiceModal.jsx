@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types'
 
-function ServiceModal({ label, description, projects, service }) {
+import Service from './Service'
+
+function ServiceModal({ label, service, description, projects }) {
   return (
     <div className="block justify-between px-5 pt-10 md:flex md:px-5 md:pt-24 lg:px-36">
       <div className="w-full md:w-2/12 3xl:w-3/12">
@@ -16,25 +18,7 @@ function ServiceModal({ label, description, projects, service }) {
         </h5>
         <ul className="mt-4 flex flex-col gap-y-10 md:mt-12 md:justify-items-start md:gap-x-2.5 lg:flex-row lg:gap-y-0">
           {projects.map(({ id, client, img }) => (
-            <li key={id} className="w-full lg:w-8/12">
-              <button>
-                <img src={img} alt={client} />
-                <div className="mt-4 block md:mt-5 md:flex md:gap-x-10 2xl:gap-x-5">
-                  <div className="w-5/12 2xl:w-2/6">
-                    <p className="text-left text-xs uppercase">client</p>
-                    <p className="mt-1 whitespace-nowrap text-left text-base uppercase md:mt-4">
-                      {client}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="mt-3 text-left text-xs uppercase md:mt-0">service</p>
-                    <p className="mt-1 text-left text-sm uppercase md:mt-4 md:text-base">
-                      {service}
-                    </p>
-                  </div>
-                </div>
-              </button>
-            </li>
+            <Service key={id} client={client} img={img} service={service} />
           ))}
         </ul>
       </div>
