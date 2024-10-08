@@ -32,7 +32,7 @@ function GroupButton() {
   return (
     <div
       ref={groupButtonRef}
-      className="top-10 z-30 hidden items-center gap-2.5 rounded-full bg-buttonGroup p-1.5 md:flex"
+      className="top-10 z-30 hidden items-center gap-2.5 rounded-full bg-buttonGroup p-1.5 backdrop-blur-sm md:flex"
     >
       <a
         className="flex items-center justify-center rounded-full bg-buttonHover sm:h-14 sm:w-14 lg:h-20 lg:w-20"
