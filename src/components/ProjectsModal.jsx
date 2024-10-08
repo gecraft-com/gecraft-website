@@ -1,4 +1,6 @@
-const ProjectsModal = ({
+import PropTypes from 'prop-types'
+
+function ProjectsModal({
   client,
   service,
   img,
@@ -8,7 +10,7 @@ const ProjectsModal = ({
   title2,
   title3,
   screenshots,
-}) => {
+}) {
   const { iPhone1, iPhone2, descktop, pages, logo, advantage } = screenshots
   return (
     <div className="px-5 pt-10 lg:px-36 1400:pt-24">
@@ -66,6 +68,18 @@ const ProjectsModal = ({
       </div>
     </div>
   )
+}
+
+ProjectsModal.propTypes = {
+  client: PropTypes.string.isRequired,
+  service: PropTypes.string,
+  img: PropTypes.string,
+  description: PropTypes.string,
+  description2: PropTypes.string,
+  title1: PropTypes.string.isRequired,
+  title2: PropTypes.string.isRequired,
+  title3: PropTypes.string.isRequired,
+  screenshots: PropTypes.objectOf(PropTypes.string.isRequired),
 }
 
 export default ProjectsModal
