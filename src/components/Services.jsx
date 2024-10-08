@@ -34,7 +34,7 @@ function Services() {
       className="block justify-between px-2 pb-20 pt-48 sm:pb-14 sm:pt-14 md:flex md:px-16 lg:pb-32 lg:pt-32"
     >
       <div className="flex w-1/4 flex-col items-start">
-        <div className="inline-block flex-col sm:sticky sm:top-10">
+        <div className="inline-block flex-col sm:sticky sm:top-36 1076:top-16 lg:top-36 1400:top-20">
           <h3 className="ml-4 w-36 text-left text-xs font-extrabold uppercase before:mr-1.5 before:inline-flex before:h-2.5 before:w-2.5 before:rounded-full before:bg-basic sm:ml-0">
             Our services
           </h3>
