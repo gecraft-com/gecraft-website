@@ -22,7 +22,7 @@ function Project({ project, handleClick, color }) {
               service
             </p>
             <p
-              className="mt-1 text-left text-sm uppercase sm:mt-4 md:text-base"
+              className="mt-1 text-left text-sm uppercase sm:mt-4 2xl:text-base"
               style={color}
             >
               {project.service}
