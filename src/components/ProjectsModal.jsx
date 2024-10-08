@@ -22,7 +22,7 @@ const ProjectsModal = ({
           </p>
           <img className="mt-12 hidden w-[54.5rem] lg:block" src={img} alt={client} />
         </div>
-        <div className="mt-10 flex w-full flex-col justify-between lg:mt-0 lg:w-[113.563rem] lg:pl-10">
+        <div className="mt-10 flex w-full flex-col justify-between lg:mt-0 lg:w-[113.563rem] lg:pl-10 3xl:w-1/2">
           <div>
             <p className="text-2xl lg:text-3xl 1400:text-5xl">{description}</p>
             <p className="mt-10 text-2xl lg:text-3xl 1400:text-5xl">{description2}</p>
