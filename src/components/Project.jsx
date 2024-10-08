@@ -35,7 +35,19 @@ function Project({ project, handleClick, color }) {
 }
 
 Project.propTypes = {
-  project: PropTypes.objectOf(PropTypes.string).isRequired,
+  project: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    client: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    img: PropTypes.string.isRequired,
+    service: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    description2: PropTypes.string,
+    title1: PropTypes.string.isRequired,
+    title2: PropTypes.string.isRequired,
+    title3: PropTypes.string.isRequired,
+    screenshots: PropTypes.objectOf(PropTypes.string.isRequired),
+  }),
   handleClick: PropTypes.func.isRequired,
   color: PropTypes.object.isRequired,
 }
