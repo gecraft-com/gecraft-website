@@ -12,7 +12,7 @@ function GroupButton() {
     const coordAppBar = groupButton.getBoundingClientRect().top
     const coordText = text.getBoundingClientRect().top
 
-    window.addEventListener('scroll', handleScroll)
+    document.addEventListener('scroll', handleScroll)
 
     function handleScroll() {
       if (window.scrollY > coordAppBar - 40) {
