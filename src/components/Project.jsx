@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 
 function Project({ project, handleClick, color }) {
   return (
-    <li className="w-max-[54.5rem] w-full md:w-[49.2%] lg:w-[32.6%] 3xl:w-[54.5rem]">
+    <li className="w-max-[54.5rem] w-full md:w-[49.2%] lg:w-[32.6%] 3xl:w-[50rem]">
       <button className="border-0" onClick={() => handleClick(project)}>
         <img src={project.img} alt={project.client} className="w-full rounded-md" />
         <div className="mt-4 block sm:mt-5 sm:flex sm:gap-x-10 2xl:gap-x-5">
