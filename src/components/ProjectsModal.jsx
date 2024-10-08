@@ -11,42 +11,44 @@ const ProjectsModal = ({
 }) => {
   const { iPhone1, iPhone2, descktop, pages, logo, advantage } = screenshots
   return (
-    <div className="px-5 pt-10 md:px-36 md:pt-24">
-      <div className="block pb-0 md:flex md:justify-between md:pb-24">
-        <div className="w-full md:w-[54.5rem]">
-          <h2 className="text-4xl md:text-9xl">{client}</h2>
-          <p className="mt-2.5 text-sm uppercase md:mt-5 md:text-3xl">{service}</p>
-          <img
-            className="mt-12 hidden h-[37.5rem] w-[54.5rem] md:block"
-            src={img}
-            alt={client}
-          />
+    <div className="px-5 pt-10 lg:px-36 1400:pt-24">
+      <div className="block pb-0 lg:flex lg:justify-between lg:pb-10 1400:pb-24">
+        <div className="w-full lg:w-[54.5rem]">
+          <h2 className="whitespace-nowrap text-4xl lg:text-6xl 1400:text-9xl">
+            {client}
+          </h2>
+          <p className="mt-2.5 text-sm uppercase lg:mt-5 lg:text-xl 1400:text-3xl">
+            {service}
+          </p>
+          <img className="mt-12 hidden w-[54.5rem] lg:block" src={img} alt={client} />
         </div>
-        <div className="mt-10 flex w-full flex-col justify-between md:mt-0 md:w-[113.563rem]">
+        <div className="mt-10 flex w-full flex-col justify-between lg:mt-0 lg:w-[113.563rem] lg:pl-10">
           <div>
-            <p className="text-2xl md:text-5xl">{description}</p>
-            <p className="mt-10 text-2xl md:text-5xl">{description2}</p>
+            <p className="text-2xl lg:text-3xl 1400:text-5xl">{description}</p>
+            <p className="mt-10 text-2xl lg:text-3xl 1400:text-5xl">{description2}</p>
           </div>
-          <a href="#" className="mt-10 text-xl underline md:mt-0 md:text-3xl">
+          <a href="#" className="mt-10 text-xl underline 1400:mt-0 1400:text-3xl">
             See the website
           </a>
-          <img className="mt-10 w-full" src={img} alt={client} />
+          <img className="mt-10 w-full lg:hidden" src={img} alt={client} />
         </div>
       </div>
-      <div className="md:grid md:grid-cols-2 md:gap-2.5">
-        <div className="col-start-1 col-end-3 mt-2.5 flex flex-col items-center rounded-md bg-gradient-to-b from-[#F0F0F0] to-[#D7D7D7] px-2 pb-4 pt-6 md:mt-0 md:px-0 md:pb-24 md:pt-36">
-          <h3 className="text-[0.5rem] font-extrabold uppercase md:text-4xl">{title1}</h3>
+      <div className="lg:grid lg:grid-cols-2 lg:gap-2.5">
+        <div className="col-start-1 col-end-3 mt-2.5 flex flex-col items-center rounded-md bg-gradient-to-b from-[#F0F0F0] to-[#D7D7D7] px-2 pb-4 pt-6 lg:mt-0 lg:pb-6 lg:pt-12 1400:px-0 1400:pb-24 1400:pt-36">
+          <h3 className="text-[0.5rem] font-extrabold uppercase lg:text-2xl 1400:text-4xl">
+            {title1}
+          </h3>
           <img src={descktop} alt="MacBook" />
         </div>
-        <div className="relative mt-2.5 flex h-72 flex-col items-center rounded-md bg-gradient-to-b from-[#F0F0F0] to-[#D7D7D7] pt-6 md:mt-0 md:h-[65.375rem] md:pb-24 md:pt-20">
-          <h3 className="text-[0.5rem] font-extrabold uppercase md:text-4xl">
+        <div className="relative mt-2.5 flex h-72 flex-col items-center rounded-md bg-gradient-to-b from-[#F0F0F0] to-[#D7D7D7] pt-6 lg:mt-0 lg:h-[65.375rem] lg:pb-24 lg:pt-20">
+          <h3 className="text-[0.5rem] font-extrabold uppercase lg:text-4xl">
             Mobile version
           </h3>
-          <img src={iPhone1} alt={iPhone1} className="absolute right-8 md:right-60" />
-          <img src={iPhone2} alt={iPhone2} className="absolute left-7 md:left-64" />
+          <img src={iPhone1} alt={iPhone1} className="absolute right-8 lg:right-60" />
+          <img src={iPhone2} alt={iPhone2} className="absolute left-7 lg:left-64" />
         </div>
-        <div className="relative left-0 top-0 mt-2.5 flex h-96 flex-col items-center rounded-md bg-gradient-to-b from-[#F0F0F0] to-[#D7D7D7] md:mt-0 md:pb-[30.125rem]">
-          <h3 className="z-10 mt-6 text-[0.5rem] font-extrabold uppercase md:mt-20 md:text-4xl">
+        <div className="relative left-0 top-0 mt-2.5 flex h-96 flex-col items-center rounded-md bg-gradient-to-b from-[#F0F0F0] to-[#D7D7D7] lg:mt-0 lg:pb-[30.125rem]">
+          <h3 className="z-10 mt-6 text-[0.5rem] font-extrabold uppercase lg:mt-20 lg:text-4xl">
             {title2}
           </h3>
           <img src={pages} alt="pages" className="absolute h-full w-full" />

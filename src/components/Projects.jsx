@@ -13,6 +13,7 @@ function Projects({ location }) {
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
   const [selectedProject, setSelectedProject] = useState(null)
+  const [label, setLabel] = useState('')
 
   useEffect(() => {
     setColor(location === 'gallery' ? { color: 'white' } : {})
@@ -28,6 +29,7 @@ function Projects({ location }) {
 
   const handleClick = useCallback((project) => {
     setSelectedProject(project)
+    setLabel(project.label)
     setModalIsOpen(true)
   }, [])
 
@@ -48,7 +50,11 @@ function Projects({ location }) {
         ))}
       </ul>
       {selectedProject && (
-        <ModalWindow onCloseModal={handleCloseModal} modalIsOpen={modalIsOpen}>
+        <ModalWindow
+          onCloseModal={handleCloseModal}
+          modalIsOpen={modalIsOpen}
+          label={label}
+        >
           <ProjectsModal {...selectedProject} />
         </ModalWindow>
       )}
