@@ -11,11 +11,8 @@ function Services() {
   const [label, setLabel] = useState('')
 
   useEffect(() => {
-    if (modalIsOpen) {
-      document.body.classList.add('overflow-hidden')
-    } else {
-      document.body.classList.remove('overflow-hidden')
-    }
+    document.body.classList.toggle('overflow-hidden', modalIsOpen)
+    return () => document.body.classList.remove('overflow-hidden')
   }, [modalIsOpen])
 
   const handleClick = useCallback((service) => {
@@ -54,7 +51,7 @@ function Services() {
             {service.label}
           </button>
         ))}
-        {modalIsOpen && (
+        {modalIsOpen && selectedService && (
           <ModalWindow
             onCloseModal={handleCloseModal}
             modalIsOpen={modalIsOpen}
