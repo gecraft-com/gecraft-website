@@ -1,12 +1,7 @@
 import GroupButton from './GroupButton'
 import MobileGroupButton from './MobileGroupButton'
 
-
 function Header() {
-  window.onbeforeunload = function () {
-    window.scrollTo(0, 0)
-  }
-
   return (
     <header className="relative flex w-full flex-col items-center px-5 pb-20 sm:bg-bgHeader md:px-0 2xl:pb-72">
       <MobileGroupButton />
