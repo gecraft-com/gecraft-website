@@ -1,5 +1,5 @@
 function Carousel() {
-  function Span() {
+  function SlideElement() {
     return (
       <span className="flex items-center">
         Our work
@@ -21,9 +21,9 @@ function Carousel() {
   return (
     <div className="absolute left-0 top-32 flex w-full items-center ease-in sm:top-32 lg:top-32">
       <p className="flex w-full items-center overflow-hidden whitespace-nowrap text-7xl text-white sm:text-8xl lg:text-[23.75rem]">
-        <Span />
-        <Span />
-        <Span />
+        <SlideElement />
+        <SlideElement />
+        <SlideElement />
       </p>
     </div>
   )

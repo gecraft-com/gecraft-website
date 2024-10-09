@@ -41,7 +41,7 @@ Project.propTypes = {
     label: PropTypes.string.isRequired,
     img: PropTypes.string.isRequired,
     service: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
+    description1: PropTypes.string.isRequired,
     description2: PropTypes.string,
     title1: PropTypes.string.isRequired,
     title2: PropTypes.string.isRequired,
