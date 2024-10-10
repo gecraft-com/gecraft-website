@@ -36,7 +36,7 @@ function Projects({ location }) {
 
   return (
     <>
-      <ul className="mt-40 flex w-full flex-col gap-y-10 md:mt-14 md:flex-row md:flex-wrap md:gap-x-2.5 md:gap-y-10 lg:mt-12">
+      <ul className="mt-[39.2vw] flex w-full flex-col gap-y-10 md:mt-[5.03vw] md:flex-row md:flex-wrap md:gap-x-2.5 md:gap-y-10 lg:mt-[1.57vw]">
         {projects.map((project) => (
           <Project
             key={project.id}

@@ -2,12 +2,12 @@ import services from '../../data/services.json'
 
 function Filter() {
   return (
-    <div className="hidden md:mt-48 md:flex md:flex-wrap md:gap-5 lg:mt-[26rem] lg:gap-10 2xl:gap-20">
+    <div className="hidden md:mt-[17.8vw] md:flex md:flex-wrap md:gap-5 lg:mt-[20.14vw] lg:gap-10 2xl:gap-20">
       {services.map(({ id, label }) => (
         <label
           key={id}
           htmlFor={label}
-          className="flex items-center whitespace-nowrap text-ourServicesBtn peer-checked:text-white sm:text-base lg:text-2xl 2xl:text-4xl"
+          className="flex items-center whitespace-nowrap text-ourServicesBtn peer-checked:text-white md:text-[1.42vw] lg:text-[1.25vw] 2xl:text-[1.05vw]"
         >
           <input
             key={id}
@@ -17,7 +17,7 @@ function Filter() {
             value={label}
             className="peer sr-only"
           />
-          <span className="relative mr-3 inline-block h-5 w-5 items-center rounded-full border-3 border-ourServicesBtn bg-basic before:absolute before:left-1/2 before:top-1/2 before:hidden before:h-3 before:w-3 before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:bg-white peer-checked:border-white peer-checked:before:block 2xl:h-10 2xl:w-10 2xl:before:h-8 2xl:before:w-8"></span>
+          <span className="relative mr-[0.9vw] inline-block h-[1.77vw] w-[1.77vw] items-center rounded-full border-[0.28vw] border-ourServicesBtn bg-basic before:absolute before:left-1/2 before:top-1/2 before:hidden before:h-[1.1vw] before:w-[1.1vw] before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:bg-white peer-checked:border-white peer-checked:before:block lg:h-[1.1vw] lg:w-[1.1vw] lg:border-[0.2vw] lg:before:h-[0.6vw] lg:before:w-[0.6vw] 2xl:mr-[0.3vw] 2xl:h-[1.17vw] 2xl:w-[1.17vw] 2xl:border-[0.1vw] 2xl:before:h-[0.93vw] 2xl:before:w-[0.93vw]"></span>
 
           {label}
         </label>

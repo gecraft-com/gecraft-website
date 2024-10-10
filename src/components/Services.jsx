@@ -28,14 +28,14 @@ function Services() {
   return (
     <div
       id="services"
-      className="block justify-between px-[2.1vw] pb-[20.5vw] pt-[51vw] md:flex md:pb-[2.8vw] md:pl-[5.92vw] md:pr-[4.5vw] md:pt-[4.1vw] lg:pb-[5.5vw] lg:pr-[2vw] lg:pt-[6.35vw] 2xl:pb-[4.5vw] 2xl:pl-[3.23vw] 2xl:pt-[4.99vw]"
+      className="block justify-between px-[2.1vw] pb-[20.5vw] pt-[51vw] md:flex md:pb-[2.8vw] md:pl-[5.92vw] md:pr-[4.5vw] md:pt-[4.1vw] lg:pb-[5.5vw] lg:pl-[3.13vw] lg:pr-[2vw] lg:pt-[6.35vw] 2xl:pb-[4.5vw] 2xl:pl-[3.23vw] 2xl:pt-[4.99vw]"
     >
       <div className="flex w-1/4 flex-col items-start md:mt-[2.5vw]">
         <div className="inline-block flex-col md:sticky md:top-16">
-          <h3 className="ml-[2.84vw] flex items-center text-left text-[3.08vw] font-extrabold uppercase before:mr-[1.54vw] before:inline-flex before:h-[2.56vw] before:w-[2.56vw] before:rounded-full before:bg-basic md:ml-0 md:text-[1.06vw] md:before:mr-[0.45vw] md:before:h-[1.06vw] md:before:w-[1.06vw] lg:text-[0.63vw] lg:before:h-[0.63vw] lg:before:w-[0.63vw] 2xl:text-[0.35vw] 2xl:before:mr-[0.25vw] 2xl:before:h-[0.35vw] 2xl:before:w-[0.35vw]">
+          <h3 className="ml-[2.84vw] whitespace-nowrap text-left text-[3.08vw] font-extrabold uppercase before:mr-[1.3vw] before:inline-flex before:h-[2.31vw] before:w-[2.31vw] before:rounded-full before:bg-basic md:ml-0 md:text-[1.06vw] md:before:mr-[0.45vw] md:before:h-[0.8vw] md:before:w-[0.8vw] lg:text-[0.63vw] lg:before:mr-[0.27vw] lg:before:h-[0.47vw] lg:before:w-[0.47vw] 2xl:text-[0.35vw] 2xl:before:mr-[0.15vw] 2xl:before:h-[0.263vw] 2xl:before:w-[0.263vw]">
             Our services
           </h3>
-          <h4 className="ml-[2.84vw] mt-[10vw] w-[90vw] text-left text-[9vw] leading-tight md:ml-0 md:mt-[2.74vw] md:w-[25vw] md:text-[3.185vw] lg:mt-[1.67vw] lg:text-[2.1vw] 2xl:mt-[1.3vw] 2xl:w-[14vw] 2xl:text-[1.4vw]">
+          <h4 className="ml-[2.84vw] mt-[10vw] w-[90vw] text-left text-[9vw] leading-tight md:ml-0 md:mt-[2.74vw] md:w-[32vw] md:text-[3.185vw] lg:mt-[1.67vw] lg:w-[23vw] lg:text-[2.1vw] 2xl:mt-[1.3vw] 2xl:w-[14vw] 2xl:text-[1.4vw]">
             Skills to enhance your performance
           </h4>
         </div>
