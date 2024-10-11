@@ -4,7 +4,7 @@ import Service from './Service'
 
 function ServiceModal({ label, service, description, projects }) {
   return (
-    <div className="block justify-between px-5 pt-10 md:flex md:px-5 md:pt-24 lg:px-36">
+    <div className="block justify-between px-[5.15vw] pt-10 md:flex md:px-5 md:pt-24 lg:px-36">
       <div className="w-full md:w-2/12 3xl:w-3/12">
         <h4 className="text-4xl md:text-3xl 2xl:text-5xl 3xl:text-7xl 4xl:text-9xl">
           {label}
