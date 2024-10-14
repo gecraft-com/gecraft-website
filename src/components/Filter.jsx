@@ -13,7 +13,7 @@ function Filter() {
             key={id}
             name="services"
             id={label}
-            type="radio"
+            type="checkbox"
             value={label}
             className="peer sr-only"
           />
