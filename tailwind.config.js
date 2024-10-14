@@ -2,8 +2,6 @@
 
 import { black, transparent, white } from 'tailwindcss/colors'
 
-const { nextui, button } = require('@nextui-org/react')
-
 export default {
   content: [
     './index.html',
@@ -46,5 +44,4 @@ export default {
       },
     },
   },
-  plugins: [nextui()],
 }
