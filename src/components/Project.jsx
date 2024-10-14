@@ -2,27 +2,33 @@ import PropTypes from 'prop-types'
 
 function Project({ project, handleClick, color }) {
   return (
-    <li className="w-max-[54.5rem] w-full md:w-[49.2%] lg:w-[32.6%] 3xl:w-[50rem]">
+    <li className="w-full md:w-[49%] lg:w-[32.6%] 2xl:w-[27.1%]">
       <button className="border-0" onClick={() => handleClick(project)}>
         <img src={project.img} alt={project.client} className="w-full rounded-md" />
-        <div className="mt-4 block sm:mt-5 sm:flex sm:gap-x-10 2xl:gap-x-5">
+        <div className="mt-[5.14vw] block md:mt-5 md:flex md:gap-x-10 lg:w-[30vw] 2xl:w-[22.95vw] 2xl:gap-x-5">
           <div className="w-5/12 2xl:w-2/6">
-            <p className="text-left text-xs uppercase" style={color}>
+            <p
+              className="text-left text-[3.08vw] uppercase md:text-[1.07vw] lg:text-[0.63vw] 2xl:text-[0.35vw]"
+              style={color}
+            >
               client
             </p>
             <p
-              className="mt-1 whitespace-nowrap text-left text-base uppercase sm:mt-4"
+              className="mt-[2vw] whitespace-nowrap text-left text-[4.1vw] uppercase md:text-[1.25vw] lg:text-[0.84vw] 2xl:mt-[0.44vw] 2xl:text-[0.47vw]"
               style={color}
             >
               {project.client}
             </p>
           </div>
           <div>
-            <p className="mt-3 text-left text-xs uppercase sm:mt-0" style={color}>
+            <p
+              className="mt-[4vw] text-left text-[3.08vw] uppercase md:mt-0 md:text-[1.07vw] lg:text-[0.63vw] 2xl:text-[0.35vw]"
+              style={color}
+            >
               service
             </p>
             <p
-              className="mt-1 text-left text-sm uppercase sm:mt-4 2xl:text-base"
+              className="mt-[2vw] text-left text-[3.6vw] uppercase sm:mt-4 md:text-[1.25vw] lg:text-[0.84vw] 2xl:mt-[0.44vw] 2xl:text-[0.47vw]"
               style={color}
             >
               {project.service}
@@ -41,7 +47,7 @@ Project.propTypes = {
     label: PropTypes.string.isRequired,
     img: PropTypes.string.isRequired,
     service: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
+    description1: PropTypes.string.isRequired,
     description2: PropTypes.string,
     title1: PropTypes.string.isRequired,
     title2: PropTypes.string.isRequired,

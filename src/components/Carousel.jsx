@@ -1,10 +1,10 @@
 function Carousel() {
-  function Span() {
+  function SlideElement() {
     return (
       <span className="flex items-center">
         Our work
         <svg
-          className="mx-4 h-5 w-5 sm:mx-6 sm:h-8 sm:w-8 lg:mx-16 lg:h-28 lg:w-28"
+          className="mx-[4.1vw] h-[5.4vw] w-[5.4vw] md:mx-[2.3vw] md:h-[2.91vw] md:w-[2.91vw] lg:mx-[2.61vw] lg:h-[3.33vw] lg:w-[3.33vw] 2xl:h-[3.37vw] 2xl:w-[3.37vw]"
           viewBox="0 0 116 116"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -19,11 +19,11 @@ function Carousel() {
   }
 
   return (
-    <div className="absolute left-0 top-32 flex w-full items-center ease-in sm:top-32 lg:top-32">
-      <p className="flex w-full items-center overflow-hidden whitespace-nowrap text-7xl text-white sm:text-8xl lg:text-[23.75rem]">
-        <Span />
-        <Span />
-        <Span />
+    <div className="absolute left-0 top-[28vw] flex w-full items-center ease-in md:top-[7.8vw]">
+      <p className="flex w-full items-center overflow-hidden whitespace-nowrap text-[18.4vw] text-white md:text-[9.73vw] lg:text-[11.03vw]">
+        <SlideElement />
+        <SlideElement />
+        <SlideElement />
       </p>
     </div>
   )
