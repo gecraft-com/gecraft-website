@@ -15,7 +15,7 @@ function ModalWindow({ modalIsOpen, onCloseModal, children, label }) {
       className="relative z-50 w-full max-w-[208.938rem]"
       overlayClassName="fixed flex items-center flex-col px-0 md:px-10 py-12 md:py-10 top-0 left-0 w-full h-full bg-[#2E2E2ECC] overflow-hidden overflow-y-auto z-40 before:block after:block before:h-px after:h-px before:grow after:grow"
     >
-      <div className="reltive rounded-lg bg-bgHeader pt-[10.25vw] shadow-lg sm:pt-[5vw] md:pt-[4.2vw] lg:pt-[3.1vw] 2xl:pt-[2.12vw]">
+      <div className="reltive rounded-lg bg-white pt-[10.25vw] shadow-lg sm:pt-[5vw] md:pt-[4.2vw] lg:pt-[3.1vw] 2xl:pt-[2.12vw]">
         <button
           type="button"
           onClick={onCloseModal}
@@ -34,7 +34,7 @@ function ModalWindow({ modalIsOpen, onCloseModal, children, label }) {
             />
           </svg>
         </button>
-        <h3 className="ml-[5.15vw] whitespace-nowrap text-left text-[3.08vw] font-extrabold uppercase text-basic before:mr-[1.3vw] before:inline-flex before:h-[2.31vw] before:w-[2.31vw] before:rounded-full before:bg-basic sm:text-[1.58vw] sm:before:mr-[0.66vw] sm:before:h-[1.19vw] sm:before:w-[1.19vw] md:ml-[3.53vw] md:text-[1.06vw] md:before:mr-[0.45vw] md:before:h-[0.8vw] md:before:w-[0.8vw] lg:text-[0.63vw] lg:before:mr-[0.27vw] lg:before:h-[0.47vw] lg:before:w-[0.47vw] 2xl:ml-[4.36vw] 2xl:text-[0.35vw] 2xl:before:mr-[0.15vw] 2xl:before:h-[0.263vw] 2xl:before:w-[0.263vw]">
+        <h3 className="ml-[5.15vw] whitespace-nowrap text-left text-[3.08vw] font-extrabold uppercase text-basic before:mr-[1.3vw] before:inline-flex before:h-[2.31vw] before:w-[2.31vw] before:rounded-full before:bg-basic sm:ml-[2.61vw] sm:text-[1.58vw] sm:before:mr-[0.66vw] sm:before:h-[1.19vw] sm:before:w-[1.19vw] md:ml-[3.53vw] md:text-[1.06vw] md:before:mr-[0.45vw] md:before:h-[0.8vw] md:before:w-[0.8vw] lg:text-[0.63vw] lg:before:mr-[0.27vw] lg:before:h-[0.47vw] lg:before:w-[0.47vw] 2xl:ml-[4.36vw] 2xl:text-[0.35vw] 2xl:before:mr-[0.15vw] 2xl:before:h-[0.263vw] 2xl:before:w-[0.263vw]">
           Our services / {label}
         </h3>
         {children}
