@@ -1,6 +1,18 @@
 [
-    {"label": "Services"},
-    {"label": "Our Projects"},
-    {"label": "Contact Us"},
-    {"label": "Request a Consultation"}
+    {
+        "label": "Services",
+        "href": "#services"
+    },
+    {
+        "label": "Our Projects",
+         "href": "#projects"
+    },
+    {
+        "label": "Contact Us",
+         "href": "#"
+    },
+    {
+        "label": "Request a Consultation",
+         "href": "#"
+    }
 ]

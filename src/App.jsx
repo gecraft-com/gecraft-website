@@ -1,13 +1,15 @@
 import Cursor from './components/Cursor'
 import Header from './components/Header'
 import Services from './components/Services'
+import Work from './components/Work'
 
 function App() {
   return (
     <>
       <Header />
       <Services />
-      <Cursor />
+      <Work />
+      {window.innerWidth > 768 ? <Cursor /> : null}
     </>
   )
 }

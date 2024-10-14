@@ -1,55 +1,65 @@
-import { useState } from 'react'
-
-import { useDisclosure } from '@nextui-org/react'
+import { useCallback, useEffect, useState } from 'react'
 
 import services from '../../data/services.json'
 import ModalWindow from './ModalWindow'
+import ServiceModal from './ServiceModal'
 
-const Services = () => {
-  const { isOpen, onOpen, onOpenChange } = useDisclosure()
+function Services() {
+  const [modalIsOpen, setModalIsOpen] = useState(false)
 
+  const [selectedService, setSelectedService] = useState(null)
   const [label, setLabel] = useState('')
-  const [description, setDescription] = useState('')
-  const [projects, setProjects] = useState([])
-  const [service, setService] = useState('')
 
-  const handleClick = (label, description, projects, service) => {
-    onOpen()
-    setLabel(label)
-    setDescription(description)
-    setProjects(projects)
-    setService(service)
+  useEffect(() => {
+    document.body.classList.toggle('overflow-hidden', modalIsOpen)
+    return () => document.body.classList.remove('overflow-hidden')
+  }, [modalIsOpen])
+
+  const handleClick = useCallback((service) => {
+    setSelectedService(service)
+    setLabel(service.label)
+    setModalIsOpen(true)
+  }, [])
+
+  const handleCloseModal = () => {
+    setModalIsOpen(false)
   }
 
   return (
-    <div className="block justify-between px-2 pb-20 pt-48 sm:flex sm:px-14 sm:pb-32 sm:pt-32">
-      <div className="flex w-1/4 flex-col items-start">
-        <h3 className="sticky top-10 ml-4 mt-0 w-36 text-left text-xs uppercase before:mr-1.5 before:inline-flex before:h-2.5 before:w-2.5 before:rounded-full before:bg-basic sm:ml-0 sm:mt-12">
-          Our services
-        </h3>
-        <h4 className="sticky top-28 ml-4 mt-10 w-72 text-left text-3xl sm:ml-0 sm:mt-12 sm:w-[28rem] sm:text-4xl 2xl:text-5xl 3xl:w-[33.6rem] 3xl:text-5xl">
-          Skills to enhance your performance
-        </h4>
+    <div
+      id="services"
+      className="block justify-between px-[2.1vw] pb-[20.5vw] pt-[51vw] md:flex md:pb-[2.8vw] md:pl-[5.92vw] md:pr-[4.5vw] md:pt-[4.1vw] lg:pb-[5.5vw] lg:pl-[3.13vw] lg:pr-[2vw] lg:pt-[6.35vw] 2xl:pb-[4.5vw] 2xl:pl-[3.23vw] 2xl:pt-[4.99vw]"
+    >
+      <div className="flex w-1/4 flex-col items-start md:mt-[2.5vw]">
+        <div className="inline-block flex-col md:sticky md:top-16">
+          <h3 className="ml-[2.84vw] whitespace-nowrap text-left text-[3.08vw] font-extrabold uppercase before:mr-[1.3vw] before:inline-flex before:h-[2.31vw] before:w-[2.31vw] before:rounded-full before:bg-basic md:ml-0 md:text-[1.06vw] md:before:mr-[0.45vw] md:before:h-[0.8vw] md:before:w-[0.8vw] lg:text-[0.63vw] lg:before:mr-[0.27vw] lg:before:h-[0.47vw] lg:before:w-[0.47vw] 2xl:text-[0.35vw] 2xl:before:mr-[0.15vw] 2xl:before:h-[0.263vw] 2xl:before:w-[0.263vw]">
+            Our services
+          </h3>
+          <h4 className="ml-[2.84vw] mt-[10vw] w-[90vw] text-left text-[9vw] leading-tight md:ml-0 md:mt-[2.74vw] md:w-[32vw] md:text-[3.185vw] lg:mt-[1.67vw] lg:w-[23vw] lg:text-[2.1vw] 2xl:mt-[1.3vw] 2xl:w-[14vw] 2xl:text-[1.4vw]">
+            Skills to enhance your performance
+          </h4>
+        </div>
       </div>
 
-      <div className="mt-14 hover:text-ourServicesBtn hover:duration-300 sm:mt-0">
-        {services.map(({ label, description, id, projects, service }) => (
+      <div className="mt-[14.1vw] hover:text-ourServicesBtn hover:duration-300 md:mt-0">
+        {services.map((service) => (
           <button
-            key={id}
-            onClick={() => handleClick(label, description, projects, service)}
-            className="relative z-10 table px-4 text-center text-3xl leading-relaxed after:absolute after:left-0 after:top-0 after:z-[-1] after:box-content after:h-full after:w-full after:rounded-full after:bg-buttonHover after:opacity-0 after:duration-300 hover:text-basic hover:duration-300 hover:after:opacity-100 sm:px-4 sm:text-4xl sm:leading-snug sm:after:pointer-events-none sm:after:-translate-x-[710px] sm:after:rotate-12 sm:after:scale-[3] sm:after:transform sm:after:transition sm:after:hover:translate-x-0 sm:hover:after:rotate-[0] sm:hover:after:scale-100 lg:px-7 lg:after:-translate-x-[800px] xl:text-5xl xl:leading-normal xl:after:-translate-x-[710px] 2xl:text-8xl 2xl:leading-snug 2xl:after:-translate-x-[1250px] 3xl:text-[150px] 3xl:after:-translate-x-[2250px] 4xl:text-[190px]"
+            key={service.id}
+            onClick={() => handleClick(service)}
+            className="relative z-0 mb-[1vw] table whitespace-nowrap px-[2.84vw] py-[1.3vw] text-center text-[8.45vw] after:absolute after:left-0 after:top-0 after:-z-10 after:box-content after:h-full after:w-full after:rounded-full after:bg-buttonHover after:opacity-0 after:duration-300 last:mb-0 hover:text-basic hover:duration-300 hover:after:opacity-100 md:mb-0 md:px-[4.33vw] md:py-[1.2vw] md:text-[4.25vw] md:after:pointer-events-none md:after:-translate-x-[70vw] md:after:rotate-12 md:after:scale-[3] md:after:transform md:after:transition md:after:hover:translate-x-0 md:hover:after:rotate-[0] md:hover:after:scale-100 lg:px-[3.55vw] lg:py-[0.4vw] lg:text-[5.52vw] 2xl:px-[4.1vw]"
           >
-            {label}
+            {service.label}
           </button>
         ))}
-        <ModalWindow
-          label={label}
-          description={description}
-          projects={projects}
-          service={service}
-          isOpen={isOpen}
-          onOpenChange={onOpenChange}
-        />
+        {modalIsOpen && selectedService && (
+          <ModalWindow
+            onCloseModal={handleCloseModal}
+            modalIsOpen={modalIsOpen}
+            label={label}
+          >
+            <ServiceModal {...selectedService} />
+          </ModalWindow>
+        )}
       </div>
     </div>
   )

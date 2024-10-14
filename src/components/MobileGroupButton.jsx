@@ -1,30 +1,18 @@
-import { Button, Link } from '@nextui-org/react'
-
-const MobileGroupButton = () => {
+function MobileGroupButton() {
   return (
-    <div className="fixed left-0 top-10 z-20 flex h-11 w-11/12 items-center justify-between sm:hidden">
-      <Button
-        data-hover="false"
-        radius="full"
-        className="z-20 h-full bg-transparent hover:bg-buttonHover"
+    <div className="fixed left-0 top-10 z-40 flex w-full items-center justify-between px-5 md:hidden">
+      <a
+        className="z-20 flex h-11 w-11 items-center justify-center rounded-full bg-buttonGroup backdrop-blur-3xl hover:bg-buttonHover"
         href="#"
-        as={Link}
       >
-        <img
-          src="img/logo-mobile.svg"
-          alt="mobile logo of GeCraft"
-          className="h-11 w-11"
-        />
-      </Button>
-      <Button
-        data-hover="false"
-        radius="full"
-        className="h-full rounded-full bg-buttonGroup text-sm font-bold text-basic hover:bg-buttonHover"
-        as={Link}
+        <img src="img/logo.svg" alt="mobile logo of GeCraft" className="h-8 w-8" />
+      </a>
+      <a
+        className="flex h-11 w-48 items-center justify-center rounded-full bg-buttonGroup text-sm font-bold text-basic backdrop-blur-3xl hover:bg-buttonHover"
         href="#"
       >
         Request a Consultation
-      </Button>
+      </a>
     </div>
   )
 }
