@@ -41,7 +41,6 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
     if (modalServiceIsOpen) {
       const projectsSlider = document.querySelector('.projectsSlider')
       const projectsCarousel = document.querySelector('.projectsCarousel')
-      const description = document.querySelector('.description')
 
       let coordX = 0
 
@@ -58,11 +57,6 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
         `
       }
 
-      projectsSlider.addEventListener('mouseover', () => {
-        description.classList.remove('opacity-0')
-        description.classList.add('opacity-100')
-      })
-
       projectsSlider.addEventListener('mouseout', () => {
         projectsCarousel.style.cssText = `
         transform: translateX(0);
@@ -77,11 +71,6 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
         transform: translateX(0);
         translate-duration: 700ms;
         `
-        })
-        projectsSlider.removeEventListener('click', () => {
-          description.style.cssText = `
-            opacity: 1;
-          `
         })
       }
     }

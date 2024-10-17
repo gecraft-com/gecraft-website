@@ -5,7 +5,7 @@ function Project({ project, handleClick, color }) {
     <div className="w-full md:min-w-[43.43vw] md:max-w-[43.43vw] lg:min-w-[33%] lg:max-w-[33%] 2xl:min-w-[33%] 2xl:max-w-[33%]">
       <button className="border-0" onClick={() => handleClick(project)}>
         <img src={project.img} alt={project.client} className="w-full rounded-md" />
-        <div className="description mt-[5.14vw] block opacity-0 md:mt-5 md:flex md:gap-x-10 lg:w-[30vw] 2xl:w-[22.95vw] 2xl:gap-x-5">
+        <div className="mt-[5.14vw] block md:mt-5 md:flex md:gap-x-10 lg:w-[30vw] 2xl:w-[22.95vw] 2xl:gap-x-5">
           <div className="w-5/12 2xl:w-2/6">
             <p
               className="text-left text-[3.08vw] uppercase md:text-[1.07vw] lg:text-[0.63vw] 2xl:text-[0.35vw]"
