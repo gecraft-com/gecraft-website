@@ -1,16 +1,17 @@
 import services from '../../data/services.json'
 
-function Filter() {
+function Filter({ handleFilterClick }) {
   return (
     <div className="hidden md:mt-[17.8vw] md:flex md:flex-wrap md:gap-5 lg:mt-[20.14vw] lg:gap-10 2xl:gap-20">
-      {services.map(({ id, label }) => (
+      {services.map(({ label }, index) => (
         <label
-          key={id}
+          key={index}
           htmlFor={label}
-          className="flex items-center whitespace-nowrap text-ourServicesBtn peer-checked:text-white md:text-[1.42vw] lg:text-[1.25vw] 2xl:text-[1.05vw]"
+          className="flex select-none items-center whitespace-nowrap text-ourServicesBtn peer-checked:text-white md:text-[1.42vw] lg:text-[1.25vw] 2xl:text-[1.05vw]"
         >
           <input
-            key={id}
+            key={index}
+            onClick={() => handleFilterClick(label)}
             name="services"
             id={label}
             type="checkbox"

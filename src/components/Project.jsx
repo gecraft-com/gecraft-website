@@ -42,7 +42,6 @@ function Project({ project, handleClick, color }) {
 
 Project.propTypes = {
   project: PropTypes.shape({
-    id: PropTypes.string.isRequired,
     client: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     img: PropTypes.string.isRequired,

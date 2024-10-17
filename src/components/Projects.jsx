@@ -7,10 +7,12 @@ import ModalWindow from './ModalWindow'
 import Project from './Project'
 import ProjectsModal from './ProjectsModal'
 
-function Projects({ location }) {
+function Projects({ location, filteredItems, category }) {
   const [color, setColor] = useState({})
 
   const [modalIsOpen, setModalIsOpen] = useState(false)
+
+  const [filteredProjects, setFilteredProjects] = useState(projects)
 
   const [selectedProject, setSelectedProject] = useState(null)
   const [label, setLabel] = useState('')
@@ -18,14 +20,6 @@ function Projects({ location }) {
   useEffect(() => {
     setColor(location === 'gallery' ? { color: 'white' } : {})
   }, [location])
-
-  useEffect(() => {
-    if (modalIsOpen) {
-      document.body.classList.add('overflow-hidden')
-    } else {
-      document.body.classList.remove('overflow-hidden')
-    }
-  }, [modalIsOpen])
 
   const handleClick = useCallback((project) => {
     setSelectedProject(project)
@@ -37,18 +31,38 @@ function Projects({ location }) {
     setModalIsOpen(false)
   }
 
+  useEffect(() => {
+    setFilteredProjects(
+      filteredProjects.filter((project) => project.categories.includes(category))
+    )
+  }, [])
+
   return (
     <>
-      <ul className="mt-[39.2vw] flex w-full flex-col gap-y-10 md:mt-[5.03vw] md:flex-row md:flex-wrap md:gap-x-2.5 md:gap-y-10 lg:mt-[1.57vw]">
-        {projects.map((project) => (
-          <Project
-            key={project.id}
-            project={project}
-            handleClick={handleClick}
-            color={color}
-          />
-        ))}
-      </ul>
+      {location === 'gallery' && (
+        <ul className="mt-[39.2vw] flex w-full flex-col gap-y-10 md:mt-[5.03vw] md:flex-row md:flex-wrap md:gap-x-2.5 md:gap-y-10 lg:mt-[1.57vw]">
+          {filteredItems.map((project, index) => (
+            <Project
+              key={index}
+              project={project}
+              handleClick={handleClick}
+              color={color}
+            />
+          ))}
+        </ul>
+      )}
+      {location === 'services' && (
+        <ul className="mt-[39.2vw] flex w-full flex-col gap-y-10 md:mt-[5.03vw] md:flex-wrap md:gap-x-2.5 md:gap-y-10 lg:mt-[1.57vw]">
+          {filteredProjects.map((project, index) => (
+            <Project
+              key={index}
+              project={project}
+              handleClick={handleClick}
+              color={color}
+            />
+          ))}
+        </ul>
+      )}
       {selectedProject && (
         <ModalWindow
           onCloseModal={handleCloseModal}
