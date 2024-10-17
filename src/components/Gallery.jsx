@@ -23,12 +23,10 @@ function Gallery() {
 
   const filterItems = () => {
     if (selectedFilters.length > 0) {
-      let tempItems = selectedFilters
-        .map((selectedCategory) =>
-          projects.filter((item) => item.categories.includes(selectedCategory))
-        )
-        .flat()
-      setFilteredItems(tempItems)
+      const tempProjects = projects.filter((project) =>
+        project.categories.some((category) => selectedFilters.includes(category))
+      )
+      setFilteredItems(tempProjects)
     } else {
       setFilteredItems([...projects])
     }
