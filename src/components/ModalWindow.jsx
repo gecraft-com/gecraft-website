@@ -1,9 +1,16 @@
+import { useEffect } from 'react'
+
 import PropTypes from 'prop-types'
 import Modal from 'react-modal'
 
 Modal.setAppElement('#root')
 
 function ModalWindow({ modalIsOpen, onCloseModal, children, label }) {
+  useEffect(() => {
+    document.body.classList.toggle('overflow-hidden', modalIsOpen)
+    return () => document.body.classList.remove('overflow-hidden')
+  }, [modalIsOpen])
+
   return (
     <Modal
       isOpen={modalIsOpen}

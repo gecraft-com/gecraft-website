@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useState } from 'react'
 
 import services from '../../data/services.json'
 import ModalWindow from './ModalWindow'
@@ -9,11 +9,6 @@ function Services() {
 
   const [selectedService, setSelectedService] = useState(null)
   const [label, setLabel] = useState('')
-
-  useEffect(() => {
-    document.body.classList.toggle('overflow-hidden', modalIsOpen)
-    return () => document.body.classList.remove('overflow-hidden')
-  }, [modalIsOpen])
 
   const handleClick = useCallback((service) => {
     setSelectedService(service)

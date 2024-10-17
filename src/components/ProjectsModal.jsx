@@ -11,7 +11,7 @@ function ProjectsModal({
   title3,
   screenshots,
 }) {
-  const { iPhone1, iPhone2, desktop, pages, logo, advantage } = screenshots
+  const { iPhone, desktop, pages, logo, advantage } = screenshots
   return (
     <div className="px-[5.14vw] pt-[10.3vw] sm:px-[2.61vw] sm:pt-[5.22vw] lg:pt-[3vw] 2xl:pt-[2.91vw]">
       <div className="block pb-0 sm:flex sm:justify-between sm:gap-x-[3vw] sm:pb-[5.22vw] lg:pb-[3vw] 2xl:pb-[2.91vw]">
@@ -53,20 +53,11 @@ function ProjectsModal({
           </h3>
           <img src={desktop} alt="MacBook" />
         </div>
-        <div className="relative mt-[2.6vw] flex h-[69.8vw] flex-col items-center rounded-md bg-gradient-to-b from-[#F0F0F0] to-[#D7D7D7] pt-[6.16vw] sm:mt-0 sm:h-[32.42vw] sm:pt-[2vw] 2xl:pt-[2.24vw]">
+        <div className="mt-[2.6vw] flex h-[69.8vw] flex-col items-center justify-between rounded-md bg-gradient-to-b from-[#F0F0F0] to-[#D7D7D7] pt-[6.16vw] sm:mt-0 sm:h-[32.42vw] sm:pt-[2vw] 2xl:pt-[2.24vw]">
           <h3 className="text-[2.06vw] font-extrabold uppercase sm:text-[1.6vw] lg:text-[1.06vw] 2xl:text-[1.05vw]">
             Mobile version
           </h3>
-          <img
-            src={iPhone1}
-            alt={iPhone1}
-            className="absolute right-[8.8vw] h-[63vw] sm:right-[7.45vw] sm:h-[30vw] md:right-[4.85vw] lg:right-[5.68vw] 2xl:right-[6.75vw]"
-          />
-          <img
-            src={iPhone2}
-            alt={iPhone2}
-            className="absolute left-[8.8vw] h-[63vw] sm:left-[7.45vw] sm:h-[30vw] md:left-[4.85vw] lg:left-[5.68vw] 2xl:left-[6.75vw]"
-          />
+          <img src={iPhone} alt={iPhone} className="h-[55vw] sm:h-[26vw]" />
         </div>
         <div className="relative mt-[2.6vw] flex h-[69.8vw] flex-col items-center rounded-md bg-gradient-to-b from-[#F0F0F0] to-[#D7D7D7] sm:mt-0 sm:h-[32.42vw]">
           <h3 className="z-10 mt-[6.16vw] text-[2.06vw] font-extrabold uppercase sm:mt-[2vw] sm:text-[1.6vw] lg:text-[1.06vw] 2xl:mt-[2.24vw] 2xl:text-[1.05vw]">
@@ -88,7 +79,7 @@ function ProjectsModal({
           <h3 className="z-10 text-[2.06vw] font-extrabold uppercase sm:text-[1.6vw] lg:text-[1.06vw] 2xl:text-[1.05vw]">
             {title3}
           </h3>
-          <img src={advantage} alt="advantage" className="w-11/12" />
+          <img src={advantage} alt="advantage" className="w-11/12 sm:w-[40vw]" />
         </div>
       </div>
     </div>

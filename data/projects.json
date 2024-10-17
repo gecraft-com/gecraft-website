@@ -13,8 +13,7 @@
         "categories": ["Custom Software", "API Development", "Infrastructure & DevOps"],
         "screenshots": {
             "desktop": "img/vcada_desktop.png",
-            "iPhone1": "img/vcana_iPhone15_1.png",
-            "iPhone2": "img/vcana_iPhone15_2.png",
+            "iPhone": "img/vcana_iphone15.png",
             "pages": "img/vcana_bg.png",
             "logo": "img/vcana_logo.png",
             "advantage": "img/vcana_advantage.png"
@@ -33,12 +32,11 @@
         "title3": "Distribution of roles and jobs in one place",
         "categories": ["Custom Software", "API Development", "Infrastructure & DevOps"],
         "screenshots": {
-            "desktop": "img/vcada_desktop.png",
-            "iPhone1": "img/vcana_iPhone15_1.png",
-            "iPhone2": "img/vcana_iPhone15_2.png",
-            "pages": "img/vcana_bg.png",
-            "logo": "img/vcana_logo.png",
-            "advantage": "img/vcana_advantage.png"
+            "desktop": "img/bible_vis_desktop.png",
+            "iPhone": "img/bible_vis_iphone15.png",
+            "pages": "img/bible_vis_pages.png",
+            "logo": "img/bible_vis_logo.png",
+            "advantage": "img/bible_vis_advantage.png"
         }
     },
     {
@@ -54,12 +52,11 @@
         "title3": "Distribution of roles and jobs in one place",
         "categories": ["Custom Software", "API Development", "Data engineering", "Infrastructure & DevOps", "AI development"],
         "screenshots": {
-            "desktop": "img/vcada_desktop.png",
-            "iPhone1": "img/vcana_iPhone15_1.png",
-            "iPhone2": "img/vcana_iPhone15_2.png",
-            "pages": "img/vcana_bg.png",
-            "logo": "img/vcana_logo.png",
-            "advantage": "img/vcana_advantage.png"
+            "desktop": "img/glokas_desktop.png",
+            "iPhone": "img/glokas_iphone15.png",
+            "pages": "img/glokas_pages.png",
+            "logo": "img/glokas_logo.png",
+            "advantage": "img/glokas_map.png"
         }
     }
 ]

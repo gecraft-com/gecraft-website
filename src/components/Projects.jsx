@@ -68,6 +68,7 @@ function Projects({ location, filteredItems, category }) {
           onCloseModal={handleCloseModal}
           modalIsOpen={modalIsOpen}
           label={label}
+          preventScroll={true}
         >
           <ProjectsModal {...selectedProject} />
         </ModalWindow>
