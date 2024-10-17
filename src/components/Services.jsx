@@ -52,7 +52,7 @@ function Services() {
             modalIsOpen={modalIsOpen}
             label={label}
           >
-            <ServiceModal {...selectedService} />
+            <ServiceModal {...selectedService} modalServiceIsOpen={modalIsOpen} />
           </ModalWindow>
         )}
       </div>
