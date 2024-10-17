@@ -2,21 +2,22 @@
     {
         "id": "1",
         "label": "Web development",
-        "client": "V-CANA",
+        "client": "LEVEL",
         "img": "img/MacBook.jpg",
         "service": "Custom Software Development, API Development, Infrastructure & DevOps",
-        "description1": "V-CANA is a cutting-edge, customizable Translation Management System designed to support any Bible translation method. It can be adapted to various translation approaches and materials. The platform is focused on simplifying the translation process for nations with diverse linguistic backgrounds and varying levels of computer literacy. V-CANA provides a step-by-step workflow for managing translation projects.",
-        "description2": "GeCraft takes a comprehensive approach in the development of V-CANA, providing expertise in custom software development, API creation, DevOps, and AI feature development.",
+        "description1": "LEVEL is a cutting-edge, customizable Translation Management System designed to support any Bible translation method. It can be adapted to various translation approaches and materials. The platform is focused on simplifying the translation process for nations with diverse linguistic backgrounds and varying levels of computer literacy. LEVEL provides a step-by-step workflow for managing translation projects.",
+        "description2": "GeCraft takes a comprehensive approach in the development of LEVEL, providing expertise in custom software development, API creation, DevOps, and AI feature development.",
         "title1": "Convenient step-by-step translation system",
         "title2": "Thoughtful design",
         "title3": "Distribution of roles and jobs in one place",
         "categories": ["Custom Software", "API Development", "Infrastructure & DevOps"],
+        "link": "https://level.bible/",
         "screenshots": {
-            "desktop": "img/vcada_desktop.png",
-            "iPhone": "img/vcana_iphone15.png",
-            "pages": "img/vcana_bg.png",
-            "logo": "img/vcana_logo.png",
-            "advantage": "img/vcana_advantage.png"
+            "desktop": "img/level_desktop.png",
+            "iPhone": "img/level_iphone15.png",
+            "pages": "img/level_bg.png",
+            "logo": "img/level_logo.png",
+            "advantage": "img/level_advantage.png"
         }
     },
     {
@@ -31,6 +32,7 @@
         "title2": "Thoughtful design",
         "title3": "Distribution of roles and jobs in one place",
         "categories": ["Custom Software", "API Development", "Infrastructure & DevOps"],
+        "link": "https://biblevis.com/",
         "screenshots": {
             "desktop": "img/bible_vis_desktop.png",
             "iPhone": "img/bible_vis_iphone15.png",
@@ -51,6 +53,7 @@
         "title2": "Thoughtful design",
         "title3": "Distribution of roles and jobs in one place",
         "categories": ["Custom Software", "API Development", "Data engineering", "Infrastructure & DevOps", "AI development"],
+        "link": "https://glokas.com/",
         "screenshots": {
             "desktop": "img/glokas_desktop.png",
             "iPhone": "img/glokas_iphone15.png",

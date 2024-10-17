@@ -9,6 +9,7 @@ function ProjectsModal({
   title1,
   title2,
   title3,
+  link,
   screenshots,
 }) {
   const { iPhone, desktop, pages, logo, advantage } = screenshots
@@ -38,7 +39,7 @@ function ProjectsModal({
             </p>
           </div>
           <a
-            href="#"
+            href={link}
             className="mt-[10.3vw] text-[5.14vw] underline sm:mt-[3vw] sm:text-[2.61vw] md:mt-[2vw] md:text-[1.83vw] lg:mt-0 lg:text-[1.24vw] 2xl:text-[0.93vw]"
           >
             See the website
@@ -95,6 +96,7 @@ ProjectsModal.propTypes = {
   title1: PropTypes.string.isRequired,
   title2: PropTypes.string.isRequired,
   title3: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
   screenshots: PropTypes.objectOf(PropTypes.string.isRequired),
 }
 

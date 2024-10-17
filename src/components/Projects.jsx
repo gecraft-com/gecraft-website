@@ -39,9 +39,9 @@ function Projects({ location, filteredItems, category }) {
 
   return (
     <>
-      {location === 'gallery' && (
-        <ul className="mt-[39.2vw] flex w-full flex-col gap-y-10 md:mt-[5.03vw] md:flex-row md:flex-wrap md:gap-x-2.5 md:gap-y-10 lg:mt-[1.57vw]">
-          {filteredItems.map((project, index) => (
+      {location === 'services' && (
+        <ul className="mt-[39.2vw] flex w-full flex-col gap-y-10 md:mt-[5.03vw] md:flex-wrap md:gap-x-2.5 md:gap-y-10 lg:mt-[1.57vw]">
+          {filteredProjects.map((project, index) => (
             <Project
               key={index}
               project={project}
@@ -51,9 +51,9 @@ function Projects({ location, filteredItems, category }) {
           ))}
         </ul>
       )}
-      {location === 'services' && (
-        <ul className="mt-[39.2vw] flex w-full flex-col gap-y-10 md:mt-[5.03vw] md:flex-wrap md:gap-x-2.5 md:gap-y-10 lg:mt-[1.57vw]">
-          {filteredProjects.map((project, index) => (
+      {location === 'gallery' && (
+        <ul className="mt-[39.2vw] flex w-full flex-col gap-y-10 md:mt-[5.03vw] md:flex-row md:flex-wrap md:gap-x-2.5 md:gap-y-10 lg:mt-[1.57vw]">
+          {filteredItems.map((project, index) => (
             <Project
               key={index}
               project={project}

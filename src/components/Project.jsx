@@ -14,7 +14,7 @@ function Project({ project, handleClick, color }) {
               client
             </p>
             <p
-              className="mt-[2vw] whitespace-nowrap text-left text-[4.1vw] uppercase md:text-[1.25vw] lg:text-[0.84vw] 2xl:mt-[0.44vw] 2xl:text-[0.47vw]"
+              className="mt-[2vw] whitespace-nowrap text-left text-[4.1vw] uppercase sm:mt-[1.33vw] md:text-[1.25vw] lg:mt-[0.79vw] lg:text-[0.84vw] 2xl:mt-[0.44vw] 2xl:text-[0.47vw]"
               style={color}
             >
               {project.client}
@@ -28,7 +28,7 @@ function Project({ project, handleClick, color }) {
               service
             </p>
             <p
-              className="mt-[2vw] text-left text-[3.6vw] uppercase sm:mt-4 md:text-[1.25vw] lg:text-[0.84vw] 2xl:mt-[0.44vw] 2xl:text-[0.47vw]"
+              className="mt-[2vw] text-left text-[3.6vw] uppercase sm:mt-[1.33vw] md:text-[1.25vw] lg:mt-[0.79vw] lg:text-[0.84vw] 2xl:mt-[0.44vw] 2xl:text-[0.47vw]"
               style={color}
             >
               {project.service}
