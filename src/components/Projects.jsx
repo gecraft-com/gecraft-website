@@ -44,25 +44,27 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
 
       let coordX = 0
 
+      // if (filteredProjects > 2) {
       projectsSlider.addEventListener('mousemove', handleMouseMove)
+      projectsSlider.addEventListener('mouseout', handleMouseOut)
 
       function handleMouseMove(e) {
         coordX = e.pageX - projectsSlider.offsetWidth
-
         const x = (coordX / projectsSlider.offsetWidth) * 35
 
         projectsCarousel.style.cssText = `
-        transform: translateX(${-x}%);
-        transition-duration: 150ms;
-        `
+          transform: translateX(${-x}%);
+          transition-duration: 150ms;
+          `
       }
 
-      projectsSlider.addEventListener('mouseout', () => {
+      function handleMouseOut() {
         projectsCarousel.style.cssText = `
-        transform: translateX(0);
-        transition-duration: 150ms;
-        `
-      })
+          transform: translateX(0);
+          transition-duration: 150ms;
+          `
+      }
+      // }
 
       return () => {
         projectsSlider.removeEventListener('mousemove', handleMouseMove)
@@ -120,6 +122,9 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
 
 Projects.propTypes = {
   location: PropTypes.string.isRequired,
+  filteredItems: PropTypes.array,
+  category: PropTypes.string,
+  modalServiceIsOpen: PropTypes.bool,
 }
 
 export default Projects

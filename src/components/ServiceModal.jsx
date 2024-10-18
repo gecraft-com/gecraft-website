@@ -33,14 +33,8 @@ function ServiceModal({ label, service, description, modalServiceIsOpen }) {
 ServiceModal.propTypes = {
   label: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  projects: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      client: PropTypes.string.isRequired,
-      img: PropTypes.string.isRequired,
-    })
-  ).isRequired,
   service: PropTypes.string.isRequired,
+  modalServiceIsOpen: PropTypes.bool,
 }
 
 export default ServiceModal

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 import services from '../../data/services.json'
 
 function Filter({ handleFilterClick }) {
@@ -25,6 +27,10 @@ function Filter({ handleFilterClick }) {
       ))}
     </div>
   )
+}
+
+Filter.propTypes = {
+  handleFilterClick: PropTypes.func.isRequired,
 }
 
 export default Filter
