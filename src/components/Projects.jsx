@@ -7,7 +7,7 @@ import ModalWindow from './ModalWindow'
 import Project from './Project'
 import ProjectsModal from './ProjectsModal'
 
-function Projects({ location, filteredItems, category }) {
+function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
   const [color, setColor] = useState({})
 
   const [modalIsOpen, setModalIsOpen] = useState(false)
@@ -37,23 +37,66 @@ function Projects({ location, filteredItems, category }) {
     )
   }, [])
 
+  useEffect(() => {
+    if (modalServiceIsOpen) {
+      const projectsSlider = document.querySelector('.projectsSlider')
+      const projectsCarousel = document.querySelector('.projectsCarousel')
+
+      let coordX = 0
+
+      // if (filteredProjects > 2) {
+      projectsSlider.addEventListener('mousemove', handleMouseMove)
+      projectsSlider.addEventListener('mouseout', handleMouseOut)
+
+      function handleMouseMove(e) {
+        coordX = e.pageX - projectsSlider.offsetWidth
+        const x = (coordX / projectsSlider.offsetWidth) * 35
+
+        projectsCarousel.style.cssText = `
+          transform: translateX(${-x}%);
+          transition-duration: 150ms;
+          `
+      }
+
+      function handleMouseOut() {
+        projectsCarousel.style.cssText = `
+          transform: translateX(0);
+          transition-duration: 150ms;
+          `
+      }
+      // }
+
+      return () => {
+        projectsSlider.removeEventListener('mousemove', handleMouseMove)
+        projectsSlider.removeEventListener('mouseout', () => {
+          projectsCarousel.style.cssText = `
+        transform: translateX(0);
+        translate-duration: 150ms;
+        `
+        })
+      }
+    }
+  }, [modalServiceIsOpen])
+
   return (
     <>
-      {location === 'gallery' && (
-        <ul className="mt-[39.2vw] flex w-full flex-col gap-y-10 md:mt-[5.03vw] md:flex-row md:flex-wrap md:gap-x-2.5 md:gap-y-10 lg:mt-[1.57vw]">
-          {filteredItems.map((project, index) => (
-            <Project
-              key={index}
-              project={project}
-              handleClick={handleClick}
-              color={color}
-            />
-          ))}
-        </ul>
-      )}
       {location === 'services' && (
-        <ul className="mt-[39.2vw] flex w-full flex-col gap-y-10 md:mt-[5.03vw] md:flex-wrap md:gap-x-2.5 md:gap-y-10 lg:mt-[1.57vw]">
-          {filteredProjects.map((project, index) => (
+        <div className="projectsSlider z-10 mt-[39.2vw] w-full duration-500 hover:-translate-x-[3.5vw] hover:scale-125 hover:duration-500 md:relative md:mt-[5.03vw] md:h-[20.04vw] md:w-[52.76vw] md:overflow-hidden lg:mt-[1.57vw]">
+          <div className="projectsCarousel flex flex-col gap-y-10 md:absolute md:flex-row md:flex-wrap md:gap-x-2.5 md:gap-y-10 lg:flex-nowrap">
+            {filteredProjects.map((project, index) => (
+              <Project
+                key={index}
+                project={project}
+                handleClick={handleClick}
+                color={color}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+      {location === 'gallery' && (
+        <ul className="mt-[39.2vw] flex w-full flex-col gap-y-10 md:mt-[5.03vw] md:min-h-[89.022vw] md:flex-row md:flex-wrap md:gap-x-2.5 md:gap-y-10 lg:mt-[1.57vw] lg:min-h-[28.2vw] 2xl:min-h-[20.4vw]">
+          {filteredItems.map((project, index) => (
             <Project
               key={index}
               project={project}
@@ -68,6 +111,7 @@ function Projects({ location, filteredItems, category }) {
           onCloseModal={handleCloseModal}
           modalIsOpen={modalIsOpen}
           label={label}
+          preventScroll={true}
         >
           <ProjectsModal {...selectedProject} />
         </ModalWindow>
@@ -78,6 +122,9 @@ function Projects({ location, filteredItems, category }) {
 
 Projects.propTypes = {
   location: PropTypes.string.isRequired,
+  filteredItems: PropTypes.array,
+  category: PropTypes.string,
+  modalServiceIsOpen: PropTypes.bool,
 }
 
 export default Projects
