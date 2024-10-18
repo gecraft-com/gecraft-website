@@ -53,14 +53,14 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
 
         projectsCarousel.style.cssText = `
         transform: translateX(${-x}%);
-        transition-duration: 700ms;
+        transition-duration: 150ms;
         `
       }
 
       projectsSlider.addEventListener('mouseout', () => {
         projectsCarousel.style.cssText = `
         transform: translateX(0);
-        transition-duration: 700ms;
+        transition-duration: 150ms;
         `
       })
 
@@ -69,7 +69,7 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
         projectsSlider.removeEventListener('mouseout', () => {
           projectsCarousel.style.cssText = `
         transform: translateX(0);
-        translate-duration: 700ms;
+        translate-duration: 150ms;
         `
         })
       }
@@ -79,7 +79,7 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
   return (
     <>
       {location === 'services' && (
-        <div className="projectsSlider mt-[39.2vw] w-full duration-700 hover:-translate-x-[3.5vw] hover:scale-125 hover:duration-700 md:relative md:mt-[5.03vw] md:h-[20.04vw] md:w-[52.76vw] md:overflow-hidden lg:mt-[1.57vw]">
+        <div className="projectsSlider z-10 mt-[39.2vw] w-full duration-500 hover:-translate-x-[3.5vw] hover:scale-125 hover:duration-500 md:relative md:mt-[5.03vw] md:h-[20.04vw] md:w-[52.76vw] md:overflow-hidden lg:mt-[1.57vw]">
           <div className="projectsCarousel flex flex-col gap-y-10 md:absolute md:flex-row md:flex-wrap md:gap-x-2.5 md:gap-y-10 lg:flex-nowrap">
             {filteredProjects.map((project, index) => (
               <Project
