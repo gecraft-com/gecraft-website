@@ -5,7 +5,7 @@ import Projects from './Projects'
 function ServiceModal({ label, service, description, modalServiceIsOpen }) {
   return (
     <div className="block justify-between px-[5.15vw] pt-[10.25vw] sm:pt-[5vw] md:flex md:pt-[5vw] lg:px-[3.53vw] lg:pt-[2.91vw] 2xl:px-[4.36vw]">
-      <div className="mf:w-2/12 w-full lg:w-[18vw] 3xl:w-3/12">
+      <div className="w-full md:w-4/12 lg:w-[18vw] 2xl:w-3/12">
         <h4 className="text-[10.25vw] leading-none md:text-[5vw] lg:text-[3.72vw]">
           {label}
         </h4>

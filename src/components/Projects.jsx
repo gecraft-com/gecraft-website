@@ -78,22 +78,34 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
 
   return (
     <>
-      {location === 'services' && (
-        <div className="projectsSlider z-10 mt-[39.2vw] w-full duration-500 hover:-translate-x-[3.5vw] hover:scale-125 hover:duration-500 md:relative md:mt-[5.03vw] md:h-[20.04vw] md:w-[52.76vw] md:overflow-hidden lg:mt-[1.57vw]">
-          <div className="projectsCarousel flex flex-col gap-y-10 md:absolute md:flex-row md:flex-wrap md:gap-x-2.5 md:gap-y-10 lg:flex-nowrap">
-            {filteredProjects.map((project, index) => (
-              <Project
-                key={index}
-                project={project}
-                handleClick={handleClick}
-                color={color}
-              />
-            ))}
+      {location === 'services' &&
+        filteredProjects !== undefined &&
+        filteredProjects.length > 0 && (
+          <div className="projectsSlider z-10 mt-[39.2vw] w-full duration-500 hover:-translate-x-[3.5vw] hover:scale-125 hover:duration-500 md:relative md:mt-[5.03vw] md:h-[20.04vw] md:overflow-hidden lg:mt-[1.57vw]">
+            <div className="projectsCarousel flex flex-col gap-y-10 md:absolute md:flex-row md:flex-wrap md:gap-x-2.5 md:gap-y-10 lg:flex-nowrap">
+              {filteredProjects.map((project, index) => (
+                <Project
+                  key={index}
+                  project={project}
+                  handleClick={handleClick}
+                  color={color}
+                />
+              ))}
+            </div>
           </div>
-        </div>
-      )}
-      {location === 'gallery' && (
-        <ul className="mt-[39.2vw] flex w-full flex-col gap-y-10 md:mt-[5.03vw] md:min-h-[89.022vw] md:flex-row md:flex-wrap md:gap-x-2.5 md:gap-y-10 lg:mt-[1.57vw] lg:min-h-[28.2vw] 2xl:min-h-[20.4vw]">
+        )}
+      {location === 'services' &&
+        filteredProjects !== undefined &&
+        filteredProjects.length === 0 && (
+          <div className="flex w-full justify-center pt-[20vw] md:pt-[10vw]">
+            <p className="text-center text-[4.1vw] text-basic md:text-[1.24vw] lg:text-[1.15vw] 2xl:text-[0.82vw]">
+              No projects here at the moment, but we&apos;re always ready to discuss your
+              ideas in this field!
+            </p>
+          </div>
+        )}
+      {location === 'gallery' && filteredItems.length > 0 && (
+        <div className="mt-[39.2vw] flex w-full flex-col gap-y-10 md:mt-[5.03vw] md:min-h-[89.022vw] md:flex-row md:flex-wrap md:gap-x-2.5 md:gap-y-10 lg:mt-[1.57vw] lg:min-h-[28.2vw] 2xl:min-h-[20.4vw]">
           {filteredItems.map((project, index) => (
             <Project
               key={index}
@@ -102,7 +114,15 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
               color={color}
             />
           ))}
-        </ul>
+        </div>
+      )}
+      {location === 'gallery' && filteredItems.length === 0 && (
+        <div className="flex w-full items-center justify-center md:min-h-[89.022vw] lg:min-h-[29.8vw] 2xl:min-h-[22vw]">
+          <p className="text-[1.95vw] text-white lg:text-[1.15vw] 2xl:text-[0.82vw]">
+            No projects here at the moment, but we&apos;re always ready to discuss your
+            ideas in this field!
+          </p>
+        </div>
       )}
       {selectedProject && (
         <ModalWindow

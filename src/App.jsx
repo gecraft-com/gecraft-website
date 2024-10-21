@@ -9,7 +9,7 @@ function App() {
       <Header />
       <Services />
       <Work />
-      {window.innerWidth > 768 ? <Cursor /> : null}
+      {window.innerWidth > 1024 ? <Cursor /> : null}
     </>
   )
 }
