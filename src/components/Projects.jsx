@@ -44,7 +44,6 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
 
       let coordX = 0
 
-      // if (filteredProjects > 2) {
       projectsSlider.addEventListener('mousemove', handleMouseMove)
       projectsSlider.addEventListener('mouseout', handleMouseOut)
 
@@ -64,7 +63,6 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
           transition-duration: 150ms;
           `
       }
-      // }
 
       return () => {
         projectsSlider.removeEventListener('mousemove', handleMouseMove)
