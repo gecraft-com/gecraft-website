@@ -11,7 +11,7 @@ function App() {
       <Services />
       <Work />
       <ContactUs />
-      {window.innerWidth > 768 ? <Cursor /> : null}
+      {window.innerWidth > 1024 ? <Cursor /> : null}
     </>
   )
 }
