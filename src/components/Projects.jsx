@@ -38,7 +38,7 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
   }, [])
 
   useEffect(() => {
-    if (modalServiceIsOpen) {
+    if (modalServiceIsOpen && window.innerWidth > 1024) {
       const projectsSlider = document.querySelector('.projectsSlider')
       const projectsCarousel = document.querySelector('.projectsCarousel')
 
@@ -47,9 +47,19 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
       projectsSlider.addEventListener('mousemove', handleMouseMove)
       projectsSlider.addEventListener('mouseout', handleMouseOut)
 
+      const percent = () => {
+        if (window.innerWidth <= 1133) {
+          return 75
+        } else if (window.innerWidth <= 1922) {
+          return 60
+        } else if (window.innerWidth > 1922) {
+          return 40
+        }
+      }
+
       function handleMouseMove(e) {
         coordX = e.pageX - projectsSlider.offsetWidth
-        const x = (coordX / projectsSlider.offsetWidth) * 35
+        const x = (coordX / projectsSlider.offsetWidth) * percent()
 
         projectsCarousel.style.cssText = `
           transform: translateX(${-x}%);
@@ -81,11 +91,12 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
       {location === 'services' &&
         filteredProjects !== undefined &&
         filteredProjects.length > 0 && (
-          <div className="projectsSlider z-10 mt-[39.2vw] w-full duration-500 hover:-translate-x-[3.5vw] hover:scale-125 hover:duration-500 md:relative md:mt-[5.03vw] md:h-[20.04vw] md:overflow-hidden lg:mt-[1.57vw]">
-            <div className="projectsCarousel flex flex-col gap-y-10 md:absolute md:flex-row md:flex-wrap md:gap-x-2.5 md:gap-y-10 lg:flex-nowrap">
+          <div className="projectsSlider 1024:duration-500 1024:hover:-translate-x-[3.5vw] 1024:hover:scale-125 1024:hover:duration-500 1024:md:relative 1024:overflow-hidden 1024:h-[40vw] 1024:w-full z-10 mt-[39.2vw] w-full self-end md:mt-[5.03vw] lg:mt-[1.57vw] lg:h-[28vw] lg:hover:-translate-x-[5vw] 2xl:h-[21vw]">
+            <div className="projectsCarousel 1024:absolute 1024:flex-row 1024:gap-x-2.5 flex flex-col gap-y-10">
               {filteredProjects.map((project, index) => (
                 <Project
                   key={index}
+                  location={location}
                   project={project}
                   handleClick={handleClick}
                   color={color}

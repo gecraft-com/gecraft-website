@@ -45,10 +45,10 @@ function ModalWindow({ modalIsOpen, onCloseModal, children, label }) {
           Our services / {label}
         </h3>
         {children}
-        <p className="mt-[20.5vw] text-center text-[3.6vw] sm:mt-[10.5vw] sm:text-[1.83vw] md:mt-[10.6vw] md:text-[1.77vw] lg:mt-[9.37vw] lg:text-[1.46vw] 2xl:mt-[7.26vw] 2xl:text-[0.93vw]">
+        <p className="mt-[20.5vw] text-center text-[3.6vw] md:mt-[10.6vw] md:text-[1.77vw] lg:mt-[9.37vw] lg:text-[1.46vw] 2xl:mt-[7.26vw] 2xl:text-[0.93vw]">
           Do you have a similar project?
         </p>
-        <a className="mt-[5.15vw] block text-center text-[5.15vw] text-basic underline sm:mt-[1.2vw] sm:text-[2.61vw] md:mt-[1.77vw] md:text-[2.65vw] lg:mt-[0.5vw] lg:text-[2.2vw] 2xl:mt-[0.59vw] 2xl:text-[1.4vw]">
+        <a className="mt-[5.15vw] block text-center text-[5.15vw] text-basic underline md:mt-[1.77vw] md:text-[2.65vw] lg:mt-[0.5vw] lg:text-[2.2vw] 2xl:mt-[0.59vw] 2xl:text-[1.4vw]">
           Contact us
         </a>
         <div className="mt-[20.5vw] flex h-[28.7vw] w-full items-center justify-center border-t border-ourServicesBtn text-center sm:mt-[10.5vw] sm:h-[13.05vw] md:mt-[10.6vw] md:h-[8.83vw] lg:mt-[9.37vw] lg:h-[6.14vw] 2xl:mt-[7.26vw] 2xl:h-[3.43vw]">
