@@ -1,4 +1,13 @@
-import { Field, Form, Formik } from 'formik'
+import { ErrorMessage, Field, Form, Formik } from 'formik'
+import { Notify } from 'notiflix'
+import * as Yup from 'yup'
+
+const FormValidationSchema = Yup.object().shape({
+  name: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required'),
+  email: Yup.string().email('Invalid email').required('Required'),
+  phone: Yup.string().min(2, 'Too Short!').max(18, 'Too Long!').required('Required'),
+  message: Yup.string().min(2, 'Too Short!').max(300, 'Too Long!').required('Required'),
+})
 
 function FormContactUs() {
   return (
@@ -10,41 +19,81 @@ function FormContactUs() {
           phone: '',
           message: '',
         }}
-        onSubmit={async (values) => {
+        validationSchema={FormValidationSchema}
+        onSubmit={async (values, actions) => {
           await new Promise((r) => setTimeout(r, 500))
           console.log(JSON.stringify(values, null, 2))
+          Notify.success('Your message has been sent successfully')
+
+          actions.resetForm()
         }}
       >
         <Form className="grid w-full gap-y-[3vw] pt-[12.84vw] md:grid-cols-2 md:gap-x-[0.45vw] md:gap-y-[0.8vw] md:pt-0 lg:gap-x-[0.25vw] lg:gap-y-[0.5vw] 2xl:gap-x-[0.29vw] 2xl:gap-y-[0.29vw]">
-          <Field
-            id="name"
-            name="name"
-            placeholder="Name"
-            type="name"
-            className="h-[24.11vw] w-full rounded-full bg-basic px-[13.35vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:h-[8.3vw] md:px-[4.5vw] md:text-[2.3vw] lg:h-[4.9vw] lg:px-[2.7vw] lg:text-[1.3vw] 2xl:h-[4.94vw]"
-          />
-          <Field
-            id="email"
-            name="email"
-            placeholder="Email"
-            type="email"
-            className="h-[24.11vw] w-full rounded-full bg-basic px-[13.35vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:h-[8.3vw] md:px-[4.5vw] md:text-[2.3vw] lg:h-[4.9vw] lg:px-[2.7vw] lg:text-[1.3vw] 2xl:h-[4.94vw]"
-          />
-          <Field
-            id="phone"
-            name="phone"
-            placeholder="Phone"
-            type="phone"
-            className="h-[24.11vw] w-full rounded-full bg-basic px-[13.35vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:col-start-1 md:col-end-3 md:h-[8.3vw] md:px-[4.5vw] md:text-[2.3vw] lg:h-[4.9vw] lg:px-[2.7vw] lg:text-[1.3vw] 2xl:h-[4.94vw]"
-          />
-          <Field
-            as="textarea"
-            id="message"
-            name="message"
-            placeholder="Message"
-            type="text"
-            className="h-[52.32vw] w-full resize-none rounded-[15vw] bg-basic px-[13.35vw] py-[11.55vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:col-start-1 md:col-end-3 md:h-[18vw] md:rounded-[5vw] md:px-[4.5vw] md:py-[3.98vw] md:text-[2.3vw] lg:h-[10.62vw] lg:rounded-[3.4vw] lg:px-[2.7vw] lg:py-[2.35vw] lg:text-[1.3vw]"
-          />
+          <div className="relative">
+            <Field
+              id="name"
+              name="name"
+              placeholder="Name"
+              type="name"
+              className="relative h-[24.11vw] w-full rounded-full bg-basic px-[13.35vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:h-[8.3vw] md:px-[4.5vw] md:text-[2.3vw] lg:h-[4.9vw] lg:px-[2.7vw] lg:text-[1.3vw] 2xl:h-[4.94vw]"
+            />
+            <ErrorMessage name="name">
+              {(msg) => (
+                <span className="text-red-400 absolute right-[13.35vw] top-[2vw] md:right-[4.5vw] md:top-[0.7vw] lg:right-[2.7vw] lg:top-[0.4vw] 2xl:text-[0.8vw]">
+                  {msg}
+                </span>
+              )}
+            </ErrorMessage>
+          </div>
+          <div className="relative">
+            <Field
+              id="email"
+              name="email"
+              placeholder="Email"
+              type="email"
+              className="h-[24.11vw] w-full rounded-full bg-basic px-[13.35vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:h-[8.3vw] md:px-[4.5vw] md:text-[2.3vw] lg:h-[4.9vw] lg:px-[2.7vw] lg:text-[1.3vw] 2xl:h-[4.94vw]"
+            />
+            <ErrorMessage name="email">
+              {(msg) => (
+                <span className="text-red-400 absolute right-[13.35vw] top-[2vw] md:right-[4.5vw] md:top-[0.7vw] lg:right-[2.7vw] lg:top-[0.4vw] 2xl:text-[0.8vw]">
+                  {msg}
+                </span>
+              )}
+            </ErrorMessage>
+          </div>
+          <div className="relative md:col-start-1 md:col-end-3">
+            <Field
+              id="phone"
+              name="phone"
+              placeholder="Phone"
+              type="phone"
+              className="h-[24.11vw] w-full rounded-full bg-basic px-[13.35vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:h-[8.3vw] md:px-[4.5vw] md:text-[2.3vw] lg:h-[4.9vw] lg:px-[2.7vw] lg:text-[1.3vw] 2xl:h-[4.94vw]"
+            />
+            <ErrorMessage name="phone">
+              {(msg) => (
+                <span className="text-red-400 absolute right-[13.35vw] top-[2vw] md:right-[4.5vw] md:top-[0.7vw] lg:right-[2.7vw] lg:top-[0.4vw] 2xl:text-[0.8vw]">
+                  {msg}
+                </span>
+              )}
+            </ErrorMessage>
+          </div>
+          <div className="relative md:col-start-1 md:col-end-3">
+            <Field
+              as="textarea"
+              id="message"
+              name="message"
+              placeholder="Message"
+              type="text"
+              className="h-[52.32vw] w-full resize-none rounded-[15vw] bg-basic px-[13.35vw] py-[11.55vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:h-[18vw] md:rounded-[5vw] md:px-[4.5vw] md:py-[3.98vw] md:text-[2.3vw] lg:h-[10.62vw] lg:rounded-[3.4vw] lg:px-[2.7vw] lg:py-[2.35vw] lg:text-[1.3vw]"
+            />
+            <ErrorMessage name="message">
+              {(msg) => (
+                <span className="text-red-400 absolute right-[13.35vw] top-[2vw] md:right-[4.5vw] md:top-[0.7vw] lg:right-[2.7vw] lg:top-[0.4vw] 2xl:text-[0.8vw]">
+                  {msg}
+                </span>
+              )}
+            </ErrorMessage>
+          </div>
 
           <button type="submit" className="justify-self-end md:col-start-2">
             <img

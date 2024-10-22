@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-import { black, transparent, white } from 'tailwindcss/colors'
+import { black, red, transparent, white } from 'tailwindcss/colors'
 
 export default {
   content: [
@@ -12,6 +12,7 @@ export default {
     colors: {
       white,
       black,
+      red,
       transparent,
       bgHeader: '#EBEBEB',
       basic: '#1A1A1A',
