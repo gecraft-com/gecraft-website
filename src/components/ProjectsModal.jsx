@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types'
 
+// TODO: add description for Visio Bible project
+
 function ProjectsModal({
   client,
   service,
