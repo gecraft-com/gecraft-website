@@ -2,7 +2,10 @@ import FormContactUs from './FormContactUs'
 
 function ContactUs() {
   return (
-    <div id='contactUs' className="px-[5.14vw] pb-[57.95vw] pt-[22.57vw] text-left md:flex md:gap-x-[13.02vw] md:px-[5.92vw] md:py-[5.3vw] lg:gap-x-[15.95vw] lg:px-[3.13vw] lg:pb-[5.21vw] lg:pt-[3.86vw] 2xl:gap-x-[15.61vw]">
+    <div
+      id="contactUs"
+      className="px-[5.14vw] pb-[57.95vw] pt-[22.57vw] text-left md:flex md:gap-x-[13.02vw] md:px-[5.92vw] md:py-[5.3vw] lg:gap-x-[15.95vw] lg:px-[3.13vw] lg:pb-[5.21vw] lg:pt-[3.86vw] 2xl:gap-x-[15.61vw]"
+    >
       <div>
         <h3 className="ml-[2.84vw] whitespace-nowrap text-left text-[3.08vw] font-extrabold uppercase before:mr-[1.3vw] before:inline-flex before:h-[2.31vw] before:w-[2.31vw] before:rounded-full before:bg-basic md:ml-0 md:text-[1.06vw] md:before:mr-[0.45vw] md:before:h-[0.8vw] md:before:w-[0.8vw] lg:text-[0.63vw] lg:before:mr-[0.27vw] lg:before:h-[0.47vw] lg:before:w-[0.47vw] 2xl:text-[0.35vw] 2xl:before:mr-[0.15vw] 2xl:before:h-[0.263vw] 2xl:before:w-[0.263vw]">
           Contact us
