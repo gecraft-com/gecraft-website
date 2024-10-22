@@ -14,6 +14,8 @@ function Cursor() {
     const inputs = Array.from(document.getElementsByTagName('input'))
     const textareas = Array.from(document.getElementsByTagName('textarea'))
 
+    const modalWindow = document.getElementById('modal-window')
+
     const elements = [links, buttons, labels, inputs, textareas]
 
     elements.forEach((element) => {

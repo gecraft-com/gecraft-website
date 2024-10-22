@@ -22,7 +22,10 @@ function ModalWindow({ modalIsOpen, onCloseModal, children, label }) {
       className="relative z-50 w-full max-w-[208.938rem]"
       overlayClassName="fixed flex items-center flex-col px-0 md:px-10 py-12 md:py-10 top-0 left-0 w-full h-full bg-[#2E2E2ECC] overflow-hidden overflow-y-auto z-40 before:block after:block before:h-px after:h-px before:grow after:grow"
     >
-      <div className="reltive rounded-lg bg-white pt-[10.25vw] shadow-lg sm:pt-[5vw] md:pt-[4.2vw] lg:pt-[3.1vw] 2xl:pt-[2.12vw]">
+      <div
+        id="modal-window"
+        className="reltive rounded-lg bg-white pt-[10.25vw] shadow-lg sm:pt-[5vw] md:pt-[4.2vw] lg:pt-[3.1vw] 2xl:pt-[2.12vw]"
+      >
         <button
           type="button"
           onClick={onCloseModal}
