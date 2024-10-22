@@ -68,19 +68,15 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
       }
 
       function handleMouseOut() {
-        projectsCarousel.style.cssText = `
-          transform: translateX(0);
-          transition-duration: 150ms;
-          `
+        projectsCarousel.style.cssText =
+          'transform: translateX(0); transition-duration: 150ms;'
       }
 
       return () => {
         projectsSlider.removeEventListener('mousemove', handleMouseMove)
         projectsSlider.removeEventListener('mouseout', () => {
-          projectsCarousel.style.cssText = `
-        transform: translateX(0);
-        translate-duration: 150ms;
-        `
+          projectsCarousel.style.cssText =
+            'transform: translateX(0); transition-duration: 150ms;'
         })
       }
     }

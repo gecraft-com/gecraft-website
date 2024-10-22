@@ -11,26 +11,18 @@ function Cursor() {
     const links = Array.from(document.getElementsByTagName('a'))
     const buttons = Array.from(document.getElementsByTagName('button'))
     const labels = Array.from(document.getElementsByTagName('label'))
+    const inputs = Array.from(document.getElementsByTagName('input'))
+    const textareas = Array.from(document.getElementsByTagName('textarea'))
 
-    links.forEach((link) => {
-      link.addEventListener('mouseover', handleMouseOver)
-      link.addEventListener('mouseleave', handleMouseLeave)
-      link.addEventListener('mousedown', handleMouseDown)
-      link.addEventListener('mouseup', handleMouseUp)
-    })
+    const elements = [links, buttons, labels, inputs, textareas]
 
-    buttons.forEach((button) => {
-      button.addEventListener('mouseover', handleMouseOver)
-      button.addEventListener('mouseleave', handleMouseLeave)
-      button.addEventListener('mousedown', handleMouseDown)
-      button.addEventListener('mouseup', handleMouseUp)
-    })
-
-    labels.forEach((label) => {
-      label.addEventListener('mouseover', handleMouseOver)
-      label.addEventListener('mouseleave', handleMouseLeave)
-      label.addEventListener('mousedown', handleMouseDown)
-      label.addEventListener('mouseup', handleMouseUp)
+    elements.forEach((element) => {
+      element.forEach((element) => {
+        element.addEventListener('mouseover', handleMouseOver)
+        element.addEventListener('mouseleave', handleMouseLeave)
+        element.addEventListener('mousedown', handleMouseDown)
+        element.addEventListener('mouseup', handleMouseUp)
+      })
     })
 
     window.addEventListener('mousemove', (e) => {
@@ -63,25 +55,13 @@ function Cursor() {
     }
 
     return () => {
-      links.forEach((link) => {
-        link.removeEventListener('mouseover', handleMouseOver)
-        link.removeEventListener('mouseleave', handleMouseLeave)
-        link.removeEventListener('mousedown', handleMouseDown)
-        link.removeEventListener('mouseup', handleMouseUp)
-      })
-
-      buttons.forEach((button) => {
-        button.removeEventListener('mouseover', handleMouseOver)
-        button.removeEventListener('mouseleave', handleMouseLeave)
-        button.removeEventListener('mousedown', handleMouseDown)
-        button.removeEventListener('mouseup', handleMouseUp)
-      })
-
-      labels.forEach((label) => {
-        label.removeEventListener('mouseover', handleMouseOver)
-        label.removeEventListener('mouseleave', handleMouseLeave)
-        label.removeEventListener('mousedown', handleMouseDown)
-        label.removeEventListener('mouseup', handleMouseUp)
+      elements.forEach((element) => {
+        element.forEach((element) => {
+          element.removeEventListener('mouseover', handleMouseOver)
+          element.removeEventListener('mouseleave', handleMouseLeave)
+          element.removeEventListener('mousedown', handleMouseDown)
+          element.removeEventListener('mouseup', handleMouseUp)
+        })
       })
     }
   }, [])
@@ -91,7 +71,7 @@ function Cursor() {
       ref={cursorRef}
       style={{ left: cursorX + 'px', top: cursorY + 'px' }}
       id="cursor"
-      className="pointer-events-none absolute z-50 hidden h-7 w-7 -translate-x-1/2 -translate-y-1/2 select-none rounded-full border border-solid border-bgHeader bg-cursor"
+      className="pointer-events-none absolute z-50 hidden h-7 w-7 -translate-x-1/2 -translate-y-1/2 select-none rounded-full border border-solid border-bgHeader bg-cursor transition duration-150"
     ></div>
   )
 }
