@@ -6,7 +6,6 @@ import useForm from '../hooks/useForm'
 
 function FormContactUs() {
   const { formData, isFormValid, handleInputChange, resetForm } = useForm()
-  console.log('🚀 ~ FormContactUs ~ isFormValid:', isFormValid)
   const [submitMessage, setSubmitMessage] = useState(false)
 
   const handleSubmit = async (e) => {
