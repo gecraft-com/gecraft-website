@@ -35,6 +35,22 @@ export default {
       fontFamily: {
         sans: 'Be Vietnam Pro',
       },
+
+      keyframes: {
+        descent: {
+          '0%': { opacity: '0', transform: 'translate(0, -50%)' },
+          '100%': { opacity: '1', transform: 'translate(0%)' },
+        },
+        emergence: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+      },
+
+      animation: {
+        descent: 'descent 500ms ease-in-out',
+        emergence: 'emergence 500ms ease-in-out',
+      },
     },
   },
 }

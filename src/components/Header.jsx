@@ -5,7 +5,7 @@ function Header() {
   return (
     <header className="relative flex w-full flex-col items-center px-5 pb-[40vw] md:bg-bgHeader md:px-0 md:pb-[8.84vw] lg:pb-[5.2vw] 2xl:pb-[8.36vw]">
       <MobileGroupButton />
-      <h1 className="title-gradient mt-24 hidden select-none bg-clip-text font-sans text-[22vw] font-black not-italic leading-none text-transparent md:mt-0 md:block">
+      <h1 className="title-gradient animate-descent mt-24 hidden select-none bg-clip-text font-sans text-[22vw] font-black not-italic leading-none text-transparent duration-500 md:mt-0 md:block">
         GeCraft
       </h1>
 
@@ -16,10 +16,10 @@ function Header() {
         Craft
       </h2>
 
-      <p className="mt-10 select-none text-[6.15vw] text-basic md:mt-0 md:text-[2.12vw] lg:text-[1.88vw] 2xl:text-[2.79vw]">
+      <p className="animate-emergence mt-10 select-none text-[6.15vw] text-basic delay-300 md:mt-0 md:text-[2.12vw] lg:text-[1.88vw] 2xl:text-[2.79vw]">
         Your Reliable Partner
       </p>
-      <p className="select-none text-[6.15vw] text-basic md:text-[2.12vw] lg:text-[1.88vw] 2xl:text-[2.79vw]">
+      <p className="animate-emergence select-none text-[6.15vw] text-basic delay-500 md:text-[2.12vw] lg:text-[1.88vw] 2xl:text-[2.79vw]">
         for Assured Software Delivery
       </p>
 
