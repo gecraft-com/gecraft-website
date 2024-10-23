@@ -63,7 +63,7 @@ function FormContactUs() {
 
       setTimeout(() => {
         setSubmitMessage(false)
-      }, 1000)
+      }, 10000)
     } catch (error) {
       console.error('Error submitting form:', error)
     }
