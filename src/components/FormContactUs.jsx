@@ -20,6 +20,7 @@ function FormContactUs() {
     email: false,
   })
   const [wasSubmitAttempted, setWasSubmitAttempted] = useState(false)
+  const [isSubmittingForm, setIsSubmittingForm] = useState(false)
 
   const handleBlur = (fieldName) => () => {
     setTouchedFields((prev) => ({
@@ -63,9 +64,12 @@ function FormContactUs() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    setIsSubmittingForm(true)
     setWasSubmitAttempted(true)
 
     if (!formData.name || !formData.email || !isFormValid) {
+      setIsSubmittingForm(false)
       return
     }
 
@@ -78,8 +82,8 @@ function FormContactUs() {
         name: false,
         email: false,
       })
-
       setTimeout(() => {
+        setIsSubmittingForm(false)
         setSubmitMessage(false)
       }, 10000)
     } catch (error) {
@@ -157,12 +161,20 @@ function FormContactUs() {
             className="h-[52.32vw] w-full resize-none rounded-[15vw] bg-basic px-[13.35vw] py-[11.55vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:col-start-1 md:col-end-3 md:h-[18vw] md:rounded-[5vw] md:px-[4.5vw] md:py-[3.98vw] md:text-[2.3vw] lg:h-[10.62vw] lg:rounded-[3.4vw] lg:px-[2.7vw] lg:py-[2.35vw] lg:text-[1.3vw]"
           />
 
-          <button className="justify-self-end md:col-start-2">
-            <img
-              src="img/submit.svg"
-              alt="submit"
-              className="rounded-full border border-basic bg-transparent px-[7.7vw] py-[8.34vw] duration-150 hover:border-buttonHover hover:bg-buttonHover hover:duration-150 md:px-[2.61vw] md:py-[2.83vw] lg:px-[1.54vw] lg:py-[1.67vw] 2xl:px-[0.86vw] 2xl:py-[0.94vw]"
-            />
+          <button disabled={isSubmittingForm} className="justify-self-end md:col-start-2">
+            {isSubmittingForm ? (
+              <img
+                src="img/spinner.svg"
+                alt="spinner"
+                className="rounded-full border border-buttonGroup bg-transparent px-[8.6vw] py-[8.6vw] md:px-[3.051vw] md:py-[3.051vw] lg:px-[1.722vw] lg:py-[1.722vw] 2xl:w-[6.824vw] 2xl:px-[1.5vw] 2xl:py-[1.5vw]"
+              />
+            ) : (
+              <img
+                src="img/submit.svg"
+                alt="submit"
+                className="rounded-full border border-basic bg-transparent px-[7.7vw] py-[8.34vw] duration-150 hover:border-buttonHover hover:bg-buttonHover hover:duration-150 md:px-[2.61vw] md:py-[2.83vw] lg:px-[1.54vw] lg:py-[1.67vw] 2xl:w-[6.824vw] 2xl:px-[1.5vw] 2xl:py-[1.634vw]"
+              />
+            )}
           </button>
         </form>
       )}
