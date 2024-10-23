@@ -17,13 +17,13 @@ function ContactUs() {
           href="tel:+995558599550"
           className="mt-[1.3vw] text-[6.7vw] font-bold md:mt-[0.45vw] md:text-[2.3vw] lg:mt-[0.27vw] lg:text-[1.36vw] 2xl:mt-[0.15vw] 2xl:text-[1.4vw]"
         >
-          +995 558 599 550
+          +(995) 558 599 550
         </a>
         <a
           href="tel:+16475940256"
           className="mt-[1.3vw] text-[6.7vw] font-bold md:mt-[0.45vw] md:text-[2.3vw] lg:mt-[0.27vw] lg:text-[1.36vw] 2xl:mt-[0.15vw] 2xl:text-[1.4vw]"
         >
-          +1 647 594 0256
+          +1 (647) 594 0256
         </a>
         <p className="mt-[5.15vw] text-[5.15vw] font-bold uppercase md:mt-[1.77vw] md:text-[1.77vw] lg:mt-[1.05vw] lg:text-[1.05vw] 2xl:mt-[0.59vw] 2xl:text-[0.59vw]">
           Email

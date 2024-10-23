@@ -9,6 +9,7 @@ function useForm() {
   })
 
   const [isEmailValid, setIsEmailValid] = useState(false)
+  const [isNameValid, setIsNameValid] = useState(false)
   const [isFormValid, setIsFormValid] = useState(false)
 
   const validateEmail = (email) => {
@@ -29,8 +30,11 @@ function useForm() {
   }
 
   useEffect(() => {
-    const { name, phoneNumber } = formData
-    const isValid = name.trim() !== '' && phoneNumber.trim() !== '' && isEmailValid
+    const { name } = formData
+
+    const isNameValid = name.trim() !== ''
+    setIsNameValid(isNameValid)
+    const isValid = isNameValid && isEmailValid
     setIsFormValid(isValid)
   }, [formData, isEmailValid])
 
@@ -48,6 +52,8 @@ function useForm() {
   return {
     formData,
     isFormValid,
+    isNameValid,
+    isEmailValid,
     handleInputChange,
     resetForm,
     setFormData,

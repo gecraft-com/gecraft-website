@@ -5,11 +5,55 @@ import axios from 'axios'
 import useForm from '../hooks/useForm'
 
 function FormContactUs() {
-  const { formData, isFormValid, handleInputChange, resetForm } = useForm()
+  const {
+    formData,
+    isFormValid,
+    isNameValid,
+    isEmailValid,
+    handleInputChange,
+    resetForm,
+  } = useForm()
   const [submitMessage, setSubmitMessage] = useState(false)
+
+  const nameInput = document.getElementById('name')
+  const emailInput = document.getElementById('email')
+
+  if (isNameValid) {
+    nameInput.classList.remove('border-red-600')
+    nameInput.classList.add('border-green-600')
+
+    if (formData.name === '') {
+      nameInput.classList.remove('border-green-600')
+      nameInput.classList.add('border-basic')
+    }
+  }
+
+  if (isEmailValid) {
+    emailInput.classList.remove('border-red-600')
+    emailInput.classList.add('border-green-600')
+
+    if (formData.email === '') {
+      emailInput.classList.remove('border-green-600')
+      emailInput.classList.add('border-basic')
+    }
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    const nameInput = document.getElementById('name')
+    const emailInput = document.getElementById('email')
+
+    if (!isNameValid) {
+      nameInput.classList.remove('border-basic')
+      nameInput.classList.add('border-red-600')
+    }
+
+    if (!isEmailValid) {
+      emailInput.classList.remove('border-basic')
+      emailInput.classList.add('border-red-600')
+    }
+
     if (!isFormValid) return
 
     try {
@@ -19,20 +63,20 @@ function FormContactUs() {
 
       setTimeout(() => {
         setSubmitMessage(false)
-      }, 10000)
+      }, 1000)
     } catch (error) {
       console.error('Error submitting form:', error)
     }
   }
 
   return (
-    <div className="flex w-full flex-wrap gap-4 md:flex-nowrap">
+    <div className="flex min-h-[185vw] w-full flex-wrap justify-center gap-4 md:min-h-[48.6vw] md:flex-nowrap lg:min-h-[29.5vw] 2xl:min-h-[26vw]">
       {submitMessage ? (
-        <div className="text-balance py-60 text-center">
-          <p className="font-helvetica text-green-350 pb-5 text-2xl font-bold">
+        <div className="pt-[30vw] text-center md:self-center md:pt-0">
+          <p className="text-green-600 text-[10vw] font-bold md:text-[5vw] lg:text-[2.5vw] 2xl:text-[1.5vw]">
             Thank You!
           </p>
-          <p>
+          <p className="mt-[5vw] text-[4.2vw] md:mt-[2vw] md:text-[1.5vw] lg:w-[40vw] lg:text-[1vw] 2xl:mt-[1vw] 2xl:text-[0.75vw]">
             Your form has been successfully submitted. A representative from Glokas will
             be in touch with you shortly to assist with your inquiry. We appreciate your
             interest and look forward to connecting with you soon.
@@ -40,29 +84,25 @@ function FormContactUs() {
         </div>
       ) : (
         <form
+          noValidate
           onSubmit={handleSubmit}
           className="grid w-full gap-y-[3vw] pt-[12.84vw] md:grid-cols-2 md:gap-x-[0.45vw] md:gap-y-[0.8vw] md:pt-0 lg:gap-x-[0.25vw] lg:gap-y-[0.5vw] 2xl:gap-x-[0.29vw] 2xl:gap-y-[0.29vw]"
         >
           <input
+            id="name"
             placeholder="Name"
             name="name"
             type="text"
             onChange={handleInputChange('name')}
-            className="relative h-[24.11vw] w-full rounded-full bg-basic px-[13.35vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:h-[8.3vw] md:px-[4.5vw] md:text-[2.3vw] lg:h-[4.9vw] lg:px-[2.7vw] lg:text-[1.3vw] 2xl:h-[4.94vw]"
+            className="h-[24.11vw] w-full rounded-full border-4 border-basic bg-basic px-[13.35vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:h-[8.3vw] md:px-[4.5vw] md:text-[2.3vw] lg:h-[4.9vw] lg:px-[2.7vw] lg:text-[1.3vw] 2xl:h-[4.94vw]"
           />
-          {/* <ErrorMessage name="name">
-              {(msg) => (
-                <span className="text-red-400 absolute right-[13.35vw] top-[2vw] md:right-[4.5vw] md:top-[0.7vw] lg:right-[2.7vw] lg:top-[0.4vw] 2xl:text-[0.8vw]">
-                  {msg}
-                </span>
-              )}
-            </ErrorMessage> */}
           <input
+            id="email"
             placeholder="Email"
             name="email"
             type="email"
             onChange={handleInputChange('email')}
-            className="h-[24.11vw] w-full rounded-full bg-basic px-[13.35vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:h-[8.3vw] md:px-[4.5vw] md:text-[2.3vw] lg:h-[4.9vw] lg:px-[2.7vw] lg:text-[1.3vw] 2xl:h-[4.94vw]"
+            className="h-[24.11vw] w-full rounded-full border-4 border-basic bg-basic px-[13.35vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:h-[8.3vw] md:px-[4.5vw] md:text-[2.3vw] lg:h-[4.9vw] lg:px-[2.7vw] lg:text-[1.3vw] 2xl:h-[4.94vw]"
           />
 
           <input
