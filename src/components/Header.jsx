@@ -9,10 +9,10 @@ function Header() {
         GeCraft
       </h1>
 
-      <h1 className="title-gradient mt-[46vw] select-none font-sans text-[55vw] font-black not-italic leading-none md:hidden">
+      <h1 className="animate-descent title-gradient mt-[46vw] select-none font-sans text-[55vw] font-black not-italic leading-none md:hidden">
         Ge
       </h1>
-      <h2 className="title-gradient select-none font-sans text-[22vw] font-black not-italic leading-none md:hidden">
+      <h2 className="animate-descent title-gradient select-none font-sans text-[22vw] font-black not-italic leading-none md:hidden">
         Craft
       </h2>
 
@@ -24,7 +24,7 @@ function Header() {
       </p>
 
       <a
-        className="animate-lifting z-10 mt-[42.3vw] flex h-[20.5vw] w-[89.7vw] items-center justify-center rounded-full border-2 border-basic text-[4.1vw] text-base font-semibold text-basic duration-150 hover:border-buttonHover hover:bg-buttonHover hover:duration-150 md:mt-[8.84vw] md:h-[5.93vw] md:w-[32.7vw] md:text-[1.77vw] lg:mt-[6.77vw] lg:h-[4.17vw] lg:w-[28.1vw] lg:text-[1.36vw] 2xl:mt-[6vw] 2xl:h-[4.15vw] 2xl:w-[30.84vw] 2xl:text-[1.4vw]"
+        className="animation-timeline animate-appear z-10 mt-[42.3vw] flex h-[20.5vw] w-[89.7vw] items-center justify-center rounded-full border-2 border-basic text-[4.1vw] text-base font-semibold text-basic duration-150 hover:border-buttonHover hover:bg-buttonHover hover:duration-150 md:mt-[8.84vw] md:h-[5.93vw] md:w-[32.7vw] md:text-[1.77vw] lg:mt-[6.77vw] lg:h-[4.17vw] lg:w-[28.1vw] lg:text-[1.36vw] 2xl:mt-[6vw] 2xl:h-[4.15vw] 2xl:w-[30.84vw] 2xl:text-[1.4vw]"
         href="#contactUs"
       >
         Request a Consultation
