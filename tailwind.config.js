@@ -35,11 +35,6 @@ export default {
       fontFamily: {
         sans: 'Be Vietnam Pro',
       },
-      keyframes: {
-        appear: {
-          '0%, 100%': { transform: 'rotate(-3deg)' },
-          '50%': { transform: 'rotate(3deg)' },
-        }
     },
   },
 }
