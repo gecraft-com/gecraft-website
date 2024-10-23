@@ -79,7 +79,7 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
-.icon-button {
-    width: 2.47vw;
-    height: 2.47vw;
+.animation-timeline {
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
 }

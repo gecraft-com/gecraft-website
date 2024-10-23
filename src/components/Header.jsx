@@ -16,7 +16,7 @@ function Header() {
         Craft
       </h2>
 
-      <p className="animate-emergence mt-10 select-none text-[6.15vw] text-basic delay-300 md:mt-0 md:text-[2.12vw] lg:text-[1.88vw] 2xl:text-[2.79vw]">
+      <p className="animate-emergence mt-10 select-none text-[6.15vw] text-basic md:mt-0 md:text-[2.12vw] lg:text-[1.88vw] 2xl:text-[2.79vw]">
         Your Reliable Partner
       </p>
       <p className="animate-emergence select-none text-[6.15vw] text-basic delay-500 md:text-[2.12vw] lg:text-[1.88vw] 2xl:text-[2.79vw]">
@@ -24,7 +24,7 @@ function Header() {
       </p>
 
       <a
-        className="z-10 mt-[42.3vw] flex h-[20.5vw] w-[89.7vw] items-center justify-center rounded-full border-2 border-basic text-[4.1vw] text-base font-semibold text-basic duration-150 hover:border-buttonHover hover:bg-buttonHover hover:duration-150 md:mt-[8.84vw] md:h-[5.93vw] md:w-[32.7vw] md:text-[1.77vw] lg:mt-[6.77vw] lg:h-[4.17vw] lg:w-[28.1vw] lg:text-[1.36vw] 2xl:mt-[6vw] 2xl:h-[4.15vw] 2xl:w-[30.84vw] 2xl:text-[1.4vw]"
+        className="animate-lifting z-10 mt-[42.3vw] flex h-[20.5vw] w-[89.7vw] items-center justify-center rounded-full border-2 border-basic text-[4.1vw] text-base font-semibold text-basic duration-150 hover:border-buttonHover hover:bg-buttonHover hover:duration-150 md:mt-[8.84vw] md:h-[5.93vw] md:w-[32.7vw] md:text-[1.77vw] lg:mt-[6.77vw] lg:h-[4.17vw] lg:w-[28.1vw] lg:text-[1.36vw] 2xl:mt-[6vw] 2xl:h-[4.15vw] 2xl:w-[30.84vw] 2xl:text-[1.4vw]"
         href="#contactUs"
       >
         Request a Consultation
@@ -34,7 +34,7 @@ function Header() {
 
       <p
         id="text"
-        className="z-20 mt-[25.6vw] w-[89.7vw] select-none text-[6.15vw] leading-tight text-white md:mt-[24.53vw] md:w-[62.9vw] md:text-[2.65vw] lg:mt-[18.74vw] lg:w-[50.1vw] lg:text-[2.5vw] 2xl:mt-[14.2vw] 2xl:w-[49.4vw] 2xl:text-[2.44vw]"
+        className="animation-timeline animate-appear z-20 mt-[25.6vw] w-[89.7vw] select-none text-[6.15vw] leading-tight text-white md:mt-[24.53vw] md:w-[62.9vw] md:text-[2.65vw] lg:mt-[18.74vw] lg:w-[50.1vw] lg:text-[2.5vw] 2xl:mt-[14.2vw] 2xl:w-[49.4vw] 2xl:text-[2.44vw]"
       >
         Harnessing cutting-edge technology and years of industry expertise, GeCraft
         designs and develops custom, end-to-end solutions that bring your unique software

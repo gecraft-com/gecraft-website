@@ -42,7 +42,7 @@ function AppBar() {
   return (
     <div
       ref={AppBarRef}
-      className="top-10 z-30 hidden items-center gap-2.5 rounded-full bg-buttonGroup backdrop-blur-3xl sm:p-[0.53vw] md:absolute md:top-[52vw] md:flex lg:top-[48vw] lg:p-[0.32vw] 2xl:top-[49vw] 2xl:p-[0.175vw]"
+      className="animate-appear animation-timeline top-10 z-30 hidden items-center gap-2.5 rounded-full bg-buttonGroup backdrop-blur-3xl sm:p-[0.53vw] md:absolute md:top-[52vw] md:flex lg:top-[48vw] lg:p-[0.32vw] 2xl:top-[49vw] 2xl:p-[0.175vw]"
     >
       <a
         className="flex items-center justify-center rounded-full bg-buttonHover sm:h-[4.95vw] sm:w-[4.95vw] lg:h-[4.43vw] lg:w-[4.43vw] 2xl:h-[2.53vw] 2xl:w-[2.53vw]"
