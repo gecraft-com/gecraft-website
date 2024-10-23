@@ -40,7 +40,7 @@ function FormContactUs() {
 
     if (fieldName === 'name' || fieldName === 'email') {
       if (!value) {
-        return `${baseClasses} border-red-600`
+        return `${baseClasses} border-red-500`
       }
       return `${baseClasses} ${isValid ? 'border-green-600' : 'border-red-600'}`
     }
@@ -106,7 +106,7 @@ function FormContactUs() {
           onSubmit={handleSubmit}
           className="grid w-full gap-y-[3vw] pt-[12.84vw] md:grid-cols-2 md:gap-x-[0.45vw] md:gap-y-[0.8vw] md:pt-0 lg:gap-x-[0.25vw] lg:gap-y-[0.5vw] 2xl:gap-x-[0.29vw] 2xl:gap-y-[0.29vw]"
         >
-          <div className="flex flex-col">
+          <div className="relative">
             <input
               placeholder="Name *"
               name="name"
@@ -117,11 +117,13 @@ function FormContactUs() {
               className={getInputClassName('name', isNameValid, formData.name)}
             />
             {wasSubmitAttempted && !isNameValid && (
-              <span className="text-red-600 mt-1 text-sm">{getErrorMessage('name')}</span>
+              <span className="text-red-500 absolute right-[13.35vw] top-[2vw] text-[4.11vw] md:right-[4.5vw] md:top-[0.8vw] md:text-[1.42vw] lg:right-[2.7vw] lg:top-[0.4vw] lg:text-[0.84vw] 2xl:top-[0.6vw] 2xl:text-[0.47vw]">
+                {getErrorMessage('name')}
+              </span>
             )}
           </div>
 
-          <div className="flex flex-col">
+          <div className="relative">
             <input
               placeholder="Email *"
               name="email"
@@ -132,7 +134,7 @@ function FormContactUs() {
               className={getInputClassName('email', isEmailValid, formData.email)}
             />
             {wasSubmitAttempted && !isEmailValid && (
-              <span className="text-red-600 mt-1 text-sm">
+              <span className="text-red-500 absolute right-[13.35vw] top-[2vw] text-[4.11vw] md:right-[4.5vw] md:top-[0.8vw] md:text-[1.42vw] lg:right-[2.7vw] lg:top-[0.4vw] lg:text-[0.84vw] 2xl:top-[0.6vw] 2xl:text-[0.47vw]">
                 {getErrorMessage('email')}
               </span>
             )}
