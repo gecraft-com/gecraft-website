@@ -13,53 +13,71 @@ function FormContactUs() {
     handleInputChange,
     resetForm,
   } = useForm()
+
   const [submitMessage, setSubmitMessage] = useState(false)
+  const [touchedFields, setTouchedFields] = useState({
+    name: false,
+    email: false,
+  })
+  const [wasSubmitAttempted, setWasSubmitAttempted] = useState(false)
 
-  const nameInput = document.getElementById('name')
-  const emailInput = document.getElementById('email')
-
-  if (isNameValid) {
-    nameInput.classList.remove('border-red-600')
-    nameInput.classList.add('border-green-600')
-
-    if (formData.name === '') {
-      nameInput.classList.remove('border-green-600')
-      nameInput.classList.add('border-basic')
-    }
+  const handleBlur = (fieldName) => () => {
+    setTouchedFields((prev) => ({
+      ...prev,
+      [fieldName]: true,
+    }))
   }
 
-  if (isEmailValid) {
-    emailInput.classList.remove('border-red-600')
-    emailInput.classList.add('border-green-600')
+  const getInputClassName = (fieldName, isValid, value) => {
+    const baseClasses =
+      'h-[24.11vw] w-full rounded-full border-4 bg-basic px-[13.35vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:h-[8.3vw] md:px-[4.5vw] md:text-[2.3vw] lg:h-[4.9vw] lg:px-[2.7vw] lg:text-[1.3vw] 2xl:h-[4.94vw]'
 
-    if (formData.email === '') {
-      emailInput.classList.remove('border-green-600')
-      emailInput.classList.add('border-basic')
+    const shouldShowValidation = touchedFields[fieldName] || wasSubmitAttempted
+
+    if (!shouldShowValidation) {
+      return `${baseClasses} border-basic`
     }
+
+    if (fieldName === 'name' || fieldName === 'email') {
+      if (!value) {
+        return `${baseClasses} border-red-600`
+      }
+      return `${baseClasses} ${isValid ? 'border-green-600' : 'border-red-600'}`
+    }
+
+    return `${baseClasses} border-basic`
+  }
+
+  const getErrorMessage = (fieldName) => {
+    if (!formData[fieldName]) {
+      return 'This field is required'
+    }
+    if (fieldName === 'email' && !isEmailValid) {
+      return 'Please enter a valid email'
+    }
+    if (fieldName === 'name' && !isNameValid) {
+      return 'Please enter a valid name'
+    }
+    return ''
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setWasSubmitAttempted(true)
 
-    const nameInput = document.getElementById('name')
-    const emailInput = document.getElementById('email')
-
-    if (!isNameValid) {
-      nameInput.classList.remove('border-basic')
-      nameInput.classList.add('border-red-600')
+    if (!formData.name || !formData.email || !isFormValid) {
+      return
     }
-
-    if (!isEmailValid) {
-      emailInput.classList.remove('border-basic')
-      emailInput.classList.add('border-red-600')
-    }
-
-    if (!isFormValid) return
 
     try {
       await axios.post(import.meta.env.VITE_FORMSPREE_ENDPOINT, formData)
       setSubmitMessage(true)
       resetForm()
+      setWasSubmitAttempted(false)
+      setTouchedFields({
+        name: false,
+        email: false,
+      })
 
       setTimeout(() => {
         setSubmitMessage(false)
@@ -88,27 +106,43 @@ function FormContactUs() {
           onSubmit={handleSubmit}
           className="grid w-full gap-y-[3vw] pt-[12.84vw] md:grid-cols-2 md:gap-x-[0.45vw] md:gap-y-[0.8vw] md:pt-0 lg:gap-x-[0.25vw] lg:gap-y-[0.5vw] 2xl:gap-x-[0.29vw] 2xl:gap-y-[0.29vw]"
         >
-          <input
-            id="name"
-            placeholder="Name"
-            name="name"
-            type="text"
-            onChange={handleInputChange('name')}
-            className="h-[24.11vw] w-full rounded-full border-4 border-basic bg-basic px-[13.35vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:h-[8.3vw] md:px-[4.5vw] md:text-[2.3vw] lg:h-[4.9vw] lg:px-[2.7vw] lg:text-[1.3vw] 2xl:h-[4.94vw]"
-          />
-          <input
-            id="email"
-            placeholder="Email"
-            name="email"
-            type="email"
-            onChange={handleInputChange('email')}
-            className="h-[24.11vw] w-full rounded-full border-4 border-basic bg-basic px-[13.35vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:h-[8.3vw] md:px-[4.5vw] md:text-[2.3vw] lg:h-[4.9vw] lg:px-[2.7vw] lg:text-[1.3vw] 2xl:h-[4.94vw]"
-          />
+          <div className="flex flex-col">
+            <input
+              placeholder="Name *"
+              name="name"
+              type="text"
+              value={formData.name}
+              onChange={handleInputChange('name')}
+              onBlur={handleBlur('name')}
+              className={getInputClassName('name', isNameValid, formData.name)}
+            />
+            {wasSubmitAttempted && !isNameValid && (
+              <span className="text-red-600 mt-1 text-sm">{getErrorMessage('name')}</span>
+            )}
+          </div>
+
+          <div className="flex flex-col">
+            <input
+              placeholder="Email *"
+              name="email"
+              type="email"
+              value={formData.email}
+              onChange={handleInputChange('email')}
+              onBlur={handleBlur('email')}
+              className={getInputClassName('email', isEmailValid, formData.email)}
+            />
+            {wasSubmitAttempted && !isEmailValid && (
+              <span className="text-red-600 mt-1 text-sm">
+                {getErrorMessage('email')}
+              </span>
+            )}
+          </div>
 
           <input
             placeholder="Phone"
             name="phoneNumber"
             type="text"
+            value={formData.phoneNumber}
             onChange={handleInputChange('phoneNumber')}
             className="h-[24.11vw] w-full rounded-full bg-basic px-[13.35vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:col-start-1 md:col-end-3 md:h-[8.3vw] md:px-[4.5vw] md:text-[2.3vw] lg:h-[4.9vw] lg:px-[2.7vw] lg:text-[1.3vw] 2xl:h-[4.94vw]"
           />
@@ -116,7 +150,7 @@ function FormContactUs() {
           <textarea
             placeholder="Message"
             name="message"
-            type="text"
+            value={formData.message}
             onChange={handleInputChange('message')}
             className="h-[52.32vw] w-full resize-none rounded-[15vw] bg-basic px-[13.35vw] py-[11.55vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:col-start-1 md:col-end-3 md:h-[18vw] md:rounded-[5vw] md:px-[4.5vw] md:py-[3.98vw] md:text-[2.3vw] lg:h-[10.62vw] lg:rounded-[3.4vw] lg:px-[2.7vw] lg:py-[2.35vw] lg:text-[1.3vw]"
           />
