@@ -109,7 +109,7 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
           </div>
         )}
       {location === 'gallery' && filteredItems.length > 0 && (
-        <div className="mt-[39.2vw] flex w-full flex-col gap-y-10 md:mt-[5.03vw] md:min-h-[89.022vw] md:flex-row md:flex-wrap md:gap-x-2.5 md:gap-y-10 lg:mt-[1.57vw] lg:min-h-[28.2vw] 2xl:min-h-[20.4vw]">
+        <div className="animation-timeline animate-appear mt-[39.2vw] flex w-full flex-col gap-y-10 md:mt-[5.03vw] md:min-h-[89.022vw] md:flex-row md:flex-wrap md:gap-x-2.5 md:gap-y-10 lg:mt-[1.57vw] lg:min-h-[28.2vw] 2xl:min-h-[20.4vw]">
           {filteredItems.map((project, index) => (
             <Project
               key={index}

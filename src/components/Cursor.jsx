@@ -71,7 +71,7 @@ function Cursor() {
       ref={cursorRef}
       style={{ left: cursorX + 'px', top: cursorY + 'px' }}
       id="cursor"
-      className="pointer-events-none absolute z-50 hidden h-7 w-7 -translate-x-1/2 -translate-y-1/2 select-none rounded-full border border-solid border-bgHeader bg-cursor transition duration-150"
+      className="pointer-events-none absolute z-50 hidden h-[1vw] w-[1vw] -translate-x-1/2 -translate-y-1/2 select-none rounded-full border-[0.05vw] border-solid border-bgHeader bg-cursor transition duration-150"
     ></div>
   )
 }

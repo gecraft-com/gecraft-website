@@ -35,6 +35,32 @@ export default {
       fontFamily: {
         sans: 'Be Vietnam Pro',
       },
+
+      keyframes: {
+        descent: {
+          '0%': { opacity: '0', transform: 'translate(0, -50%)' },
+          '100%': { opacity: '1', transform: 'translate(0%)' },
+        },
+        lifting: {
+          '0%': { opacity: '0', transform: 'translate(0, 50%)' },
+          '100%': { opacity: '1', transform: 'translate(0%)' },
+        },
+        emergence: {
+          '0%': { opacity: '0', scale: '0.7' },
+          '100%': { opacity: '1', scale: '1' },
+        },
+        appear: {
+          '0%': { opacity: '0', scale: '0.8' },
+          '100%': { opacity: '1', scale: '1' },
+        },
+      },
+
+      animation: {
+        descent: 'descent 300ms ease-in-out',
+        lifting: 'lifting 500ms ease-in-out',
+        emergence: 'emergence 200ms ease',
+        appear: 'appear linear',
+      },
     },
   },
 }
