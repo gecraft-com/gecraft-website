@@ -36,6 +36,10 @@ select:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s;
 }
 
+html {
+  scroll-timeline: --direction-text block;
+}
+
 body {
     width: 100%;
 
@@ -289,4 +293,13 @@ body {
     width: 45.2vw;
     top: 41.7vw;
   }
+}
+
+@keyframes infiniteText {
+ 0% { transform: translateX(0%); }
+ 100% { transform: translateX(-51.97%); }
+}
+
+.infinit-text {
+  animation: infiniteText 5s linear infinite;
 }

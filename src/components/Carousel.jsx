@@ -19,8 +19,9 @@ function Carousel() {
   }
 
   return (
-    <div className="absolute left-0 top-[28vw] flex w-full items-center ease-in md:top-[7.8vw]">
-      <p className="flex w-full items-center overflow-hidden whitespace-nowrap text-[18.4vw] text-white md:text-[9.73vw] lg:text-[11.03vw]">
+    <div className="absolute left-0 top-[28vw] flex w-full items-center overflow-hidden ease-in md:top-[7.8vw]">
+      <p className="infinit-text animation-timeline flex w-full items-center whitespace-nowrap text-[18.4vw] text-white md:text-[9.73vw] lg:text-[11.03vw]">
+        <SlideElement />
         <SlideElement />
         <SlideElement />
         <SlideElement />
