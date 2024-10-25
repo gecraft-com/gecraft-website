@@ -39,13 +39,13 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
 
   useEffect(() => {
     if (modalServiceIsOpen && window.innerWidth > 1024) {
-      const projectsSlider = document.querySelector('.projectsSlider')
-      const projectsCarousel = document.querySelector('.projectsCarousel')
+      const projectsSliderServices = document.querySelector('.projectsSliderServices')
+      const projectsCarouselServices = document.querySelector('.projectsCarouselServices')
 
       let coordX = 0
 
-      projectsSlider.addEventListener('mousemove', handleMouseMove)
-      projectsSlider.addEventListener('mouseout', handleMouseOut)
+      projectsSliderServices.addEventListener('mousemove', handleMouseMove)
+      projectsSliderServices.addEventListener('mouseout', handleMouseOut)
 
       const percent = () => {
         if (window.innerWidth <= 1133) {
@@ -58,34 +58,66 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
       }
 
       function handleMouseMove(e) {
-        coordX = e.pageX - projectsSlider.offsetWidth
-        const x = (coordX / projectsSlider.offsetWidth) * percent()
+        coordX = e.pageX - projectsSliderServices.offsetWidth
+        const xServices = (coordX / projectsSliderServices.offsetWidth) * percent()
 
-        projectsCarousel.style.cssText = `
-          transform: translateX(${-x}%);
+        projectsCarouselServices.style.cssText = `
+          transform: translateX(${-xServices}%);
           transition-duration: 150ms;
           `
       }
 
       function handleMouseOut() {
-        projectsCarousel.style.cssText =
+        projectsCarouselServices.style.cssText =
           'transform: translateX(0); transition-duration: 150ms;'
       }
 
       return () => {
-        projectsSlider.removeEventListener('mousemove', handleMouseMove)
-        projectsSlider.removeEventListener('mouseout', handleMouseOut)
+        projectsSliderServices.removeEventListener('mousemove', handleMouseMove)
+        projectsSliderServices.removeEventListener('mouseout', handleMouseOut)
       }
     }
   }, [modalServiceIsOpen])
+
+  useEffect(() => {
+    if (window.innerWidth > 1133) {
+      const projectsSliderGallery = document.querySelector('.projectsSliderGallery')
+      const projectsCarouselGallery = document.querySelector('.projectsCarouselGallery')
+
+      let coordX = 0
+
+      projectsSliderGallery.addEventListener('mousemove', handleMouseMove)
+      projectsSliderGallery.addEventListener('mouseout', handleMouseOut)
+
+      function handleMouseMove(e) {
+        coordX = e.pageX - projectsSliderGallery.offsetWidth
+        const xGallery = (coordX / projectsSliderGallery.offsetWidth) * 20
+
+        projectsCarouselGallery.style.cssText = `
+          transform: translateX(${-xGallery}%);
+          transition-duration: 150ms;
+          `
+      }
+
+      function handleMouseOut() {
+        projectsCarouselGallery.style.cssText =
+          'transform: translateX(0); transition-duration: 150ms;'
+      }
+
+      return () => {
+        projectsSliderGallery.removeEventListener('mousemove', handleMouseMove)
+        projectsSliderGallery.removeEventListener('mouseout', handleMouseOut)
+      }
+    }
+  }, [])
 
   return (
     <>
       {location === 'services' &&
         filteredProjects !== undefined &&
         filteredProjects.length > 0 && (
-          <div className="projectsSlider z-10 mt-[39.2vw] w-full self-end md:mt-[5.03vw] 1024:md:relative 1024:h-[40vw] 1024:w-full 1024:overflow-hidden 1024:duration-500 1024:hover:-translate-x-[3.5vw] 1024:hover:scale-125 1024:hover:duration-500 lg:mt-[1.57vw] lg:h-[28vw] lg:hover:-translate-x-[5vw] 2xl:h-[21vw]">
-            <div className="projectsCarousel flex flex-col gap-y-10 1024:absolute 1024:flex-row 1024:gap-x-2.5">
+          <div className="projectsSliderServices z-10 mt-[39.2vw] w-full self-end md:mt-[5.03vw] 1024:md:relative 1024:h-[40vw] 1024:w-full 1024:overflow-hidden 1024:duration-500 1024:hover:-translate-x-[3.5vw] 1024:hover:scale-125 1024:hover:duration-500 lg:mt-[1.57vw] lg:h-[28vw] lg:hover:-translate-x-[5vw] 2xl:h-[21vw]">
+            <div className="projectsCarouselServices flex flex-col gap-y-10 1024:absolute 1024:flex-row 1024:gap-x-2.5">
               {filteredProjects.map((project, index) => (
                 <Project
                   key={index}
@@ -109,15 +141,17 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
           </div>
         )}
       {location === 'gallery' && filteredItems.length > 0 && (
-        <div className="animation-timeline mt-[39.2vw] flex w-full animate-appear flex-col gap-y-10 md:mt-[5.03vw] md:min-h-[89.022vw] md:flex-row md:flex-wrap md:gap-x-2.5 md:gap-y-10 lg:mt-[1.57vw] lg:min-h-[28.2vw] 2xl:min-h-[20.4vw]">
-          {filteredItems.map((project, index) => (
-            <Project
-              key={index}
-              project={project}
-              handleClick={handleClick}
-              color={color}
-            />
-          ))}
+        <div className="projectsSliderGallery animation-timeline z-10 mt-[39.2vw] w-full animate-appear self-end md:mt-[5.03vw] lg:relative lg:mt-[1.57vw] lg:h-[28vw] lg:duration-500 lg:hover:-translate-x-[5vw] lg:hover:scale-125 lg:hover:duration-500 2xl:h-[21vw]">
+          <div className="projectsCarouselGallery flex flex-col gap-y-10 md:flex-row md:flex-wrap md:gap-x-2.5 lg:absolute lg:flex-nowrap lg:overflow-hidden">
+            {filteredItems.map((project, index) => (
+              <Project
+                key={index}
+                project={project}
+                handleClick={handleClick}
+                color={color}
+              />
+            ))}
+          </div>
         </div>
       )}
       {location === 'gallery' && filteredItems.length === 0 && (

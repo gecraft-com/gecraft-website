@@ -1,4 +1,4 @@
-function MobileGroupButton() {
+function MobileAppBar() {
   return (
     <div className="fixed left-0 top-10 z-40 flex w-full items-center justify-between px-5 md:hidden">
       <a
@@ -9,7 +9,7 @@ function MobileGroupButton() {
       </a>
       <a
         className="flex h-11 w-48 items-center justify-center rounded-full bg-buttonGroup text-sm font-bold text-basic backdrop-blur-3xl hover:bg-buttonHover"
-        href="#"
+        href="#contactUs"
       >
         Request a Consultation
       </a>
@@ -17,4 +17,4 @@ function MobileGroupButton() {
   )
 }
 
-export default MobileGroupButton
+export default MobileAppBar
