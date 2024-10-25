@@ -42,6 +42,7 @@ function ProjectsModal({
           </div>
           <a
             href={link}
+            target="_blank"
             className="mt-[10.3vw] text-[5.14vw] underline sm:mt-[3vw] sm:text-[2.61vw] md:mt-[2vw] md:text-[1.83vw] lg:mt-0 lg:text-[1.24vw] 2xl:text-[0.93vw]"
           >
             See the website
