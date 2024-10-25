@@ -84,8 +84,8 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
       {location === 'services' &&
         filteredProjects !== undefined &&
         filteredProjects.length > 0 && (
-          <div className="projectsSlider 1024:duration-500 1024:hover:-translate-x-[3.5vw] 1024:hover:scale-125 1024:hover:duration-500 1024:md:relative 1024:overflow-hidden 1024:h-[40vw] 1024:w-full z-10 mt-[39.2vw] w-full self-end md:mt-[5.03vw] lg:mt-[1.57vw] lg:h-[28vw] lg:hover:-translate-x-[5vw] 2xl:h-[21vw]">
-            <div className="projectsCarousel 1024:absolute 1024:flex-row 1024:gap-x-2.5 flex flex-col gap-y-10">
+          <div className="projectsSlider z-10 mt-[39.2vw] w-full self-end md:mt-[5.03vw] 1024:md:relative 1024:h-[40vw] 1024:w-full 1024:overflow-hidden 1024:duration-500 1024:hover:-translate-x-[3.5vw] 1024:hover:scale-125 1024:hover:duration-500 lg:mt-[1.57vw] lg:h-[28vw] lg:hover:-translate-x-[5vw] 2xl:h-[21vw]">
+            <div className="projectsCarousel flex flex-col gap-y-10 1024:absolute 1024:flex-row 1024:gap-x-2.5">
               {filteredProjects.map((project, index) => (
                 <Project
                   key={index}
@@ -109,7 +109,7 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
           </div>
         )}
       {location === 'gallery' && filteredItems.length > 0 && (
-        <div className="animation-timeline animate-appear mt-[39.2vw] flex w-full flex-col gap-y-10 md:mt-[5.03vw] md:min-h-[89.022vw] md:flex-row md:flex-wrap md:gap-x-2.5 md:gap-y-10 lg:mt-[1.57vw] lg:min-h-[28.2vw] 2xl:min-h-[20.4vw]">
+        <div className="animation-timeline mt-[39.2vw] flex w-full animate-appear flex-col gap-y-10 md:mt-[5.03vw] md:min-h-[89.022vw] md:flex-row md:flex-wrap md:gap-x-2.5 md:gap-y-10 lg:mt-[1.57vw] lg:min-h-[28.2vw] 2xl:min-h-[20.4vw]">
           {filteredItems.map((project, index) => (
             <Project
               key={index}
