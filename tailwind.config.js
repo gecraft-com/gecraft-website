@@ -54,6 +54,7 @@ export default {
           '100%': { opacity: '1', scale: '1' },
         },
         infiniteText: {
+          '0%': { transform: 'translateX(0%)' },
           '100%': { transform: 'translateX(-51.97%)' },
         },
       },

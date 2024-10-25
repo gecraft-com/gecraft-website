@@ -294,12 +294,3 @@ body {
     top: 41.7vw;
   }
 }
-
-@keyframes infiniteText {
- 0% { transform: translateX(0%); }
- 100% { transform: translateX(-51.97%); }
-}
-
-.infinit-text {
-  animation: infiniteText 5s linear infinite;
-}

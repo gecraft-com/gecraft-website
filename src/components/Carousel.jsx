@@ -1,4 +1,33 @@
+import { useEffect, useRef, useState } from 'react'
+
 function Carousel() {
+  const textRef = useRef(null)
+
+  const [isDown, setIsDown] = useState(true)
+
+  useEffect(() => {
+    let lastScrollTop = 0
+    window.onscroll = onScroll
+
+    function onScroll() {
+      let top = window.scrollY
+      if (lastScrollTop > top) {
+        setIsDown(false)
+      } else if (lastScrollTop < top) {
+        setIsDown(true)
+      }
+      lastScrollTop = top
+    }
+  }, [])
+
+  const getDirection = () => {
+    const baseClasses =
+      'infinite-text flex w-full items-center whitespace-nowrap text-[18.4vw] text-white md:text-[9.73vw] lg:text-[11.03vw]'
+    const direction = isDown ? 'animate-infiniteText' : 'animate-infiniteTextReverse'
+
+    return `${baseClasses} ${direction}`
+  }
+
   function SlideElement() {
     return (
       <span className="flex items-center">
@@ -19,8 +48,8 @@ function Carousel() {
   }
 
   return (
-    <div className="absolute left-0 top-[28vw] flex w-full items-center overflow-hidden ease-in md:top-[7.8vw]">
-      <p className="infinit-text animation-timeline flex w-full items-center whitespace-nowrap text-[18.4vw] text-white md:text-[9.73vw] lg:text-[11.03vw]">
+    <div className="animation-timeline absolute left-0 top-[28vw] flex w-full animate-appear items-center overflow-hidden ease-in md:top-[7.8vw]">
+      <p id="text" ref={textRef} className={getDirection()}>
         <SlideElement />
         <SlideElement />
         <SlideElement />
