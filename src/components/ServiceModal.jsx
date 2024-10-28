@@ -41,6 +41,7 @@ ServiceModal.propTypes = {
   label: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   service: PropTypes.string.isRequired,
+  setShowProjectsModal: PropTypes.func,
   modalServiceIsOpen: PropTypes.bool,
 }
 

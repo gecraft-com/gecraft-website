@@ -6,6 +6,8 @@ import ProjectsModal from './ProjectsModal'
 import ServiceModal from './ServiceModal'
 
 function Services() {
+  const html = document.querySelector('html')
+
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
   const [showProjectsModal, setShowProjectsModal] = useState(false)
@@ -14,12 +16,14 @@ function Services() {
   const [label, setLabel] = useState('')
 
   const handleClick = useCallback((service) => {
+    html.classList.add('overflow-hidden')
     setSelectedService(service)
     setLabel(service.label)
     setModalIsOpen(true)
   }, [])
 
   const handleCloseModal = () => {
+    html.classList.remove('overflow-hidden')
     setShowProjectsModal(false)
     setModalIsOpen(false)
   }
@@ -92,11 +96,12 @@ function Services() {
           </button>
         ))}
         <div className={classNameHoverBlock()}></div>
-        {modalIsOpen && selectedService && (
+        {modalIsOpen && (
           <ModalWindow
             onCloseModal={handleCloseModal}
             modalIsOpen={modalIsOpen}
             label={label}
+            preventScroll={true}
           >
             {!showProjectsModal && (
               <ServiceModal

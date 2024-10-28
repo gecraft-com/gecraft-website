@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import projects from '../../data/projects.json'
 import { selectProject } from '../redux/actions'
+import { selectProjectSelector } from '../redux/selectors'
 import ModalWindow from './ModalWindow'
 import Project from './Project'
 import ProjectsModal from './ProjectsModal'
@@ -18,7 +19,7 @@ function Projects({
 }) {
   const dispatch = useDispatch()
 
-  const selectedProject = useSelector((state) => state.projects.selectProject)
+  const selectedProject = useSelector(selectProjectSelector)
 
   const [color, setColor] = useState({})
 
@@ -195,6 +196,7 @@ Projects.propTypes = {
   filteredItems: PropTypes.array,
   category: PropTypes.string,
   modalServiceIsOpen: PropTypes.bool,
+  setShowProjectsModal: PropTypes.func,
 }
 
 export default Projects

@@ -1,7 +1,9 @@
 import { useSelector } from 'react-redux'
 
+import { selectProjectSelector } from '../redux/selectors'
+
 function ProjectsModal() {
-  const selectedProject = useSelector((state) => state.projects.selectProject)
+  const selectedProject = useSelector(selectProjectSelector)
 
   const {
     client,
