@@ -2,10 +2,13 @@ import { useCallback, useEffect, useState } from 'react'
 
 import services from '../../data/services.json'
 import ModalWindow from './ModalWindow'
+import ProjectsModal from './ProjectsModal'
 import ServiceModal from './ServiceModal'
 
 function Services() {
   const [modalIsOpen, setModalIsOpen] = useState(false)
+
+  const [showProjectsModal, setShowProjectsModal] = useState(false)
 
   const [selectedService, setSelectedService] = useState(null)
   const [label, setLabel] = useState('')
@@ -17,6 +20,7 @@ function Services() {
   }, [])
 
   const handleCloseModal = () => {
+    setShowProjectsModal(false)
     setModalIsOpen(false)
   }
 
@@ -94,7 +98,14 @@ function Services() {
             modalIsOpen={modalIsOpen}
             label={label}
           >
-            <ServiceModal {...selectedService} modalServiceIsOpen={modalIsOpen} />
+            {!showProjectsModal && (
+              <ServiceModal
+                {...selectedService}
+                setShowProjectsModal={setShowProjectsModal}
+                modalServiceIsOpen={modalIsOpen}
+              />
+            )}
+            {showProjectsModal && <ProjectsModal />}
           </ModalWindow>
         )}
       </div>

@@ -2,7 +2,13 @@ import PropTypes from 'prop-types'
 
 import Projects from './Projects'
 
-function ServiceModal({ label, service, description, modalServiceIsOpen }) {
+function ServiceModal({
+  label,
+  service,
+  description,
+  setShowProjectsModal,
+  modalServiceIsOpen,
+}) {
   return (
     <div className="block justify-between px-[5.15vw] pt-[10.25vw] sm:pt-[5vw] md:flex md:pt-[5vw] lg:px-[3.53vw] lg:pt-[2.91vw] 2xl:px-[4.36vw]">
       <div className="w-full md:w-4/12 lg:w-[18vw] 2xl:w-3/12">
@@ -24,6 +30,7 @@ function ServiceModal({ label, service, description, modalServiceIsOpen }) {
           location={'services'}
           category={label}
           modalServiceIsOpen={modalServiceIsOpen}
+          setShowProjectsModal={setShowProjectsModal}
         />
       </div>
     </div>

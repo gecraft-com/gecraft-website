@@ -1,20 +1,31 @@
 import { useCallback, useEffect, useState } from 'react'
 
 import PropTypes from 'prop-types'
+import { useDispatch, useSelector } from 'react-redux'
 
 import projects from '../../data/projects.json'
+import { selectProject } from '../redux/actions'
 import ModalWindow from './ModalWindow'
 import Project from './Project'
 import ProjectsModal from './ProjectsModal'
 
-function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
+function Projects({
+  location,
+  filteredItems,
+  category,
+  modalServiceIsOpen,
+  setShowProjectsModal,
+}) {
+  const dispatch = useDispatch()
+
+  const selectedProject = useSelector((state) => state.projects.selectProject)
+
   const [color, setColor] = useState({})
 
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
   const [filteredProjects, setFilteredProjects] = useState(projects)
 
-  const [selectedProject, setSelectedProject] = useState(null)
   const [label, setLabel] = useState('')
 
   useEffect(() => {
@@ -22,7 +33,10 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
   }, [location])
 
   const handleClick = useCallback((project) => {
-    setSelectedProject(project)
+    dispatch(selectProject(project))
+    {
+      location !== 'gallery' && setShowProjectsModal(true)
+    }
     setLabel(project.label)
     setModalIsOpen(true)
   }, [])
@@ -169,7 +183,7 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
           label={label}
           preventScroll={true}
         >
-          <ProjectsModal {...selectedProject} />
+          <ProjectsModal />
         </ModalWindow>
       )}
     </>

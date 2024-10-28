@@ -1,20 +1,21 @@
-import PropTypes from 'prop-types'
+import { useSelector } from 'react-redux'
 
-// TODO: add description for Visio Bible project
+function ProjectsModal() {
+  const selectedProject = useSelector((state) => state.projects.selectProject)
 
-function ProjectsModal({
-  client,
-  service,
-  img,
-  description1,
-  description2,
-  title1,
-  title2,
-  title3,
-  link,
-  screenshots,
-}) {
-  const { iPhone, desktop, pages, logo, advantage } = screenshots
+  const {
+    client,
+    service,
+    img,
+    description1,
+    description2,
+    title1,
+    title2,
+    title3,
+    link,
+    screenshots: { iPhone, desktop, pages, logo, advantage },
+  } = selectedProject
+
   return (
     <div className="px-[5.14vw] pt-[10.3vw] sm:px-[2.61vw] sm:pt-[5.22vw] lg:pt-[3vw] 2xl:pt-[2.91vw]">
       <div className="block pb-0 sm:flex sm:justify-between sm:gap-x-[3vw] sm:pb-[5.22vw] lg:pb-[3vw] 2xl:pb-[2.91vw]">
@@ -88,19 +89,6 @@ function ProjectsModal({
       </div>
     </div>
   )
-}
-
-ProjectsModal.propTypes = {
-  client: PropTypes.string.isRequired,
-  service: PropTypes.string,
-  img: PropTypes.string,
-  description1: PropTypes.string,
-  description2: PropTypes.string,
-  title1: PropTypes.string.isRequired,
-  title2: PropTypes.string.isRequired,
-  title3: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
-  screenshots: PropTypes.objectOf(PropTypes.string.isRequired),
 }
 
 export default ProjectsModal
