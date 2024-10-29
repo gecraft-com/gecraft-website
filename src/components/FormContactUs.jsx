@@ -31,7 +31,7 @@ function FormContactUs() {
 
   const getInputClassName = (fieldName, isValid, value) => {
     const baseClasses =
-      'animation-timeline animate-appear h-[24.11vw] w-full rounded-full border-4 bg-basic px-[13.35vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:h-[8.3vw] md:px-[4.5vw] md:text-[2.3vw] lg:h-[4.9vw] lg:px-[2.7vw] lg:text-[1.3vw] 2xl:h-[4.94vw]'
+      'animation-timeline animate-emergence h-[24.11vw] w-full rounded-full border-4 bg-basic px-[13.35vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:h-[8.3vw] md:px-[4.5vw] md:text-[2.3vw] lg:h-[4.9vw] lg:px-[2.7vw] lg:text-[1.3vw] 2xl:h-[4.94vw]'
 
     const shouldShowValidation = touchedFields[fieldName] || wasSubmitAttempted
 
@@ -150,7 +150,7 @@ function FormContactUs() {
             type="text"
             value={formData.phoneNumber}
             onChange={handleInputChange('phoneNumber')}
-            className="animation-timeline animate-appear h-[24.11vw] w-full rounded-full bg-basic px-[13.35vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:col-start-1 md:col-end-3 md:h-[8.3vw] md:px-[4.5vw] md:text-[2.3vw] lg:h-[4.9vw] lg:px-[2.7vw] lg:text-[1.3vw] 2xl:h-[4.94vw]"
+            className="animation-timeline animate-emergence h-[24.11vw] w-full rounded-full bg-basic px-[13.35vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:col-start-1 md:col-end-3 md:h-[8.3vw] md:px-[4.5vw] md:text-[2.3vw] lg:h-[4.9vw] lg:px-[2.7vw] lg:text-[1.3vw] 2xl:h-[4.94vw]"
           />
 
           <textarea
@@ -158,12 +158,12 @@ function FormContactUs() {
             name="message"
             value={formData.message}
             onChange={handleInputChange('message')}
-            className="animation-timeline animate-appear h-[52.32vw] w-full resize-none rounded-[15vw] bg-basic px-[13.35vw] py-[11.55vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:col-start-1 md:col-end-3 md:h-[18vw] md:rounded-[5vw] md:px-[4.5vw] md:py-[3.98vw] md:text-[2.3vw] lg:h-[10.62vw] lg:rounded-[3.4vw] lg:px-[2.7vw] lg:py-[2.35vw] lg:text-[1.3vw]"
+            className="animation-timeline animate-emergence h-[52.32vw] w-full resize-none rounded-[15vw] bg-basic px-[13.35vw] py-[11.55vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:col-start-1 md:col-end-3 md:h-[18vw] md:rounded-[5vw] md:px-[4.5vw] md:py-[3.98vw] md:text-[2.3vw] lg:h-[10.62vw] lg:rounded-[3.4vw] lg:px-[2.7vw] lg:py-[2.35vw] lg:text-[1.3vw]"
           />
 
           <button
             disabled={isSubmittingForm}
-            className="animation-timeline animate-appear justify-self-end md:col-start-2"
+            className="animation-timeline animate-emergence justify-self-end md:col-start-2"
           >
             {isSubmittingForm ? (
               <img

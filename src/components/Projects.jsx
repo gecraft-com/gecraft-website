@@ -26,8 +26,10 @@ function Projects({
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
   const [filteredProjects, setFilteredProjects] = useState(projects)
-
   const [label, setLabel] = useState('')
+
+  const [overlay, setOverlay] = useState('opacity-0')
+  const [modalWindow, setModalWindow] = useState('translate-y-full')
 
   useEffect(() => {
     setColor(location === 'gallery' ? { color: 'white' } : {})
@@ -40,10 +42,18 @@ function Projects({
     }
     setLabel(project.label)
     setModalIsOpen(true)
+    setTimeout(() => {
+      setOverlay('opacity-1')
+      setModalWindow('translate-y-0 delay-200')
+    }, 0)
   }, [])
 
   const handleCloseModal = () => {
-    setModalIsOpen(false)
+    setTimeout(() => {
+      setModalIsOpen(false)
+    }, 600)
+    setModalWindow('translate-y-full')
+    setOverlay('opacity-0 delay-200')
   }
 
   useEffect(() => {
@@ -110,13 +120,13 @@ function Projects({
 
         projectsCarouselGallery.style.cssText = `
           transform: translateX(${-xGallery}%);
-          transition-duration: 150ms;
+          transition-duration: 300ms;
           `
       }
 
       function handleMouseOut() {
         projectsCarouselGallery.style.cssText =
-          'transform: translateX(0); transition-duration: 150ms;'
+          'transform: translateX(0); transition-duration: 300ms;'
       }
 
       return () => {
@@ -131,7 +141,7 @@ function Projects({
       {location === 'services' &&
         filteredProjects !== undefined &&
         filteredProjects.length > 0 && (
-          <div className="projectsSliderServices z-10 mt-[39.2vw] w-full self-end md:mt-[5.03vw] 1024:md:relative 1024:h-[40vw] 1024:w-full 1024:overflow-hidden 1024:duration-500 1024:hover:-translate-x-[3.5vw] 1024:hover:scale-125 1024:hover:duration-500 lg:mt-[1.57vw] lg:h-[28vw] lg:hover:-translate-x-[5vw] 2xl:h-[21vw]">
+          <div className="projectsSliderServices animation-timeline z-10 mt-[39.2vw] w-full animate-emergence self-end md:mt-[5.03vw] 1024:md:relative 1024:h-[40vw] 1024:w-full 1024:overflow-hidden 1024:duration-500 1024:hover:-translate-x-[3.5vw] 1024:hover:scale-125 1024:hover:duration-500 lg:mt-[1.57vw] lg:h-[28vw] lg:hover:-translate-x-[5vw] 2xl:h-[21vw]">
             <div className="projectsCarouselServices flex flex-col gap-y-10 1024:absolute 1024:flex-row 1024:gap-x-2.5">
               {filteredProjects.map((project, index) => (
                 <Project
@@ -156,7 +166,7 @@ function Projects({
           </div>
         )}
       {location === 'gallery' && filteredItems.length > 0 && (
-        <div className="projectsSliderGallery animation-timeline z-10 mt-[39.2vw] w-full animate-appear self-end md:mt-[5.03vw] lg:relative lg:mt-[1.57vw] lg:h-[28vw] lg:duration-500 lg:hover:-translate-x-[5vw] lg:hover:scale-125 lg:hover:duration-500 2xl:h-[21vw]">
+        <div className="projectsSliderGallery animation-timeline z-10 mt-[39.2vw] w-full animate-emergence self-end md:mt-[5.03vw] lg:relative lg:mt-[1.57vw] lg:h-[28vw] lg:duration-500 lg:hover:-translate-x-[5vw] lg:hover:scale-125 lg:hover:duration-500 2xl:h-[21vw]">
           <div className="projectsCarouselGallery flex flex-col gap-y-10 md:flex-row md:flex-wrap md:gap-x-2.5 lg:absolute lg:flex-nowrap lg:overflow-hidden">
             {filteredItems.map((project, index) => (
               <Project
@@ -183,6 +193,8 @@ function Projects({
           modalIsOpen={modalIsOpen}
           label={label}
           preventScroll={true}
+          overlay={overlay}
+          modalWindow={modalWindow}
         >
           <ProjectsModal />
         </ModalWindow>

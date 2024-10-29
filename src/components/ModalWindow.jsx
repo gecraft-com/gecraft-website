@@ -5,9 +5,17 @@ import Modal from 'react-modal'
 
 Modal.setAppElement('#root')
 
-function ModalWindow({ modalIsOpen, onCloseModal, children, label }) {
+function ModalWindow({
+  modalIsOpen,
+  onCloseModal,
+  children,
+  label,
+  overlay,
+  modalWindow,
+}) {
   useEffect(() => {
     document.body.classList.toggle('overflow-hidden', modalIsOpen)
+
     return () => document.body.classList.remove('overflow-hidden')
   }, [modalIsOpen])
 
@@ -19,8 +27,8 @@ function ModalWindow({ modalIsOpen, onCloseModal, children, label }) {
       shouldCloseOnEsc={true}
       ariaHideApp={true}
       shouldReturnFocusAfterClose={false}
-      className="relative z-50 w-full max-w-[208.938rem]"
-      overlayClassName="fixed flex items-center flex-col px-0 md:px-10 py-12 md:py-10 top-0 left-0 w-full h-full bg-[#2E2E2ECC] overflow-hidden overflow-y-auto z-40 before:block after:block before:h-px after:h-px before:grow after:grow"
+      className={`${modalWindow} relative z-50 w-full max-w-[208.938rem] duration-300`}
+      overlayClassName={`${overlay} overflow-y-auto duration-300 fixed flex items-center flex-col px-0 md:px-10 py-12 md:py-10 top-0 left-0 w-full h-full bg-[#2E2E2ECC] overflow-hidden z-40 before:block after:block before:h-px after:h-px before:grow after:grow`}
     >
       <div
         id="modal-window"
@@ -48,17 +56,17 @@ function ModalWindow({ modalIsOpen, onCloseModal, children, label }) {
           Our services / {label}
         </h3>
         {children}
-        <p className="mt-[20.5vw] text-center text-[3.6vw] md:mt-[10.6vw] md:text-[1.77vw] lg:mt-[9.37vw] lg:text-[1.46vw] 2xl:mt-[7.26vw] 2xl:text-[0.93vw]">
+        <p className="animation-timeline mt-[20.5vw] animate-emergence text-center text-[3.6vw] md:mt-[10.6vw] md:text-[1.77vw] lg:mt-[9.37vw] lg:text-[1.46vw] 2xl:mt-[7.26vw] 2xl:text-[0.93vw]">
           Do you have a similar project?
         </p>
         <a
           href="#contactUs"
           onClick={onCloseModal}
-          className="mt-[5.15vw] block text-center text-[5.15vw] text-basic underline md:mt-[1.77vw] md:text-[2.65vw] lg:mt-[0.5vw] lg:text-[2.2vw] 2xl:mt-[0.59vw] 2xl:text-[1.4vw]"
+          className="animation-timeline mt-[5.15vw] block animate-emergence text-center text-[5.15vw] text-basic underline md:mt-[1.77vw] md:text-[2.65vw] lg:mt-[0.5vw] lg:text-[2.2vw] 2xl:mt-[0.59vw] 2xl:text-[1.4vw]"
         >
           Contact us
         </a>
-        <div className="mt-[20.5vw] flex h-[28.7vw] w-full items-center justify-center border-t border-ourServicesBtn text-center sm:mt-[10.5vw] sm:h-[13.05vw] md:mt-[10.6vw] md:h-[8.83vw] lg:mt-[9.37vw] lg:h-[6.14vw] 2xl:mt-[7.26vw] 2xl:h-[3.43vw]">
+        <div className="animation-timeline mt-[20.5vw] flex h-[28.7vw] w-full animate-emergence items-center justify-center border-t border-ourServicesBtn text-center sm:mt-[10.5vw] sm:h-[13.05vw] md:mt-[10.6vw] md:h-[8.83vw] lg:mt-[9.37vw] lg:h-[6.14vw] 2xl:mt-[7.26vw] 2xl:h-[3.43vw]">
           <button
             onClick={onCloseModal}
             className="h-[20.5vw] w-[98.3vw] rounded-full text-[3.6vw] uppercase sm:h-[10vw] sm:text-[1.83vw] md:h-[6vw] md:text-[1.42vw] lg:h-[5vw] lg:text-[0.84vw] 2xl:h-[2.8vw] 2xl:text-[0.47vw]"

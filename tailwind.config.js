@@ -49,23 +49,12 @@ export default {
           '0%': { opacity: '0', scale: '0.7' },
           '100%': { opacity: '1', scale: '1' },
         },
-        appear: {
-          '0%': { opacity: '0', scale: '0.8' },
-          '100%': { opacity: '1', scale: '1' },
-        },
-        infiniteText: {
-          '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(-51.97%)' },
-        },
       },
 
       animation: {
         descent: 'descent 300ms ease-in-out',
         lifting: 'lifting 500ms ease-in-out',
         emergence: 'emergence 200ms ease',
-        appear: 'appear linear',
-        infiniteText: 'infiniteText 5s linear infinite',
-        infiniteTextReverse: 'infiniteText 5s linear infinite reverse',
       },
     },
   },

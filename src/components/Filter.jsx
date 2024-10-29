@@ -4,7 +4,7 @@ import services from '../../data/services.json'
 
 function Filter({ handleFilterClick }) {
   return (
-    <div className="animation-timeline animate-appear hidden md:mt-[17.8vw] md:flex md:flex-wrap md:gap-5 lg:mt-[20.14vw] lg:gap-10 2xl:gap-20">
+    <div className="animation-timeline hidden animate-emergence md:mt-[17.8vw] md:flex md:flex-wrap md:gap-5 lg:mt-[20.14vw] lg:gap-10 2xl:gap-20">
       {services.map(({ label }, index) => (
         <label
           key={index}
