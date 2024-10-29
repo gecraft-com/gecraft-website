@@ -66,7 +66,7 @@ function ModalWindow({
         >
           Contact us
         </a>
-        <div className="animation-timeline mt-[20.5vw] flex h-[28.7vw] w-full animate-emergence items-center justify-center border-t border-ourServicesBtn text-center sm:mt-[10.5vw] sm:h-[13.05vw] md:mt-[10.6vw] md:h-[8.83vw] lg:mt-[9.37vw] lg:h-[6.14vw] 2xl:mt-[7.26vw] 2xl:h-[3.43vw]">
+        <div className="mt-[20.5vw] flex h-[28.7vw] w-full items-center justify-center border-t border-ourServicesBtn text-center sm:mt-[10.5vw] sm:h-[13.05vw] md:mt-[10.6vw] md:h-[8.83vw] lg:mt-[9.37vw] lg:h-[6.14vw] 2xl:mt-[7.26vw] 2xl:h-[3.43vw]">
           <button
             onClick={onCloseModal}
             className="h-[20.5vw] w-[98.3vw] rounded-full text-[3.6vw] uppercase sm:h-[10vw] sm:text-[1.83vw] md:h-[6vw] md:text-[1.42vw] lg:h-[5vw] lg:text-[0.84vw] 2xl:h-[2.8vw] 2xl:text-[0.47vw]"
