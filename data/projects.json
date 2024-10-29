@@ -3,7 +3,7 @@
         "id": "1",
         "label": "Web development",
         "client": "LEVEL",
-        "img": "img/MacBook.jpg",
+        "img": "img/level_macbook.jpg",
         "service": "Custom Software Development, API Development, Infrastructure & DevOps",
         "description1": "LEVEL is a cutting-edge, customizable Translation Management System designed to support any Bible translation method. It can be adapted to various translation approaches and materials. The platform is focused on simplifying the translation process for nations with diverse linguistic backgrounds and varying levels of computer literacy. LEVEL provides a step-by-step workflow for managing translation projects.",
         "description2": "GeCraft takes a comprehensive approach in the development of LEVEL, providing expertise in custom software development, API creation, DevOps, and AI feature development.",
@@ -16,7 +16,7 @@
             "desktop": "img/level_desktop.png",
             "iPhone": "img/level_iphone15.png",
             "pages": "img/level_bg.png",
-            "logo": "img/level_logo.png",
+            "logo": "img/level_logo.svg",
             "advantage": "img/level_advantage.png"
         }
     },
@@ -26,7 +26,7 @@
         "client": "BibleVis",
         "img": "img/bibleVis.jpg",
         "service": "Custom Software Development, API Development, Infrastructure & DevOps",
-        "description1": "",
+        "description1": "Bibleviz is a Christian stock image website designed for both image creators and people who want to tell a story more effectively. The platform supports images created using artificial intelligence, as well as a more traditional version.",
         "description2": "",
         "title1": "Convenient step-by-step translation system",
         "title2": "Thoughtful design",
