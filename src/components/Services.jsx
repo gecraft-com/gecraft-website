@@ -98,7 +98,7 @@ function Services() {
           <button
             key={service.id}
             onClick={() => handleClick(service)}
-            className="button animation-timeline relative z-10 mb-[1vw] table animate-emergence whitespace-nowrap px-[2.84vw] text-center text-[8.45vw] last:mb-0 hover:text-basic md:mb-0 md:px-[4.33vw] md:text-[4.25vw] lg:px-[3.55vw] lg:text-[5.52vw] 2xl:px-[4.1vw]"
+            className="button animation-timeline relative z-10 mb-[1vw] table animate-emergence whitespace-nowrap px-[2.84vw] text-center text-[8.45vw] last:mb-0 hover:text-basic active:rounded-full active:bg-buttonHover md:mb-0 md:px-[4.33vw] md:text-[4.25vw] 1024:active:bg-transparent lg:px-[3.55vw] lg:text-[5.52vw] 2xl:px-[4.1vw]"
             onMouseEnter={() => {
               setId(service.id)
             }}
