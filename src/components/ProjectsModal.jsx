@@ -22,10 +22,10 @@ function ProjectsModal() {
     <div className="px-[5.14vw] pt-[10.3vw] sm:px-[2.61vw] sm:pt-[5.22vw] lg:pt-[3vw] 2xl:pt-[2.91vw]">
       <div className="block pb-0 sm:flex sm:justify-between sm:gap-x-[3vw] sm:pb-[5.22vw] lg:pb-[3vw] 2xl:pb-[2.91vw]">
         <div className="w-full sm:w-7/12 2xl:w-[25.35vw]">
-          <h2 className="whitespace-nowrap text-[10.3vw] delay-1000 sm:text-[5.22vw] 2xl:text-[3.72vw]">
+          <h2 className="animation-timeline animate-emergence whitespace-nowrap text-[10.3vw] delay-1000 sm:text-[5.22vw] 2xl:text-[3.72vw]">
             {client}
           </h2>
-          <p className="mt-[2.6vw] text-[3.6vw] uppercase sm:mt-[1.31vw] sm:text-[1.83vw] md:text-[1.56vw] lg:text-[1.15vw] 2xl:mt-[0.59vw] 2xl:text-[0.93vw]">
+          <p className="animation-timeline mt-[2.6vw] animate-emergence text-[3.6vw] uppercase sm:mt-[1.31vw] sm:text-[1.83vw] md:text-[1.56vw] lg:text-[1.15vw] 2xl:mt-[0.59vw] 2xl:text-[0.93vw]">
             {service}
           </p>
           <img
@@ -50,7 +50,11 @@ function ProjectsModal() {
           >
             See the website
           </a>
-          <img className="mt-[10.3vw] w-full sm:hidden" src={img} alt={client} />
+          <img
+            className="animation-timeline mt-[10.3vw] w-full animate-emergence sm:hidden"
+            src={img}
+            alt={client}
+          />
         </div>
       </div>
       <div className="sm:grid sm:grid-cols-2 sm:gap-[0.5vw] 2xl:gap-[0.3vw]">
