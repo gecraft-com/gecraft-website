@@ -24,7 +24,7 @@ function Header() {
       </p>
 
       <a
-        className="animation-timeline z-10 mt-[42.3vw] flex h-[20.5vw] w-[89.7vw] animate-emergence items-center justify-center rounded-full border-2 border-basic text-[4.1vw] text-base font-semibold text-basic duration-150 hover:border-buttonHover hover:bg-buttonHover hover:duration-150 active:border-buttonHover active:bg-buttonHover md:mt-[8.84vw] md:h-[5.93vw] md:w-[32.7vw] md:animate-lifting md:text-[1.77vw] lg:mt-[6.77vw] lg:h-[4.17vw] lg:w-[28.1vw] lg:text-[1.36vw] 2xl:mt-[6vw] 2xl:h-[4.15vw] 2xl:w-[30.84vw] 2xl:text-[1.4vw]"
+        className="animation-timeline z-10 mt-[42.3vw] flex h-[20.5vw] w-[89.7vw] animate-emergence items-center justify-center rounded-full border-2 border-basic text-[4.1vw] text-base font-semibold text-basic duration-150 hover:duration-150 active:border-buttonHover active:bg-buttonHover md:mt-[8.84vw] md:h-[5.93vw] md:w-[32.7vw] md:animate-lifting md:text-[1.77vw] 1024:hover:border-buttonHover 1024:hover:bg-buttonHover 1024:active:bg-transparent lg:mt-[6.77vw] lg:h-[4.17vw] lg:w-[28.1vw] lg:text-[1.36vw] 2xl:mt-[6vw] 2xl:h-[4.15vw] 2xl:w-[30.84vw] 2xl:text-[1.4vw]"
         href="#contactUs"
       >
         Request a Consultation
