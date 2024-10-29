@@ -38,9 +38,9 @@ function ServiceModal({
 }
 
 ServiceModal.propTypes = {
-  label: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  service: PropTypes.string.isRequired,
+  label: PropTypes.string,
+  description: PropTypes.string,
+  service: PropTypes.string,
   setShowProjectsModal: PropTypes.func,
   modalServiceIsOpen: PropTypes.bool,
 }
