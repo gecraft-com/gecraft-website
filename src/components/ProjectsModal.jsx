@@ -29,7 +29,7 @@ function ProjectsModal() {
             {service}
           </p>
           <img
-            className="hidden w-[54.5rem] sm:mt-[3vw] sm:block 2xl:mt-[1.46vw]"
+            className="animation-timeline hidden w-[54.5rem] animate-emergence sm:mt-[3vw] sm:block 2xl:mt-[1.46vw]"
             src={img}
             alt={client}
           />
@@ -46,7 +46,7 @@ function ProjectsModal() {
           <a
             href={link}
             target="_blank"
-            className="mt-[10.3vw] text-[5.14vw] underline sm:mt-[3vw] sm:text-[2.61vw] md:mt-[2vw] md:text-[1.83vw] lg:mt-0 lg:text-[1.24vw] 2xl:text-[0.93vw]"
+            className="animation-timeline mt-[10.3vw] animate-emergence text-[5.14vw] underline sm:mt-[3vw] sm:text-[2.61vw] md:mt-[2vw] md:text-[1.83vw] lg:mt-0 lg:text-[1.24vw] 2xl:text-[0.93vw]"
           >
             See the website
           </a>
