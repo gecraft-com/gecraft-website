@@ -24,12 +24,11 @@ function Projects({
   const [color, setColor] = useState({})
 
   const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [overlay, setOverlay] = useState('opacity-0')
+  const [modalWindow, setModalWindow] = useState('translate-y-full')
 
   const [filteredProjects, setFilteredProjects] = useState(projects)
   const [label, setLabel] = useState('')
-
-  const [overlay, setOverlay] = useState('opacity-0')
-  const [modalWindow, setModalWindow] = useState('translate-y-full')
 
   useEffect(() => {
     setColor(location === 'gallery' ? { color: 'white' } : {})
@@ -69,8 +68,8 @@ function Projects({
 
       let coordX = 0
 
-      projectsSliderServices.addEventListener('mousemove', handleMouseMove)
-      projectsSliderServices.addEventListener('mouseout', handleMouseOut)
+      projectsCarouselServices.addEventListener('mousemove', handleMouseMove)
+      projectsCarouselServices.addEventListener('mouseout', handleMouseOut)
 
       const percent = () => {
         if (window.innerWidth <= 1133) {
@@ -120,13 +119,13 @@ function Projects({
 
         projectsCarouselGallery.style.cssText = `
           transform: translateX(${-xGallery}%);
-          transition-duration: 300ms;
+          transition-duration: 150ms;
           `
       }
 
       function handleMouseOut() {
         projectsCarouselGallery.style.cssText =
-          'transform: translateX(0); transition-duration: 300ms;'
+          'transform: translateX(0); transition-duration: 150ms;'
       }
 
       return () => {
