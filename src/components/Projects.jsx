@@ -87,13 +87,14 @@ function Projects({
 
         projectsCarouselServices.style.cssText = `
           transform: translateX(${-xServices}%);
-          transition-duration: 150ms;
+          transition-property: translateX;
+          transition-duration: 500ms;
           `
       }
 
       function handleMouseOut() {
         projectsCarouselServices.style.cssText =
-          'transform: translateX(0); transition-duration: 150ms;'
+          'transform: translateX(0); transition-duration: 500ms;'
       }
 
       return () => {
@@ -119,13 +120,14 @@ function Projects({
 
         projectsCarouselGallery.style.cssText = `
           transform: translateX(${-xGallery}%);
-          transition-duration: 150ms;
+          transition-property: translateX;
+          transition-duration: 500ms;
           `
       }
 
       function handleMouseOut() {
         projectsCarouselGallery.style.cssText =
-          'transform: translateX(0); transition-duration: 150ms;'
+          'transform: translateX(0); transition-duration: 500ms;'
       }
 
       return () => {
@@ -141,7 +143,7 @@ function Projects({
         filteredProjects !== undefined &&
         filteredProjects.length > 0 && (
           <div className="projectsSliderServices animation-timeline z-10 mt-[39.2vw] w-full animate-emergence self-end md:mt-[5.03vw] 1024:md:relative 1024:h-[40vw] 1024:w-full 1024:overflow-hidden 1024:duration-500 1024:hover:-translate-x-[3.5vw] 1024:hover:scale-125 1024:hover:duration-500 lg:mt-[1.57vw] lg:h-[28vw] lg:hover:-translate-x-[5vw] 2xl:h-[21vw]">
-            <div className="projectsCarouselServices flex flex-col gap-y-10 1024:absolute 1024:flex-row 1024:gap-x-2.5">
+            <div className="projectsCarouselServices pointer-events-auto flex flex-col gap-y-10 1024:absolute 1024:flex-row 1024:gap-x-2.5">
               {filteredProjects.map((project, index) => (
                 <Project
                   key={index}
