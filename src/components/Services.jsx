@@ -2,22 +2,41 @@ import { useCallback, useEffect, useState } from 'react'
 
 import services from '../../data/services.json'
 import ModalWindow from './ModalWindow'
+import ProjectsModal from './ProjectsModal'
 import ServiceModal from './ServiceModal'
 
 function Services() {
+  const html = document.querySelector('html')
+
   const [modalIsOpen, setModalIsOpen] = useState(false)
+
+  const [showProjectsModal, setShowProjectsModal] = useState(false)
 
   const [selectedService, setSelectedService] = useState(null)
   const [label, setLabel] = useState('')
 
+  const [overlay, setOverlay] = useState('opacity-0')
+  const [modalWindow, setModalWindow] = useState('translate-y-full')
+
   const handleClick = useCallback((service) => {
+    html.classList.add('overflow-hidden')
     setSelectedService(service)
     setLabel(service.label)
     setModalIsOpen(true)
+    setTimeout(() => {
+      setOverlay('opacity-1')
+      setModalWindow('translate-y-0 delay-200')
+    }, 0)
   }, [])
 
   const handleCloseModal = () => {
-    setModalIsOpen(false)
+    setTimeout(() => {
+      html.classList.remove('overflow-hidden')
+      setShowProjectsModal(false)
+      setModalIsOpen(false)
+    }, 600)
+    setModalWindow('translate-y-full')
+    setOverlay('opacity-0 delay-200')
   }
 
   const [id, setId] = useState('1')
@@ -65,10 +84,10 @@ function Services() {
     >
       <div className="flex w-1/4 flex-col items-start md:mt-[2.5vw]">
         <div className="inline-block flex-col md:sticky md:top-16">
-          <h3 className="animation-timeline animate-appear ml-[2.84vw] whitespace-nowrap text-left text-[3.08vw] font-extrabold uppercase before:mr-[1.3vw] before:inline-flex before:h-[2.31vw] before:w-[2.31vw] before:rounded-full before:bg-basic md:ml-0 md:text-[1.06vw] md:before:mr-[0.45vw] md:before:h-[0.8vw] md:before:w-[0.8vw] lg:text-[0.63vw] lg:before:mr-[0.27vw] lg:before:h-[0.47vw] lg:before:w-[0.47vw] 2xl:text-[0.35vw] 2xl:before:mr-[0.15vw] 2xl:before:h-[0.263vw] 2xl:before:w-[0.263vw]">
+          <h3 className="animation-timeline ml-[2.84vw] animate-emergence whitespace-nowrap text-left text-[3.08vw] font-extrabold uppercase before:mr-[1.3vw] before:inline-flex before:h-[2.31vw] before:w-[2.31vw] before:rounded-full before:bg-basic md:ml-0 md:text-[1.06vw] md:before:mr-[0.45vw] md:before:h-[0.8vw] md:before:w-[0.8vw] lg:text-[0.63vw] lg:before:mr-[0.27vw] lg:before:h-[0.47vw] lg:before:w-[0.47vw] 2xl:text-[0.35vw] 2xl:before:mr-[0.15vw] 2xl:before:h-[0.263vw] 2xl:before:w-[0.263vw]">
             Our services
           </h3>
-          <h4 className="animation-timeline animate-appear ml-[2.84vw] mt-[10vw] w-[90vw] text-left text-[9vw] leading-tight md:ml-0 md:mt-[2.74vw] md:w-[32vw] md:text-[3.185vw] lg:mt-[1.67vw] lg:w-[23vw] lg:text-[2.1vw] 2xl:mt-[1.3vw] 2xl:w-[14vw] 2xl:text-[1.4vw]">
+          <h4 className="animation-timeline ml-[2.84vw] mt-[10vw] w-[90vw] animate-emergence text-left text-[9vw] leading-tight md:ml-0 md:mt-[2.74vw] md:w-[32vw] md:text-[3.185vw] lg:mt-[1.67vw] lg:w-[23vw] lg:text-[2.1vw] 2xl:mt-[1.3vw] 2xl:w-[14vw] 2xl:text-[1.4vw]">
             Skills to enhance your performance
           </h4>
         </div>
@@ -79,7 +98,7 @@ function Services() {
           <button
             key={service.id}
             onClick={() => handleClick(service)}
-            className="button animation-timeline animate-appear relative z-10 mb-[1vw] table whitespace-nowrap px-[2.84vw] text-center text-[8.45vw] last:mb-0 hover:text-basic md:mb-0 md:px-[4.33vw] md:text-[4.25vw] lg:px-[3.55vw] lg:text-[5.52vw] 2xl:px-[4.1vw]"
+            className="button animation-timeline relative z-10 mb-[1vw] table animate-emergence whitespace-nowrap px-[2.84vw] text-center text-[8.45vw] last:mb-0 hover:text-basic active:rounded-full active:bg-buttonHover md:mb-0 md:px-[4.33vw] md:text-[4.25vw] 1024:active:bg-transparent lg:px-[3.55vw] lg:text-[5.52vw] 2xl:px-[4.1vw]"
             onMouseEnter={() => {
               setId(service.id)
             }}
@@ -88,15 +107,23 @@ function Services() {
           </button>
         ))}
         <div className={classNameHoverBlock()}></div>
-        {modalIsOpen && selectedService && (
-          <ModalWindow
-            onCloseModal={handleCloseModal}
-            modalIsOpen={modalIsOpen}
-            label={label}
-          >
-            <ServiceModal {...selectedService} modalServiceIsOpen={modalIsOpen} />
-          </ModalWindow>
-        )}
+        <ModalWindow
+          onCloseModal={handleCloseModal}
+          modalIsOpen={modalIsOpen}
+          label={label}
+          preventScroll={true}
+          overlay={overlay}
+          modalWindow={modalWindow}
+        >
+          {!showProjectsModal && (
+            <ServiceModal
+              {...selectedService}
+              setShowProjectsModal={setShowProjectsModal}
+              modalServiceIsOpen={modalIsOpen}
+            />
+          )}
+          {showProjectsModal && <ProjectsModal />}
+        </ModalWindow>
       </div>
     </div>
   )

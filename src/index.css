@@ -22,6 +22,11 @@
     text-align: center;
   }
 
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: rgba(255, 255, 255, 0.0);
+  }
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -85,14 +90,16 @@ body {
 
 .animation-timeline {
   animation-timeline: view();
-  animation-range: entry 0 cover 30%;
+  animation-range: entry 0 cover 50%;
 }
 
 .hover-block {
+display: none;
+
+  @media screen and (min-width: 1024px) {
+    display: block;
   position: absolute;
   left: 0;
-
-  height: 12.4vw;
 
   border-radius: 7vw;
 
@@ -109,7 +116,6 @@ body {
   -moz-box-shadow: -1px 4px 51px 22px rgba(190,224,255,1);
   box-shadow: -1px 4px 51px 22px rgba(190,224,255,1);
 
-  @media screen and (min-width: 768px) {
     height: 7vw;
   }
 
@@ -123,8 +129,8 @@ body {
 }
 
 .button:nth-child(1):hover~.hover-block{
-  width: 70vw;
-  top: 0.2vw;
+  @media screen and (min-width: 1024px) {
+
   opacity: 1;
 
   transform: translate(0, 0) rotate(0) scale(1);
@@ -134,7 +140,6 @@ body {
   -moz-box-shadow: 0 0 0 0 rgba(190,224,255,1);
   box-shadow: 0 0 0 0 rgba(190,224,255,1);
 
-  @media screen and (min-width: 768px) {
     width: 41vw;
     top: 0.2vw;
   }
@@ -146,14 +151,11 @@ body {
 
   @media screen and (min-width: 1922px) {
     width: 49.1vw;
-    top: 0.4vw;
   }
 }
 
 .button:nth-child(2):hover~.hover-block{
-  width: 70vw;
-  top: 13.8vw;
-
+  @media screen and (min-width: 1024px) {
   opacity: 1;
 
   transform: translate(0, 0) rotate(0) scale(1);
@@ -163,7 +165,6 @@ body {
   -moz-box-shadow: 0 0 0 0 rgba(190,224,255,1);
   box-shadow: 0 0 0 0 rgba(190,224,255,1);
 
-  @media screen and (min-width: 768px) {
     width: 41vw;
     top: 6.5vw;
   }
@@ -180,9 +181,7 @@ body {
 }
 
 .button:nth-child(3):hover~.hover-block{
-  width: 70vw;
-  top: 27.5vw;
-
+  @media screen and (min-width: 1024px) {
   opacity: 1;
 
   transform: translate(0, 0) rotate(0) scale(1);
@@ -192,7 +191,6 @@ body {
   -moz-box-shadow: 0 0 0 0 rgba(190,224,255,1);
   box-shadow: 0 0 0 0 rgba(190,224,255,1);
 
-  @media screen and (min-width: 768px) {
     width: 40vw;
     top: 12.9vw;
   }
@@ -209,9 +207,7 @@ body {
 }
 
 .button:nth-child(4):hover~.hover-block{
-  width: 95vw;
-  top: 41.2vw;
-
+  @media screen and (min-width: 1024px) {
   opacity: 1;
 
   transform: translate(0, 0) rotate(0) scale(1);
@@ -221,7 +217,6 @@ body {
   -moz-box-shadow: 0 0 0 0 rgba(190,224,255,1);
   box-shadow: 0 0 0 0 rgba(190,224,255,1);
 
-  @media screen and (min-width: 768px) {
     width: 52.5vw;
     top: 19.2vw;
   }
@@ -230,17 +225,10 @@ body {
     width: 64.7vw;
     top: 25.2vw;
   }
-
-  @media screen and (min-width: 1922px) {
-    width: 64.7vw;
-    top: 25.2vw;
-  }
 }
 
 .button:nth-child(5):hover~.hover-block{
-  width: 96vw;
-  top: 54.7vw;
-
+  @media screen and (min-width: 1024px) {
   opacity: 1;
 
   transform: translate(0, 0) rotate(0) scale(1);
@@ -250,7 +238,6 @@ body {
   -moz-box-shadow: 0 0 0 0 rgba(190,224,255,1);
   box-shadow: 0 0 0 0 rgba(190,224,255,1);
 
-  @media screen and (min-width: 768px) {
     width: 53.5vw;
     top: 25.6vw;
   }
@@ -259,17 +246,10 @@ body {
     width: 65vw;
     top: 33.5vw;
   }
-
-  @media screen and (min-width: 1922px) {
-    width: 65vw;
-    top: 33.5vw;
-  }
 }
 
 .button:nth-child(6):hover~.hover-block{
-  width: 64vw;
-  top: 68.5vw;
-
+  @media screen and (min-width: 1024px) {
   opacity: 1;
 
   transform: translate(0, 0) rotate(0) scale(1);
@@ -279,17 +259,11 @@ body {
   -moz-box-shadow: 0 0 0 0 rgba(190,224,255,1);
   box-shadow: 0 0 0 0 rgba(190,224,255,1);
 
-  @media screen and (min-width: 768px) {
     width: 38.2vw;
     top: 32vw;
   }
 
   @media screen and (min-width: 1133px) {
-    width: 45.2vw;
-    top: 41.7vw;
-  }
-
-  @media screen and (min-width: 1922px) {
     width: 45.2vw;
     top: 41.7vw;
   }

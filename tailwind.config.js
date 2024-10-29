@@ -49,17 +49,12 @@ export default {
           '0%': { opacity: '0', scale: '0.7' },
           '100%': { opacity: '1', scale: '1' },
         },
-        appear: {
-          '0%': { opacity: '0', scale: '0.8' },
-          '100%': { opacity: '1', scale: '1' },
-        },
       },
 
       animation: {
         descent: 'descent 300ms ease-in-out',
         lifting: 'lifting 500ms ease-in-out',
         emergence: 'emergence 200ms ease',
-        appear: 'appear linear',
       },
     },
   },

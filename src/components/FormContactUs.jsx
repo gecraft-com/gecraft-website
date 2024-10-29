@@ -31,7 +31,7 @@ function FormContactUs() {
 
   const getInputClassName = (fieldName, isValid, value) => {
     const baseClasses =
-      'animation-timeline animate-appear h-[24.11vw] w-full rounded-full border-4 bg-basic px-[13.35vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:h-[8.3vw] md:px-[4.5vw] md:text-[2.3vw] lg:h-[4.9vw] lg:px-[2.7vw] lg:text-[1.3vw] 2xl:h-[4.94vw]'
+      'animation-timeline animate-emergence h-[24.11vw] w-full rounded-full border-4 bg-basic px-[13.35vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:h-[8.3vw] md:px-[4.5vw] md:text-[2.3vw] lg:h-[4.9vw] lg:px-[2.7vw] lg:text-[1.3vw] 2xl:h-[4.94vw]'
 
     const shouldShowValidation = touchedFields[fieldName] || wasSubmitAttempted
 
@@ -95,7 +95,7 @@ function FormContactUs() {
     <div className="flex min-h-[185vw] w-full flex-wrap justify-center gap-4 md:min-h-[48.6vw] md:flex-nowrap lg:min-h-[29.5vw] 2xl:min-h-[26vw]">
       {submitMessage ? (
         <div className="pt-[30vw] text-center md:self-center md:pt-0">
-          <p className="text-green-600 text-[10vw] font-bold md:text-[5vw] lg:text-[2.5vw] 2xl:text-[1.5vw]">
+          <p className="text-[10vw] font-bold text-green-600 md:text-[5vw] lg:text-[2.5vw] 2xl:text-[1.5vw]">
             Thank You!
           </p>
           <p className="mt-[5vw] text-[4.2vw] md:mt-[2vw] md:text-[1.5vw] lg:w-[40vw] lg:text-[1vw] 2xl:mt-[1vw] 2xl:text-[0.75vw]">
@@ -121,7 +121,7 @@ function FormContactUs() {
               className={getInputClassName('name', isNameValid, formData.name)}
             />
             {wasSubmitAttempted && !isNameValid && (
-              <span className="text-red-500 absolute right-[13.35vw] top-[2vw] text-[4.11vw] md:right-[4.5vw] md:top-[0.8vw] md:text-[1.42vw] lg:right-[2.7vw] lg:top-[0.4vw] lg:text-[0.84vw] 2xl:top-[0.6vw] 2xl:text-[0.47vw]">
+              <span className="absolute right-[13.35vw] top-[2vw] text-[4.11vw] text-red-500 md:right-[4.5vw] md:top-[0.8vw] md:text-[1.42vw] lg:right-[2.7vw] lg:top-[0.4vw] lg:text-[0.84vw] 2xl:top-[0.6vw] 2xl:text-[0.47vw]">
                 {getErrorMessage('name')}
               </span>
             )}
@@ -138,7 +138,7 @@ function FormContactUs() {
               className={getInputClassName('email', isEmailValid, formData.email)}
             />
             {wasSubmitAttempted && !isEmailValid && (
-              <span className="text-red-500 absolute right-[13.35vw] top-[2vw] text-[4.11vw] md:right-[4.5vw] md:top-[0.8vw] md:text-[1.42vw] lg:right-[2.7vw] lg:top-[0.4vw] lg:text-[0.84vw] 2xl:top-[0.6vw] 2xl:text-[0.47vw]">
+              <span className="absolute right-[13.35vw] top-[2vw] text-[4.11vw] text-red-500 md:right-[4.5vw] md:top-[0.8vw] md:text-[1.42vw] lg:right-[2.7vw] lg:top-[0.4vw] lg:text-[0.84vw] 2xl:top-[0.6vw] 2xl:text-[0.47vw]">
                 {getErrorMessage('email')}
               </span>
             )}
@@ -150,7 +150,7 @@ function FormContactUs() {
             type="text"
             value={formData.phoneNumber}
             onChange={handleInputChange('phoneNumber')}
-            className="animation-timeline animate-appear h-[24.11vw] w-full rounded-full bg-basic px-[13.35vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:col-start-1 md:col-end-3 md:h-[8.3vw] md:px-[4.5vw] md:text-[2.3vw] lg:h-[4.9vw] lg:px-[2.7vw] lg:text-[1.3vw] 2xl:h-[4.94vw]"
+            className="animation-timeline h-[24.11vw] w-full animate-emergence rounded-full bg-basic px-[13.35vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:col-start-1 md:col-end-3 md:h-[8.3vw] md:px-[4.5vw] md:text-[2.3vw] lg:h-[4.9vw] lg:px-[2.7vw] lg:text-[1.3vw] 2xl:h-[4.94vw]"
           />
 
           <textarea
@@ -158,12 +158,12 @@ function FormContactUs() {
             name="message"
             value={formData.message}
             onChange={handleInputChange('message')}
-            className="animation-timeline animate-appear h-[52.32vw] w-full resize-none rounded-[15vw] bg-basic px-[13.35vw] py-[11.55vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:col-start-1 md:col-end-3 md:h-[18vw] md:rounded-[5vw] md:px-[4.5vw] md:py-[3.98vw] md:text-[2.3vw] lg:h-[10.62vw] lg:rounded-[3.4vw] lg:px-[2.7vw] lg:py-[2.35vw] lg:text-[1.3vw]"
+            className="animation-timeline h-[52.32vw] w-full animate-emergence resize-none rounded-[15vw] bg-basic px-[13.35vw] py-[11.55vw] text-[7vw] text-white placeholder:text-white placeholder:duration-150 placeholder:focus:text-opacity-15 md:col-start-1 md:col-end-3 md:h-[18vw] md:rounded-[5vw] md:px-[4.5vw] md:py-[3.98vw] md:text-[2.3vw] lg:h-[10.62vw] lg:rounded-[3.4vw] lg:px-[2.7vw] lg:py-[2.35vw] lg:text-[1.3vw]"
           />
 
           <button
             disabled={isSubmittingForm}
-            className="animation-timeline animate-appear justify-self-end md:col-start-2"
+            className="animation-timeline animate-emergence justify-self-end md:col-start-2"
           >
             {isSubmittingForm ? (
               <img
@@ -175,7 +175,7 @@ function FormContactUs() {
               <img
                 src="img/submit.svg"
                 alt="submit"
-                className="rounded-full border border-basic bg-transparent px-[7.7vw] py-[8.34vw] duration-150 hover:border-buttonHover hover:bg-buttonHover hover:duration-150 md:px-[2.61vw] md:py-[2.83vw] lg:px-[1.54vw] lg:py-[1.67vw] 2xl:w-[6.824vw] 2xl:px-[1.5vw] 2xl:py-[1.634vw]"
+                className="rounded-full border border-basic bg-transparent px-[7.7vw] py-[8.34vw] duration-150 hover:duration-150 active:border-buttonHover active:bg-buttonHover md:px-[2.61vw] md:py-[2.83vw] 1024:hover:border-buttonHover 1024:hover:bg-buttonHover 1024:active:bg-transparent lg:px-[1.54vw] lg:py-[1.67vw] 2xl:w-[6.824vw] 2xl:px-[1.5vw] 2xl:py-[1.634vw]"
               />
             )}
           </button>

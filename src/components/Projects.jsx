@@ -1,20 +1,33 @@
 import { useCallback, useEffect, useState } from 'react'
 
 import PropTypes from 'prop-types'
+import { useDispatch, useSelector } from 'react-redux'
 
 import projects from '../../data/projects.json'
+import { selectProject } from '../redux/actions'
+import { selectProjectSelector } from '../redux/selectors'
 import ModalWindow from './ModalWindow'
 import Project from './Project'
 import ProjectsModal from './ProjectsModal'
 
-function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
+function Projects({
+  location,
+  filteredItems,
+  category,
+  modalServiceIsOpen,
+  setShowProjectsModal,
+}) {
+  const dispatch = useDispatch()
+
+  const selectedProject = useSelector(selectProjectSelector)
+
   const [color, setColor] = useState({})
 
   const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [overlay, setOverlay] = useState('opacity-0')
+  const [modalWindow, setModalWindow] = useState('translate-y-full')
 
   const [filteredProjects, setFilteredProjects] = useState(projects)
-
-  const [selectedProject, setSelectedProject] = useState(null)
   const [label, setLabel] = useState('')
 
   useEffect(() => {
@@ -22,13 +35,24 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
   }, [location])
 
   const handleClick = useCallback((project) => {
-    setSelectedProject(project)
+    dispatch(selectProject(project))
+    {
+      location !== 'gallery' && setShowProjectsModal(true)
+    }
     setLabel(project.label)
     setModalIsOpen(true)
+    setTimeout(() => {
+      setOverlay('opacity-1')
+      setModalWindow('translate-y-0 delay-200')
+    }, 0)
   }, [])
 
   const handleCloseModal = () => {
-    setModalIsOpen(false)
+    setTimeout(() => {
+      setModalIsOpen(false)
+    }, 600)
+    setModalWindow('translate-y-full')
+    setOverlay('opacity-0 delay-200')
   }
 
   useEffect(() => {
@@ -39,13 +63,13 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
 
   useEffect(() => {
     if (modalServiceIsOpen && window.innerWidth > 1024) {
-      const projectsSlider = document.querySelector('.projectsSlider')
-      const projectsCarousel = document.querySelector('.projectsCarousel')
+      const projectsSliderServices = document.querySelector('.projectsSliderServices')
+      const projectsCarouselServices = document.querySelector('.projectsCarouselServices')
 
       let coordX = 0
 
-      projectsSlider.addEventListener('mousemove', handleMouseMove)
-      projectsSlider.addEventListener('mouseout', handleMouseOut)
+      projectsCarouselServices.addEventListener('mousemove', handleMouseMove)
+      projectsCarouselServices.addEventListener('mouseout', handleMouseOut)
 
       const percent = () => {
         if (window.innerWidth <= 1133) {
@@ -58,34 +82,64 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
       }
 
       function handleMouseMove(e) {
-        coordX = e.pageX - projectsSlider.offsetWidth
-        const x = (coordX / projectsSlider.offsetWidth) * percent()
+        coordX = e.pageX - projectsSliderServices.offsetWidth
+        const xServices = (coordX / projectsSliderServices.offsetWidth) * percent()
 
-        projectsCarousel.style.cssText = `
-          transform: translateX(${-x}%);
-          transition-duration: 150ms;
+        projectsCarouselServices.style.cssText = `
+          transform: translateX(${-xServices}%);
+          transition-property: translateX;
           `
       }
 
       function handleMouseOut() {
-        projectsCarousel.style.cssText =
-          'transform: translateX(0); transition-duration: 150ms;'
+        projectsCarouselServices.style.cssText = 'transform: translateX(0);'
       }
 
       return () => {
-        projectsSlider.removeEventListener('mousemove', handleMouseMove)
-        projectsSlider.removeEventListener('mouseout', handleMouseOut)
+        projectsSliderServices.removeEventListener('mousemove', handleMouseMove)
+        projectsSliderServices.removeEventListener('mouseout', handleMouseOut)
       }
     }
   }, [modalServiceIsOpen])
+
+  useEffect(() => {
+    if (window.innerWidth > 1133) {
+      const projectsSliderGallery = document.querySelector('.projectsSliderGallery')
+      const projectsCarouselGallery = document.querySelector('.projectsCarouselGallery')
+
+      let coordX = 0
+
+      projectsSliderGallery.addEventListener('mousemove', handleMouseMove)
+      projectsSliderGallery.addEventListener('mouseout', handleMouseOut)
+
+      function handleMouseMove(e) {
+        coordX = e.pageX - projectsSliderGallery.offsetWidth
+        const xGallery = (coordX / projectsSliderGallery.offsetWidth) * 20
+
+        projectsCarouselGallery.style.cssText = `
+          transform: translateX(${-xGallery}%);
+          transition-property: translateX;
+          `
+      }
+
+      function handleMouseOut() {
+        projectsCarouselGallery.style.cssText = 'transform: translateX(0);'
+      }
+
+      return () => {
+        projectsSliderGallery.removeEventListener('mousemove', handleMouseMove)
+        projectsSliderGallery.removeEventListener('mouseout', handleMouseOut)
+      }
+    }
+  }, [])
 
   return (
     <>
       {location === 'services' &&
         filteredProjects !== undefined &&
         filteredProjects.length > 0 && (
-          <div className="projectsSlider 1024:duration-500 1024:hover:-translate-x-[3.5vw] 1024:hover:scale-125 1024:hover:duration-500 1024:md:relative 1024:overflow-hidden 1024:h-[40vw] 1024:w-full z-10 mt-[39.2vw] w-full self-end md:mt-[5.03vw] lg:mt-[1.57vw] lg:h-[28vw] lg:hover:-translate-x-[5vw] 2xl:h-[21vw]">
-            <div className="projectsCarousel 1024:absolute 1024:flex-row 1024:gap-x-2.5 flex flex-col gap-y-10">
+          <div className="projectsSliderServices animation-timeline z-10 mt-[39.2vw] w-full animate-emergence self-end duration-500 hover:duration-500 md:mt-[5.03vw] 1024:md:relative 1024:h-[40vw] 1024:w-full 1024:overflow-hidden 1024:hover:-translate-x-[3.5vw] 1024:hover:scale-110 lg:mt-[1.57vw] lg:h-[28vw] lg:hover:-translate-x-[5vw] 2xl:h-[21vw]">
+            <div className="projectsCarouselServices pointer-events-auto flex flex-col gap-y-10 duration-500 1024:absolute 1024:flex-row 1024:gap-x-2.5">
               {filteredProjects.map((project, index) => (
                 <Project
                   key={index}
@@ -109,15 +163,17 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
           </div>
         )}
       {location === 'gallery' && filteredItems.length > 0 && (
-        <div className="animation-timeline animate-appear mt-[39.2vw] flex w-full flex-col gap-y-10 md:mt-[5.03vw] md:min-h-[89.022vw] md:flex-row md:flex-wrap md:gap-x-2.5 md:gap-y-10 lg:mt-[1.57vw] lg:min-h-[28.2vw] 2xl:min-h-[20.4vw]">
-          {filteredItems.map((project, index) => (
-            <Project
-              key={index}
-              project={project}
-              handleClick={handleClick}
-              color={color}
-            />
-          ))}
+        <div className="projectsSliderGallery animation-timeline z-10 mt-[39.2vw] w-full animate-emergence self-end duration-500 hover:duration-500 md:mt-[5.03vw] lg:relative lg:mt-[1.57vw] lg:h-[28vw] lg:translate-x-0 lg:hover:-translate-x-[10vw] lg:hover:scale-110 2xl:h-[21vw]">
+          <div className="projectsCarouselGallery flex flex-col gap-y-10 duration-500 md:flex-row md:flex-wrap md:gap-x-2.5 lg:absolute lg:flex-nowrap lg:overflow-hidden">
+            {filteredItems.map((project, index) => (
+              <Project
+                key={index}
+                project={project}
+                handleClick={handleClick}
+                color={color}
+              />
+            ))}
+          </div>
         </div>
       )}
       {location === 'gallery' && filteredItems.length === 0 && (
@@ -134,8 +190,10 @@ function Projects({ location, filteredItems, category, modalServiceIsOpen }) {
           modalIsOpen={modalIsOpen}
           label={label}
           preventScroll={true}
+          overlay={overlay}
+          modalWindow={modalWindow}
         >
-          <ProjectsModal {...selectedProject} />
+          <ProjectsModal />
         </ModalWindow>
       )}
     </>
@@ -147,6 +205,7 @@ Projects.propTypes = {
   filteredItems: PropTypes.array,
   category: PropTypes.string,
   modalServiceIsOpen: PropTypes.bool,
+  setShowProjectsModal: PropTypes.func,
 }
 
 export default Projects

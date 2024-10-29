@@ -106,7 +106,7 @@ const Carousel = () => {
   )
 
   return (
-    <div className="animation-timeline absolute left-0 top-[28vw] flex w-full animate-appear items-center overflow-hidden ease-in md:top-[7.8vw]">
+    <div className="animation-timeline absolute left-0 top-[28vw] flex w-full animate-emergence items-center overflow-hidden ease-in md:top-[7.8vw]">
       <motion.div
         ref={containerRef}
         className="flex items-center whitespace-nowrap text-[18.4vw] text-white md:text-[9.73vw] lg:text-[11.03vw]"
