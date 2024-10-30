@@ -62,7 +62,7 @@ function Projects({
   }, [])
 
   useEffect(() => {
-    if (modalServiceIsOpen && window.innerWidth > 639) {
+    if (modalServiceIsOpen && window.innerWidth > 1132) {
       const projectsSliderServices = document.querySelector('.projectsSliderServices')
       const projectsCarouselServices = document.querySelector('.projectsCarouselServices')
 
@@ -138,7 +138,7 @@ function Projects({
       {location === 'services' &&
         filteredProjects !== undefined &&
         filteredProjects.length > 0 && (
-          <div className="projectsSliderServices animation-timeline z-10 mt-[39.2vw] w-full animate-emergence self-end duration-500 hover:duration-500 lg:relative lg:mt-[1.57vw] lg:h-[28vw] lg:w-full lg:overflow-hidden lg:hover:-translate-x-[5vw] lg:hover:scale-110 2xl:h-[21vw]">
+          <div className="projectsSliderServices animation-timeline z-10 mt-[39.2vw] w-full animate-emergence self-end duration-500 sm:mt-[2vw] lg:relative lg:mt-[1.57vw] lg:h-[28vw] lg:w-full lg:overflow-hidden lg:hover:-translate-x-[5vw] lg:hover:scale-110 lg:hover:duration-500 2xl:h-[21vw]">
             <div className="projectsCarouselServices pointer-events-auto flex flex-col gap-y-10 duration-500 lg:absolute lg:flex-row lg:gap-x-2.5">
               {filteredProjects.map((project, index) => (
                 <Project
