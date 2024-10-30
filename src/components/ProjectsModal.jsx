@@ -19,13 +19,13 @@ function ProjectsModal() {
   } = selectedProject
 
   return (
-    <div className="px-[5.14vw] pt-[10.3vw] sm:px-[2.61vw] sm:pt-[5.22vw] lg:pt-[3vw] 2xl:pt-[2.91vw]">
+    <div className="px-[5.15vw] pt-[10.3vw] sm:px-[3.53vw] sm:pt-[5.22vw] lg:pt-[3vw] 2xl:pt-[2.91vw]">
       <div className="block pb-0 sm:flex sm:justify-between sm:gap-x-[3vw] sm:pb-[5.22vw] lg:pb-[3vw] 2xl:pb-[2.91vw]">
         <div className="w-full sm:w-7/12 2xl:w-[25.35vw]">
           <h2 className="animation-timeline animate-emergence whitespace-nowrap text-[10.3vw] delay-1000 sm:text-[5.22vw] 2xl:text-[3.72vw]">
             {client}
           </h2>
-          <p className="animation-timeline mt-[2.6vw] animate-emergence text-[3.6vw] uppercase sm:mt-[1.31vw] sm:text-[1.83vw] md:text-[1.56vw] lg:text-[1.15vw] 2xl:mt-[0.59vw] 2xl:text-[0.93vw]">
+          <p className="animation-timeline mt-[2.6vw] animate-emergence text-[3.6vw] uppercase sm:mt-[1.31vw] sm:text-[1.56vw] lg:text-[1.15vw] 2xl:mt-[0.59vw] 2xl:text-[0.93vw]">
             {service}
           </p>
           <img
@@ -36,17 +36,17 @@ function ProjectsModal() {
         </div>
         <div className="mt-[10.3vw] flex w-full flex-col justify-between sm:mt-0 2xl:w-[53.55vw]">
           <div>
-            <p className="text-[6.16vw] sm:text-[3.13vw] md:text-[2.08vw] lg:text-[1.42vw] 2xl:text-[1.4vw]">
+            <p className="text-[6.16vw] sm:text-[2.08vw] lg:text-[1.42vw] 2xl:text-[1.4vw]">
               {description1}
             </p>
-            <p className="mt-[10.3vw] text-[6.16vw] sm:mt-[3vw] sm:text-[3.13vw] md:mt-[2vw] md:text-[2.08vw] lg:text-[1.42vw] 2xl:mt-[1.5vw] 2xl:text-[1.4vw]">
+            <p className="mt-[10.3vw] text-[6.16vw] sm:mt-[2vw] sm:text-[2.08vw] lg:text-[1.42vw] 2xl:mt-[1.5vw] 2xl:text-[1.4vw]">
               {description2}
             </p>
           </div>
           <a
             href={link}
             target="_blank"
-            className="animation-timeline mt-[10.3vw] animate-emergence text-[5.14vw] underline sm:mt-[3vw] sm:text-[2.61vw] md:mt-[2vw] md:text-[1.83vw] lg:mt-0 lg:text-[1.24vw] 2xl:text-[0.93vw]"
+            className="animation-timeline mt-[10.3vw] animate-emergence text-[5.14vw] underline sm:mt-[2vw] sm:text-[1.83vw] lg:mt-0 lg:text-[1.24vw] 2xl:text-[0.93vw]"
           >
             See the website
           </a>

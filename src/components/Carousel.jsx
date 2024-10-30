@@ -92,7 +92,7 @@ const Carousel = () => {
     <span className="flex items-center">
       Our work
       <svg
-        className="mx-[4.1vw] h-[5.4vw] w-[5.4vw] md:mx-[2.3vw] md:h-[2.91vw] md:w-[2.91vw] lg:mx-[2.61vw] lg:h-[3.33vw] lg:w-[3.33vw] 2xl:h-[3.37vw] 2xl:w-[3.37vw]"
+        className="mx-[4.1vw] h-[5.4vw] w-[5.4vw] sm:mx-[2.3vw] sm:h-[2.91vw] sm:w-[2.91vw] lg:mx-[2.61vw] lg:h-[3.33vw] lg:w-[3.33vw] 2xl:h-[3.37vw] 2xl:w-[3.37vw]"
         viewBox="0 0 116 116"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -106,10 +106,10 @@ const Carousel = () => {
   )
 
   return (
-    <div className="animation-timeline absolute left-0 top-[28vw] flex w-full animate-emergence items-center overflow-hidden ease-in md:top-[7.8vw]">
+    <div className="animation-timeline absolute left-0 top-[28vw] flex w-full animate-emergence items-center overflow-hidden ease-in sm:top-[7.8vw]">
       <motion.div
         ref={containerRef}
-        className="flex items-center whitespace-nowrap text-[18.4vw] text-white md:text-[9.73vw] lg:text-[11.03vw]"
+        className="flex items-center whitespace-nowrap text-[18.4vw] text-white sm:text-[9.73vw] lg:text-[11.03vw]"
         animate={controls}
       >
         {[...Array(32)].map((_, i) => (
