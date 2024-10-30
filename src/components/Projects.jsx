@@ -138,7 +138,7 @@ function Projects({
       {location === 'services' &&
         filteredProjects !== undefined &&
         filteredProjects.length > 0 && (
-          <div className="projectsSliderServices animation-timeline z-10 mt-[39.2vw] w-full animate-emergence self-end duration-500 hover:duration-500 sm:mt-[5.03vw] sm:h-[40vw] sm:w-full sm:overflow-hidden sm:hover:-translate-x-[3.5vw] sm:hover:scale-110 lg:relative lg:mt-[1.57vw] lg:h-[28vw] lg:hover:-translate-x-[5vw] 2xl:h-[21vw]">
+          <div className="projectsSliderServices animation-timeline z-10 mt-[39.2vw] w-full animate-emergence self-end duration-500 hover:duration-500 lg:relative lg:mt-[1.57vw] lg:h-[28vw] lg:w-full lg:overflow-hidden lg:hover:-translate-x-[5vw] lg:hover:scale-110 2xl:h-[21vw]">
             <div className="projectsCarouselServices pointer-events-auto flex flex-col gap-y-10 duration-500 lg:absolute lg:flex-row lg:gap-x-2.5">
               {filteredProjects.map((project, index) => (
                 <Project
