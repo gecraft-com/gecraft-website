@@ -34,11 +34,25 @@ function ContactUs() {
         >
           info@gecraft.com
         </a>
-        <img
-          src="img/logo_green.svg"
-          alt="logo"
-          className="animation-timeline mt-[5.15vw] w-[33.35vw] animate-emergence sm:mt-[3.53vw] sm:w-[11.48vw] lg:mt-[2.09vw] lg:w-[6.77vw] 2xl:mt-[1.17vw] 2xl:w-[5.17vw]"
-        />
+        <div className="mt-[5.15vw] flex items-center sm:mt-[3.53vw] lg:mt-[2.09vw] 2xl:mt-[1.17vw]">
+          <a href="https://gecraft.com/">
+            <img
+              src="img/logo_green.svg"
+              alt="logo"
+              className="animation-timeline w-[33.35vw] animate-emergence sm:w-[11.48vw] lg:w-[6.77vw] 2xl:w-[5.17vw]"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/gecraft/?viewAsMember=true"
+            target="_blank"
+          >
+            <img
+              src="img/in.svg"
+              alt="linkedIn"
+              className="ml-[8.98vw] w-[7.7vw] sm:ml-[3.09vw] sm:w-[2.65vw] lg:ml-[1.82vw] lg:w-[1.57vw] 2xl:ml-[1.02vw] 2xl:w-[1.2vw]"
+            />
+          </a>
+        </div>
       </div>
       <FormContactUs />
     </div>
