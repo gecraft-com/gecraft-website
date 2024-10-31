@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useLayoutEffect, useRef } from 'react'
 
 import appBarButtons from '../../data/appBarButtons.json'
 
@@ -30,13 +30,43 @@ function AppBar() {
           'lg:top-[48vw]',
           '2xl:top-[49vw]'
         )
-        AppBar.classList.remove('sm:fixed', 'sm:top-10', 'lg:top-10', '2xl:top-10')
+        AppBar.classList.remove(
+          'duration-500',
+          'sm:fixed',
+          'sm:top-10',
+          'lg:top-10',
+          '2xl:top-10'
+        )
       }
     }
 
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
+  }, [])
+
+  useLayoutEffect(() => {
+    const contactUs = document.getElementById('contactUs')
+    document.addEventListener('scroll', function () {
+      const contactUsSection = contactUs.getBoundingClientRect().top
+
+      if (contactUsSection < window.innerHeight) {
+        AppBarRef.current.classList.remove('sm:top-10', 'lg:top-10', '2xl:top-10')
+        AppBarRef.current.classList.add(
+          'duration-500',
+          'sm:top-[92vh]',
+          'lg:top-[85vh]',
+          '2xl:top-[90vh]'
+        )
+      } else if (contactUsSection >= window.innerHeight) {
+        AppBarRef.current.classList.remove(
+          'sm:top-[92vh]',
+          'lg:top-[85vh]',
+          '2xl:top-[90vh]'
+        )
+        AppBarRef.current.classList.add('sm:top-10', 'lg:top-10', '2xl:top-10')
+      }
+    })
   }, [])
 
   return (
