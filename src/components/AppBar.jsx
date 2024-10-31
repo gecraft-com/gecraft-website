@@ -54,13 +54,13 @@ function AppBar() {
         AppBarRef.current.classList.remove('sm:top-10', 'lg:top-10', '2xl:top-10')
         AppBarRef.current.classList.add(
           'duration-500',
-          'sm:top-[80vh]',
+          'sm:top-[70vh]',
           'lg:top-[85vh]',
           '2xl:top-[90vh]'
         )
       } else if (contactUsSection >= window.innerHeight) {
         AppBarRef.current.classList.remove(
-          'sm:top-[80vh]',
+          'sm:top-[70vh]',
           'lg:top-[85vh]',
           '2xl:top-[90vh]'
         )
