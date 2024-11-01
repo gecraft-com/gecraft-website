@@ -17,20 +17,20 @@ function AppBar() {
     function handleScroll() {
       if (window.scrollY > coordAppBar - 40) {
         AppBar.classList.remove(
-          'md:absolute',
-          'md:top-[52vw]',
+          'sm:absolute',
+          'sm:top-[52vw]',
           'lg:top-[48vw]',
           '2xl:top-[49vw]'
         )
-        AppBar.classList.add('md:fixed', 'md:top-10', 'lg:top-10', '2xl:top-10')
+        AppBar.classList.add('sm:fixed', 'sm:top-10', 'lg:top-10', '2xl:top-10')
       } else if (window.scrollY <= coordText) {
         AppBar.classList.add(
-          'md:absolute',
-          'md:top-[52vw]',
+          'sm:absolute',
+          'sm:top-[52vw]',
           'lg:top-[48vw]',
           '2xl:top-[49vw]'
         )
-        AppBar.classList.remove('md:fixed', 'md:top-10', 'lg:top-10', '2xl:top-10')
+        AppBar.classList.remove('sm:fixed', 'sm:top-10', 'lg:top-10', '2xl:top-10')
       }
     }
 
@@ -42,7 +42,7 @@ function AppBar() {
   return (
     <div
       ref={AppBarRef}
-      className="animate-emergence animation-timeline top-10 z-30 hidden items-center gap-2.5 rounded-full bg-buttonGroup backdrop-blur-3xl sm:p-[0.53vw] md:absolute md:top-[52vw] md:flex lg:top-[48vw] lg:p-[0.32vw] 2xl:top-[49vw] 2xl:p-[0.175vw]"
+      className="animation-timeline top-10 z-30 hidden animate-emergence items-center gap-2.5 rounded-full bg-buttonGroup backdrop-blur-3xl sm:absolute sm:top-[52vw] sm:flex sm:p-[0.53vw] lg:top-[48vw] lg:p-[0.32vw] 2xl:top-[49vw] 2xl:p-[0.175vw]"
     >
       <a
         className="flex items-center justify-center rounded-full bg-buttonHover sm:h-[4.95vw] sm:w-[4.95vw] lg:h-[4.43vw] lg:w-[4.43vw] 2xl:h-[2.53vw] 2xl:w-[2.53vw]"
@@ -57,7 +57,7 @@ function AppBar() {
       {appBarButtons.map(({ label, href }, index) => (
         <a
           key={index}
-          className="flex items-center justify-center whitespace-nowrap rounded-full bg-transparent font-bold text-basic duration-150 last:bg-buttonHover hover:bg-buttonHover hover:duration-150 sm:h-[4.95vw] sm:px-[1.86vw] sm:text-[1.42vw] lg:h-[4.43vw] lg:px-[1.6vw] lg:text-[1.1vw] 2xl:h-[2.53vw] 2xl:px-[0.88vw] 2xl:text-[0.61vw]"
+          className="flex items-center justify-center whitespace-nowrap rounded-full bg-transparent font-bold text-basic duration-150 last:bg-buttonHover active:bg-buttonHover active:duration-150 sm:h-[4.95vw] sm:px-[1.86vw] sm:text-[1.42vw] lg:h-[4.43vw] lg:px-[1.6vw] lg:text-[1.1vw] lg:hover:bg-buttonHover lg:hover:duration-150 lg:active:bg-transparent 2xl:h-[2.53vw] 2xl:px-[0.88vw] 2xl:text-[0.61vw]"
           href={href}
         >
           {label}

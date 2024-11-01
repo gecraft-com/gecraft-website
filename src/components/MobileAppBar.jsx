@@ -1,6 +1,6 @@
 function MobileAppBar() {
   return (
-    <div className="fixed left-0 top-10 z-40 flex w-full items-center justify-between px-5 md:hidden">
+    <div className="fixed left-0 top-10 z-40 flex w-full items-center justify-between px-5 sm:hidden">
       <a
         className="z-20 flex h-11 w-11 items-center justify-center rounded-full bg-buttonGroup backdrop-blur-3xl active:bg-buttonHover"
         href="#"

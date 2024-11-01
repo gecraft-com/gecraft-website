@@ -62,7 +62,7 @@ function Projects({
   }, [])
 
   useEffect(() => {
-    if (modalServiceIsOpen && window.innerWidth > 1024) {
+    if (modalServiceIsOpen && window.innerWidth > 1132) {
       const projectsSliderServices = document.querySelector('.projectsSliderServices')
       const projectsCarouselServices = document.querySelector('.projectsCarouselServices')
 
@@ -138,8 +138,8 @@ function Projects({
       {location === 'services' &&
         filteredProjects !== undefined &&
         filteredProjects.length > 0 && (
-          <div className="projectsSliderServices animation-timeline z-10 mt-[39.2vw] w-full animate-emergence self-end duration-500 hover:duration-500 md:mt-[5.03vw] 1024:md:relative 1024:h-[40vw] 1024:w-full 1024:overflow-hidden 1024:hover:-translate-x-[3.5vw] 1024:hover:scale-110 lg:mt-[1.57vw] lg:h-[28vw] lg:hover:-translate-x-[5vw] 2xl:h-[21vw]">
-            <div className="projectsCarouselServices pointer-events-auto flex flex-col gap-y-10 duration-500 1024:absolute 1024:flex-row 1024:gap-x-2.5">
+          <div className="projectsSliderServices animation-timeline z-10 mt-[39.2vw] w-full animate-emergence self-end duration-500 sm:mt-[2vw] lg:relative lg:mt-[1.57vw] lg:h-[28vw] lg:w-full lg:overflow-hidden lg:hover:-translate-x-[5vw] lg:hover:scale-110 lg:hover:duration-500 2xl:h-[21vw]">
+            <div className="projectsCarouselServices pointer-events-auto flex flex-col gap-y-10 duration-500 lg:absolute lg:flex-row lg:gap-x-2.5">
               {filteredProjects.map((project, index) => (
                 <Project
                   key={index}
@@ -155,16 +155,16 @@ function Projects({
       {location === 'services' &&
         filteredProjects !== undefined &&
         filteredProjects.length === 0 && (
-          <div className="flex w-full justify-center pt-[20vw] md:pt-[10vw]">
-            <p className="text-center text-[4.1vw] text-basic md:text-[1.24vw] lg:text-[1.15vw] 2xl:text-[0.82vw]">
+          <div className="flex w-full justify-center pt-[20vw] sm:pt-[10vw]">
+            <p className="text-center text-[4.1vw] text-basic sm:text-[1.24vw] lg:text-[1.15vw] 2xl:text-[0.82vw]">
               No projects here at the moment, but we&apos;re always ready to discuss your
               ideas in this field!
             </p>
           </div>
         )}
       {location === 'gallery' && filteredItems.length > 0 && (
-        <div className="projectsSliderGallery animation-timeline z-10 mt-[39.2vw] w-full animate-emergence self-end duration-500 hover:duration-500 md:mt-[5.03vw] lg:relative lg:mt-[1.57vw] lg:h-[28vw] lg:translate-x-0 lg:hover:-translate-x-[10vw] lg:hover:scale-110 2xl:h-[21vw]">
-          <div className="projectsCarouselGallery flex flex-col gap-y-10 duration-500 md:flex-row md:flex-wrap md:gap-x-2.5 lg:absolute lg:flex-nowrap lg:overflow-hidden">
+        <div className="projectsSliderGallery animation-timeline z-10 mt-[39.2vw] w-full animate-emergence self-end duration-500 hover:duration-500 sm:mt-[5.03vw] lg:relative lg:mt-[1.57vw] lg:h-[28vw] lg:translate-x-0 lg:hover:-translate-x-[10vw] lg:hover:scale-110 2xl:h-[21vw]">
+          <div className="projectsCarouselGallery flex flex-col gap-y-[4vw] duration-500 sm:flex-row sm:flex-wrap sm:gap-x-[0.8vw] lg:absolute lg:flex-nowrap lg:overflow-hidden">
             {filteredItems.map((project, index) => (
               <Project
                 key={index}
@@ -177,7 +177,7 @@ function Projects({
         </div>
       )}
       {location === 'gallery' && filteredItems.length === 0 && (
-        <div className="flex w-full items-center justify-center md:min-h-[89.022vw] lg:min-h-[29.8vw] 2xl:min-h-[22vw]">
+        <div className="flex w-full items-center justify-center sm:min-h-[89.022vw] lg:min-h-[29.8vw] 2xl:min-h-[22vw]">
           <p className="text-[1.95vw] text-white lg:text-[1.15vw] 2xl:text-[0.82vw]">
             No projects here at the moment, but we&apos;re always ready to discuss your
             ideas in this field!
