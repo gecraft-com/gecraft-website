@@ -82,7 +82,8 @@ function ModalWindow({
 ModalWindow.propTypes = {
   modalIsOpen: PropTypes.bool.isRequired,
   onCloseModal: PropTypes.func.isRequired,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
+    .isRequired,
   label: PropTypes.string.isRequired,
 }
 
