@@ -84,7 +84,7 @@ ModalWindow.propTypes = {
   onCloseModal: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
     .isRequired,
-  label: PropTypes.string,
+  label: PropTypes.string.isRequired,
 }
 
 export default ModalWindow
