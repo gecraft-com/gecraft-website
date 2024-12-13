@@ -1,5 +1,3 @@
-'use client'
-
 import React, { useState } from 'react'
 
 // import { Switch } from '@nextui-org/react'
