@@ -34,14 +34,12 @@ function Header() {
 
       <p
         id="text"
-        className="animation-timeline z-20 mt-[25.6vw] w-[89.7vw] animate-emergence select-none text-[6.15vw] leading-tight text-white sm:mt-[24.53vw] sm:w-[62.9vw] sm:text-[2.65vw] lg:mt-[18.74vw] lg:w-[50.1vw] lg:text-[2.5vw] 2xl:mt-[14.2vw] 2xl:w-[49.4vw] 2xl:text-[2.44vw]"
+        className="animation-timeline z-20 mt-[25.6vw] w-[89.7vw] animate-emergence select-none text-[6.15vw] leading-tight sm:mt-[24.53vw] sm:w-[62.9vw] sm:text-[2.65vw] lg:mt-[18.74vw] lg:w-[50.1vw] lg:text-[2.5vw] 2xl:mt-[14.2vw] 2xl:w-[49.4vw] 2xl:text-[2.44vw]"
       >
         Harnessing cutting-edge technology and years of industry expertise, GeCraft
         designs and develops custom, end-to-end solutions that bring your unique software
         vision to life.
       </p>
-
-      <div className="absolute bottom-20 left-0 h-1/4 w-full bg-[url(/img/gradient_background_header_section.svg)] bg-cover sm:bottom-0 sm:h-1/2"></div>
     </header>
   )
 }

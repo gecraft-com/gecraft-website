@@ -18,7 +18,7 @@ export default {
       bgHeader: '#EBEBEB',
       basic: '#1A1A1A',
       buttonGroup: '#AFAFAF4D',
-      buttonHover: '#BEE0FF',
+      buttonHover: '#A5EAC5',
       ourServicesBtn: '#C3C3C3',
       cursor: '#1A1A1ACC',
       cursorHover: '#1A1A1A99',
