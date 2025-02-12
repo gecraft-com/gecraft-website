@@ -23,7 +23,7 @@ function Footer() {
       </div>
       <div className="flex justify-between pt-4">
         <a href="">
-          <Icons name="logo-small" width={80} height={20} />
+          <Icons name="logo" width={80} height={20} />
         </a>
         <p className="text-primary-300 text-xs">© 2023 All rights reserved</p>
       </div>
