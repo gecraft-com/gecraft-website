@@ -5,7 +5,7 @@ function Layout({ children }) {
   return (
     <>
       <Header />
-      <main className="pt-20">{children}</main>
+      <main className="px-4 pb-6 pt-20">{children}</main>
       <Footer />
     </>
   )
