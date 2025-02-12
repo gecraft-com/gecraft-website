@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-import { black, green, red, transparent, white } from 'tailwindcss/colors'
+import { black, transparent, white } from 'tailwindcss/colors'
 
 export default {
   content: [
@@ -12,16 +12,12 @@ export default {
     colors: {
       white,
       black,
-      red,
-      green,
       transparent,
-      bgHeader: '#EBEBEB',
-      basic: '#1A1A1A',
-      buttonGroup: '#AFAFAF4D',
-      buttonHover: '#A5EAC5',
-      ourServicesBtn: '#C3C3C3',
-      cursor: '#1A1A1ACC',
-      cursorHover: '#1A1A1A99',
+      primary: {
+        100: '#F6F6F6',
+        200: '#D1D1D1',
+        300: '#888888',
+      },
     },
     extend: {
       screens: {
