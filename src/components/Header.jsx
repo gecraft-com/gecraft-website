@@ -9,7 +9,7 @@ function Header() {
 
   return (
     <>
-      <header className="fixed z-10 flex w-full items-center justify-between bg-primary-100 p-4 sm:px-8 sm:py-2.5 xl:h-20 xl:px-20 2xl:px-40">
+      <header className="fixed z-10 flex h-16 w-full items-center justify-between border-b border-primary-100 bg-primary-100 px-4 sm:px-8 sm:py-2.5 xl:h-20 xl:px-20 2xl:px-40">
         <a href="/" className="xl:hidden">
           <Icons name="logo" width={88} height={22} />
         </a>

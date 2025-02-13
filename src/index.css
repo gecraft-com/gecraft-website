@@ -5,10 +5,6 @@
 @tailwind utilities;
 
 
-*:hover {
-  cursor: none;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
