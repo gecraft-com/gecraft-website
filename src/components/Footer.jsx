@@ -3,7 +3,7 @@ import Icons from './Icons'
 function Footer() {
   return (
     <footer className="w-full bg-primary-100 px-4 pb-4 pt-6 text-left">
-      <div className="border-primary-200 flex justify-between border-b pb-4">
+      <div className="flex justify-between border-b border-primary-200 pb-4">
         <div className="flex flex-col">
           <a href="">Services</a>
           <a href="" className="mt-2">
@@ -22,12 +22,12 @@ function Footer() {
         </p>
       </div>
       <div className="flex justify-between pt-4">
-        <a href="">
+        <a href="/">
           <Icons name="logo" width={80} height={20} />
         </a>
-        <p className="text-primary-300 text-xs">© 2023 All rights reserved</p>
+        <p className="text-xs text-primary-300">© 2023 All rights reserved</p>
       </div>
-      <div className="text-primary-300 flex gap-4 pt-3 text-xs underline">
+      <div className="flex gap-4 pt-3 text-xs text-primary-300 underline">
         <a href="">Privacy Policy</a>
         <a href="">Terms of Service</a>
       </div>
