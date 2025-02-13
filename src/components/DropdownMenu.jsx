@@ -13,13 +13,13 @@ function DropdownMenu({ setIsShow }) {
         </GCButton>
       </div>
       <div className="flex flex-col pt-3 text-left">
-        <a href="" className="p-3">
+        <a href="/services" className="p-3">
           Services
         </a>
-        <a href="" className="p-3">
+        <a href="/work" className="p-3">
           Work
         </a>
-        <a href="" className="mb-3 p-3">
+        <a href="/about" className="mb-3 p-3">
           About
         </a>
         <GCButton type="green-header">Contact us</GCButton>

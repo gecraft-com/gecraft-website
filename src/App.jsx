@@ -1,16 +1,21 @@
-import PortfolioList from './components/PortfolioList'
-import Services from './components/Services'
+import { Route, Routes } from 'react-router-dom'
+
 import Layout from './Layout'
+import About from './pages/About'
+import HomePage from './pages/HomePage'
+import Services from './pages/Services'
+import Work from './pages/Work'
 
 function App() {
   return (
     <Layout>
-      <Services />
-      <p className="mt-6 text-lg font-semibold leading-6 sm:mt-12 sm:text-3xl xl:mt-14 xl:text-5xl 2xl:mt-20">
-        Tailored solutions: bespoke design <br className="hidden sm:block" /> and
-        development for your business challenges
-      </p>
-      <PortfolioList />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/work" element={<Work />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<HomePage />} />
+      </Routes>
     </Layout>
   )
 }

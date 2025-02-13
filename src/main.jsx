@@ -7,10 +7,14 @@ import App from './App'
 
 import './index.css'
 
+import { BrowserRouter } from 'react-router-dom'
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <NextUIProvider>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </NextUIProvider>
   </StrictMode>
 )

@@ -17,13 +17,13 @@ function Header() {
           <Icons name="logo" width={150} height={36} />
         </a>
         <div className="hidden sm:block xl:text-lg">
-          <a href="" className="mr-2.5 px-4 py-3">
+          <a href="/services" className="mr-2.5 px-4 py-3">
             Services
           </a>
-          <a href="" className="mr-2.5 p-3 px-4">
+          <a href="/work" className="mr-2.5 p-3 px-4">
             Work
           </a>
-          <a href="" className="p-3 px-4">
+          <a href="/about" className="p-3 px-4">
             About
           </a>
         </div>
