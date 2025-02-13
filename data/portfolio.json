@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "icon": "/level.png",
+    "projectName": "LEVEL.bible",
+    "sinceDate": "2023",
+    "services": ["Strategy & Discovery", "Product Management", "Product Design", "Software Engineering", "Quality Assurance", "Training and demos"]
+  },
+  {
+    "id": "2",
+    "icon": "/skilldor.png",
+    "projectName": "Skilldor.com",
+    "sinceDate": "2024",
+    "services": ["Strategy & Discovery", "Product Management", "Product Design", "Software Engineering", "Quality Assurance"]
+  },
+  {
+    "id": "3",
+    "icon": "/biblevis.png",
+    "projectName": "BibleVis.com",
+    "sinceDate": "2024",
+    "services": ["Strategy & Discovery", "Product Management", "Product Design", "Software Engineering", "Quality Assurance", "Training and demos"]
+  }
+]
