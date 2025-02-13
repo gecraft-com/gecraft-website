@@ -1,7 +1,7 @@
 function Icons({ name, width, height }) {
   return (
     <>
-      {name === 'logo-small' && (
+      {name === 'logo' && (
         <svg
           width={width}
           height={height}
