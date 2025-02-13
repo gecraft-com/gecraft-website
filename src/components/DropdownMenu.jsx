@@ -4,7 +4,7 @@ import Icons from './Icons'
 function DropdownMenu({ setIsShow }) {
   return (
     <div className="fixed w-full rounded-b-lg bg-primary-100 p-4 drop-shadow-xl">
-      <div className="border-primary-200 flex justify-between border-b pb-4">
+      <div className="flex justify-between border-b border-primary-200 pb-4">
         <a href="/">
           <Icons name="logo" width={88} height={22} />
         </a>
@@ -22,7 +22,7 @@ function DropdownMenu({ setIsShow }) {
         <a href="" className="mb-3 p-3">
           About
         </a>
-        <GCButton type="contact-us-header">Contact us</GCButton>
+        <GCButton type="green-header">Contact us</GCButton>
       </div>
     </div>
   )
