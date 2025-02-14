@@ -1,5 +1,3 @@
-import GCButton from './GCButton'
-
 function PortfolioItem({ icon, projectName, sinceDate, services, description }) {
   return (
     <div className="rounded-3xl bg-primary-100 p-4 sm:p-6 xl:p-8">
@@ -23,13 +21,14 @@ function PortfolioItem({ icon, projectName, sinceDate, services, description }) 
             ))}
           </ul>
         </div>
+        <h2 className="text-xl font-semibold sm:text-5xl xl:hidden">{projectName}</h2>
       </div>
       <h3 className="mt-4 text-lg font-semibold sm:text-xl xl:hidden">
         Cooperation period
       </h3>
       <p className="mt-1 text-sm sm:mt-1.5 sm:text-lg xl:hidden">Since {sinceDate}</p>
       <h3 className="mt-4 text-lg font-semibold sm:text-xl xl:hidden">Services used</h3>
-      <ul className="mb-3 mt-1.5 flex flex-wrap gap-2 sm:mt-2 sm:gap-3 xl:hidden">
+      <ul className="mb-3.5 mt-1.5 flex flex-wrap gap-2 sm:mt-2 sm:gap-3 xl:hidden">
         {services.map((service, index) => (
           <li
             key={index}
@@ -39,10 +38,7 @@ function PortfolioItem({ icon, projectName, sinceDate, services, description }) 
           </li>
         ))}
       </ul>
-      <div className="sm:hidden">
-        <GCButton type="read-more">Read more</GCButton>
-      </div>
-      <p className="hidden sm:mt-4 sm:block xl:mt-10 xl:text-2xl">{description}</p>
+      <p className="text-sm sm:mt-4 sm:block xl:mt-10 xl:text-2xl">{description}</p>
     </div>
   )
 }
