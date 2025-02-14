@@ -3,7 +3,7 @@ import Icons from './Icons'
 
 function DropdownMenu({ setIsShow }) {
   return (
-    <div className="fixed z-20 w-full rounded-b-lg bg-primary-100 px-4 pb-4 drop-shadow-xl">
+    <div className="fixed z-30 w-full rounded-b-lg bg-primary-100 px-4 pb-4 drop-shadow-xl">
       <div className="flex h-16 items-center justify-between border-b border-primary-200">
         <a href="/">
           <Icons name="logo" width={88} height={22} />
