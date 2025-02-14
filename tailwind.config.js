@@ -24,9 +24,7 @@ export default {
     },
     extend: {
       screens: {
-        lg: '1134px',
-        '1024': '1025px',
-        '2xl': '1923px',
+        '2xl': '1920px',
       },
 
       fontFamily: {
