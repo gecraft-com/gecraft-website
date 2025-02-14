@@ -1,0 +1,40 @@
+[
+  {
+    "id": "1",
+    "title": "Frontend",
+    "stack": [
+      {"icon": "/javascript.svg", "name": "JavaScript"},
+      {"icon": "/typescript.svg", "name": "TypeScript"},
+      {"icon": "/react.svg", "name": "React"},
+      {"icon": "/nextjs.svg", "name": "Next.js"},
+      {"icon": "/css.svg", "name": "CSS"},
+      {"icon": "/html.svg", "name": "HTML"},
+      {"icon": "/tailwind.svg", "name": "Tailwind"},
+      {"icon": "/nextui.svg", "name": "NextUI"},
+      {"icon": "/vite.svg", "name": "Vite"}
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Backend",
+    "stack": [
+      {"icon": "/nodejs.svg", "name": "Node.js"},
+      {"icon": "/postgresql.svg", "name": "PostgreSQL"},
+      {"icon": "/mysql.svg", "name": "MySQL"},
+      {"icon": "/sqlite.svg", "name": "SQLite"},
+      {"icon": "/graphql.svg", "name": "GraphQL"},
+      {"icon": "/rest-api.svg", "name": "REST API"},
+      {"icon": "/swagger.svg", "name": "Swagger"}
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Testing",
+    "stack": [
+      {"icon": "/jest.svg", "name": "Jest"},
+      {"icon": "/playwright.svg", "name": "Playwright"},
+      {"icon": "/vitest.svg", "name": "Vitest"},
+      {"icon": "/docker.svg", "name": "Docker"}
+    ]
+  }
+]
