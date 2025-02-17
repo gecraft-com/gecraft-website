@@ -1,4 +1,10 @@
+import { useState } from 'react'
+
 function PortfolioItem({ icon, projectName, sinceDate, services, description }) {
+  const [expanded, setExpanded] = useState(false)
+  const words = description.split(' ')
+  const shouldTruncate = words.length > 30
+
   return (
     <div className="rounded-3xl bg-primary-100 p-4 sm:p-6 xl:p-8">
       <div className="flex items-center gap-2 sm:gap-4 xl:gap-9">
@@ -38,7 +44,27 @@ function PortfolioItem({ icon, projectName, sinceDate, services, description }) 
           </li>
         ))}
       </ul>
-      <p className="text-sm sm:mt-4 sm:block xl:mt-10 xl:text-2xl">{description}</p>
+      <span
+        className={`${expanded || !shouldTruncate ? 'inline text-sm sm:mt-4 xl:mt-10 xl:text-2xl' : 'line-clamp-2 inline text-sm sm:mt-4 xl:mt-10 xl:text-2xl'}`}
+      >
+        {expanded ? description + ' ' : words.slice(0, 15).join(' ') + '...' + ' '}
+      </span>
+      {!expanded && shouldTruncate && (
+        <button
+          className="font-sm text-primary-500 underline"
+          onClick={() => setExpanded(true)}
+        >
+          Read more
+        </button>
+      )}
+      {expanded && shouldTruncate && (
+        <button
+          className="font-sm text-primary-500 underline"
+          onClick={() => setExpanded(false)}
+        >
+          Hide more
+        </button>
+      )}
     </div>
   )
 }
