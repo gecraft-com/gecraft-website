@@ -9,7 +9,7 @@ function HomePage() {
         Tailored solutions: bespoke design <br className="hidden sm:block" /> and
         development for your business challenges
       </p>
-      <PortfolioList />
+      <PortfolioList location="home" />
     </>
   )
 }

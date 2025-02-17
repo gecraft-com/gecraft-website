@@ -1,7 +1,7 @@
 import portfolio from '../../data/portfolio.json'
 import PortfolioItem from './PortfolioItem'
 
-function PortfolioList() {
+function PortfolioList({ location = '' }) {
   return (
     <div className="mt-4 flex flex-col gap-2 sm:mt-6 sm:gap-4 xl:mt-9 xl:gap-6">
       {portfolio.map(({ id, icon, projectName, sinceDate, services, description }) => (
@@ -12,6 +12,7 @@ function PortfolioList() {
           sinceDate={sinceDate}
           services={services}
           description={description}
+          location={location}
         />
       ))}
     </div>
