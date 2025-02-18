@@ -8,7 +8,7 @@ function DropdownMenu({ setIsShow }) {
         <a href="/">
           <Icons name="logo" width={88} height={22} />
         </a>
-        <GCButton type="menu" onClick={() => setIsShow(false)}>
+        <GCButton onClick={() => setIsShow(false)}>
           <Icons name="close" />
         </GCButton>
       </div>
@@ -22,7 +22,7 @@ function DropdownMenu({ setIsShow }) {
         <a href="/about" className="mb-3 p-3">
           About
         </a>
-        <GCButton type="green-header">Contact us</GCButton>
+        <GCButton view="green-header">Contact us</GCButton>
       </div>
     </div>
   )
