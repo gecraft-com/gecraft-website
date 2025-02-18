@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import { NavLink } from 'react-router-dom'
+
 import DropdownMenu from './DropdownMenu'
 import GCButton from './GCButton'
 import Icons from './Icons'
@@ -17,15 +19,30 @@ function Header() {
           <Icons name="logo" width={150} height={36} />
         </a>
         <div className="hidden sm:block xl:text-lg">
-          <a href="/services" className="mr-2.5 px-4 py-3">
+          <NavLink
+            to="/services"
+            className={({ isActive }) =>
+              `${isActive ? 'font-semibold' : ''} "mr-2.5 py-3" px-4`
+            }
+          >
             Services
-          </a>
-          <a href="/work" className="mr-2.5 p-3 px-4">
+          </NavLink>
+          <NavLink
+            to="/work"
+            className={({ isActive }) =>
+              `${isActive ? 'font-semibold' : ''} "mr-2.5 py-3" px-4`
+            }
+          >
             Work
-          </a>
-          <a href="/about" className="p-3 px-4">
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              `${isActive ? 'font-semibold' : ''} "mr-2.5 py-3" px-4`
+            }
+          >
             About
-          </a>
+          </NavLink>
         </div>
         <div className="sm:hidden">
           <GCButton type="menu" onClick={() => setIsShow(true)}>

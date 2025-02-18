@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom'
+
 import Form from './Form'
 import Icons from './Icons'
 
@@ -7,13 +9,28 @@ function Footer() {
       <div className="flex justify-between border-b border-primary-200 pb-4">
         <div className="flex w-full justify-between sm:flex-col">
           <div className="flex flex-col">
-            <a href="">Services</a>
-            <a href="" className="mt-2 sm:mt-3">
+            <NavLink
+              to="/services"
+              className={({ isActive }) => `${isActive ? 'font-semibold' : ''}`}
+            >
+              Services
+            </NavLink>
+            <NavLink
+              to="/work"
+              className={({ isActive }) =>
+                `${isActive ? 'font-semibold' : ''} mt-2 sm:mt-3`
+              }
+            >
               Work
-            </a>
-            <a href="" className="mt-2 sm:mt-3">
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                `${isActive ? 'font-semibold' : ''} mt-2 sm:mt-3`
+              }
+            >
               About
-            </a>
+            </NavLink>
             <a href="" className="mt-3 sm:mt-6">
               <Icons name="linkedin" />
             </a>
