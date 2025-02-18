@@ -24,7 +24,8 @@
       {"icon": "/sqlite.svg", "name": "SQLite"},
       {"icon": "/graphql.svg", "name": "GraphQL"},
       {"icon": "/rest-api.svg", "name": "REST API"},
-      {"icon": "/swagger.svg", "name": "Swagger"}
+      {"icon": "/swagger.svg", "name": "Swagger"},
+      {"icon": "/docker.svg", "name": "Docker"}
     ]
   },
   {
@@ -33,8 +34,7 @@
     "stack": [
       {"icon": "/jest.svg", "name": "Jest"},
       {"icon": "/playwright.svg", "name": "Playwright"},
-      {"icon": "/vitest.svg", "name": "Vitest"},
-      {"icon": "/docker.svg", "name": "Docker"}
+      {"icon": "/vitest.svg", "name": "Vitest"}
     ]
   }
 ]
