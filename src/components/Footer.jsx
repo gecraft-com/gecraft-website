@@ -2,6 +2,9 @@ import Form from './Form'
 import Icons from './Icons'
 
 function Footer() {
+  const today = new Date()
+  const currentYear = today.getFullYear()
+
   return (
     <footer className="w-full bg-primary-100 px-4 pb-4 pt-6 text-left sm:px-8 sm:pb-7 sm:pt-11 xl:px-20 xl:pb-9 xl:pt-14 2xl:px-40">
       <div className="flex justify-between border-b border-primary-200 pb-4">
@@ -20,7 +23,7 @@ function Footer() {
               <Icons name="linkedin" />
             </a>
           </div>
-          <p className="w-40 text-sm font-semibold sm:mt-9 sm:w-80 sm:text-base sm:leading-5 xl:w-full">
+          <p className="w-40 text-sm sm:mt-9 sm:w-80 sm:text-base sm:leading-5 xl:w-full">
             We want to make IT solutions affordable <br className="hidden xl:block" /> and
             help businesses achieve great results through innovation
           </p>
@@ -36,7 +39,7 @@ function Footer() {
           <a href="">Terms of Service</a>
         </div>
         <p className="text-xs text-primary-300 sm:text-base">
-          © 2023 All rights reserved
+          © {currentYear} All rights reserved
         </p>
       </div>
       <div className="flex gap-4 pt-3 text-xs text-primary-300 underline sm:hidden">
