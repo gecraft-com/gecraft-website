@@ -38,7 +38,7 @@ function Form({ onPage = false }) {
     const baseClasses =
       fieldName === 'goals'
         ? `${onPage ? 'h-40' : 'h-24'} w-full resize-none rounded-lg border-2 border-primary-600 px-4 py-3 text-black`
-        : 'h-12 w-full rounded-lg border-2 px-4'
+        : 'h-12 w-full rounded-lg border-2 px-4 resize-none'
 
     const shouldShowValidation = touchedFields[fieldName] || wasSubmitAttempted
 
