@@ -85,7 +85,7 @@ function CookiesModal({ handleAfterClick, children }) {
                 }}
                 className="peer hidden"
               />
-              <span className="relative mr-10 inline-block h-8 w-8 cursor-pointer rounded-md border-4 border-primary-500 after:absolute after:-top-6 after:left-0 after:hidden after:text-5xl after:text-primary-500 after:content-['\2713'] peer-checked:border-primary-500 peer-checked:after:block sm:hover:border-primary-200"></span>
+              <span className="relative mr-10 inline-block h-8 w-8 cursor-pointer rounded-md border-4 border-primary-500 duration-100 after:absolute after:-top-6 after:left-0 after:hidden after:text-5xl after:text-primary-700 after:content-['\2713'] peer-checked:border-primary-700 peer-checked:after:block sm:hover:border-primary-700"></span>
             </label>
           </div>
           <div className="text-medium mb-5">
@@ -98,7 +98,7 @@ function CookiesModal({ handleAfterClick, children }) {
                 }}
                 className="peer hidden"
               />
-              <span className="relative mr-10 inline-block h-8 w-8 cursor-pointer rounded-md border-4 border-primary-500 after:absolute after:-top-6 after:left-0 after:hidden after:text-5xl after:text-primary-500 after:content-['\2713'] peer-checked:border-primary-500 peer-checked:after:block sm:hover:border-primary-200"></span>
+              <span className="relative mr-10 inline-block h-8 w-8 cursor-pointer rounded-md border-4 border-primary-500 duration-100 after:absolute after:-top-6 after:left-0 after:hidden after:text-5xl after:text-primary-700 after:content-['\2713'] peer-checked:border-primary-700 peer-checked:after:block sm:hover:border-primary-700"></span>
             </label>
           </div>
           <div className="mt-12 flex flex-col justify-center gap-6 md:flex-row">
