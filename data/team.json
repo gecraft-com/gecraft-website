@@ -7,13 +7,13 @@
   },
   {
     "id": "2",
-    "photo": "/victor.png",
+    "photo": "/viktor.png",
     "name": "Viktor G",
     "role": "Software Architect"
   },
   {
     "id": "3",
-    "photo": "/aleksandr.png",
+    "photo": "/alexander.png",
     "name": "Alexander V",
     "role": "Software Lead"
   },

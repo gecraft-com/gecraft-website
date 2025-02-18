@@ -1,19 +1,19 @@
 [
   {
     "id": "1",
-    "icon": "/level.png",
-    "projectName": "LEVEL.bible",
-    "sinceDate": "2023",
-    "services": ["Strategy & Discovery", "Product Management", "Product Design", "Software Engineering", "Quality Assurance", "Training and demos"],
-    "description": "LEVEL is a cutting-edge, customizable Translation Management System designed to support any Bible translation method. It can be dapted to various translation approaches and materials. The platform is focused on simplifying the translation process for nations with diverse linguistic backgrounds and varying levels of computer literacy. LEVEL provides a step-by-step workflow for managing translation projects. GeCraft takes a comprehensive approach in the development of LEVEL, providing expertise in custom software development, API creation, DevOps, and AI feature development."
-  },
-  {
-    "id": "2",
     "icon": "/skilldor.png",
     "projectName": "Skilldor.com",
     "sinceDate": "2024",
     "services": ["Strategy & Discovery", "Product Management", "Product Design", "Software Engineering", "Quality Assurance"],
     "description": "GeCraft developed Skilldor, a gamified sports training platform that helps players improve through XP-based progression, progress tracking, and customizable workouts. We handled everything—from mobile & web development to UX design and feature-rich training apps. Skilldor is more than an app—it’s a sports training revolution, starting with basketball and expanding into soccer and fitness in the near future. GeCraft turns bold ideas into reality. Let’s build yours!"
+  },
+  {
+    "id": "2",
+    "icon": "/level.png",
+    "projectName": "LEVEL.bible",
+    "sinceDate": "2023",
+    "services": ["Strategy & Discovery", "Product Management", "Product Design", "Software Engineering", "Quality Assurance", "Training and demos"],
+    "description": "LEVEL is a cutting-edge, customizable Translation Management System designed to support any Bible translation method. It can be dapted to various translation approaches and materials. The platform is focused on simplifying the translation process for nations with diverse linguistic backgrounds and varying levels of computer literacy. LEVEL provides a step-by-step workflow for managing translation projects. GeCraft takes a comprehensive approach in the development of LEVEL, providing expertise in custom software development, API creation, DevOps, and AI feature development."
   },
   {
     "id": "3",
