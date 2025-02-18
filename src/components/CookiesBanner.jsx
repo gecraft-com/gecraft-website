@@ -42,9 +42,11 @@ function CookiesBanner() {
             </p>
             <div className="mt-3 flex gap-4 md:mt-0">
               <CookiesModal handleAfterClick={() => setShowBanner(false)}>
-                <GCButton>Manage Cookies</GCButton>
+                <GCButton view="cookies-first">Manage Cookies</GCButton>
               </CookiesModal>
-              <GCButton onClick={handleAcceptAll}>Accept All</GCButton>
+              <GCButton view="cookies-second" onClick={handleAcceptAll}>
+                Accept All
+              </GCButton>
             </div>
           </div>
         </div>
