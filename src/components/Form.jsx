@@ -6,12 +6,12 @@ function Form() {
       <input
         placeholder="Your name"
         type="text"
-        className="border-primary-600 h-12 rounded-lg border-2 px-4 placeholder:text-lg placeholder:text-black"
+        className="h-12 rounded-lg border-2 border-primary-600 px-4 placeholder:text-lg placeholder:text-black"
       />
       <textarea
         placeholder="Your question"
         type="text"
-        className="border-primary-600 h-24 rounded-lg border-2 px-4 py-3 placeholder:text-lg placeholder:text-black"
+        className="h-24 resize-none rounded-lg border-2 border-primary-600 px-4 py-3 placeholder:text-lg placeholder:text-black"
       />
       <GCButton type="green-form">Contact us</GCButton>
     </form>
