@@ -11,7 +11,8 @@
       {"icon": "/html.svg", "name": "HTML"},
       {"icon": "/tailwind.svg", "name": "Tailwind"},
       {"icon": "/nextui.svg", "name": "NextUI"},
-      {"icon": "/vite.svg", "name": "Vite"}
+      {"icon": "/vite.svg", "name": "Vite"},
+      {"icon": "/сapacitor.svg", "name": "Capacitor"}
     ]
   },
   {
