@@ -7,14 +7,16 @@ function Footer() {
       <div className="flex justify-between border-b border-primary-200 pb-4">
         <div className="flex w-full justify-between sm:flex-col">
           <div className="flex flex-col">
-            <a href="">Services</a>
-            <a href="" className="mt-2 sm:mt-3">
+            <a href="/services" className="w-1/2">
+              Services
+            </a>
+            <a href="/work" className="mt-2 w-1/2 sm:mt-3">
               Work
             </a>
-            <a href="" className="mt-2 sm:mt-3">
+            <a href="/about" className="mt-2 w-1/2 sm:mt-3">
               About
             </a>
-            <a href="" className="mt-3 sm:mt-6">
+            <a href="" className="mt-3 w-1/2 sm:mt-6">
               <Icons name="linkedin" />
             </a>
           </div>

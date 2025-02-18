@@ -28,12 +28,14 @@ function Header() {
           </a>
         </div>
         <div className="sm:hidden">
-          <GCButton type="menu" onClick={() => setIsShow(true)}>
+          <GCButton view="menu" onClick={() => setIsShow(true)}>
             <Icons name="menu" />
           </GCButton>
         </div>
         <div className="hidden sm:block">
-          <GCButton type="green-header">Contact us</GCButton>
+          <GCButton asLink link="/contact-us" view="green-header">
+            Contact us
+          </GCButton>
         </div>
       </header>
       {isShow && <DropdownMenu setIsShow={setIsShow} />}

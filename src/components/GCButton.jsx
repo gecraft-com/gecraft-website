@@ -1,8 +1,16 @@
-function GCButton({ children, type, onClick }) {
-  const getButtonStyles = (type) => {
-    switch (type) {
+function GCButton({
+  children,
+  type,
+  view,
+  onClick,
+  asLink = null,
+  link = null,
+  disabled = false,
+}) {
+  const getButtonStyles = (view) => {
+    switch (view) {
       case 'green-header':
-        return 'w-36 bg-primary-500 h-10 rounded-full text-white xl:w-44 xl:h-12'
+        return 'w-36 flex justify-center items-center bg-primary-500 h-10 rounded-full text-white xl:w-44 xl:h-12'
       case 'green-form':
         return 'w-full bg-primary-500 h-12 rounded-full text-white xl:text-lg'
       case 'read-more':
@@ -14,8 +22,17 @@ function GCButton({ children, type, onClick }) {
     }
   }
 
-  return (
-    <button type="button" onClick={onClick} className={getButtonStyles(type)}>
+  return asLink ? (
+    <a href={link} className={getButtonStyles(view)}>
+      {children}
+    </a>
+  ) : (
+    <button
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+      className={getButtonStyles(view)}
+    >
       {children}
     </button>
   )
