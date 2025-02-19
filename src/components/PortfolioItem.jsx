@@ -15,7 +15,12 @@ function PortfolioItem({
   return (
     <div className="rounded-3xl bg-primary-100 p-4 sm:p-6 xl:p-8">
       <div className="flex items-center gap-2 sm:gap-4 xl:gap-9">
-        <img src={icon} alt="logo" className="w-16 sm:w-24 xl:w-80" />
+        <img
+          src={icon}
+          alt="logo"
+          loading="lazy"
+          className="h-16 w-16 sm:h-24 sm:w-24 xl:h-80 xl:w-80"
+        />
         <div>
           <h2 className="hidden text-5xl font-semibold xl:block">{projectName}</h2>
           <h3 className="mt-4 hidden text-3xl font-semibold xl:block">

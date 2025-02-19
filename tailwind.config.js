@@ -3,11 +3,7 @@
 import { black, transparent, white } from 'tailwindcss/colors'
 
 export default {
-  content: [
-    './index.html',
-    './src/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
-  ],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     colors: {
       white,
@@ -27,32 +23,19 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        readexPro: ['Readex Pro', 'sans-serif'],
+      },
       screens: {
         '2xl': '1920px',
       },
-
-      fontFamily: {
-        sans: 'Be Vietnam Pro',
-      },
-
       keyframes: {
-        descent: {
-          '0%': { opacity: '0', transform: 'translate(0, -50%)' },
-          '100%': { opacity: '1', transform: 'translate(0%)' },
-        },
-        lifting: {
-          '0%': { opacity: '0', transform: 'translate(0, 50%)' },
-          '100%': { opacity: '1', transform: 'translate(0%)' },
-        },
         emergence: {
           '0%': { opacity: '0', scale: '0.7' },
           '100%': { opacity: '1', scale: '1' },
         },
       },
-
       animation: {
-        descent: 'descent 300ms ease-in-out',
-        lifting: 'lifting 500ms ease-in-out',
         emergence: 'emergence 200ms ease',
       },
     },

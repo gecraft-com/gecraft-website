@@ -2,7 +2,7 @@
   {
     "id": "1",
     "anchor": "management",
-    "icon": "/chat.svg",
+    "icon": "/chat.webp",
     "serviceName": "Product Management",
     "list": ["Discovery and Requirements", "Customer Research", "Digital Strategy", "Content Modeling", "Technical Design", "Analytics and SEO"],
     "paragraph": "Focuses on defining the vision, goals, and roadmap of a product. Ensures alignment between stakeholders, engineering, and design to deliver value to users"
@@ -10,7 +10,7 @@
   {
     "id": "2",
     "anchor": "design",
-    "icon": "/frame.svg",
+    "icon": "/frame.webp",
     "serviceName": "Product Design",
     "list": ["User Experience (UX) Design", "User Interface (UI) Design", "Creative Direction", "Interaction Design (IxD)", "Information Architecture (IA)"],
     "paragraph": "Crafts user experiences through research, wireframes, and prototypes, emphasizing usability and aesthetics. Bridges user needs with functional product solutions"
@@ -18,7 +18,7 @@
   {
     "id": "3",
     "anchor": "quality",
-    "icon": "/security.svg",
+    "icon": "/security.webp",
     "serviceName": "Quality Assurance",
     "list": ["Ensures the product meets quality standards by identifying bugs and testing features. Focuses on user experience, functionality, and stability before release.", "Manual Testing", "Automated Testing", "User Acceptance Testing (UAT)"],
     "paragraph": ""
@@ -26,7 +26,7 @@
   {
     "id": "4",
     "anchor": "engineering",
-    "icon": "/code.svg",
+    "icon": "/code.webp",
     "serviceName": "Software Engineering",
     "list": ["Builds and maintains the software infrastructure, turning design concepts into functional code. Ensures scalability, performance, and reliability of the product.", "Frontend Development", "Backend Development", "DevOps", "Code Reviews and Testing", "System Architecture"],
     "paragraph": ""
@@ -34,7 +34,7 @@
   {
     "id": "5",
     "anchor": "fullCycle",
-    "icon": "/analytics.svg",
+    "icon": "/analytics.webp",
     "serviceName": "Digital Product Full-Cycle Service",
     "list": ["Strategy & Discovery – Defining vision, goals, and roadmap", "Product Design – Crafting intuitive and engaging user experiences", "Software Development – Building scalable and robust applications", "Quality Assurance – Ensuring functionality, performance, and reliability", "Launch & Growth – Deploying, optimizing, and scaling your product"],
     "paragraph": "From concept to launch, we handle every stage of product development, ensuring seamless execution and long-term success. Our full-cycle approach combines strategy, design, engineering, and quality assurance to deliver high-quality digital solutions"
