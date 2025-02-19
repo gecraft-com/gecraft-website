@@ -12,7 +12,7 @@ function ContactUsPage() {
       </p>
       <div className="mt-16 xl:flex xl:flex-row-reverse xl:gap-10">
         <div className="xl:flex xl:min-w-96 xl:flex-col 2xl:min-w-[36rem]">
-          <h3 className="mt-7 text-lg font-semibold text-primary-900 sm:mt-11 sm:text-xl xl:mt-0 xl:text-2xl">
+          <h3 className="mt-7 text-lg font-semibold text-primary-900 sm:mt-11 sm:text-xl xl:mt-0 xl:text-3xl">
             What to Expect:
           </h3>
           <ul className="mt-3 text-sm text-primary-900 sm:text-lg xl:text-xl">
@@ -20,7 +20,7 @@ function ContactUsPage() {
             <li>— A free introductory call to discuss your needs</li>
             <li>— Expert insights and recommendations</li>
           </ul>
-          <h3 className="mt-4 text-lg font-semibold text-primary-900 sm:text-xl xl:mt-6 xl:text-2xl">
+          <h3 className="mt-4 text-lg font-semibold text-primary-900 sm:text-xl xl:mt-6 xl:text-3xl">
             Let’s create <br className="sm:hidden" /> something amazing!
           </h3>
         </div>
