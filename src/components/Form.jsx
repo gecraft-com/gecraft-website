@@ -37,7 +37,7 @@ function Form({ onPage = false }) {
   const getInputClassName = (fieldName, isValid, value) => {
     const baseClasses =
       fieldName === 'goals'
-        ? `${onPage ? 'h-40' : 'h-24'} w-full resize-none rounded-lg border-2 border-primary-600 px-4 py-3 text-black`
+        ? `${onPage ? 'h-40' : 'h-24'} w-full rounded-lg border-2 border-primary-600 px-4 py-3 text-black`
         : 'h-12 w-full rounded-lg border-2 px-4 resize-none'
 
     const shouldShowValidation = touchedFields[fieldName] || wasSubmitAttempted
@@ -133,7 +133,7 @@ function Form({ onPage = false }) {
                 Your name*
               </span>
               {wasSubmitAttempted && !isNameValid && (
-                <span className="text-red-600 absolute right-4 top-0 text-sm">
+                <span className="absolute right-4 top-0 text-sm text-red-600">
                   {getErrorMessage('name')}
                 </span>
               )}
@@ -154,7 +154,7 @@ function Form({ onPage = false }) {
               Your email*
             </span>
             {wasSubmitAttempted && !isEmailValid && (
-              <span className="text-red-600 absolute right-4 top-0 text-sm">
+              <span className="absolute right-4 top-0 text-sm text-red-600">
                 {getErrorMessage('email')}
               </span>
             )}
@@ -229,7 +229,7 @@ function Form({ onPage = false }) {
               </div>
             )}
             {wasSubmitAttempted && !isGoalsValid && (
-              <span className="text-red-600 absolute right-4 top-0 text-sm">
+              <span className="absolute right-4 top-0 text-sm text-red-600">
                 {getErrorMessage('goals')}
               </span>
             )}
