@@ -27,7 +27,7 @@ function PortfolioItem({
             {services.map((service, index) => (
               <li
                 key={index}
-                className="inline-block rounded-full bg-primary-400 px-3 py-1 text-xl"
+                className="inline-block rounded-full bg-primary-400 px-3 py-1 text-xl xl:text-2xl"
               >
                 {service}
               </li>

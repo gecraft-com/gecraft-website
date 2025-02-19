@@ -10,7 +10,7 @@ function GCButton({
   const getButtonStyles = (view) => {
     switch (view) {
       case 'green-header':
-        return 'w-36 flex justify-center items-center bg-primary-500 h-10 rounded-full text-white xl:w-44 xl:h-12'
+        return 'w-36 bg-primary-500 h-10 rounded-full text-white xl:w-44 xl:h-12 xl:text-lg'
       case 'green-form':
         return 'w-full bg-primary-500 h-12 rounded-full text-white xl:text-lg'
       case 'read-more':
