@@ -2,9 +2,9 @@ import Form from '../components/Form'
 
 function ContactUsPage() {
   return (
-    <div className="bg-primary-850 rounded-3xl px-7 py-5 text-white sm:px-12 sm:py-11 xl:rounded-[4rem] xl:px-14 xl:py-12">
+    <div className="rounded-3xl bg-primary-850 px-7 py-5 text-white sm:px-12 sm:py-11 xl:rounded-[4rem] xl:px-14 xl:py-12">
       <h2 className="text-3xl font-semibold uppercase sm:text-5xl xl:text-6xl">
-        LET&apos;S BUILD SOMETHING GREAT TOGETHER
+        Let&apos;s build something great together
       </h2>
       <p className="mt-2 text-lg sm:mt-3 sm:text-3xl xl:mt-6 xl:text-4xl">
         Tell us about your project by filling out the form below, and we&apos;ll reach out

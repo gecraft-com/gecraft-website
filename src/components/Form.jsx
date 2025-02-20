@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
-// import axios from 'axios'
+import clsx from 'clsx'
+
+// import axios from 'axios' Закомментировано для того, чтобы проводить тесты работы формы, чтобы не отправлять лишние письма
 
 import useForm from '../hooks/useForm'
 import GCButton from './GCButton'
-import Icons from './Icons'
+import ArrowIcon from './icons/ArrowIcon'
 
 function Form({ onPage = false }) {
   const {
@@ -34,11 +36,13 @@ function Form({ onPage = false }) {
     }))
   }
 
-  const getInputClassName = (fieldName, isValid, value) => {
-    const baseClasses =
+  const getInputClassName = (fieldName, isValid) => {
+    const baseClasses = clsx(
+      'w-full rounded-lg border-2 px-4 py-3',
       fieldName === 'goals'
-        ? `${onPage ? 'h-40' : 'h-24'} w-full rounded-lg border-2 border-primary-600 px-4 py-3 text-black`
-        : 'h-12 w-full rounded-lg border-2 px-4 resize-none'
+        ? ['border-primary-600', { 'h-40': onPage, 'h-24': !onPage }]
+        : ['h-12']
+    )
 
     const shouldShowValidation = touchedFields[fieldName] || wasSubmitAttempted
 
@@ -47,10 +51,10 @@ function Form({ onPage = false }) {
     }
 
     if (fieldName === 'name' || fieldName === 'email' || fieldName === 'goals') {
-      if (!value) {
-        return `${baseClasses} border-red-500`
-      }
-      return `${baseClasses} ${isValid ? 'border-green-600' : 'border-red-600'}`
+      return clsx(baseClasses, {
+        'border-green-600': isValid,
+        'border-red-600': !isValid,
+      })
     }
 
     return `${baseClasses} border-primary-600`
@@ -72,10 +76,10 @@ function Form({ onPage = false }) {
     return ''
   }
 
+  let timeoutId
+
   const handleSubmit = async (e) => {
     e.preventDefault()
-
-    console.log('🚀 ~ Form ~ formData:', formData)
 
     setWasSubmitAttempted(true)
 
@@ -84,7 +88,7 @@ function Form({ onPage = false }) {
     }
 
     try {
-      // await axios.post(import.meta.env.VITE_FORMSPREE_ENDPOINT, formData)
+      // await axios.post(import.meta.env.VITE_FORMSPREE_ENDPOINT, formData) Закомментировано для того, чтобы проводить тесты работы формы, чтобы не отправлять лишние письма
       setSubmitMessage(true)
       resetForm()
       setWasSubmitAttempted(false)
@@ -93,13 +97,21 @@ function Form({ onPage = false }) {
         email: false,
         goals: false,
       })
-      setTimeout(() => {
+      timeoutId = setTimeout(() => {
         setSubmitMessage(false)
       }, 10000)
     } catch (error) {
       console.error('Error submitting form:', error)
     }
   }
+
+  useEffect(() => {
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId)
+      }
+    }
+  }, [timeoutId])
 
   return (
     <>
@@ -115,7 +127,10 @@ function Form({ onPage = false }) {
       ) : (
         <form
           onSubmit={handleSubmit}
-          className={`${onPage ? 'mt-6 grid w-full grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 xl:mt-0' : 'hidden w-72 gap-3 sm:flex sm:flex-col xl:w-96'} text-black`}
+          className={clsx('text-black', {
+            'mt-6 grid w-full grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 xl:mt-0': onPage,
+            'hidden w-72 gap-3 sm:flex sm:flex-col xl:w-96': !onPage,
+          })}
         >
           {onPage && (
             <label className="group relative">
@@ -125,10 +140,17 @@ function Form({ onPage = false }) {
                 type="text"
                 onChange={handleInputChange('name')}
                 onBlur={handleBlur('name')}
-                className={getInputClassName('name', isNameValid, formData.name)}
+                className={getInputClassName('name', isNameValid)}
               />
               <span
-                className={`${formData.name ? 'top-2.5 text-xs opacity-35' : ''} absolute left-4 top-1/2 -translate-y-1/2 text-black duration-200 group-focus-within:top-2.5 group-focus-within:text-xs group-focus-within:opacity-35`}
+                className={clsx(
+                  'absolute left-4 top-1/2 -translate-y-1/2',
+                  'duration-200',
+                  'group-focus-within:top-2.5 group-focus-within:text-xs group-focus-within:opacity-35',
+                  {
+                    'top-2.5 text-xs opacity-35': formData.name,
+                  }
+                )}
               >
                 Your name*
               </span>
@@ -146,10 +168,17 @@ function Form({ onPage = false }) {
               type="text"
               onChange={handleInputChange('email')}
               onBlur={handleBlur('email')}
-              className={getInputClassName('email', isEmailValid, formData.email)}
+              className={getInputClassName('email', isEmailValid)}
             />
             <span
-              className={`${formData.email ? 'top-2.5 text-xs opacity-35' : ''} absolute left-4 top-1/2 -translate-y-1/2 text-black duration-200 group-focus-within:top-2.5 group-focus-within:text-xs group-focus-within:opacity-35`}
+              className={clsx(
+                'absolute left-4 top-1/2 -translate-y-1/2',
+                'duration-200',
+                'group-focus-within:top-2.5 group-focus-within:text-xs group-focus-within:opacity-35',
+                {
+                  'top-2.5 text-xs opacity-35': formData.email,
+                }
+              )}
             >
               Your email*
             </span>
@@ -169,7 +198,14 @@ function Form({ onPage = false }) {
                 className="h-12 w-full rounded-lg border-2 border-primary-600 px-4"
               />
               <span
-                className={`${formData.company ? 'top-2.5 text-xs opacity-35' : ''} absolute left-4 top-1/2 -translate-y-1/2 text-black duration-200 group-focus-within:top-2.5 group-focus-within:text-xs group-focus-within:opacity-35`}
+                className={clsx(
+                  'absolute left-4 top-1/2 -translate-y-1/2',
+                  'duration-200',
+                  'group-focus-within:top-2.5 group-focus-within:text-xs group-focus-within:opacity-35',
+                  {
+                    'top-2.5 text-xs opacity-35': formData.company,
+                  }
+                )}
               >
                 Your company
               </span>
@@ -196,9 +232,16 @@ function Form({ onPage = false }) {
                 <option value="I don't know yet">I don&apos;t know yet</option>
               </select>
               <div
-                className={`pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 duration-200 ${rotate ? 'rotate-180' : 'rotate-0'}`}
+                className={clsx(
+                  'absolute right-4 top-1/2 -translate-y-1/2',
+                  'pointer-events-none duration-200',
+                  {
+                    'rotate-180': rotate,
+                    'rotate-0': !rotate,
+                  }
+                )}
               >
-                <Icons name="arrow" />
+                <ArrowIcon />
               </div>
             </div>
           )}
@@ -209,16 +252,29 @@ function Form({ onPage = false }) {
               value={formData.goals}
               onChange={handleInputChange('goals')}
               onBlur={handleBlur('goals')}
-              className={getInputClassName('goals', isGoalsValid, formData.goals)}
+              className={getInputClassName('goals', isGoalsValid)}
             />
             <span
-              className={`${formData.goals ? 'top-0.5 text-xs opacity-35' : 'top-4'} absolute left-4 text-black duration-200 group-focus-within:top-0.5 group-focus-within:text-xs group-focus-within:opacity-35`}
+              className={clsx(
+                'absolute left-4',
+                'duration-200',
+                'group-focus-within:top-0.5 group-focus-within:text-xs group-focus-within:opacity-35',
+                {
+                  'top-0.5 text-xs opacity-35': formData.goals,
+                  'top-4': !formData.goals,
+                }
+              )}
             >
               {onPage ? 'Project Goals*' : 'Your question*'}
             </span>
             {onPage && (
               <div
-                className={`${formData.goals ? 'scale-0 opacity-0' : ''} absolute bottom-4 left-4 duration-200 group-focus-within:scale-0 group-focus-within:opacity-0`}
+                className={clsx(
+                  'absolute bottom-4 left-4',
+                  'duration-200',
+                  'group-focus-within:scale-0 group-focus-within:opacity-0',
+                  { 'scale-0 opacity-0': formData.goals }
+                )}
               >
                 <p className="text-primary-750">Helpful things to include:</p>
                 <ul className="text-primary-750">
