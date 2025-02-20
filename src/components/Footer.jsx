@@ -33,16 +33,16 @@ function Footer() {
           <Icons name="logo" width={80} height={20} />
         </a>
         <div className="hidden gap-4 text-base text-primary-300 underline sm:flex">
-          <a href="">Privacy Policy</a>
-          <a href="">Terms of Service</a>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
         </div>
         <p className="text-xs text-primary-300 sm:text-base">
           © {currentYear} All rights reserved
         </p>
       </div>
       <div className="flex gap-4 pt-3 text-xs text-primary-300 underline sm:hidden">
-        <a href="">Privacy Policy</a>
-        <a href="">Terms of Service</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
       </div>
     </footer>
   )
