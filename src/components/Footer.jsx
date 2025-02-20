@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import { NavLink } from 'react-router-dom'
 
 import Form from './Form'
@@ -14,14 +15,18 @@ function Footer() {
           <div className="flex flex-col">
             <NavLink
               to="/services"
-              className={({ isActive }) => `${isActive ? 'font-semibold' : ''}`}
+              className={({ isActive }) =>
+                clsx('pb-0.5 hover:font-semibold', { 'font-semibold': isActive })
+              }
             >
               Services
             </NavLink>
             <NavLink
               to="/work"
               className={({ isActive }) =>
-                `${isActive ? 'font-semibold' : ''} mt-2 sm:mt-3`
+                clsx('py-1 hover:font-semibold sm:mt-3', {
+                  'font-semibold': isActive,
+                })
               }
             >
               Work
@@ -29,7 +34,9 @@ function Footer() {
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                `${isActive ? 'font-semibold' : ''} mt-2 sm:mt-3`
+                clsx('pt-0.5 hover:font-semibold sm:mt-3', {
+                  'font-semibold': isActive,
+                })
               }
             >
               About

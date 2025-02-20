@@ -1,5 +1,6 @@
 import { useState } from 'react'
 
+import clsx from 'clsx'
 import { NavLink } from 'react-router-dom'
 
 import DropdownMenu from './DropdownMenu'
@@ -18,33 +19,54 @@ function Header() {
         <a href="/" className="hidden xl:block">
           <Icons name="logo" width={150} height={36} />
         </a>
-        <div className="hidden sm:block xl:text-lg">
-          <NavLink
-            to="/services"
-            className={({ isActive }) =>
-              `${isActive ? 'font-semibold' : ''} "mr-2.5 py-3" px-4`
-            }
-          >
-            Services
-          </NavLink>
-          <NavLink
-            to="/work"
-            className={({ isActive }) =>
-              `${isActive ? 'font-semibold' : ''} "mr-2.5 py-3" px-4`
-            }
-          >
-            Work
-          </NavLink>
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              `${isActive ? 'font-semibold' : ''} "mr-2.5 py-3" px-4`
-            }
-          >
-            About
-          </NavLink>
+        <div className="hidden justify-between sm:flex sm:w-44 sm:items-center xl:w-48 xl:text-lg">
+          <div className="relative h-full">
+            <NavLink
+              to="/services"
+              className={({ isActive }) =>
+                clsx(
+                  'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-3 hover:font-semibold',
+                  {
+                    'font-semibold': isActive,
+                  }
+                )
+              }
+            >
+              Services
+            </NavLink>
+          </div>
+          <div className="relative h-full">
+            <NavLink
+              to="/work"
+              className={({ isActive }) =>
+                clsx(
+                  'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-3 hover:font-semibold',
+                  {
+                    'font-semibold': isActive,
+                  }
+                )
+              }
+            >
+              Work
+            </NavLink>
+          </div>
+          <div className="relative h-full">
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                clsx(
+                  'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-3 hover:font-semibold',
+                  {
+                    'font-semibold': isActive,
+                  }
+                )
+              }
+            >
+              About
+            </NavLink>
+          </div>
         </div>
-        <div className="sm:hidden">
+        <div className="flex h-full items-center sm:hidden">
           <GCButton type="menu" onClick={() => setIsShow(true)}>
             <Icons name="menu" />
           </GCButton>
