@@ -5,7 +5,8 @@ import { NavLink } from 'react-router-dom'
 
 import DropdownMenu from './DropdownMenu'
 import GCButton from './GCButton'
-import Icons from './Icons'
+import BurgerMenuIcon from './icons/BurgerMenuIcon'
+import LogoIcon from './icons/LogoIcon'
 
 function Header() {
   const [isShow, setIsShow] = useState(false)
