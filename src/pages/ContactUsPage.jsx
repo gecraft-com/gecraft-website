@@ -7,8 +7,9 @@ function ContactUsPage() {
         Let&apos;s build something great together
       </h2>
       <p className="mt-2 text-lg sm:mt-3 sm:text-3xl xl:mt-6 xl:text-4xl">
-        Tell us about your project by filling out the form below, and we&apos;ll reach out
-        to schedule an introductory call!
+        Tell us about your project by filling out the form below,
+        <br className="hidden xl:block" /> and we&apos;ll reach out to schedule an
+        introductory call!
       </p>
       <div className="mt-16 xl:flex xl:flex-row-reverse xl:gap-10">
         <div className="xl:flex xl:min-w-96 xl:flex-col 2xl:min-w-[36rem]">
