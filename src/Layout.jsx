@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 import Footer from './components/Footer'
 import Header from './components/Header'
-import Icons from './components/Icons'
+import GoToTopIcon from './components/icons/GoToTopIcon'
 
 function Layout({ children }) {
   const [visible, setVisible] = useState(false)
@@ -28,7 +28,7 @@ function Layout({ children }) {
         href="#"
         className={`fixed bottom-5 right-5 duration-200 ${visible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`}
       >
-        <Icons name="go-to-top" />
+        <GoToTopIcon />
       </a>
     </div>
   )

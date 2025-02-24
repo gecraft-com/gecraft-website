@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-import { black, transparent, white } from 'tailwindcss/colors'
+import { black, green, red, transparent, white } from 'tailwindcss/colors'
 
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
@@ -8,6 +8,8 @@ export default {
     colors: {
       white,
       black,
+      red,
+      green,
       transparent,
       primary: {
         100: '#F6F6F6',
@@ -17,7 +19,9 @@ export default {
         500: '#25904A',
         600: '#6D6D6D',
         700: '#1C6036',
+        750: '#B0B0B0',
         800: '#237842',
+        850: '#001D1F',
         900: '#E7E7E7',
         950: '#0B2315',
       },

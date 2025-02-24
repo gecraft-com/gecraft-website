@@ -1,5 +1,9 @@
+import clsx from 'clsx'
+import { NavLink } from 'react-router-dom'
+
 import Form from './Form'
-import Icons from './Icons'
+import LinkedinIcon from './icons/LinkedinIcon'
+import LogoIcon from './icons/LogoIcon'
 
 function Footer() {
   const today = new Date()
@@ -10,15 +14,36 @@ function Footer() {
       <div className="flex justify-between border-b border-primary-200 pb-4">
         <div className="flex w-full justify-between sm:flex-col">
           <div className="flex flex-col">
-            <a href="">Services</a>
-            <a href="" className="mt-2 sm:mt-3">
+            <NavLink
+              to="/services"
+              className={({ isActive }) =>
+                clsx('pb-0.5 hover:font-semibold', { 'font-semibold': isActive })
+              }
+            >
+              Services
+            </NavLink>
+            <NavLink
+              to="/work"
+              className={({ isActive }) =>
+                clsx('py-1 hover:font-semibold sm:mt-3', {
+                  'font-semibold': isActive,
+                })
+              }
+            >
               Work
-            </a>
-            <a href="" className="mt-2 sm:mt-3">
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                clsx('pt-0.5 hover:font-semibold sm:mt-3', {
+                  'font-semibold': isActive,
+                })
+              }
+            >
               About
-            </a>
+            </NavLink>
             <a href="" className="mt-3 sm:mt-6">
-              <Icons name="linkedin" />
+              <LinkedinIcon />
             </a>
           </div>
           <p className="w-40 text-sm sm:mt-9 sm:w-80 sm:text-base sm:leading-5 xl:w-full">
@@ -30,7 +55,7 @@ function Footer() {
       </div>
       <div className="flex items-center justify-between pt-4 sm:pt-6">
         <a href="/">
-          <Icons name="logo" width={80} height={20} />
+          <LogoIcon width={80} height={20} />
         </a>
         <div className="hidden gap-4 text-base text-primary-300 underline sm:flex">
           <a href="">Privacy Policy</a>

@@ -24,9 +24,7 @@ function ServiceItem({ service, even }) {
         </div>
         <ul className="mt-3 list-disc pl-6 text-sm font-medium sm:mt-4 sm:text-lg xl:pl-8 xl:text-xl">
           {list.map((item, index) => (
-            <li key={index} className="">
-              {item}
-            </li>
+            <li key={index}>{item}</li>
           ))}
         </ul>
         {paragraph && (
