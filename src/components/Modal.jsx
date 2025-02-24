@@ -1,4 +1,4 @@
-import Icons from './Icons'
+import CloseIcon from './icons/CloseIcon'
 
 export function Modal({ children, setModal }) {
   const closeModal = (e) => {
@@ -17,7 +17,7 @@ export function Modal({ children, setModal }) {
           className="absolute right-5 top-5 cursor-pointer duration-100 hover:scale-110"
           onClick={() => setModal(false)}
         >
-          <Icons name="close" />
+          <CloseIcon />
         </div>
         {children}
       </div>
