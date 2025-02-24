@@ -43,7 +43,7 @@ function Footer() {
               About
             </NavLink>
             <a href="" className="mt-3 sm:mt-6">
-              <Icons name="linkedin" />
+              <LinkedinIcon />
             </a>
           </div>
           <Form />

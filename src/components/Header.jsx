@@ -15,10 +15,10 @@ function Header() {
     <>
       <header className="fixed z-20 flex h-16 w-full items-center justify-between border-b border-primary-100 bg-primary-100 px-4 drop-shadow-xl sm:px-8 sm:py-2.5 xl:h-20 xl:px-20 2xl:px-40">
         <a href="/" className="xl:hidden">
-          <Icons name="logo" width={88} height={22} />
+          <LogoIcon width={88} height={22} />
         </a>
         <a href="/" className="hidden xl:block">
-          <Icons name="logo" width={150} height={36} />
+          <LogoIcon name="logo" width={150} height={36} />
         </a>
         <div className="hidden justify-between sm:flex sm:w-44 sm:items-center xl:w-48 xl:text-lg">
           <div className="relative h-full">
@@ -69,7 +69,7 @@ function Header() {
         </div>
         <div className="flex h-full items-center sm:hidden">
           <GCButton type="menu" onClick={() => setIsShow(true)}>
-            <Icons name="menu" />
+            <BurgerMenuIcon />
           </GCButton>
         </div>
         <div className="hidden sm:block">
