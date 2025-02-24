@@ -4,11 +4,12 @@ function ServiceItem({ service, even }) {
   return (
     <div
       id={anchor}
-      className={`max-w-[78.875rem] rounded-3xl bg-primary-100 px-4 py-3.5 sm:p-6 xl:flex xl:items-center xl:rounded-[4rem] xl:px-11 xl:py-8 ${even ? '' : 'ml-auto'}`}
+      className={`max-w-[78.875rem] rounded-3xl bg-primary-100 px-4 py-3.5 sm:p-6 xl:flex xl:items-center xl:rounded-[4rem] xl:px-11 xl:py-8 ${even ? '' : 'ml-auto'} scroll-mt-20 xl:scroll-mt-24`}
     >
       <img
         src={icon}
         alt="logo"
+        loading="lazy"
         className={`hidden w-[29rem] 2xl:w-[35rem] ${even ? '' : '-scale-x-100'} xl:block`}
       />
       <div className="w-11/12">
@@ -16,6 +17,7 @@ function ServiceItem({ service, even }) {
           <img
             src={icon}
             alt="logo"
+            loading="lazy"
             className={`w-20 sm:w-32 ${even ? '' : '-scale-x-100'} xl:hidden`}
           />
           <h2 className="text-lg font-semibold sm:text-3xl xl:text-4xl">{serviceName}</h2>

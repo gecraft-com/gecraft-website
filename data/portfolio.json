@@ -1,7 +1,7 @@
 [
   {
     "id": "1",
-    "icon": "/skilldor.png",
+    "icon": "/skilldor.webp",
     "projectName": "Skilldor.com",
     "sinceDate": "2024",
     "services": ["Strategy & Discovery", "Product Management", "Product Design", "Software Engineering", "Quality Assurance"],
@@ -9,7 +9,7 @@
   },
   {
     "id": "2",
-    "icon": "/level.png",
+    "icon": "/level.webp",
     "projectName": "LEVEL.bible",
     "sinceDate": "2023",
     "services": ["Strategy & Discovery", "Product Management", "Product Design", "Software Engineering", "Quality Assurance", "Training and demos"],
@@ -17,7 +17,7 @@
   },
   {
     "id": "3",
-    "icon": "/biblevis.png",
+    "icon": "/biblevis.webp",
     "projectName": "BibleVis.com",
     "sinceDate": "2024",
     "services": ["Strategy & Discovery", "Product Management", "Product Design", "Software Engineering", "Quality Assurance", "Training and demos"],
