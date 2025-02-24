@@ -45,10 +45,10 @@ function TermsPage() {
           4. Disclaimer of Warranties
         </h3>
         <p className="mt-2 text-lg sm:mt-3 2xl:text-xl">
-          Our website is provided "as is" without any warranties, express or implied.
-          While we strive to provide accurate and timely information, we do not guarantee
-          that the content is error-free or complete. Your use of the website is at your
-          own risk.
+          Our website is provided &quot;as is&quot; without any warranties, express or
+          implied. While we strive to provide accurate and timely information, we do not
+          guarantee that the content is error-free or complete. Your use of the website is
+          at your own risk.
         </p>
         <h3 className="mt-4 text-xl font-semibold sm:mt-6 sm:text-3xl">
           5. Limitation of Liability
