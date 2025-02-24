@@ -5,7 +5,7 @@ function AboutPage() {
     <>
       <div className="gap-6 sm:flex sm:items-center xl:gap-20 2xl:gap-28">
         <img
-          src="/gecraft-logo.png"
+          src="/gecraft-logo.webp"
           alt="GeCraft logo"
           className="hidden sm:block sm:h-60 sm:w-60 xl:h-80 xl:w-80 2xl:h-[31.25rem] 2xl:w-[31.25rem]"
         />

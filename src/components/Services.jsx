@@ -26,7 +26,7 @@ function Services({ location = 'home' }) {
         )}
       >
         <img
-          src="/chat.svg"
+          src="/chat.webp"
           alt="chat"
           className={clsx(
             'absolute',
@@ -50,7 +50,7 @@ function Services({ location = 'home' }) {
         )}
       >
         <img
-          src="/frame.svg"
+          src="/frame.webp"
           alt="frame"
           className={clsx(
             'absolute',
@@ -74,7 +74,7 @@ function Services({ location = 'home' }) {
         )}
       >
         <img
-          src="/security.svg"
+          src="/security.webp"
           alt="security"
           className={clsx(
             'absolute',
@@ -98,7 +98,7 @@ function Services({ location = 'home' }) {
         )}
       >
         <img
-          src="/code.svg"
+          src="/code.webp"
           alt="code"
           className={clsx(
             'absolute',
@@ -122,7 +122,7 @@ function Services({ location = 'home' }) {
         )}
       >
         <img
-          src="/analytics.svg"
+          src="/analytics.webp"
           alt="analytics"
           className={clsx(
             'absolute',
