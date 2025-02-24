@@ -10,7 +10,7 @@ function DropdownMenu({ setIsShow }) {
           <LogoIcon width={88} height={22} />
         </a>
         <GCButton onClick={() => setIsShow(false)}>
-          <Icons name="close" />
+          <CloseIcon />
         </GCButton>
       </div>
       <div className="flex flex-col pt-3 text-left">

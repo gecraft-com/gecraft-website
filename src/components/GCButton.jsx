@@ -1,6 +1,6 @@
 function GCButton({
   children,
-  type,
+  type = 'button',
   view,
   onClick,
   asLink = null,
