@@ -34,7 +34,7 @@ function Services({ location = 'home' }) {
             location === 'home' &&
               'left-1 top-1 w-[5.5rem] duration-1000 group-hover:-rotate-12 group-hover:scale-125 sm:w-[12rem] xl:left-2 xl:top-2 xl:w-[19rem] 2xl:-top-6 2xl:w-[25rem]',
             location === 'services' &&
-              '-left-4 -top-1 w-[8rem] opacity-20 sm:-top-5 sm:w-80 xl:-left-14 xl:-top-16 xl:w-[28rem]'
+              '-left-4 -top-1 w-[8rem] opacity-20 sm:-left-8 sm:-top-1 sm:w-[25rem] xl:-left-16 xl:-top-9 xl:w-[28rem]'
           )}
         />
         <span className="z-10 duration-1000 group-hover:-translate-x-3">
@@ -58,7 +58,7 @@ function Services({ location = 'home' }) {
             location === 'home' &&
               'left-0.5 top-1 w-[4.563rem] duration-1000 group-hover:-rotate-12 group-hover:scale-125 sm:-left-1.5 sm:-top-1.5 sm:w-[12rem] xl:left-0 xl:top-2 xl:w-[17.5rem] 2xl:-left-2 2xl:-top-6 2xl:w-[22rem]',
             location === 'services' &&
-              '-left-2.5 -top-3 w-[7.7rem] -rotate-6 opacity-20 sm:-left-7 sm:-top-6 sm:w-80 xl:-left-28 xl:-top-14 xl:w-[28rem]'
+              '-left-2.5 -top-3 w-[7.7rem] -rotate-6 opacity-20 sm:-left-6 sm:-top-5 sm:w-[15rem] xl:-left-28 xl:-top-12 xl:w-[28rem] 2xl:w-[26rem]'
           )}
         />
         <span className="z-10 duration-1000 group-hover:-translate-x-3">
@@ -82,7 +82,7 @@ function Services({ location = 'home' }) {
             location === 'home' &&
               'left-0.5 top-0 w-[5rem] duration-1000 group-hover:-rotate-12 group-hover:scale-125 sm:-left-3 sm:-top-1 sm:w-[10.2rem] xl:-left-3 xl:top-0 xl:w-[17rem] 2xl:-left-8 2xl:-top-6 2xl:w-[21rem]',
             location === 'services' &&
-              '-left-2 -top-1.5 w-[7rem] opacity-20 sm:-left-12 sm:-top-7 sm:w-56 xl:-left-28 xl:-top-20 xl:w-96'
+              '-left-2 -top-1.5 w-[7rem] opacity-20 sm:-left-10 sm:-top-3 sm:w-[13rem] xl:-left-16 xl:-top-10 xl:w-[21.5rem] 2xl:-left-20'
           )}
         />
         <span className="z-10 duration-1000 group-hover:-translate-x-3">
@@ -106,7 +106,7 @@ function Services({ location = 'home' }) {
             location === 'home' &&
               'left-0.5 top-1 w-[4.563rem] duration-1000 group-hover:-rotate-12 group-hover:scale-125 sm:-left-1 sm:-top-1 sm:w-[11rem] xl:left-3 xl:top-0 xl:w-[18.5rem] 2xl:-left-1.5 2xl:w-[23.5rem]',
             location === 'services' &&
-              '-left-3 -top-3 w-[7rem] -rotate-12 opacity-20 sm:-left-7 sm:-top-8 sm:w-64 xl:-top-14 xl:w-96'
+              '-left-3 -top-3 w-[7rem] -rotate-12 opacity-20 sm:-left-7 sm:-top-8 sm:w-64 xl:-top-11 xl:w-[23rem]'
           )}
         />
         <span className="z-10 duration-1000 group-hover:-translate-x-3">
@@ -130,7 +130,7 @@ function Services({ location = 'home' }) {
             location === 'home' &&
               'left-0.5 top-1 w-[8.125rem] duration-1000 group-hover:-rotate-12 group-hover:scale-125 sm:-left-4 sm:-top-2 sm:w-[13rem] xl:left-0 xl:top-0 xl:w-[19.5rem] 2xl:-left-8 2xl:-top-5 2xl:w-[23.5rem]',
             location === 'services' &&
-              '-top-1 left-2 w-[8.5rem] -rotate-6 opacity-20 sm:-left-14 sm:-top-10 sm:w-72 xl:-left-28 xl:-top-20 xl:w-[29rem]'
+              '-top-1 left-2 w-[8.5rem] -rotate-6 opacity-20 sm:-left-6 sm:-top-4 sm:w-[15.5rem] xl:-left-16 xl:-top-12 xl:w-[27rem]'
           )}
         />
         <span className="z-10 duration-1000 group-hover:-translate-x-3">
