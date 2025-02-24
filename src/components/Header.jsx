@@ -68,12 +68,14 @@ function Header() {
           </div>
         </div>
         <div className="flex h-full items-center sm:hidden">
-          <GCButton type="menu" onClick={() => setIsShow(true)}>
+          <GCButton onClick={() => setIsShow(true)}>
             <BurgerMenuIcon />
           </GCButton>
         </div>
         <div className="hidden sm:block">
-          <GCButton type="green-header">Contact us</GCButton>
+          <GCButton asLink link="/contact-us" view="green-header">
+            Contact us
+          </GCButton>
         </div>
       </header>
       {isShow && <DropdownMenu setIsShow={setIsShow} />}

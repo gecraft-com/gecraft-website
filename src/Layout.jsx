@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 
+import CookiesBanner from './components/CookiesBanner'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import GoToTopIcon from './components/icons/GoToTopIcon'
@@ -30,6 +31,7 @@ function Layout({ children }) {
       >
         <GoToTopIcon />
       </a>
+      <CookiesBanner />
     </div>
   )
 }
