@@ -23,7 +23,9 @@ function DropdownMenu({ setIsShow }) {
         <a href="/about" className="mb-3 p-3">
           About
         </a>
-        <GCButton view="green-header">Contact us</GCButton>
+        <GCButton asLink link="/contact-us" view="green-header">
+          Contact us
+        </GCButton>
       </div>
     </div>
   )
