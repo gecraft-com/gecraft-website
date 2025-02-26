@@ -20,9 +20,11 @@ function Services({ location = 'home' }) {
       <Link
         to="/services#management"
         className={clsx(
-          'relative flex items-end justify-end rounded-tl-3xl bg-primary-400 px-3 py-2.5 text-right sm:col-span-2 sm:p-4 xl:rounded-tl-[4rem] xl:p-7',
-          location === 'home' && 'group h-28 sm:h-48 xl:h-80',
-          location === 'services' && 'h-24 overflow-hidden sm:h-44 xl:h-56'
+          'relative flex items-end justify-end rounded-tl-3xl bg-primary-400 px-3 py-2.5 text-right duration-1000 sm:col-span-2 sm:p-4 xl:rounded-tl-[4rem] xl:p-7',
+          location === 'home' &&
+            'group h-28 hover:scale-[1.01] hover:shadow-xl sm:h-48 xl:h-80',
+          location === 'services' &&
+            'group h-24 overflow-hidden hover:scale-[1.01] hover:shadow-xl sm:h-44 xl:h-56'
         )}
       >
         <img
@@ -37,16 +39,18 @@ function Services({ location = 'home' }) {
               '-left-4 -top-1 w-[8rem] opacity-20 sm:-left-8 sm:-top-1 sm:w-[25rem] xl:-left-16 xl:-top-9 xl:w-[28rem]'
           )}
         />
-        <span className="z-10 duration-1000 group-hover:-translate-x-3">
+        <span className="z-10 duration-1000 group-hover:-translate-x-6">
           Product Management
         </span>
       </Link>
       <Link
         to="/services#design"
         className={clsx(
-          'relative flex items-end justify-end rounded-tr-3xl bg-primary-400 px-3 py-2.5 text-right sm:col-span-2 sm:rounded-none xl:p-7',
-          location === 'home' && 'group h-28 sm:h-48 xl:h-80',
-          location === 'services' && 'h-24 overflow-hidden sm:h-44 xl:h-56'
+          'relative flex items-end justify-end rounded-tr-3xl bg-primary-400 px-3 py-2.5 text-right duration-1000 sm:col-span-2 sm:rounded-none xl:p-7',
+          location === 'home' &&
+            'group h-28 hover:scale-[1.01] hover:shadow-xl sm:h-48 xl:h-80',
+          location === 'services' &&
+            'group h-24 overflow-hidden hover:scale-[1.01] hover:shadow-xl sm:h-44 xl:h-56'
         )}
       >
         <img
@@ -61,16 +65,16 @@ function Services({ location = 'home' }) {
               '-left-2.5 -top-3 w-[7.7rem] -rotate-6 opacity-20 sm:-left-6 sm:-top-5 sm:w-[15rem] xl:-left-28 xl:-top-12 xl:w-[28rem] 2xl:w-[26rem]'
           )}
         />
-        <span className="z-10 duration-1000 group-hover:-translate-x-3">
-          Product Design
-        </span>
+        <span className="duration-1000 group-hover:-translate-x-6">Product Design</span>
       </Link>
       <Link
         to="/services#quality"
         className={clsx(
-          'relative flex items-end justify-end bg-primary-400 px-3 py-2.5 text-right sm:col-span-2 sm:rounded-tr-3xl xl:rounded-tr-[4rem] xl:p-7',
-          location === 'home' && 'group h-28 sm:h-48 xl:h-80',
-          location === 'services' && 'h-24 overflow-hidden sm:h-44 xl:h-56'
+          'relative flex items-end justify-end bg-primary-400 px-3 py-2.5 text-right duration-1000 sm:col-span-2 sm:rounded-tr-3xl xl:rounded-tr-[4rem] xl:p-7',
+          location === 'home' &&
+            'group h-28 hover:scale-[1.01] hover:shadow-xl sm:h-48 xl:h-80',
+          location === 'services' &&
+            'group h-24 overflow-hidden hover:scale-[1.01] hover:shadow-xl sm:h-44 xl:h-56'
         )}
       >
         <img
@@ -85,16 +89,18 @@ function Services({ location = 'home' }) {
               '-left-2 -top-1.5 w-[7rem] opacity-20 sm:-left-10 sm:-top-3 sm:w-[13rem] xl:-left-16 xl:-top-10 xl:w-[21.5rem] 2xl:-left-20'
           )}
         />
-        <span className="z-10 duration-1000 group-hover:-translate-x-3">
+        <span className="z-10 duration-1000 group-hover:-translate-x-6">
           Quality Assurance
         </span>
       </Link>
       <Link
         to="/services#engineering"
         className={clsx(
-          'relative flex items-end justify-end bg-primary-400 px-3 py-2.5 text-right sm:col-span-3 sm:rounded-bl-3xl xl:rounded-bl-[4rem] xl:p-7',
-          location === 'home' && 'group h-28 sm:h-48 xl:h-80',
-          location === 'services' && 'h-24 overflow-hidden sm:h-44 xl:h-56'
+          'relative flex items-end justify-end bg-primary-400 px-3 py-2.5 text-right duration-1000 sm:col-span-3 sm:rounded-bl-3xl xl:rounded-bl-[4rem] xl:p-7',
+          location === 'home' &&
+            'group h-28 hover:scale-[1.01] hover:shadow-xl sm:h-48 xl:h-80',
+          location === 'services' &&
+            'group h-24 overflow-hidden hover:scale-[1.01] hover:shadow-xl sm:h-44 xl:h-56'
         )}
       >
         <img
@@ -109,16 +115,18 @@ function Services({ location = 'home' }) {
               '-left-3 -top-3 w-[7rem] -rotate-12 opacity-20 sm:-left-7 sm:-top-8 sm:w-64 xl:-top-11 xl:w-[23rem]'
           )}
         />
-        <span className="z-10 duration-1000 group-hover:-translate-x-3">
+        <span className="z-10 duration-1000 group-hover:-translate-x-6">
           Software Engineering
         </span>
       </Link>
       <Link
         to="/services#fullCycle"
         className={clsx(
-          'relative col-span-2 flex items-end justify-end rounded-b-3xl bg-primary-400 px-3 py-2.5 text-right sm:col-span-3 sm:rounded-bl-none xl:rounded-br-[4rem] xl:p-7',
-          location === 'home' && 'group h-28 sm:h-48 xl:h-80',
-          location === 'services' && 'h-24 overflow-hidden sm:h-44 xl:h-56'
+          'relative col-span-2 flex items-end justify-end rounded-b-3xl bg-primary-400 px-3 py-2.5 text-right duration-1000 sm:col-span-3 sm:rounded-bl-none xl:rounded-br-[4rem] xl:p-7',
+          location === 'home' &&
+            'group h-28 hover:scale-[1.01] hover:shadow-xl sm:h-48 xl:h-80',
+          location === 'services' &&
+            'group h-24 overflow-hidden hover:scale-[1.01] hover:shadow-xl sm:h-44 xl:h-56'
         )}
       >
         <img
@@ -128,12 +136,12 @@ function Services({ location = 'home' }) {
           className={clsx(
             'absolute',
             location === 'home' &&
-              'left-0.5 top-1 w-[8.125rem] duration-1000 group-hover:-rotate-12 group-hover:scale-125 sm:-left-4 sm:-top-2 sm:w-[13rem] xl:left-0 xl:top-0 xl:w-[19.5rem] 2xl:-left-8 2xl:-top-5 2xl:w-[23.5rem]',
+              'left-0.5 top-1 z-30 w-[8.125rem] duration-1000 group-hover:-rotate-12 group-hover:scale-125 sm:-left-4 sm:-top-2 sm:w-[13rem] xl:left-0 xl:top-0 xl:w-[19.5rem] 2xl:-left-8 2xl:-top-5 2xl:w-[23.5rem]',
             location === 'services' &&
               '-top-1 left-2 w-[8.5rem] -rotate-6 opacity-20 sm:-left-6 sm:-top-4 sm:w-[15.5rem] xl:-left-16 xl:-top-12 xl:w-[27rem]'
           )}
         />
-        <span className="z-10 duration-1000 group-hover:-translate-x-3">
+        <span className="z-10 duration-1000 group-hover:-translate-x-6">
           Digital Product <br className="xl:hidden" />
           Full-Cycle Service
         </span>
