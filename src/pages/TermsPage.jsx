@@ -1,6 +1,6 @@
 function TermsPage() {
   return (
-    <div className="w-full bg-right-top bg-no-repeat xl:bg-[url('/logo-background1.png')] 2xl:bg-[url('/logo-background.png')]">
+    <div className="3xl:before:right-48 4xl:before:right-96 w-full before:fixed before:right-16 before:top-10 before:-z-10 before:content-[url('/logo-background1.png')] 2xl:before:right-36">
       <div className="rounded-3xl bg-primary-100 p-4 sm:px-9 sm:py-8 xl:w-[50rem] 2xl:w-[62.5rem]">
         <h2 className="text-3xl sm:text-4xl">Gecraft Terms of Use</h2>
         <p className="mt-4 text-lg italic sm:mt-6 2xl:text-xl">

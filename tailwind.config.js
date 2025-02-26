@@ -33,6 +33,8 @@ export default {
       },
       screens: {
         '2xl': '1920px',
+        '3xl': '2000px',
+        '4xl': '2500px',
       },
       keyframes: {
         emergence: {
