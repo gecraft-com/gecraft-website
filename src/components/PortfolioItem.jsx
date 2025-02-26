@@ -32,7 +32,7 @@ function PortfolioItem({
             {services.map((service, index) => (
               <li
                 key={index}
-                className="inline-block rounded-full bg-primary-400 px-3 py-1 text-xl xl:text-2xl"
+                className="inline-block rounded-full bg-primary-900 px-3 py-1 text-xl xl:text-2xl"
               >
                 {service}
               </li>
@@ -50,7 +50,7 @@ function PortfolioItem({
         {services.map((service, index) => (
           <li
             key={index}
-            className="inline-block rounded-full bg-primary-400 px-3 py-1 text-sm sm:text-lg"
+            className="inline-block rounded-full bg-primary-900 px-3 py-1 text-sm sm:text-lg"
           >
             {service}
           </li>
