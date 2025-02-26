@@ -13,7 +13,7 @@ function Footer() {
     <footer className="w-full bg-primary-100 px-4 pb-4 pt-6 text-left sm:px-8 sm:pb-7 sm:pt-11 xl:px-20 xl:pb-9 xl:pt-14 2xl:px-40">
       <div className="mx-auto max-w-[100.188rem]">
         <div className="flex justify-between border-b border-primary-200 pb-4">
-          <div className="flex w-full justify-between sm:flex-col">
+          <div className="flex justify-between sm:flex-col">
             <div className="flex flex-col">
               <NavLink
                 to="/services"
