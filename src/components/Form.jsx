@@ -40,7 +40,7 @@ function Form({ onPage = false }) {
     const baseClasses = clsx(
       'w-full rounded-lg border-2 px-4 py-3',
       fieldName === 'goals'
-        ? ['border-primary-600', { 'h-40': onPage, 'h-24': !onPage }]
+        ? ['border-primary-600 min-h-36', { 'h-40': onPage, 'h-24': !onPage }]
         : ['h-12']
     )
 
@@ -116,7 +116,7 @@ function Form({ onPage = false }) {
   return (
     <>
       {submitMessage ? (
-        <div className="w-1/2">
+        <div className="w-full">
           <p className="mt-10 text-3xl font-semibold text-primary-500">Thank You!</p>
           <p className="mt-3">
             Your form has been successfully submitted. A representative from Glokas will
