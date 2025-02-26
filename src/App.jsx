@@ -15,7 +15,7 @@ const PrivacyPage = lazy(() => import('./pages/PrivacyPage'))
 function App() {
   return (
     <Layout>
-      <Suspense fallback={<div>Загрузка...</div>}>
+      <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicesPage />} />
