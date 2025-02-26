@@ -3,11 +3,11 @@ import Team from '../components/Team'
 function AboutPage() {
   return (
     <>
-      <div className="gap-6 sm:flex sm:items-center xl:gap-20 2xl:gap-28">
+      <div className="relative sm:static sm:flex sm:items-center sm:gap-6 xl:gap-20 2xl:gap-28">
         <img
           src="/gecraft-logo.webp"
           alt="GeCraft logo"
-          className="hidden sm:block sm:h-60 sm:w-60 xl:h-80 xl:w-80 2xl:h-[31.25rem] 2xl:w-[31.25rem]"
+          className="absolute -right-12 top-28 -z-10 w-[22.98rem] -rotate-12 opacity-10 sm:static sm:right-auto sm:top-auto sm:h-60 sm:w-60 sm:rotate-0 sm:opacity-100 xl:h-80 xl:w-80 2xl:h-[31.25rem] 2xl:w-[31.25rem]"
         />
         <div>
           <h2 className="text-sm font-semibold text-primary-700 xl:text-xl 2xl:text-3xl">
