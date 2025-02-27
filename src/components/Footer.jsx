@@ -45,6 +45,7 @@ function Footer() {
               </NavLink>
               <a
                 href="https://www.linkedin.com/company/gecraft/?viewAsMember=true"
+                target="_blank"
                 className="mt-3 sm:mt-6"
               >
                 <LinkedinIcon />
