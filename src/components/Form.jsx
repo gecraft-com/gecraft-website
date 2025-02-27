@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react'
 
+import axios from 'axios'
 import clsx from 'clsx'
-
-// import axios from 'axios' Закомментировано для того, чтобы проводить тесты работы формы, чтобы не отправлять лишние письма
 
 import useForm from '../hooks/useForm'
 import GCButton from './GCButton'
@@ -88,7 +87,7 @@ function Form({ onPage = false }) {
     }
 
     try {
-      // await axios.post(import.meta.env.VITE_FORMSPREE_ENDPOINT, formData) Закомментировано для того, чтобы проводить тесты работы формы, чтобы не отправлять лишние письма
+      await axios.post(import.meta.env.VITE_FORMSPREE_ENDPOINT, formData)
       setSubmitMessage(true)
       resetForm()
       setWasSubmitAttempted(false)
