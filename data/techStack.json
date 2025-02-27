@@ -3,39 +3,39 @@
     "id": "1",
     "title": "Frontend",
     "stack": [
-      {"icon": "/javascript.svg", "name": "JavaScript"},
-      {"icon": "/typescript.svg", "name": "TypeScript"},
-      {"icon": "/react.svg", "name": "React"},
-      {"icon": "/nextjs.svg", "name": "Next.js"},
-      {"icon": "/css.svg", "name": "CSS"},
-      {"icon": "/html.svg", "name": "HTML"},
-      {"icon": "/tailwind.svg", "name": "Tailwind"},
-      {"icon": "/nextui.svg", "name": "NextUI"},
-      {"icon": "/vite.svg", "name": "Vite"},
-      {"icon": "/сapacitor.svg", "name": "Capacitor"}
+      {"name": "JavaScript"},
+      {"name": "TypeScript"},
+      {"name": "React"},
+      {"name": "Next.js"},
+      {"name": "CSS"},
+      {"name": "HTML"},
+      {"name": "Tailwind"},
+      {"name": "NextUI"},
+      {"name": "Vite"},
+      {"name": "Capacitor"}
     ]
   },
   {
     "id": "2",
     "title": "Backend",
     "stack": [
-      {"icon": "/nodejs.svg", "name": "Node.js"},
-      {"icon": "/postgresql.svg", "name": "PostgreSQL"},
-      {"icon": "/mysql.svg", "name": "MySQL"},
-      {"icon": "/sqlite.svg", "name": "SQLite"},
-      {"icon": "/graphql.svg", "name": "GraphQL"},
-      {"icon": "/rest-api.svg", "name": "REST API"},
-      {"icon": "/swagger.svg", "name": "Swagger"},
-      {"icon": "/docker.svg", "name": "Docker"}
+      {"name": "Node.js"},
+      {"name": "PostgreSQL"},
+      {"name": "MySQL"},
+      {"name": "SQLite"},
+      {"name": "GraphQL"},
+      {"name": "REST API"},
+      {"name": "Swagger"},
+      {"name": "Docker"}
     ]
   },
   {
     "id": "3",
     "title": "Testing",
     "stack": [
-      {"icon": "/jest.svg", "name": "Jest"},
-      {"icon": "/playwright.svg", "name": "Playwright"},
-      {"icon": "/vitest.svg", "name": "Vitest"}
+      {"name": "Jest"},
+      {"name": "Playwright"},
+      {"name": "Vitest"}
     ]
   }
 ]

@@ -8,10 +8,12 @@ function TechStackItem({ stackItem }) {
         {stack.map((item, index) => (
           <li
             key={index}
-            className="flex h-20 flex-col items-center justify-center rounded-md bg-white sm:h-24 xl:h-28"
+            className="group flex h-20 flex-col items-center justify-center rounded-md bg-white hover:bg-primary-500 sm:h-24 xl:h-28"
           >
             <img src={item.icon} alt={item.name} className="w-6 sm:w-7 xl:w-10" />
-            <p className="mt-2 text-sm sm:text-base xl:mt-2.5 xl:text-lg">{item.name}</p>
+            <p className="mt-2 text-sm group-hover:text-white sm:text-base xl:mt-2.5 xl:text-lg">
+              {item.name}
+            </p>
           </li>
         ))}
       </ul>
