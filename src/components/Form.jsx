@@ -40,7 +40,13 @@ function Form({ onPage = false }) {
     const baseClasses = clsx(
       'w-full rounded-lg border-2 px-4 py-3',
       fieldName === 'goals'
-        ? ['border-primary-600 min-h-36', { 'h-40': onPage, 'h-24': !onPage }]
+        ? [
+            'border-primary-600 block',
+            {
+              'min-h-36 h-40': onPage,
+              'min-h-20 h-[5.5rem]': !onPage,
+            },
+          ]
         : ['h-12']
     )
 
