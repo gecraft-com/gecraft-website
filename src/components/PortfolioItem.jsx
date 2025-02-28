@@ -22,7 +22,7 @@ function PortfolioItem({
         className="h-16 w-full rounded-xl object-cover sm:h-24 xl:h-80 xl:rounded-2xl"
       />
       <a href={link} target="_blank">
-        <h2 className="mt-2 font-readexPro text-2xl font-semibold text-primary-800 underline hover:text-primary-700 sm:mt-4 sm:text-4xl xl:mb-3 xl:mt-9">
+        <h2 className="mt-2 font-readexPro text-2xl font-semibold text-primary-800 underline duration-100 hover:text-primary-700 sm:mt-4 sm:text-4xl xl:mb-3 xl:mt-9">
           {projectName}
         </h2>
       </a>
