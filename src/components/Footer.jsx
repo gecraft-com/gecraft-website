@@ -14,7 +14,7 @@ function Footer() {
       <div className="mx-auto max-w-[100.188rem]">
         <div className="border-b border-primary-200 pb-4 sm:flex sm:justify-between sm:gap-6">
           <div className="flex justify-between sm:flex-col">
-            <div className="flex flex-col">
+            <div className="flex flex-col font-readexPro">
               <NavLink
                 to="/services"
                 className={({ isActive }) =>

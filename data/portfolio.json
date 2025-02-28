@@ -1,7 +1,7 @@
 [
   {
     "id": "1",
-    "icon": "/skilldor.webp",
+    "icon": "/Picture.png",
     "projectName": "Skilldor.com",
     "sinceDate": "2024",
     "link": "https://skilldor.com/",
@@ -10,7 +10,7 @@
   },
   {
     "id": "2",
-    "icon": "/level.webp",
+    "icon": "/Picture.png",
     "projectName": "LEVEL.bible",
     "sinceDate": "2023",
     "link": "https://level.bible/",
@@ -19,7 +19,7 @@
   },
   {
     "id": "3",
-    "icon": "/biblevis.webp",
+    "icon": "/Picture.png",
     "projectName": "BibleVis.com",
     "sinceDate": "2024",
     "link": "https://biblevis.com/",

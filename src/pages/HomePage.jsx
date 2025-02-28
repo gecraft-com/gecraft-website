@@ -5,7 +5,7 @@ function HomePage() {
   return (
     <>
       <Services location="home" />
-      <p className="mt-6 text-lg font-semibold leading-6 sm:mt-12 sm:text-3xl xl:mt-14 xl:text-5xl 2xl:mt-20">
+      <p className="mt-6 font-readexPro text-lg font-semibold leading-6 sm:mt-12 sm:text-3xl xl:mt-14 xl:text-4xl 2xl:mt-20">
         Tailored solutions: bespoke design <br className="hidden sm:block" /> and
         development for your business challenges
       </p>

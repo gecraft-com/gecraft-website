@@ -16,7 +16,7 @@ function Services({ location = 'home' }) {
   }, [hash])
 
   return (
-    <div className="grid grid-cols-2 grid-rows-2 gap-1 font-semibold sm:grid-cols-6 sm:gap-1.5 sm:text-xl xl:gap-4 xl:text-3xl">
+    <div className="grid grid-cols-2 grid-rows-2 gap-1 font-readexPro font-semibold sm:grid-cols-6 sm:gap-1.5 sm:text-xl xl:gap-4 xl:text-3xl">
       <Link
         to="/services#management"
         className={clsx(

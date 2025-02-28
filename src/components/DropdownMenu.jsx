@@ -13,7 +13,7 @@ function DropdownMenu({ setIsShow }) {
           <CloseIcon />
         </GCButton>
       </div>
-      <div className="flex flex-col pt-3 text-left">
+      <div className="flex flex-col pt-3 text-left font-readexPro">
         <a href="/services" className="p-3">
           Services
         </a>

@@ -151,7 +151,7 @@ function Form({ onPage = false }) {
               <span
                 className={clsx(
                   'absolute left-4 top-1/2 -translate-y-1/2',
-                  'duration-200',
+                  'cursor-text duration-200',
                   'group-focus-within:top-2.5 group-focus-within:text-xs group-focus-within:opacity-35',
                   {
                     'top-2.5 text-xs opacity-35': formData.name,
@@ -179,7 +179,7 @@ function Form({ onPage = false }) {
             <span
               className={clsx(
                 'absolute left-4 top-1/2 -translate-y-1/2',
-                'duration-200',
+                'cursor-text duration-200',
                 'group-focus-within:top-2.5 group-focus-within:text-xs group-focus-within:opacity-35',
                 {
                   'top-2.5 text-xs opacity-35': formData.email,
@@ -206,7 +206,7 @@ function Form({ onPage = false }) {
               <span
                 className={clsx(
                   'absolute left-4 top-1/2 -translate-y-1/2',
-                  'duration-200',
+                  'cursor-text duration-200',
                   'group-focus-within:top-2.5 group-focus-within:text-xs group-focus-within:opacity-35',
                   {
                     'top-2.5 text-xs opacity-35': formData.company,
@@ -222,7 +222,7 @@ function Form({ onPage = false }) {
               <select
                 name="budget"
                 onChange={handleInputChange('budget')}
-                className="h-12 w-full appearance-none rounded-lg border-2 border-primary-600 px-4"
+                className="h-12 w-full cursor-pointer appearance-none rounded-lg border-2 border-primary-600 px-4"
                 onClick={() => {
                   setRotate(!rotate)
                 }}
@@ -263,7 +263,7 @@ function Form({ onPage = false }) {
             <span
               className={clsx(
                 'absolute left-4',
-                'duration-200',
+                'cursor-text duration-200',
                 'group-focus-within:top-0.5 group-focus-within:text-xs group-focus-within:opacity-35',
                 {
                   'top-0.5 text-xs opacity-35': formData.goals,
@@ -277,7 +277,7 @@ function Form({ onPage = false }) {
               <div
                 className={clsx(
                   'absolute bottom-4 left-4',
-                  'duration-200',
+                  'cursor-text duration-200',
                   'group-focus-within:scale-0 group-focus-within:opacity-0',
                   { 'scale-0 opacity-0': formData.goals }
                 )}

@@ -23,15 +23,19 @@ function ServiceItem({ service, odd }) {
       <div className="w-11/12">
         <div className="flex items-center gap-4">
           <img src={icon} alt="logo" loading="lazy" className="w-16 sm:w-24 xl:hidden" />
-          <h2 className="text-lg font-semibold sm:text-3xl xl:text-4xl">{serviceName}</h2>
+          <h2 className="font-readexPro text-lg font-semibold sm:text-3xl xl:text-4xl">
+            {serviceName}
+          </h2>
         </div>
-        <ul className="mt-3 list-disc pl-6 text-sm font-medium sm:mt-4 sm:text-lg xl:pl-8 xl:text-xl">
+        <ul className="mt-3 list-disc pl-6 font-bold sm:mt-4 xl:pl-8 xl:text-lg">
           {list.map((item, index) => (
-            <li key={index}>{item}</li>
+            <li key={index} className="marker:text-xl marker:leading-4">
+              {item}
+            </li>
           ))}
         </ul>
         {paragraph && (
-          <p className="mt-2 text-sm sm:mt-3 sm:text-lg xl:text-xl">{paragraph}</p>
+          <p className="text-primary-550 mt-2 sm:mt-3 xl:text-lg">{paragraph}</p>
         )}
       </div>
     </div>
