@@ -18,7 +18,9 @@ function Footer() {
               <NavLink
                 to="/services"
                 className={({ isActive }) =>
-                  clsx('pb-0.5 hover:font-semibold', { 'font-semibold': isActive })
+                  clsx('pb-0.5 duration-100 hover:font-semibold', {
+                    'font-semibold': isActive,
+                  })
                 }
               >
                 Services
@@ -26,7 +28,7 @@ function Footer() {
               <NavLink
                 to="/work"
                 className={({ isActive }) =>
-                  clsx('py-1 hover:font-semibold sm:mt-3', {
+                  clsx('py-1 duration-100 hover:font-semibold sm:mt-3', {
                     'font-semibold': isActive,
                   })
                 }
@@ -36,7 +38,7 @@ function Footer() {
               <NavLink
                 to="/about"
                 className={({ isActive }) =>
-                  clsx('pt-0.5 hover:font-semibold sm:mt-3', {
+                  clsx('pt-0.5 duration-100 hover:font-semibold sm:mt-3', {
                     'font-semibold': isActive,
                   })
                 }

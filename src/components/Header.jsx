@@ -27,7 +27,7 @@ function Header() {
                 to="/services"
                 className={({ isActive }) =>
                   clsx(
-                    'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-3 hover:font-semibold',
+                    'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-3 duration-100 hover:font-semibold',
                     {
                       'font-semibold': isActive,
                     }
@@ -42,7 +42,7 @@ function Header() {
                 to="/work"
                 className={({ isActive }) =>
                   clsx(
-                    'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-3 hover:font-semibold',
+                    'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-3 duration-100 hover:font-semibold',
                     {
                       'font-semibold': isActive,
                     }
@@ -57,7 +57,7 @@ function Header() {
                 to="/about"
                 className={({ isActive }) =>
                   clsx(
-                    'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-3 hover:font-semibold',
+                    'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-3 duration-100 hover:font-semibold',
                     {
                       'font-semibold': isActive,
                     }
