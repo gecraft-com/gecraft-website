@@ -1,7 +1,10 @@
 [
   {
     "id": "1",
-    "icon": "/Picture.png",
+    "icon1": "/skilldor@1.webp",
+    "icon2": "/skilldor@2.webp",
+    "icon3": "/skilldor@3.webp",
+    "icon4": "/skilldor@4.webp",
     "projectName": "Skilldor.com",
     "sinceDate": "2024",
     "link": "https://skilldor.com/",
@@ -10,7 +13,10 @@
   },
   {
     "id": "2",
-    "icon": "/Picture.png",
+    "icon1": "/level@1.webp",
+    "icon2": "/level@2.webp",
+    "icon3": "/level@3.webp",
+    "icon4": "/level@4.webp",
     "projectName": "LEVEL.bible",
     "sinceDate": "2023",
     "link": "https://level.bible/",
@@ -19,7 +25,10 @@
   },
   {
     "id": "3",
-    "icon": "/Picture.png",
+    "icon1": "/biblevis@1.webp",
+    "icon2": "/biblevis@2.webp",
+    "icon3": "/biblevis@3.webp",
+    "icon4": "/biblevis@4.webp",
     "projectName": "BibleVis.com",
     "sinceDate": "2024",
     "link": "https://biblevis.com/",
