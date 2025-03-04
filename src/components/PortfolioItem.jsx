@@ -18,7 +18,6 @@ function PortfolioItem({
       <img
         src={icon}
         alt="logo"
-        loading="lazy"
         className="w-full rounded-xl object-cover xl:rounded-xl"
       />
       <a href={link} target="_blank">

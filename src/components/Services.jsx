@@ -30,7 +30,6 @@ function Services({ location = 'home' }) {
         <img
           src="/chat.webp"
           alt="chat"
-          loading="lazy"
           className={clsx(
             'absolute',
             location === 'home' &&
@@ -56,7 +55,6 @@ function Services({ location = 'home' }) {
         <img
           src="/frame.webp"
           alt="frame"
-          loading="lazy"
           className={clsx(
             'absolute',
             location === 'home' &&
@@ -80,7 +78,6 @@ function Services({ location = 'home' }) {
         <img
           src="/security.webp"
           alt="security"
-          loading="lazy"
           className={clsx(
             'absolute',
             location === 'home' &&
@@ -106,7 +103,6 @@ function Services({ location = 'home' }) {
         <img
           src="/code.webp"
           alt="code"
-          loading="lazy"
           className={clsx(
             'absolute',
             location === 'home' &&
@@ -132,7 +128,6 @@ function Services({ location = 'home' }) {
         <img
           src="/analytics.webp"
           alt="analytics"
-          loading="lazy"
           className={clsx(
             'absolute',
             location === 'home' &&

@@ -14,15 +14,10 @@ function ServiceItem({ service, odd }) {
         }
       )}
     >
-      <img
-        src={icon}
-        alt="logo"
-        loading="lazy"
-        className="hidden xl:mr-8 xl:block xl:w-80"
-      />
+      <img src={icon} alt="logo" className="hidden xl:mr-8 xl:block xl:w-80" />
       <div className="w-11/12">
         <div className="flex items-center gap-4">
-          <img src={icon} alt="logo" loading="lazy" className="w-16 sm:w-24 xl:hidden" />
+          <img src={icon} alt="logo" className="w-16 sm:w-24 xl:hidden" />
           <h2 className="font-readexPro text-lg font-semibold sm:text-3xl xl:text-4xl">
             {serviceName}
           </h2>
@@ -35,7 +30,7 @@ function ServiceItem({ service, odd }) {
           ))}
         </ul>
         {paragraph && (
-          <p className="text-primary-550 mt-2 sm:mt-3 xl:text-lg">{paragraph}</p>
+          <p className="mt-2 text-primary-550 sm:mt-3 xl:text-lg">{paragraph}</p>
         )}
       </div>
     </div>
