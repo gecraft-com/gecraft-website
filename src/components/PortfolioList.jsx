@@ -6,7 +6,7 @@ function PortfolioList({ location = '' }) {
   const windowWidth = useWindowWidth()
 
   return (
-    <div className="mt-4 flex w-full flex-col flex-wrap gap-2 sm:mt-6 sm:gap-4 xl:mt-9 xl:h-[117.57rem] xl:gap-6 1366:h-[113.71rem] 1440:h-[115.1rem] 1536:h-[116.6rem] 1680:h-[123.5rem] 2xl:h-[108.1rem]">
+    <div className="mt-4 grid w-full gap-3 sm:mt-6 sm:gap-4 xl:mt-9 xl:grid-cols-2 xl:gap-6">
       {portfolio.map(
         ({
           id,

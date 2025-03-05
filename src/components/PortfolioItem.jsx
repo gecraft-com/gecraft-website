@@ -14,7 +14,7 @@ function PortfolioItem({
   const shouldTruncate = words.length > 30
 
   return (
-    <div className="item rounded-3xl bg-primary-100 p-4 sm:p-6 xl:w-1/2 xl:rounded-[3.5rem] xl:p-8">
+    <div className="item rounded-3xl bg-primary-100 p-4 sm:p-6 xl:rounded-[3.5rem] xl:p-8">
       <img
         src={icon}
         alt="logo"
