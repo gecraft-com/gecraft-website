@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "icon1": "/skilldor@1.webp",
+    "icon2": "/skilldor@2.webp",
+    "icon3": "/skilldor@3.webp",
+    "icon4": "/skilldor@4.webp",
+    "projectName": "Skilldor.com",
+    "sinceDate": "2024",
+    "link": "https://skilldor.com/",
+    "services": ["Strategy & Discovery", "Product Management", "Product Design", "Software Engineering", "Quality Assurance"],
+    "description": "GeCraft developed Skilldor, a gamified sports training platform that helps players improve through XP-based progression, progress tracking, and customizable workouts. We handled everything—from mobile & web development to UX design and feature-rich training apps. Skilldor is more than an app—it’s a sports training revolution, starting with basketball and expanding into soccer and fitness in the near future. GeCraft turns bold ideas into reality. Let’s build yours!"
+  },
+  {
+    "id": "2",
+    "icon1": "/level@1.webp",
+    "icon2": "/level@2.webp",
+    "icon3": "/level@3.webp",
+    "icon4": "/level@4.webp",
+    "projectName": "LEVEL.bible",
+    "sinceDate": "2023",
+    "link": "https://level.bible/",
+    "services": ["Strategy & Discovery", "Product Management", "Product Design", "Software Engineering", "Quality Assurance", "Training and demos"],
+    "description": "LEVEL is a cutting-edge, customizable Translation Management System designed to support any Bible translation method. It can be dapted to various translation approaches and materials. The platform is focused on simplifying the translation process for nations with diverse linguistic backgrounds and varying levels of computer literacy. LEVEL provides a step-by-step workflow for managing translation projects. GeCraft takes a comprehensive approach in the development of LEVEL, providing expertise in custom software development, API creation, DevOps, and AI feature development."
+  },
+  {
+    "id": "3",
+    "icon1": "/biblevis@1.webp",
+    "icon2": "/biblevis@2.webp",
+    "icon3": "/biblevis@3.webp",
+    "icon4": "/biblevis@4.webp",
+    "projectName": "BibleVis.com",
+    "sinceDate": "2024",
+    "link": "https://biblevis.com/",
+    "services": ["Strategy & Discovery", "Product Management", "Product Design", "Software Engineering", "Quality Assurance", "Training and demos"],
+    "description": "BibleVis is an innovative platform dedicated to making Bible stories and Christian concepts more accessible and visually engaging. Through the use of advanced AI technology, we create high-quality, AI-generated images based on Bible themes, providing a unique and creative way to experience the richness of Scripture."
+  }
+]

@@ -1,130 +1,146 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
-import services from '../../data/services.json'
-import ModalWindow from './ModalWindow'
-import ProjectsModal from './ProjectsModal'
-import ServiceModal from './ServiceModal'
+import clsx from 'clsx'
+import { Link, useLocation } from 'react-router-dom'
 
-function Services() {
-  const html = document.querySelector('html')
-
-  const [modalIsOpen, setModalIsOpen] = useState(false)
-
-  const [showProjectsModal, setShowProjectsModal] = useState(false)
-
-  const [selectedService, setSelectedService] = useState(null)
-  const [label, setLabel] = useState('')
-
-  const [overlay, setOverlay] = useState('opacity-0')
-  const [modalWindow, setModalWindow] = useState('translate-y-full')
-
-  const handleClick = useCallback((service) => {
-    html.classList.add('overflow-hidden')
-    setSelectedService(service)
-    setLabel(service.label)
-    setModalIsOpen(true)
-    setTimeout(() => {
-      setOverlay('opacity-1')
-      setModalWindow('translate-y-0 delay-200')
-    }, 0)
-  }, [])
-
-  const handleCloseModal = () => {
-    setTimeout(() => {
-      html.classList.remove('overflow-hidden')
-      setShowProjectsModal(false)
-      setModalIsOpen(false)
-    }, 600)
-    setModalWindow('translate-y-full')
-    setOverlay('opacity-0 delay-200')
-  }
-
-  const [id, setId] = useState('1')
-  const [movement, setMovement] = useState(0)
+function Services({ location = 'home' }) {
+  const { hash } = useLocation()
 
   useEffect(() => {
-    switch (id) {
-      case '1':
-        setMovement('rotate-[20deg] -translate-y-[30vw]')
-        break
-      case '2':
-        setMovement('rotate-[15deg] -translate-y-[15vw]')
-        break
-      case '3':
-        setMovement('rotate-6 -translate-y-[2vw]')
-        break
-      case '4':
-        setMovement('-rotate-3 -translate-y-[2vw]')
-        break
-      case '5':
-        setMovement('-rotate-[12deg] translate-y-[15vw]')
-        break
-      case '6':
-        setMovement('-rotate-[18deg] translate-y-[30vw]')
-        break
-
-      default:
-        setMovement('-rotate-[20deg] translate-y-[30vw]')
-        break
+    if (hash) {
+      const element = document.getElementById(hash.replace('#', ''))
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
     }
-  }, [id])
-
-  const classNameHoverBlock = () => {
-    const baseClasses = 'hover-block'
-
-    const transform = `-translate-x-[100vw] ${movement} scale-[4]`
-
-    return `${baseClasses} ${transform}`
-  }
+  }, [hash])
 
   return (
-    <div
-      id="services"
-      className="block justify-between px-[2.1vw] pb-[20.5vw] pt-[51vw] sm:flex sm:pb-[2.8vw] sm:pl-[5.92vw] sm:pr-[4.5vw] sm:pt-[4.1vw] lg:pb-[5.5vw] lg:pl-[3.13vw] lg:pr-[2vw] lg:pt-[6.35vw] 2xl:pb-[4.5vw] 2xl:pl-[3.23vw] 2xl:pt-[4.99vw]"
-    >
-      <div className="flex w-1/4 flex-col items-start sm:mt-[2.5vw]">
-        <div className="inline-block flex-col sm:sticky sm:top-16">
-          <h3 className="animation-timeline ml-[2.84vw] animate-emergence whitespace-nowrap text-left text-[3.08vw] font-extrabold uppercase before:mr-[1.3vw] before:inline-flex before:h-[2.31vw] before:w-[2.31vw] before:rounded-full before:bg-basic sm:ml-0 sm:text-[1.06vw] sm:before:mr-[0.45vw] sm:before:h-[0.8vw] sm:before:w-[0.8vw] lg:text-[0.63vw] lg:before:mr-[0.27vw] lg:before:h-[0.47vw] lg:before:w-[0.47vw] 2xl:text-[0.35vw] 2xl:before:mr-[0.15vw] 2xl:before:h-[0.263vw] 2xl:before:w-[0.263vw]">
-            Our services
-          </h3>
-          <h4 className="animation-timeline ml-[2.84vw] mt-[10vw] w-[90vw] animate-emergence text-left text-[9vw] leading-tight sm:ml-0 sm:mt-[2.74vw] sm:w-[32vw] sm:text-[3.185vw] lg:mt-[1.67vw] lg:w-[23vw] lg:text-[2.1vw] 2xl:mt-[1.3vw] 2xl:w-[14vw] 2xl:text-[1.4vw]">
-            Skills to enhance your performance
-          </h4>
-        </div>
-      </div>
-
-      <div className="relative mt-[14.1vw] duration-150 hover:text-ourServicesBtn hover:duration-150 sm:mt-0 sm:pt-[0.5vw]">
-        {services.map((service) => (
-          <button
-            key={service.id}
-            onClick={() => handleClick(service)}
-            className="button animation-timeline relative z-10 mb-[1vw] table animate-emergence whitespace-nowrap px-[2.84vw] text-center text-[8.45vw] last:mb-0 hover:text-basic active:rounded-full active:bg-buttonHover sm:mb-0 sm:px-[4.33vw] sm:text-[4.25vw] lg:px-[3.55vw] lg:text-[5.52vw] lg:active:bg-transparent 2xl:px-[4.1vw]"
-            onMouseEnter={() => {
-              setId(service.id)
-            }}
-          >
-            {service.label}
-          </button>
-        ))}
-        <div className={classNameHoverBlock()}></div>
-        <ModalWindow
-          onCloseModal={handleCloseModal}
-          modalIsOpen={modalIsOpen}
-          label={label}
-          preventScroll={true}
-          overlay={overlay}
-          modalWindow={modalWindow}
-        >
-          {!showProjectsModal && (
-            <ServiceModal
-              {...selectedService}
-              setShowProjectsModal={setShowProjectsModal}
-              modalServiceIsOpen={modalIsOpen}
-            />
+    <div className="grid grid-cols-2 grid-rows-2 gap-1 font-readexPro font-semibold sm:grid-cols-6 sm:gap-1.5 sm:text-xl xl:gap-4 xl:text-3xl">
+      <Link
+        to="/services#management"
+        className={clsx(
+          'relative flex items-end justify-end rounded-tl-3xl bg-primary-400 px-3 py-2.5 text-right duration-1000 sm:col-span-2 sm:p-4 xl:rounded-tl-[4rem] xl:p-7',
+          location === 'home' &&
+            'group h-28 hover:scale-[1.01] hover:shadow-xl sm:h-48 xl:h-80',
+          location === 'services' &&
+            'group h-24 overflow-hidden hover:scale-[1.01] hover:shadow-xl sm:h-44 xl:h-56'
+        )}
+      >
+        <img
+          src="/chat.webp"
+          alt="chat"
+          className={clsx(
+            'absolute',
+            location === 'home' &&
+              'left-1 top-1 w-[4.5rem] duration-1000 group-hover:-rotate-12 group-hover:scale-125 sm:left-3 sm:top-3 sm:w-[8.3rem] xl:left-7 xl:top-5 xl:w-[15rem] 2xl:-top-3 2xl:w-[18rem]',
+            location === 'services' &&
+              '-left-1.5 -top-2 w-[6.2rem] opacity-20 sm:-left-3.5 sm:-top-4 sm:w-[12rem] xl:-left-10 xl:-top-12 xl:w-[20rem]'
           )}
-          {showProjectsModal && <ProjectsModal />}
-        </ModalWindow>
-      </div>
+        />
+        <span className="z-10 duration-1000 group-hover:-translate-x-6">
+          Product Management
+        </span>
+      </Link>
+      <Link
+        to="/services#design"
+        className={clsx(
+          'relative flex items-end justify-end rounded-tr-3xl bg-primary-400 px-3 py-2.5 text-right duration-1000 sm:col-span-2 sm:rounded-none xl:p-7',
+          location === 'home' &&
+            'group h-28 hover:scale-[1.01] hover:shadow-xl sm:h-48 xl:h-80',
+          location === 'services' &&
+            'group h-24 overflow-hidden hover:scale-[1.01] hover:shadow-xl sm:h-44 xl:h-56'
+        )}
+      >
+        <img
+          src="/frame.webp"
+          alt="frame"
+          className={clsx(
+            'absolute',
+            location === 'home' &&
+              'left-3 top-2 w-[3.5rem] duration-1000 group-hover:-rotate-12 group-hover:scale-125 sm:left-3.5 sm:top-1 sm:w-[8.5rem] xl:left-8 xl:top-7 xl:w-[13.5rem] 2xl:left-8 2xl:top-1 2xl:w-[16.5rem]',
+            location === 'services' &&
+              '-top-2 left-0.5 w-[5.5rem] -rotate-6 opacity-20 sm:-top-3 sm:left-0 sm:w-[11.9rem] xl:-left-16 xl:-top-9 xl:w-[18rem]'
+          )}
+        />
+        <span className="duration-1000 group-hover:-translate-x-6">Product Design</span>
+      </Link>
+      <Link
+        to="/services#quality"
+        className={clsx(
+          'relative flex items-end justify-end bg-primary-400 px-3 py-2.5 text-right duration-1000 sm:col-span-2 sm:rounded-tr-3xl xl:rounded-tr-[4rem] xl:p-7',
+          location === 'home' &&
+            'group h-28 hover:scale-[1.01] hover:shadow-xl sm:h-48 xl:h-80',
+          location === 'services' &&
+            'group h-24 overflow-hidden hover:scale-[1.01] hover:shadow-xl sm:h-44 xl:h-56'
+        )}
+      >
+        <img
+          src="/security.webp"
+          alt="security"
+          className={clsx(
+            'absolute',
+            location === 'home' &&
+              'left-2.5 top-2 w-[4rem] duration-1000 group-hover:-rotate-12 group-hover:scale-125 sm:left-2 sm:top-3 sm:w-[8rem] xl:left-3 xl:top-7 xl:w-[13rem] 2xl:left-4 2xl:top-4 2xl:w-[15rem]',
+            location === 'services' &&
+              '-left-1 top-0 w-[5.5rem] opacity-20 sm:-left-7 sm:-top-0.5 sm:w-[10rem] xl:-left-14 xl:-top-7 xl:w-[17rem]'
+          )}
+        />
+        <span className="z-10 duration-1000 group-hover:-translate-x-6">
+          Quality Assurance
+        </span>
+      </Link>
+      <Link
+        to="/services#engineering"
+        className={clsx(
+          'relative flex items-end justify-end bg-primary-400 px-3 py-2.5 text-right duration-1000 sm:col-span-3 sm:rounded-bl-3xl xl:rounded-bl-[4rem] xl:p-7',
+          location === 'home' &&
+            'group h-28 hover:scale-[1.01] hover:shadow-xl sm:h-48 xl:h-80',
+          location === 'services' &&
+            'group h-24 overflow-hidden hover:scale-[1.01] hover:shadow-xl sm:h-44 xl:h-56'
+        )}
+      >
+        <img
+          src="/code.webp"
+          alt="code"
+          className={clsx(
+            'absolute',
+            location === 'home' &&
+              'left-2 top-3 w-[3.2rem] duration-1000 group-hover:-rotate-12 group-hover:scale-125 sm:left-5 sm:top-2.5 sm:w-[8rem] xl:left-10 xl:top-5 xl:w-[14rem] 2xl:left-10 2xl:w-[17.4rem]',
+            location === 'services' &&
+              '-left-0.5 -top-1 w-[5rem] -rotate-12 opacity-20 sm:-top-3.5 sm:left-0.5 sm:w-[12rem] xl:-top-4 xl:left-5 xl:w-[16.5rem]'
+          )}
+        />
+        <span className="z-10 duration-1000 group-hover:-translate-x-6">
+          Software Engineering
+        </span>
+      </Link>
+      <Link
+        to="/services#fullCycle"
+        className={clsx(
+          'relative col-span-2 flex items-end justify-end rounded-b-3xl bg-primary-400 px-3 py-2.5 text-right duration-1000 sm:col-span-3 sm:rounded-bl-none xl:rounded-br-[4rem] xl:p-7',
+          location === 'home' &&
+            'group h-28 hover:scale-[1.01] hover:shadow-xl sm:h-48 xl:h-80',
+          location === 'services' &&
+            'group h-24 overflow-hidden hover:scale-[1.01] hover:shadow-xl sm:h-44 xl:h-56'
+        )}
+      >
+        <img
+          src="/analytics.webp"
+          alt="analytics"
+          className={clsx(
+            'absolute',
+            location === 'home' &&
+              'left-6 top-2 w-[5.6rem] duration-1000 group-hover:-rotate-12 group-hover:scale-125 sm:left-5 sm:top-1.5 sm:w-[8.5rem] xl:left-10 xl:top-5 xl:w-[14rem] 2xl:left-9 2xl:top-1 2xl:w-[16.5rem]',
+            location === 'services' &&
+              'left-6 top-0 w-[6rem] -rotate-6 opacity-20 sm:-top-3 sm:left-1 sm:w-[11rem] xl:-left-8 xl:-top-10 xl:w-[19.5rem]'
+          )}
+        />
+        <span className="z-10 duration-1000 group-hover:-translate-x-6">
+          Digital Product <br className="xl:hidden" />
+          Full-Cycle Service
+        </span>
+      </Link>
     </div>
   )
 }

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "1",
+    "photo": "/dima.png",
+    "name": "Dima S",
+    "role": "CEO, Founder"
+  },
+  {
+    "id": "2",
+    "photo": "/viktor.png",
+    "name": "Viktor G",
+    "role": "Software Architect"
+  },
+  {
+    "id": "3",
+    "photo": "/alexander.png",
+    "name": "Alexander V",
+    "role": "Software Lead"
+  },
+  {
+    "id": "4",
+    "photo": "/paul.png",
+    "name": "Paul E",
+    "role": "Software Developer"
+  },
+  {
+    "id": "5",
+    "photo": "/den.png",
+    "name": "Den",
+    "role": "Software Developer"
+  },
+  {
+    "id": "6",
+    "photo": "/vitalii.png",
+    "name": "Vitalii P",
+    "role": "Software Developer"
+  },
+  {
+    "id": "7",
+    "photo": "/snezhana.png",
+    "name": "Snezhana M",
+    "role": "Chief of Staff"
+  },
+  {
+    "id": "8",
+    "photo": "/christina.png",
+    "name": "Christina M",
+    "role": "UI/UX designer"
+  },
+  {
+    "id": "9",
+    "photo": "/russ.png",
+    "name": "Russ Lang",
+    "role": "Product Manager"
+  }
+]
