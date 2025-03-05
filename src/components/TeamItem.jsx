@@ -1,12 +1,12 @@
 function TeamItem({ person }) {
   const { photo, name, role } = person
+
   return (
-    <div className="hover:bg-primary-650 group rounded-2xl bg-primary-900 px-3.5 py-3 duration-100 sm:px-4 sm:py-3.5 xl:p-5">
+    <div className="group rounded-2xl bg-primary-900 px-3.5 py-3 duration-100 hover:bg-primary-650 sm:px-4 sm:py-3.5 xl:rounded-3xl xl:p-5">
       <img
         src={photo}
         alt={name}
-        loading="lazy"
-        className="mx-auto w-auto rounded-lg bg-white"
+        className="mx-auto h-auto w-auto rounded-lg bg-white xl:rounded-2xl"
       />
       <p className="mt-2 font-semibold text-primary-950 duration-100 group-hover:text-white sm:text-xl xl:mt-4 xl:text-3xl">
         {name}

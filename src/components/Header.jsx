@@ -21,13 +21,13 @@ function Header() {
           <a href="/" className="hidden xl:block">
             <LogoIcon name="logo" width={150} height={36} />
           </a>
-          <div className="hidden justify-between sm:flex sm:w-44 sm:items-center xl:w-48 xl:text-lg">
+          <div className="hidden justify-between font-readexPro sm:flex sm:w-44 sm:items-center xl:w-48 xl:text-lg">
             <div className="relative h-full">
               <NavLink
                 to="/services"
                 className={({ isActive }) =>
                   clsx(
-                    'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-3 hover:font-semibold',
+                    'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-3 duration-100 hover:font-semibold',
                     {
                       'font-semibold': isActive,
                     }
@@ -42,7 +42,7 @@ function Header() {
                 to="/work"
                 className={({ isActive }) =>
                   clsx(
-                    'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-3 hover:font-semibold',
+                    'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-3 duration-100 hover:font-semibold',
                     {
                       'font-semibold': isActive,
                     }
@@ -57,7 +57,7 @@ function Header() {
                 to="/about"
                 className={({ isActive }) =>
                   clsx(
-                    'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-3 hover:font-semibold',
+                    'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-3 duration-100 hover:font-semibold',
                     {
                       'font-semibold': isActive,
                     }

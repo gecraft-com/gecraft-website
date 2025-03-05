@@ -12,13 +12,15 @@ function Footer() {
   return (
     <footer className="w-full bg-primary-100 px-4 pb-4 pt-6 text-left sm:px-8 sm:pb-7 sm:pt-11 xl:px-20 xl:pb-9 xl:pt-14 2xl:px-40">
       <div className="mx-auto max-w-[100.188rem]">
-        <div className="flex justify-between border-b border-primary-200 pb-4">
-          <div className="flex w-full justify-between sm:flex-col">
-            <div className="flex flex-col">
+        <div className="border-b border-primary-200 pb-4 sm:flex sm:justify-between sm:gap-6">
+          <div className="flex justify-between sm:flex-col">
+            <div className="flex flex-col font-readexPro">
               <NavLink
                 to="/services"
                 className={({ isActive }) =>
-                  clsx('pb-0.5 hover:font-semibold', { 'font-semibold': isActive })
+                  clsx('pb-0.5 duration-100 hover:font-semibold', {
+                    'font-semibold': isActive,
+                  })
                 }
               >
                 Services
@@ -26,7 +28,7 @@ function Footer() {
               <NavLink
                 to="/work"
                 className={({ isActive }) =>
-                  clsx('py-1 hover:font-semibold sm:mt-3', {
+                  clsx('py-1 duration-100 hover:font-semibold sm:mt-3', {
                     'font-semibold': isActive,
                   })
                 }
@@ -36,7 +38,7 @@ function Footer() {
               <NavLink
                 to="/about"
                 className={({ isActive }) =>
-                  clsx('pt-0.5 hover:font-semibold sm:mt-3', {
+                  clsx('pt-0.5 duration-100 hover:font-semibold sm:mt-3', {
                     'font-semibold': isActive,
                   })
                 }
@@ -45,6 +47,7 @@ function Footer() {
               </NavLink>
               <a
                 href="https://www.linkedin.com/company/gecraft/?viewAsMember=true"
+                target="_blank"
                 className="mt-3 sm:mt-6"
               >
                 <LinkedinIcon />

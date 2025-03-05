@@ -17,6 +17,7 @@ export default {
         300: '#888888',
         400: '#DAF1DE',
         500: '#25904A',
+        550: '#3D3D3D',
         600: '#6D6D6D',
         650: '#55B272',
         700: '#1C6036',
@@ -32,7 +33,13 @@ export default {
         readexPro: ['Readex Pro', 'sans-serif'],
       },
       screens: {
+        '1366': '1366px',
+        '1440': '1440px',
+        '1536': '1536px',
+        '1680': '1680px',
         '2xl': '1920px',
+        '3xl': '2000px',
+        '4xl': '2500px',
       },
       keyframes: {
         emergence: {
