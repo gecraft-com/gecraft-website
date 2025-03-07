@@ -23,7 +23,7 @@ function GCButton({
   }
 
   return asLink ? (
-    <a href={link} className={getButtonStyles(view)}>
+    <a href={link} className={getButtonStyles(view)} onClick={onClick}>
       {children}
     </a>
   ) : (
