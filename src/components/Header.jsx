@@ -13,7 +13,7 @@ function Header() {
 
   return (
     <>
-      <header className="fixed z-20 h-16 w-full border-b border-primary-100 bg-primary-100 px-4 drop-shadow-xl sm:px-8 sm:py-2.5 xl:h-20 xl:px-20 2xl:px-40">
+      <header className="border-primary-100 bg-primary-100 fixed z-20 h-16 w-full border-b px-4 drop-shadow-xl sm:px-8 sm:py-2.5 xl:h-20 xl:px-20 2xl:px-40">
         <div className="mx-auto flex h-full max-w-[100.188rem] items-center justify-between">
           <a href="/" className="xl:hidden">
             <LogoIcon width={88} height={22} />
@@ -21,13 +21,13 @@ function Header() {
           <a href="/" className="hidden xl:block">
             <LogoIcon name="logo" width={150} height={36} />
           </a>
-          <div className="hidden justify-between font-readexPro sm:flex sm:w-44 sm:items-center xl:w-48 xl:text-lg">
+          <div className="font-readexPro hidden justify-between sm:flex sm:w-44 sm:items-center xl:w-48 xl:text-lg">
             <div className="relative h-full">
               <NavLink
                 to="/services"
                 className={({ isActive }) =>
                   clsx(
-                    'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-3 duration-100 hover:font-semibold',
+                    'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-3 duration-100 hover:font-semibold',
                     {
                       'font-semibold': isActive,
                     }
@@ -42,7 +42,7 @@ function Header() {
                 to="/work"
                 className={({ isActive }) =>
                   clsx(
-                    'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-3 duration-100 hover:font-semibold',
+                    'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-3 duration-100 hover:font-semibold',
                     {
                       'font-semibold': isActive,
                     }
@@ -57,7 +57,7 @@ function Header() {
                 to="/about"
                 className={({ isActive }) =>
                   clsx(
-                    'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-3 duration-100 hover:font-semibold',
+                    'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-3 duration-100 hover:font-semibold',
                     {
                       'font-semibold': isActive,
                     }

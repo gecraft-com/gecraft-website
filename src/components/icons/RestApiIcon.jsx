@@ -4,7 +4,7 @@ function RestApiIcon() {
       viewBox="0 0 38 38"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-6 fill-primary-500 stroke-primary-500 duration-100 group-hover:fill-white group-hover:stroke-white sm:w-7 xl:w-10"
+      className="fill-primary-500 stroke-primary-500 w-6 duration-100 group-hover:fill-white group-hover:stroke-white sm:w-7 xl:w-10"
     >
       <path
         fillRule="evenodd"

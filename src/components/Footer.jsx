@@ -10,11 +10,11 @@ function Footer() {
   const currentYear = today.getFullYear()
 
   return (
-    <footer className="w-full bg-primary-100 px-4 pb-4 pt-6 text-left sm:px-8 sm:pb-7 sm:pt-11 xl:px-20 xl:pb-9 xl:pt-14 2xl:px-40">
+    <footer className="bg-primary-100 w-full px-4 pt-6 pb-4 text-left sm:px-8 sm:pt-11 sm:pb-7 xl:px-20 xl:pt-14 xl:pb-9 2xl:px-40">
       <div className="mx-auto max-w-[100.188rem]">
-        <div className="border-b border-primary-200 pb-4 sm:flex sm:justify-between sm:gap-6">
+        <div className="border-primary-200 border-b pb-4 sm:flex sm:justify-between sm:gap-6">
           <div className="flex justify-between sm:flex-col">
-            <div className="flex flex-col font-readexPro">
+            <div className="font-readexPro flex flex-col">
               <NavLink
                 to="/services"
                 className={({ isActive }) =>
@@ -64,15 +64,15 @@ function Footer() {
           <a href="/">
             <LogoIcon width={80} height={20} />
           </a>
-          <div className="hidden gap-4 text-base text-primary-300 underline sm:flex">
+          <div className="text-primary-300 hidden gap-4 text-base underline sm:flex">
             <a href="/privacy">Privacy Policy</a>
             <a href="/terms">Terms of Service</a>
           </div>
-          <p className="text-xs text-primary-300 sm:text-base">
+          <p className="text-primary-300 text-xs sm:text-base">
             © {currentYear} All rights reserved
           </p>
         </div>
-        <div className="flex gap-4 pt-3 text-xs text-primary-300 underline sm:hidden">
+        <div className="text-primary-300 flex gap-4 pt-3 text-xs underline sm:hidden">
           <a href="/privacy">Privacy Policy</a>
           <a href="/terms">Terms of Service</a>
         </div>

@@ -4,7 +4,7 @@ function NextJsIcon() {
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-6 fill-primary-500 duration-100 group-hover:fill-white sm:w-7 xl:w-10"
+      className="fill-primary-500 w-6 duration-100 group-hover:fill-white sm:w-7 xl:w-10"
     >
       <g clipPath="url(#clip0_397_2736)">
         <g>

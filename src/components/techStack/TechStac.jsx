@@ -8,7 +8,7 @@ function TechStack() {
       <h2 className="mb-4 text-lg font-semibold sm:mb-8 sm:text-3xl xl:mb-9 xl:text-5xl">
         Our tech stack
       </h2>
-      <ul className="flex flex-col gap-6 font-readexPro 2xl:gap-9">
+      <ul className="font-readexPro flex flex-col gap-6 2xl:gap-9">
         <Frontend />
         <Backend />
         <Testing />
