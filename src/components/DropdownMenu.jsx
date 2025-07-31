@@ -4,7 +4,7 @@ import LogoIcon from './icons/LogoIcon'
 
 function DropdownMenu({ setIsShow }) {
   return (
-    <div className="bg-primary-100 fixed z-30 w-full rounded-b-lg px-4 pb-4 drop-shadow-xl">
+    <div className="bg-primary-100 fixed z-40 w-full rounded-b-lg px-4 pb-4 drop-shadow-xl">
       <div className="border-primary-200 flex h-16 items-center justify-between border-b">
         <a href="/">
           <LogoIcon width={88} height={22} />
@@ -14,7 +14,7 @@ function DropdownMenu({ setIsShow }) {
         </GCButton>
       </div>
       <div className="font-readexPro flex flex-col pt-3 text-left">
-        <a href="/services" className="p-3">
+        <a href="/services" className="p-3" onClick={() => setIsShow(false)}>
           Services
         </a>
         <a href="/work" className="p-3" onClick={() => setIsShow(false)}>
