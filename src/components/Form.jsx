@@ -122,7 +122,7 @@ function Form({ onPage = false }) {
     <>
       {submitMessage ? (
         <div className="w-full">
-          <p className="mt-10 text-3xl font-semibold text-primary-500">Thank You!</p>
+          <p className="text-primary-500 mt-10 text-3xl font-semibold">Thank You!</p>
           <p className="mt-3">
             Your form has been successfully submitted. A representative from Glokas will
             be in touch with you shortly to assist with your inquiry. We appreciate your
@@ -149,7 +149,7 @@ function Form({ onPage = false }) {
               />
               <span
                 className={clsx(
-                  'absolute left-4 top-1/2 -translate-y-1/2',
+                  'absolute top-1/2 left-4 -translate-y-1/2',
                   'cursor-text duration-200',
                   'group-focus-within:top-2.5 group-focus-within:text-xs group-focus-within:opacity-35',
                   {
@@ -160,7 +160,7 @@ function Form({ onPage = false }) {
                 Your name*
               </span>
               {wasSubmitAttempted && !isNameValid && (
-                <span className="absolute right-4 top-0 text-sm text-red-600">
+                <span className="absolute top-0 right-4 text-sm text-red-600">
                   {getErrorMessage('name')}
                 </span>
               )}
@@ -177,7 +177,7 @@ function Form({ onPage = false }) {
             />
             <span
               className={clsx(
-                'absolute left-4 top-1/2 -translate-y-1/2',
+                'absolute top-1/2 left-4 -translate-y-1/2',
                 'cursor-text duration-200',
                 'group-focus-within:top-2.5 group-focus-within:text-xs group-focus-within:opacity-35',
                 {
@@ -188,7 +188,7 @@ function Form({ onPage = false }) {
               Your email*
             </span>
             {wasSubmitAttempted && !isEmailValid && (
-              <span className="absolute right-4 top-0 text-sm text-red-600">
+              <span className="absolute top-0 right-4 text-sm text-red-600">
                 {getErrorMessage('email')}
               </span>
             )}
@@ -200,11 +200,11 @@ function Form({ onPage = false }) {
                 value={formData.company}
                 onChange={handleInputChange('company')}
                 type="text"
-                className="h-12 w-full rounded-lg border-2 border-primary-600 px-4"
+                className="border-primary-600 h-12 w-full rounded-lg border-2 px-4"
               />
               <span
                 className={clsx(
-                  'absolute left-4 top-1/2 -translate-y-1/2',
+                  'absolute top-1/2 left-4 -translate-y-1/2',
                   'cursor-text duration-200',
                   'group-focus-within:top-2.5 group-focus-within:text-xs group-focus-within:opacity-35',
                   {
@@ -221,7 +221,7 @@ function Form({ onPage = false }) {
               <select
                 name="budget"
                 onChange={handleInputChange('budget')}
-                className="h-12 w-full cursor-pointer appearance-none rounded-lg border-2 border-primary-600 px-4"
+                className="border-primary-600 h-12 w-full cursor-pointer appearance-none rounded-lg border-2 px-4"
                 onClick={() => {
                   setRotate(!rotate)
                 }}
@@ -238,7 +238,7 @@ function Form({ onPage = false }) {
               </select>
               <div
                 className={clsx(
-                  'absolute right-4 top-1/2 -translate-y-1/2',
+                  'absolute top-1/2 right-4 -translate-y-1/2',
                   'pointer-events-none duration-200',
                   {
                     'rotate-180': rotate,
@@ -290,7 +290,7 @@ function Form({ onPage = false }) {
               </div>
             )}
             {wasSubmitAttempted && !isGoalsValid && (
-              <span className="absolute right-4 top-0 text-sm text-red-600">
+              <span className="absolute top-0 right-4 text-sm text-red-600">
                 {getErrorMessage('goals')}
               </span>
             )}

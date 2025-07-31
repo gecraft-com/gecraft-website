@@ -4,7 +4,7 @@ function GraphQLIcon() {
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-6 fill-primary-500 duration-100 group-hover:fill-white sm:w-7 xl:w-10"
+      className="fill-primary-500 w-6 duration-100 group-hover:fill-white sm:w-7 xl:w-10"
     >
       <path
         d="M4.70862 17.2004L4.02853 16.8077L12.1768 2.69503L12.8569 3.08769L4.70862 17.2004Z"

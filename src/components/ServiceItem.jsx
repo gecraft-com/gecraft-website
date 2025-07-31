@@ -7,7 +7,7 @@ function ServiceItem({ service, odd }) {
     <div
       id={anchor}
       className={clsx(
-        'max-w-[78.875rem] scroll-mt-20 rounded-3xl bg-primary-100 px-4 py-3.5 sm:p-6 xl:flex xl:scroll-mt-24 xl:items-center xl:rounded-[4rem] xl:px-11 xl:py-8',
+        'bg-primary-100 max-w-[78.875rem] scroll-mt-20 rounded-3xl px-4 py-3.5 sm:p-6 xl:flex xl:scroll-mt-24 xl:items-center xl:rounded-[4rem] xl:px-11 xl:py-8',
         {
           'mr-auto': odd,
           'ml-auto': !odd,
@@ -30,7 +30,7 @@ function ServiceItem({ service, odd }) {
           ))}
         </ul>
         {paragraph && (
-          <p className="mt-2 text-primary-550 sm:mt-3 xl:text-lg">{paragraph}</p>
+          <p className="text-primary-550 mt-2 sm:mt-3 xl:text-lg">{paragraph}</p>
         )}
       </div>
     </div>

@@ -1,10 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
+@theme {
+  --color-primary-100: #F6F6F6;
+  --color-primary-200: #D1D1D1;
+  --color-primary-300: #888888;
+  --color-primary-400: #DAF1DE;
+  --color-primary-500: #25904A;
+  --color-primary-550: #3D3D3D;
+  --color-primary-600: #6D6D6D;
+  --color-primary-650: #55B272;
+  --color-primary-700: #1C6036;
+  --color-primary-750: #B0B0B0;
+  --color-primary-800: #237842;
+  --color-primary-850: #001D1F;
+  --color-primary-900: #E7E7E7;
+  --color-primary-950: #0B2315;
+
+  --color-secondary-50: #F4F7FB;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   :root {
