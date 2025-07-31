@@ -17,13 +17,18 @@ function DropdownMenu({ setIsShow }) {
         <a href="/services" className="p-3">
           Services
         </a>
-        <a href="/work" className="p-3">
+        <a href="/work" className="p-3" onClick={() => setIsShow(false)}>
           Work
         </a>
-        <a href="/about" className="mb-3 p-3">
+        <a href="/about" className="mb-3 p-3" onClick={() => setIsShow(false)}>
           About
         </a>
-        <GCButton asLink link="/contact-us" view="green-header">
+        <GCButton
+          asLink
+          link="/contact-us"
+          view="green-header"
+          onClick={() => setIsShow(false)}
+        >
           Contact us
         </GCButton>
       </div>

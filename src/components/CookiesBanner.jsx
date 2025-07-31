@@ -35,7 +35,7 @@ function CookiesBanner() {
             <p className="text-sm select-none">
               We use cookies to improve your experience and deliver personalized content.
               You can customize the use of cookies or accept all cookies. Read more in our{' '}
-              <a href="/privacy-policy" className="underline">
+              <a href="/privacy" className="underline">
                 Privacy Policy
               </a>
               .

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import clsx from 'clsx'
 import { NavLink } from 'react-router-dom'
@@ -10,6 +10,23 @@ import LogoIcon from './icons/LogoIcon'
 
 function Header() {
   const [isShow, setIsShow] = useState(false)
+
+  useEffect(() => {
+    if (isShow) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto'
+    }
+  }, [isShow])
+
+  const closeMenu = (e) => {
+    if (e.target.closest('.dropdown-menu')) return
+    setIsShow(false)
+  }
 
   return (
     <>
@@ -80,7 +97,13 @@ function Header() {
           </div>
         </div>
       </header>
-      {isShow && <DropdownMenu setIsShow={setIsShow} />}
+      {isShow && (
+        <div className="fixed inset-0 z-30" onClick={closeMenu}>
+          <div className="dropdown-menu" onClick={(e) => e.stopPropagation()}>
+            <DropdownMenu setIsShow={setIsShow} />
+          </div>
+        </div>
+      )}
     </>
   )
 }
