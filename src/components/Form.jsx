@@ -37,13 +37,13 @@ export const Form = ({ onPage = false }) => {
 
   const getInputClassName = (fieldName, isValid) => {
     const baseClasses = clsx(
-      'w-full rounded-lg border-2 px-4 py-3',
+      'w-full rounded-lg border-2 border-black-300 px-4 py-3 bg-black-00 text-black-950 focus:outline-none',
       fieldName === 'goals'
         ? [
-            'border-primary-600 block',
+            'block',
             {
               'min-h-36 h-40': onPage,
-              'min-h-20 h-[5.5rem]': !onPage,
+              'min-h-20 h-22': !onPage,
             },
           ]
         : ['h-12']
@@ -52,17 +52,17 @@ export const Form = ({ onPage = false }) => {
     const shouldShowValidation = touchedFields[fieldName] || wasSubmitAttempted
 
     if (!shouldShowValidation) {
-      return `${baseClasses} border-primary-600`
+      return `${baseClasses}`
     }
 
     if (fieldName === 'name' || fieldName === 'email' || fieldName === 'goals') {
       return clsx(baseClasses, {
-        'border-green-600': isValid,
-        'border-red-600': !isValid,
+        'border-primary-500': isValid,
+        'border-error-1': !isValid,
       })
     }
 
-    return `${baseClasses} border-primary-600`
+    return `${baseClasses}`
   }
 
   const getErrorMessage = (fieldName) => {
@@ -133,8 +133,8 @@ export const Form = ({ onPage = false }) => {
         <form
           onSubmit={handleSubmit}
           className={clsx('text-black', {
-            'mt-6 grid w-full grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 xl:mt-0': onPage,
-            'hidden w-72 gap-3 sm:flex sm:flex-col xl:w-96': !onPage,
+            'mt-6 grid w-full grid-cols-1 gap-2 md:grid-cols-2 md:gap-4 xl:mt-0': onPage,
+            'hidden w-72 gap-3 md:flex md:flex-col xl:w-96': !onPage,
           })}
         >
           {onPage && (
@@ -160,13 +160,13 @@ export const Form = ({ onPage = false }) => {
                 Your name*
               </span>
               {wasSubmitAttempted && !isNameValid && (
-                <span className="absolute top-0 right-4 text-sm text-red-600">
+                <span className="text-error-1 absolute top-0 right-4 text-sm">
                   {getErrorMessage('name')}
                 </span>
               )}
             </label>
           )}
-          <label className="group relative">
+          <label className="group text-black-300 relative">
             <input
               name="email"
               value={formData.email}
@@ -179,16 +179,16 @@ export const Form = ({ onPage = false }) => {
               className={clsx(
                 'absolute top-1/2 left-4 -translate-y-1/2',
                 'cursor-text duration-200',
-                'group-focus-within:top-2.5 group-focus-within:text-xs group-focus-within:opacity-35',
+                'group-focus-within:top-2.5 group-focus-within:text-xs',
                 {
-                  'top-2.5 text-xs opacity-35': formData.email,
+                  'top-2.5 text-xs': formData.email,
                 }
               )}
             >
               Your email*
             </span>
             {wasSubmitAttempted && !isEmailValid && (
-              <span className="absolute top-0 right-4 text-sm text-red-600">
+              <span className="text-error-1 absolute top-0 right-4 text-sm">
                 {getErrorMessage('email')}
               </span>
             )}
@@ -250,7 +250,7 @@ export const Form = ({ onPage = false }) => {
               </div>
             </div>
           )}
-          <label className="group relative sm:col-span-2">
+          <label className="group text-black-300 relative md:col-span-2">
             <textarea
               name="goals"
               type="text"
@@ -263,9 +263,9 @@ export const Form = ({ onPage = false }) => {
               className={clsx(
                 'absolute left-4',
                 'cursor-text duration-200',
-                'group-focus-within:top-0.5 group-focus-within:text-xs group-focus-within:opacity-35',
+                'group-focus-within:top-0.5 group-focus-within:text-xs',
                 {
-                  'top-0.5 text-xs opacity-35': formData.goals,
+                  'top-0.5 text-xs': formData.goals,
                   'top-4': !formData.goals,
                 }
               )}
@@ -290,13 +290,13 @@ export const Form = ({ onPage = false }) => {
               </div>
             )}
             {wasSubmitAttempted && !isGoalsValid && (
-              <span className="absolute top-0 right-4 text-sm text-red-600">
+              <span className="text-error-1 absolute top-0 right-4 text-sm">
                 {getErrorMessage('goals')}
               </span>
             )}
           </label>
-          <div className="sm:col-span-2">
-            <GCButton type="submit" view="green-form">
+          <div className="md:col-span-2">
+            <GCButton type="submit" view="secondary" className="h-12 w-full">
               {onPage ? 'Submit' : 'Contact us'}
             </GCButton>
           </div>
