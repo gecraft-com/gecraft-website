@@ -1,13 +1,13 @@
 import { GCButton } from './GCButton'
 import { CloseIcon } from './icons/CloseIcon'
-import { LogoIcon } from './icons/LogoIcon'
+import { LogoFooterIcon } from './icons/LogoFooterIcon'
 
 export const DropdownMenu = ({ setIsShow }) => {
   return (
     <div className="bg-primary-100 fixed z-40 w-full rounded-b-lg px-4 pb-4 drop-shadow-xl">
       <div className="border-primary-200 flex h-16 items-center justify-between border-b">
         <a href="/">
-          <LogoIcon width={88} height={22} />
+          <LogoFooterIcon width={88} height={22} />
         </a>
         <GCButton onClick={() => setIsShow(false)}>
           <CloseIcon />
