@@ -33,7 +33,7 @@ export const Header = () => {
       <header className="border-primary-100 bg-primary-100 fixed z-20 h-16 w-full border-b px-4 drop-shadow-xl sm:px-8 sm:py-2.5 xl:h-20 xl:px-20 2xl:px-40">
         <div className="mx-auto flex h-full max-w-[100.188rem] items-center justify-between">
           <a href="/" className="xl:hidden">
-            <LogoIcon width={88} height={22} />
+            <LogoIcon className="h-5.5 w-22" />
           </a>
           <a href="/" className="hidden xl:block">
             <LogoIcon name="logo" width={150} height={36} />
