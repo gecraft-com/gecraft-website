@@ -33,7 +33,6 @@ export default [
       'react/prop-types': 0,
       'react/jsx-no-target-blank': 'off',
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
-      // 'import/no-unresolved': 'error',
       'import/named': 'error',
       'import/default': 'error',
     },

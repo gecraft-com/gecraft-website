@@ -24,7 +24,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-.eslintrc.json
 
 # Environment files
 .env
