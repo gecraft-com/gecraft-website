@@ -1,4 +1,4 @@
-export const LogoIcon = ({ className }) => {
+export const LogoFooterIcon = ({ className }) => {
   return (
     <svg
       className={className}

@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 
 import { Form } from './Form'
 import { LinkedinIcon } from './icons/LinkedinIcon'
-import { LogoIcon } from './icons/LogoIcon'
+import { LogoFooterIcon } from './icons/LogoFooterIcon'
 
 const navLinks = [
   {
@@ -65,7 +65,7 @@ export const Footer = () => {
         </div>
         <div className="flex items-center justify-between pt-4 md:pt-6">
           <Link to="/">
-            <LogoIcon className="h-5 w-20" />
+            <LogoFooterIcon className="h-5 w-20" />
           </Link>
           <div className="text-black-200 hidden gap-4 text-base underline md:flex">
             <Link to="/privacy">Privacy Policy</Link>
