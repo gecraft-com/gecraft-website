@@ -31,6 +31,7 @@ export default {
     extend: {
       fontFamily: {
         readexPro: ['Readex Pro', 'sans-serif'],
+        nevermind: ['NeverMindCompact', 'sans-serif'],
       },
       screens: {
         '1366': '1366px',

@@ -1,31 +1,38 @@
+import { Link } from 'react-router-dom'
+
 export const GCButton = ({
   children,
   type = 'button',
   view,
   onClick,
-  asLink = null,
+  asLink = false,
   link = null,
   disabled = false,
+  className,
 }) => {
   const getButtonStyles = (view) => {
+    if (disabled) {
+      const baseClasses = 'cursor-not-allowed rounded-full text-black-500 bg-black-400'
+
+      return `${baseClasses} ${className}`
+    }
+
+    const baseClasses = 'cursor-pointer rounded-full text-black-00 duration-100'
+
     switch (view) {
-      case 'green-header':
-        return 'font-readexPro w-36 flex justify-center items-center bg-primary-500 h-10 rounded-full text-white xl:w-44 xl:h-12 hover:bg-primary-800 duration-100 active:bg-primary-700'
-      case 'green-form':
-        return 'font-readexPro w-full bg-primary-500 h-12 rounded-full text-white xl:text-lg hover:bg-primary-800 duration-100 active:bg-primary-700'
-      case 'cookies-first':
-        return 'font-readexPro w-full bg-primary-500 h-12 rounded-full px-4 text-white xl:text-lg whitespace-nowrap hover:bg-primary-800 duration-100 active:bg-primary-700'
-      case 'cookies-second':
-        return 'font-readexPro w-full border border-primary-500 h-12 px-4 rounded-full text-primary-500 whitespace-nowrap hover:bg-primary-800 duration-100 hover:text-white hover:border-primary-800 active:bg-primary-700'
+      case 'primary':
+        return `${baseClasses} ${className} bg-primary-950 text-lg font-medium hover:bg-black-900 active:bg-black-600`
+      case 'secondary':
+        return `${baseClasses} ${className} bg-primary-500 text-lg font-medium hover:bg-primary-600 active:bg-primary-700`
       default:
-        return ''
+        return `${baseClasses} ${className}`
     }
   }
 
   return asLink ? (
-    <a href={link} className={getButtonStyles(view)} onClick={onClick}>
+    <Link href={link} className={getButtonStyles(view)} onClick={onClick}>
       {children}
-    </a>
+    </Link>
   ) : (
     <button
       type={type}
