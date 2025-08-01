@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 
-function ServiceItem({ service, odd }) {
+export const ServiceItem = ({ service, odd }) => {
   const { icon, serviceName, list, paragraph, anchor } = service
 
   return (
@@ -36,5 +36,3 @@ function ServiceItem({ service, odd }) {
     </div>
   )
 }
-
-export default ServiceItem

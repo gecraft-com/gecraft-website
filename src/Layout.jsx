@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react'
 
 import { Outlet } from 'react-router-dom'
 
-import CookiesBanner from './components/CookiesBanner'
-import Footer from './components/Footer'
-import Header from './components/Header'
-import GoToTopIcon from './components/icons/GoToTopIcon'
+import { CookiesBanner } from './components/CookiesBanner'
+import { Footer } from './components/Footer'
+import { Header } from './components/Header'
+import { GoToTopIcon } from './components/icons/GoToTopIcon'
 
-function Layout() {
+export const Layout = () => {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -22,7 +22,7 @@ function Layout() {
   return (
     <div className="relative">
       <Header />
-      <main className="mx-auto max-w-[120.188rem] overflow-x-hidden px-4 pb-6 pt-20 sm:px-8 xl:px-20 xl:pb-9 xl:pt-28 2xl:px-40 2xl:pb-11">
+      <main className="mx-auto max-w-[120.188rem] overflow-x-hidden px-4 pt-20 pb-6 sm:px-8 xl:px-20 xl:pt-28 xl:pb-9 2xl:px-40 2xl:pb-11">
         {<Outlet />}
       </main>
       <Footer />
@@ -37,5 +37,3 @@ function Layout() {
     </div>
   )
 }
-
-export default Layout

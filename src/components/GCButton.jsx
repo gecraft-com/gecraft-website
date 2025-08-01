@@ -1,4 +1,4 @@
-function GCButton({
+export const GCButton = ({
   children,
   type = 'button',
   view,
@@ -6,7 +6,7 @@ function GCButton({
   asLink = null,
   link = null,
   disabled = false,
-}) {
+}) => {
   const getButtonStyles = (view) => {
     switch (view) {
       case 'green-header':
@@ -37,5 +37,3 @@ function GCButton({
     </button>
   )
 }
-
-export default GCButton

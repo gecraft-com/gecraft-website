@@ -1,11 +1,11 @@
 import clsx from 'clsx'
 import { NavLink } from 'react-router-dom'
 
-import Form from './Form'
-import LinkedinIcon from './icons/LinkedinIcon'
-import LogoIcon from './icons/LogoIcon'
+import { Form } from './Form'
+import { LinkedinIcon } from './icons/LinkedinIcon'
+import { LogoIcon } from './icons/LogoIcon'
 
-function Footer() {
+export const Footer = () => {
   const today = new Date()
   const currentYear = today.getFullYear()
 
@@ -80,5 +80,3 @@ function Footer() {
     </footer>
   )
 }
-
-export default Footer

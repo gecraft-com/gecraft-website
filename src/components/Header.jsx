@@ -3,12 +3,12 @@ import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import { NavLink } from 'react-router-dom'
 
-import DropdownMenu from './DropdownMenu'
-import GCButton from './GCButton'
-import BurgerMenuIcon from './icons/BurgerMenuIcon'
-import LogoIcon from './icons/LogoIcon'
+import { DropdownMenu } from './DropdownMenu'
+import { GCButton } from './GCButton'
+import { BurgerMenuIcon } from './icons/BurgerMenuIcon'
+import { LogoIcon } from './icons/LogoIcon'
 
-function Header() {
+export const Header = () => {
   const [isShow, setIsShow] = useState(false)
 
   useEffect(() => {
@@ -107,5 +107,3 @@ function Header() {
     </>
   )
 }
-
-export default Header

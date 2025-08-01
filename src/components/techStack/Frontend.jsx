@@ -1,16 +1,16 @@
-import CapacitorIcon from '../icons/CapacitorIcon'
-import CssIcon from '../icons/CssIcon'
-import HtmlIcon from '../icons/HtmlIcon'
-import JavaScriptIcon from '../icons/JavaScriptIcon'
-import NextJsIcon from '../icons/NextJsIcon'
-import NextUiIcon from '../icons/NextUiIcon'
-import ReactIcon from '../icons/ReactIcon'
-import TailwindIcon from '../icons/TailwindIcon'
-import TypeScriptIcon from '../icons/TypeScriptIcon'
-import ViteIcon from '../icons/ViteIcon'
-import TechStackItem from './TechStackItem'
+import { CapacitorIcon } from '../icons/CapacitorIcon'
+import { CssIcon } from '../icons/CssIcon'
+import { HtmlIcon } from '../icons/HtmlIcon'
+import { JavaScriptIcon } from '../icons/JavaScriptIcon'
+import { NextJsIcon } from '../icons/NextJsIcon'
+import { NextUiIcon } from '../icons/NextUiIcon'
+import { ReactIcon } from '../icons/ReactIcon'
+import { TailwindIcon } from '../icons/TailwindIcon'
+import { TypeScriptIcon } from '../icons/TypeScriptIcon'
+import { ViteIcon } from '../icons/ViteIcon'
+import { TechStackItem } from './TechStackItem'
 
-function Frontend() {
+export const Frontend = () => {
   return (
     <li className="bg-primary-100 rounded-3xl px-4 py-3.5 sm:p-4 xl:px-10 xl:py-9">
       <h2 className="text-lg font-medium sm:text-xl xl:text-3xl">Frontend</h2>
@@ -58,5 +58,3 @@ function Frontend() {
     </li>
   )
 }
-
-export default Frontend

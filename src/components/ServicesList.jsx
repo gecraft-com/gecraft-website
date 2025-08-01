@@ -1,7 +1,7 @@
 import services from '../../data/services.json'
-import ServiceItem from './ServiceItem'
+import { ServiceItem } from './ServiceItem'
 
-function ServicesList() {
+export const ServicesList = () => {
   return (
     <div className="mt-6 flex flex-col gap-3 sm:mt-11 sm:gap-6 xl:mt-14">
       {services.map((service, index) => (
@@ -10,5 +10,3 @@ function ServicesList() {
     </div>
   )
 }
-
-export default ServicesList

@@ -1,4 +1,4 @@
-function SwaggerIcon() {
+export const SwaggerIcon = () => {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -17,5 +17,3 @@ function SwaggerIcon() {
     </svg>
   )
 }
-
-export default SwaggerIcon

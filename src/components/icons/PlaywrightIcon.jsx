@@ -1,4 +1,4 @@
-function PlaywrightIcon() {
+export const PlaywrightIcon = () => {
   return (
     <svg
       viewBox="0 0 38 38"
@@ -17,5 +17,3 @@ function PlaywrightIcon() {
     </svg>
   )
 }
-
-export default PlaywrightIcon

@@ -1,4 +1,4 @@
-function JestIcon() {
+export const JestIcon = () => {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -13,5 +13,3 @@ function JestIcon() {
     </svg>
   )
 }
-
-export default JestIcon

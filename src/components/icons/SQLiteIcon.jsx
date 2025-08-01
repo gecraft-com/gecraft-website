@@ -1,4 +1,4 @@
-function SQLiteIcon() {
+export const SQLiteIcon = () => {
   return (
     <svg
       viewBox="0 0 38 38"
@@ -13,5 +13,3 @@ function SQLiteIcon() {
     </svg>
   )
 }
-
-export default SQLiteIcon

@@ -1,4 +1,4 @@
-function GraphQLIcon() {
+export const GraphQLIcon = () => {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -21,5 +21,3 @@ function GraphQLIcon() {
     </svg>
   )
 }
-
-export default GraphQLIcon

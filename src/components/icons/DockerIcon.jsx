@@ -1,4 +1,4 @@
-function DockerIcon() {
+export const DockerIcon = () => {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -10,5 +10,3 @@ function DockerIcon() {
     </svg>
   )
 }
-
-export default DockerIcon

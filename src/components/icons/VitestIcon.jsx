@@ -1,4 +1,4 @@
-function VitestIcon() {
+export const VitestIcon = () => {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -10,5 +10,3 @@ function VitestIcon() {
     </svg>
   )
 }
-
-export default VitestIcon

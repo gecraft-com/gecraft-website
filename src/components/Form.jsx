@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import clsx from 'clsx'
 
-import useForm from '../hooks/useForm'
-import GCButton from './GCButton'
-import ArrowIcon from './icons/ArrowIcon'
+import { useForm } from '../hooks/useForm'
+import { GCButton } from './GCButton'
+import { ArrowIcon } from './icons/ArrowIcon'
 
-function Form({ onPage = false }) {
+export const Form = ({ onPage = false }) => {
   const {
     formData,
     isFormValid,
@@ -305,5 +305,3 @@ function Form({ onPage = false }) {
     </>
   )
 }
-
-export default Form

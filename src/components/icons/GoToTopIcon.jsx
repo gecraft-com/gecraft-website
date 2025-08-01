@@ -1,4 +1,4 @@
-function GoToTopIcon() {
+export const GoToTopIcon = () => {
   return (
     <svg
       width="76"
@@ -66,5 +66,3 @@ function GoToTopIcon() {
     </svg>
   )
 }
-
-export default GoToTopIcon

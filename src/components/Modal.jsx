@@ -1,6 +1,6 @@
-import CloseIcon from './icons/CloseIcon'
+import { CloseIcon } from './icons/CloseIcon'
 
-export function Modal({ children, setModal }) {
+export const Modal = ({ children, setModal }) => {
   const closeModal = (e) => {
     if (e.target === e.currentTarget) {
       setModal(false)

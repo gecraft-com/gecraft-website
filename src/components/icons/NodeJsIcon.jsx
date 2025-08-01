@@ -1,4 +1,4 @@
-function NodeJsIcon() {
+export const NodeJsIcon = () => {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -10,5 +10,3 @@ function NodeJsIcon() {
     </svg>
   )
 }
-
-export default NodeJsIcon

@@ -1,4 +1,4 @@
-function NextUiIcon() {
+export const NextUiIcon = () => {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -10,5 +10,3 @@ function NextUiIcon() {
     </svg>
   )
 }
-
-export default NextUiIcon

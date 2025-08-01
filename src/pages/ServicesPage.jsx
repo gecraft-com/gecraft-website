@@ -1,8 +1,8 @@
-import Services from '../components/Services'
-import ServicesList from '../components/ServicesList'
-import TechStack from '../components/techStack/TechStac'
+import { Services } from '../components/Services'
+import { ServicesList } from '../components/ServicesList'
+import { TechStack } from '../components/techStack/TechStack'
 
-function ServicesPage() {
+export const ServicesPage = () => {
   return (
     <>
       <Services location="services" />
@@ -11,5 +11,3 @@ function ServicesPage() {
     </>
   )
 }
-
-export default ServicesPage

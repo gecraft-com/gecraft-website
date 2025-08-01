@@ -1,4 +1,4 @@
-function MySQLIcon() {
+export const MySQLIcon = () => {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -25,5 +25,3 @@ function MySQLIcon() {
     </svg>
   )
 }
-
-export default MySQLIcon

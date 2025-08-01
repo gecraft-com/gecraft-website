@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function PortfolioItem({
+export const PortfolioItem = ({
   icon,
   projectName,
   sinceDate,
@@ -8,7 +8,7 @@ function PortfolioItem({
   services,
   description,
   location = '',
-}) {
+}) => {
   const [expanded, setExpanded] = useState(false)
   const words = description.split(' ')
   const shouldTruncate = words.length > 30
@@ -74,5 +74,3 @@ function PortfolioItem({
     </div>
   )
 }
-
-export default PortfolioItem

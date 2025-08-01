@@ -1,4 +1,4 @@
-function TypeScriptIcon() {
+export const TypeScriptIcon = () => {
   return (
     <svg
       viewBox="0 0 38 38"
@@ -10,5 +10,3 @@ function TypeScriptIcon() {
     </svg>
   )
 }
-
-export default TypeScriptIcon
