@@ -1,4 +1,4 @@
-function JavaScriptIcon() {
+export const JavaScriptIcon = () => {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -10,5 +10,3 @@ function JavaScriptIcon() {
     </svg>
   )
 }
-
-export default JavaScriptIcon

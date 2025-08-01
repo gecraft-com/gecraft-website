@@ -1,4 +1,4 @@
-function LogoIcon({ width, height }) {
+export const LogoIcon = ({ width, height }) => {
   return (
     <svg
       width={width}
@@ -49,5 +49,3 @@ function LogoIcon({ width, height }) {
     </svg>
   )
 }
-
-export default LogoIcon

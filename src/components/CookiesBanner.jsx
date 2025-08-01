@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react'
 
 import Cookies from 'js-cookie'
 
-import CookiesModal from './CookiesModal'
-import GCButton from './GCButton'
+import { CookiesModal } from './CookiesModal'
+import { GCButton } from './GCButton'
 
-function CookiesBanner() {
+export const CookiesBanner = () => {
   const [showBanner, setShowBanner] = useState(false)
 
   const handleAcceptAll = () => {
@@ -54,5 +54,3 @@ function CookiesBanner() {
     </>
   )
 }
-
-export default CookiesBanner

@@ -1,4 +1,4 @@
-function PrivacyPage() {
+export const PrivacyPage = () => {
   return (
     <div className="3xl:before:right-48 4xl:before:right-96 w-full before:fixed before:top-10 before:right-16 before:-z-10 xl:before:content-[url('/logo-background1.png')] 2xl:before:top-28 2xl:before:right-36 2xl:before:content-[url('/logo-background.png')]">
       <div className="bg-primary-100 rounded-3xl p-4 sm:px-9 sm:py-8 xl:w-[50rem] 2xl:w-[62.5rem]">
@@ -88,5 +88,3 @@ function PrivacyPage() {
     </div>
   )
 }
-
-export default PrivacyPage

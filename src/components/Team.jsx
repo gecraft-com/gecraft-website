@@ -1,7 +1,7 @@
 import team from '../../data/team.json'
-import TeamItem from './TeamItem'
+import { TeamItem } from './TeamItem'
 
-function Team() {
+export const Team = () => {
   return (
     <div className="mt-6 sm:mt-11 xl:mt-14 2xl:mt-20">
       <h3 className="text-lg font-semibold sm:text-3xl xl:text-5xl">Our team</h3>
@@ -13,5 +13,3 @@ function Team() {
     </div>
   )
 }
-
-export default Team

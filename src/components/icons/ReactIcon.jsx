@@ -1,4 +1,4 @@
-function ReactIcon() {
+export const ReactIcon = () => {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -13,5 +13,3 @@ function ReactIcon() {
     </svg>
   )
 }
-
-export default ReactIcon

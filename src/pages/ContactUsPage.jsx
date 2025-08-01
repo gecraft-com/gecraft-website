@@ -1,6 +1,6 @@
-import Form from '../components/Form'
+import { Form } from '../components/Form'
 
-function ContactUsPage() {
+export const ContactUsPage = () => {
   return (
     <div className="bg-primary-850 rounded-3xl px-7 py-5 text-white sm:px-12 sm:py-11 xl:rounded-[4rem] xl:px-14 xl:py-12">
       <h2 className="font-readexPro text-3xl font-semibold uppercase sm:text-5xl xl:text-6xl">
@@ -30,5 +30,3 @@ function ContactUsPage() {
     </div>
   )
 }
-
-export default ContactUsPage

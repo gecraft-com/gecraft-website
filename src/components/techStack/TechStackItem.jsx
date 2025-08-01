@@ -1,4 +1,4 @@
-function TechStackItem({ children, title }) {
+export const TechStackItem = ({ children, title }) => {
   return (
     <li className="group hover:bg-primary-500 flex h-20 flex-col items-center justify-center rounded-md bg-white duration-100 sm:h-24 xl:h-28">
       {children}
@@ -8,5 +8,3 @@ function TechStackItem({ children, title }) {
     </li>
   )
 }
-
-export default TechStackItem

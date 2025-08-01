@@ -1,6 +1,6 @@
-import PortfolioList from '../components/PortfolioList'
+import { PortfolioList } from '../components/PortfolioList'
 
-function Work() {
+export const WorkPage = () => {
   return (
     <>
       <h2 className="text-lg font-semibold sm:text-3xl xl:text-5xl xl:font-medium">
@@ -11,5 +11,3 @@ function Work() {
     </>
   )
 }
-
-export default Work

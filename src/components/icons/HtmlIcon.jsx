@@ -1,4 +1,4 @@
-function HtmlIcon() {
+export const HtmlIcon = () => {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -10,5 +10,3 @@ function HtmlIcon() {
     </svg>
   )
 }
-
-export default HtmlIcon

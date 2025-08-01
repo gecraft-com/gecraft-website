@@ -1,4 +1,4 @@
-function CapacitorIcon() {
+export const CapacitorIcon = () => {
   return (
     <svg
       viewBox="0 0 38 38"
@@ -10,5 +10,3 @@ function CapacitorIcon() {
     </svg>
   )
 }
-
-export default CapacitorIcon

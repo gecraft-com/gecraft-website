@@ -1,4 +1,4 @@
-function RestApiIcon() {
+export const RestApiIcon = () => {
   return (
     <svg
       viewBox="0 0 38 38"
@@ -15,5 +15,3 @@ function RestApiIcon() {
     </svg>
   )
 }
-
-export default RestApiIcon

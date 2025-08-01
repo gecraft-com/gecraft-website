@@ -1,4 +1,4 @@
-function PostgreSQLIcon() {
+export const PostgreSQLIcon = () => {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -13,5 +13,3 @@ function PostgreSQLIcon() {
     </svg>
   )
 }
-
-export default PostgreSQLIcon

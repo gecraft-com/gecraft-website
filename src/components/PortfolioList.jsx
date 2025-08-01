@@ -1,8 +1,8 @@
 import portfolio from '../../data/portfolio.json'
 import { useWindowWidth } from '../hooks/useWindowWidth'
-import PortfolioItem from './PortfolioItem'
+import { PortfolioItem } from './PortfolioItem'
 
-function PortfolioList({ location = '' }) {
+export const PortfolioList = ({ location = '' }) => {
   const windowWidth = useWindowWidth()
 
   return (
@@ -41,5 +41,3 @@ function PortfolioList({ location = '' }) {
     </div>
   )
 }
-
-export default PortfolioList

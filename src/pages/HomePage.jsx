@@ -1,7 +1,7 @@
-import PortfolioList from '../components/PortfolioList'
-import Services from '../components/Services'
+import { PortfolioList } from '../components/PortfolioList'
+import { Services } from '../components/Services'
 
-function HomePage() {
+export const HomePage = () => {
   return (
     <>
       <Services location="home" />
@@ -13,5 +13,3 @@ function HomePage() {
     </>
   )
 }
-
-export default HomePage

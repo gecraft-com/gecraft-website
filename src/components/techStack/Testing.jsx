@@ -1,9 +1,9 @@
-import JestIcon from '../icons/JestIcon'
-import PlaywrightIcon from '../icons/PlaywrightIcon'
-import VitestIcon from '../icons/VitestIcon'
-import TechStackItem from './TechStackItem'
+import { JestIcon } from '../icons/JestIcon'
+import { PlaywrightIcon } from '../icons/PlaywrightIcon'
+import { VitestIcon } from '../icons/VitestIcon'
+import { TechStackItem } from './TechStackItem'
 
-function Testing() {
+export const Testing = () => {
   return (
     <li className="bg-primary-100 rounded-3xl px-4 py-3.5 sm:p-4 xl:px-10 xl:py-9">
       <h2 className="text-lg font-medium sm:text-xl xl:text-3xl">Testing</h2>
@@ -23,5 +23,3 @@ function Testing() {
     </li>
   )
 }
-
-export default Testing

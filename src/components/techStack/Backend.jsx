@@ -1,14 +1,14 @@
-import DockerIcon from '../icons/DockerIcon'
-import GraphQLIcon from '../icons/GraphQLIcon'
-import MySQLIcon from '../icons/MySQLIcon'
-import NodeJsIcon from '../icons/NodeJsIcon'
-import PostgreSQLIcon from '../icons/PostgreSQLIcon'
-import RestApiIcon from '../icons/RestApiIcon'
-import SQLiteIcon from '../icons/SQLiteIcon'
-import SwaggerIcon from '../icons/SwaggerIcon'
-import TechStackItem from './TechStackItem'
+import { DockerIcon } from '../icons/DockerIcon'
+import { GraphQLIcon } from '../icons/GraphQLIcon'
+import { MySQLIcon } from '../icons/MySQLIcon'
+import { NodeJsIcon } from '../icons/NodeJsIcon'
+import { PostgreSQLIcon } from '../icons/PostgreSQLIcon'
+import { RestApiIcon } from '../icons/RestApiIcon'
+import { SQLiteIcon } from '../icons/SQLiteIcon'
+import { SwaggerIcon } from '../icons/SwaggerIcon'
+import { TechStackItem } from './TechStackItem'
 
-function Backend() {
+export const Backend = () => {
   return (
     <li className="bg-primary-100 rounded-3xl px-4 py-3.5 sm:p-4 xl:px-10 xl:py-9">
       <h2 className="text-lg font-medium sm:text-xl xl:text-3xl">Backend</h2>
@@ -48,5 +48,3 @@ function Backend() {
     </li>
   )
 }
-
-export default Backend

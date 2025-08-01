@@ -1,4 +1,4 @@
-function NextJsIcon() {
+export const NextJsIcon = () => {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -19,5 +19,3 @@ function NextJsIcon() {
     </svg>
   )
 }
-
-export default NextJsIcon

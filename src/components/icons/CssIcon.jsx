@@ -1,4 +1,4 @@
-function CssIcon() {
+export const CssIcon = () => {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -10,5 +10,3 @@ function CssIcon() {
     </svg>
   )
 }
-
-export default CssIcon

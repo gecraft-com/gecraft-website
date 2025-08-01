@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 
 import Cookies from 'js-cookie'
 
-import GCButton from './GCButton'
+import { GCButton } from './GCButton'
 import { Modal } from './Modal'
 
-function CookiesModal({ handleAfterClick, children }) {
+export const CookiesModal = ({ handleAfterClick, children }) => {
   const [modal, setModal] = useState(false)
 
   const [analytics, setAnalytics] = useState(() => {
@@ -114,5 +114,3 @@ function CookiesModal({ handleAfterClick, children }) {
     </>
   )
 }
-
-export default CookiesModal

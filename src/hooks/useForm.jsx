@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-function useForm({ onPage }) {
+export const useForm = ({ onPage }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -66,5 +66,3 @@ function useForm({ onPage }) {
     setFormData,
   }
 }
-
-export default useForm

@@ -1,6 +1,6 @@
-import Team from '../components/Team'
+import { Team } from '../components/Team'
 
-function AboutPage() {
+export const AboutPage = () => {
   return (
     <>
       <div className="relative sm:static sm:flex sm:items-center sm:gap-6 xl:gap-20 2xl:gap-28">
@@ -57,5 +57,3 @@ function AboutPage() {
     </>
   )
 }
-
-export default AboutPage

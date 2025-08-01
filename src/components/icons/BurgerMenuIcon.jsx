@@ -1,4 +1,4 @@
-function BurgerMenuIcon() {
+export const BurgerMenuIcon = () => {
   return (
     <svg
       width="24"
@@ -13,5 +13,3 @@ function BurgerMenuIcon() {
     </svg>
   )
 }
-
-export default BurgerMenuIcon

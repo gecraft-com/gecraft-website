@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import clsx from 'clsx'
 import { Link, useLocation } from 'react-router-dom'
 
-function Services({ location = 'home' }) {
+export const Services = ({ location = 'home' }) => {
   const { hash } = useLocation()
 
   useEffect(() => {
@@ -144,5 +144,3 @@ function Services({ location = 'home' }) {
     </div>
   )
 }
-
-export default Services

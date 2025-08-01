@@ -1,8 +1,8 @@
-import GCButton from './GCButton'
-import CloseIcon from './icons/CloseIcon'
-import LogoIcon from './icons/LogoIcon'
+import { GCButton } from './GCButton'
+import { CloseIcon } from './icons/CloseIcon'
+import { LogoIcon } from './icons/LogoIcon'
 
-function DropdownMenu({ setIsShow }) {
+export const DropdownMenu = ({ setIsShow }) => {
   return (
     <div className="bg-primary-100 fixed z-40 w-full rounded-b-lg px-4 pb-4 drop-shadow-xl">
       <div className="border-primary-200 flex h-16 items-center justify-between border-b">
@@ -35,5 +35,3 @@ function DropdownMenu({ setIsShow }) {
     </div>
   )
 }
-
-export default DropdownMenu

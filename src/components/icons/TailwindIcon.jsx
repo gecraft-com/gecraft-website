@@ -1,4 +1,4 @@
-function TailwindIcon() {
+export const TailwindIcon = () => {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -13,5 +13,3 @@ function TailwindIcon() {
     </svg>
   )
 }
-
-export default TailwindIcon

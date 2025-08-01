@@ -1,4 +1,4 @@
-function TeamItem({ person }) {
+export const TeamItem = ({ person }) => {
   const { photo, name, role } = person
 
   return (
@@ -17,5 +17,3 @@ function TeamItem({ person }) {
     </div>
   )
 }
-
-export default TeamItem
