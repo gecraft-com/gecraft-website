@@ -50,6 +50,7 @@ export const Footer = () => {
                 href="https://www.linkedin.com/company/gecraft/?viewAsMember=true"
                 target="_blank"
                 className="mt-3 md:mt-6"
+                rel="noopener noreferrer"
               >
                 <LinkedinIcon />
               </a>

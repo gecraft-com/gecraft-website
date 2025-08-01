@@ -30,7 +30,7 @@ export const GCButton = ({
   }
 
   return asLink ? (
-    <Link href={link} className={getButtonStyles(view)} onClick={onClick}>
+    <Link to={link} className={getButtonStyles(view)} onClick={onClick}>
       {children}
     </Link>
   ) : (
