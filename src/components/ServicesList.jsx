@@ -10,27 +10,16 @@ export const ServicesList = () => {
 
   useEffect(() => {
     if (!hash) return
-    const elementId = hash.replace('#', '')
+    const element = document.getElementById(hash.replace('#', ''))
+    if (!element) return
 
-    const scrollToTarget = () => {
-      const element = document.getElementById(elementId)
-      if (!element) return
+    const headerHeight = document.querySelector('header')?.offsetHeight || 0
+    const extraOffset = 8
 
-      const header = document.querySelector('header')
-      const headerHeight = header?.offsetHeight || 0
-      const extraOffset = 8
+    const elementTop = element.getBoundingClientRect().top + window.scrollY
+    const targetY = Math.max(0, elementTop - headerHeight - extraOffset)
 
-      const elementTop = element.getBoundingClientRect().top + window.scrollY
-      const targetY = Math.max(0, elementTop - headerHeight - extraOffset)
-
-      window.scrollTo({ top: targetY, behavior: 'smooth' })
-    }
-
-    const timeouts = [0, 150, 350, 700].map((t) => setTimeout(scrollToTarget, t))
-
-    return () => {
-      timeouts.forEach(clearTimeout)
-    }
+    window.scrollTo({ top: targetY, behavior: 'smooth' })
   }, [hash])
 
   return (
