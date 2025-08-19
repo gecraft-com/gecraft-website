@@ -1,24 +1,10 @@
 import clsx from 'clsx'
 import { Link, NavLink } from 'react-router-dom'
 
+import { navLinks } from '../constants/Navigate'
 import { Form } from './Form'
 import { LinkedinIcon } from './icons/LinkedinIcon'
 import { LogoFooterIcon } from './icons/LogoFooterIcon'
-
-const navLinks = [
-  {
-    to: '/services',
-    label: 'Services',
-  },
-  {
-    to: '/work',
-    label: 'Work',
-  },
-  {
-    to: '/about',
-    label: 'About',
-  },
-]
 
 export const Footer = () => {
   const today = new Date()
