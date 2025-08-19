@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import { Link } from 'react-router-dom'
+
 export const PortfolioItem = ({
   icon,
   projectName,
@@ -20,11 +22,11 @@ export const PortfolioItem = ({
         alt="logo"
         className="w-full rounded-xl object-cover xl:rounded-xl"
       />
-      <a href={link} target="_blank">
+      <Link to={link} target="_blank">
         <h2 className="font-readexPro text-primary-800 hover:text-primary-700 mt-2 text-2xl font-semibold underline duration-100 sm:mt-4 sm:text-4xl xl:mt-9 xl:mb-3">
           {projectName}
         </h2>
-      </a>
+      </Link>
       <div className="flex flex-col xl:flex-col-reverse">
         <div>
           <h3 className="font-readexPro mt-4 text-lg font-semibold sm:text-xl xl:text-3xl">

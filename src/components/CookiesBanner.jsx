@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import Cookies from 'js-cookie'
+import { Link } from 'react-router-dom'
 
 import { CookiesModal } from './CookiesModal'
 import { GCButton } from './GCButton'
@@ -35,9 +36,9 @@ export const CookiesBanner = () => {
             <p className="text-sm select-none">
               We use cookies to improve your experience and deliver personalized content.
               You can customize the use of cookies or accept all cookies. Read more in our{' '}
-              <a href="/privacy" className="underline">
+              <Link to="/privacy" className="underline">
                 Privacy Policy
-              </a>
+              </Link>
               .
             </p>
             <div className="mt-3 flex gap-4 md:mt-0">
