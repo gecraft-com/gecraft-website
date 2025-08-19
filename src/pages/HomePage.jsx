@@ -1,18 +1,28 @@
+import { Lines1 } from '../components/icons/Lines1'
+import { Lines2 } from '../components/icons/Lines2'
 import { PortfolioList } from '../components/PortfolioList'
 import { Services } from '../components/Services'
 
 export const HomePage = () => {
   return (
     <>
-      <p className="text-center font-[Faberge]">
-        <span className="">End-to-end digital services:</span> strategy, design, and
-        development for business growth
-      </p>
+      <div className="relative">
+        <p className="mb-4 text-center font-[Faberge] text-xl">
+          <span className="bg-primary-200">End-to-end digital services:</span> <br />
+          strategy, design, and development <br />
+          for business growth
+        </p>
+        <Lines1 className="absolute right-16 -bottom-2 -z-10" />
+      </div>
       <Services location="home" />
-      <p className="font-readexPro mt-6 text-lg leading-6 font-semibold sm:mt-12 sm:text-3xl xl:mt-14 xl:text-4xl 2xl:mt-20">
-        Tailored solutions: bespoke design <br className="hidden sm:block" /> and
-        development for your business challenges
-      </p>
+      <div className="relative">
+        <p className="mt-6.5 text-center font-[Faberge] text-xl leading-6">
+          Tailored solutions: <br />
+          bespoke design and development <br />
+          for your <span className="bg-primary-200">business</span> challenges
+        </p>
+        <Lines2 className="absolute top-4 right-13 -z-10" />
+      </div>
       <PortfolioList location="home" />
     </>
   )
