@@ -6,7 +6,7 @@ export const GCButton = ({
   view,
   onClick,
   asLink = false,
-  link = null,
+  link = '/',
   disabled = false,
   className,
 }) => {

@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 import { navLinks } from '../constants/Navigate'
 import { GCButton } from './GCButton'
@@ -10,9 +10,9 @@ export const DropdownMenu = ({ setIsShow }) => {
   return (
     <div className="bg-primary-100 fixed z-40 w-full rounded-b-lg px-4 pb-4 drop-shadow-xl">
       <div className="border-primary-200 flex h-15 items-center justify-between border-b">
-        <a href="/">
+        <Link href="/">
           <LogoHeaderIcon className="h-5.5 w-22" />
-        </a>
+        </Link>
         <GCButton onClick={() => setIsShow(false)}>
           <CloseIcon />
         </GCButton>
