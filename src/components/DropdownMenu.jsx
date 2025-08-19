@@ -10,7 +10,7 @@ export const DropdownMenu = ({ setIsShow }) => {
   return (
     <div className="bg-primary-100 fixed z-40 w-full rounded-b-lg px-4 pb-4 drop-shadow-xl">
       <div className="border-primary-200 flex h-15 items-center justify-between border-b">
-        <Link href="/">
+        <Link to="/">
           <LogoHeaderIcon className="h-5.5 w-22" />
         </Link>
         <GCButton onClick={() => setIsShow(false)}>
