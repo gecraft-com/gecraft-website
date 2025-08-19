@@ -33,7 +33,7 @@ export const PortfolioItem = ({
             Cooperation period
           </h3>
           <p className="mt-1 md:mt-1.5 xl:text-lg">Since {sinceDate}</p>
-          <h3 className="mt-3.5 text-lg font-semibold md:text-xl xl:mt-6 xl:text-3xl">
+          <h3 className="mt-3.5 text-lg font-semibold md:mt-4.5 md:text-xl xl:mt-6 xl:text-3xl">
             Services used
           </h3>
           <ul className="mt-1.5 mb-3.5 flex flex-wrap gap-2 md:mt-2 md:mb-5 md:gap-3 xl:mt-3 xl:mb-0">

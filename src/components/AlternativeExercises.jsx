@@ -1,36 +1,38 @@
 import { useEffect, useRef } from 'react'
 
-import { Link, useLocation } from 'react-router-dom'
+import clsx from 'clsx'
+import { Link } from 'react-router-dom'
 
-import services from '../../data/services.json'
-import { ArrowRightIcon } from './icons/ArrowRightIcon'
-
-const ServicesItem = ({ icon, serviceName, anchor }) => (
-  <Link
-    to={`/services#${anchor}`}
-    className="bg-secondary-100 flex h-47.5 w-36 shrink-0 cursor-pointer flex-col justify-between rounded-lg px-3 py-3.5 first:ml-4 last:mr-4 md:h-66.5 md:w-56 md:rounded-2xl md:px-4.5 md:py-4 first:md:ml-8 last:md:mr-8 xl:h-85.5 xl:w-75 xl:rounded-3xl xl:px-7 xl:py-6.5 first:xl:ml-20 last:xl:mr-20 first:2xl:ml-auto last:2xl:mr-auto"
-  >
-    <img src={icon} alt={serviceName} className="w-20 md:w-30 xl:w-40" />
-    <p className="text-sm leading-4 font-medium break-words whitespace-pre-line md:text-2xl md:leading-7 xl:text-3xl xl:leading-9">
-      {serviceName}
-    </p>
-    <ArrowRightIcon className="w-7 shrink-0 self-end md:w-8.5" />
-  </Link>
+const AlternativeExercisesItem = () => (
+  <div className="bg-secondary-50 flex max-w-80 shrink-0 gap-3 rounded-lg p-3 md:max-w-114">
+    <img
+      src="/exercise.png"
+      alt="exercise"
+      className="h-25 w-25 shrink-0 rounded object-cover"
+    />
+    <div>
+      <Link to="/exercises/1" className="leading-4 font-semibold">
+        Workout name
+      </Link>
+      <hr className="text-black-100 my-2 w-full" />
+      <div className="flex gap-2 leading-4">
+        <p className="text-secondary-600 text-sm underline">Other</p>
+        <p className="text-secondary-600 text-sm underline">Lower back</p>
+      </div>
+      <p className="text-black-400 mt-2 line-clamp-2 text-sm leading-4">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero tempore, quis
+        soluta ea necessitatibus nihil omnis magni earum dicta fuga.
+      </p>
+    </div>
+  </div>
 )
 
-export const Services = () => {
-  const { hash } = useLocation()
+const items = Array.from({ length: 6 }).map((_, i) => (
+  <AlternativeExercisesItem key={i} />
+))
 
-  useEffect(() => {
-    if (hash) {
-      const element = document.getElementById(hash.replace('#', ''))
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' })
-      }
-    }
-  }, [hash])
-
-  const containerRef = useRef(null)
+export const AlternativeExercises = ({ className }) => {
+  const containerRef = (useRef < HTMLDivElement) | (null > null)
   const isDragging = useRef(false)
   const startX = useRef(0)
   const scrollLeftStart = useRef(0)
@@ -39,7 +41,7 @@ export const Services = () => {
     const container = containerRef.current
     if (!container) return
 
-    const onWheel = (e) => {
+    const onWheel = (e: WheelEvent) => {
       if (e.deltaY !== 0) {
         e.preventDefault()
         container.scrollLeft += e.deltaY * 0.5
@@ -54,18 +56,19 @@ export const Services = () => {
     const container = containerRef.current
     if (!container) return
 
+    // Touch state
     let isTouchDragging = false
     let touchStartX = 0
     let touchScrollLeftStart = 0
 
-    const onMouseDown = (e) => {
+    const onMouseDown = (e: MouseEvent) => {
       isDragging.current = true
       startX.current = e.pageX - container.offsetLeft
       scrollLeftStart.current = container.scrollLeft
       container.classList.add('cursor-grabbing')
     }
 
-    const onMouseMove = (e) => {
+    const onMouseMove = (e: MouseEvent) => {
       if (!isDragging.current) return
       e.preventDefault()
       const x = e.pageX - container.offsetLeft
@@ -78,7 +81,8 @@ export const Services = () => {
       container.classList.remove('cursor-grabbing')
     }
 
-    const onTouchStart = (e) => {
+    // Touch events
+    const onTouchStart = (e: TouchEvent) => {
       if (e.touches.length !== 1) return
       isTouchDragging = true
       touchStartX = e.touches[0].pageX - container.offsetLeft
@@ -86,7 +90,7 @@ export const Services = () => {
       container.classList.add('cursor-grabbing')
     }
 
-    const onTouchMove = (e) => {
+    const onTouchMove = (e: TouchEvent) => {
       if (!isTouchDragging) return
       if (e.touches.length !== 1) return
       e.preventDefault()
@@ -122,14 +126,13 @@ export const Services = () => {
   }, [])
 
   return (
-    <div className="absolute top-45 left-0 w-full overflow-hidden md:top-48 xl:top-64">
+    <div className={clsx('mt-7 overflow-hidden', className)}>
+      <h3 className="mb-3 font-semibold">Alternative exercises:</h3>
       <div
         ref={containerRef}
-        className="hide-scrollbar flex w-full max-w-full cursor-grab gap-1.5 overflow-x-auto select-none md:gap-4 xl:gap-6"
+        className="hide-scrollbar flex w-full max-w-full cursor-grab gap-4 overflow-x-auto select-none"
       >
-        {services.map(({ id, icon, serviceName, anchor }) => (
-          <ServicesItem key={id} icon={icon} serviceName={serviceName} anchor={anchor} />
-        ))}
+        {items}
       </div>
     </div>
   )

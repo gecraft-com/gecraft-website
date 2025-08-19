@@ -1,8 +1,6 @@
 export const Lines1 = ({ className }) => {
   return (
     <svg
-      width="156"
-      height="18"
       viewBox="0 0 156 18"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
