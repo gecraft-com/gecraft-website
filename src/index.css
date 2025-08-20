@@ -9,18 +9,8 @@
 }
 
 @font-face {
-  font-family: 'NeverMindCompact';
-  src: url('/fonts/NeverMindCompact-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'NeverMindCompact';
-  src: url('/fonts/NeverMindCompact-Heavy.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
+  font-family: 'Faberge';
+  src: url('/fonts/Faberge.ttf') format('truetype');
   font-display: swap;
 }
 
