@@ -11,11 +11,15 @@
 @font-face {
   font-family: 'Faberge';
   src: url('/fonts/Faberge.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
   font-display: swap;
 }
 
 @theme {
   --color-black-00: #FFFFFF;
+  --color-black-50: #F6F6F6;
   --color-black-100: #E7E7E7;
   --color-black-200: #D1D1D1;
   --color-black-300: #B0B0B0;
