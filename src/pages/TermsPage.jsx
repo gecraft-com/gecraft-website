@@ -1,8 +1,8 @@
 export const TermsPage = () => {
   return (
-    <div className="3xl:before:right-48 4xl:before:right-96 w-full before:fixed before:top-10 before:right-16 before:-z-10 xl:before:content-[url('/logo-background1.png')] 2xl:before:top-28 2xl:before:right-36 2xl:before:content-[url('/logo-background.png')]">
-      <div className="bg-primary-100 rounded-3xl p-4 sm:px-9 sm:py-8 xl:w-[50rem] 2xl:w-[62.5rem]">
-        <h2 className="font-readexPro text-3xl sm:text-4xl">Gecraft Terms of Use</h2>
+    <div className="w-full before:fixed before:top-20 before:right-0 before:-z-10 xl:before:content-[url('/logo-background1.png')] 2xl:before:top-28 2xl:before:right-0 2xl:before:content-[url('/logo-background.png')]">
+      <div className="bg-black-00 rounded-3xl p-4 sm:px-9 sm:py-8 xl:w-200 2xl:w-250">
+        <h2 className="font-[Faberge] text-3xl sm:text-4xl">Gecraft Terms of Use</h2>
         <p className="mt-4 italic sm:mt-6 xl:text-lg">Last Updated: 24 February, 2025</p>
         <p className="mt-4 sm:mt-6 xl:text-lg">
           Welcome to the Gecraft website. These Terms of Use govern your use of our
@@ -10,7 +10,7 @@ export const TermsPage = () => {
           accessing or using our website, you agree to be bound by these terms. If you do
           not agree with any part of these terms, please do not use our website.
         </p>
-        <h3 className="font-readexPro mt-4 text-xl font-semibold sm:mt-6 sm:text-3xl">
+        <h3 className="mt-4 font-[Faberge] text-xl sm:mt-6 sm:text-3xl">
           1. Acceptance of Terms
         </h3>
         <p className="mt-2 sm:mt-3 xl:text-lg">
@@ -18,7 +18,7 @@ export const TermsPage = () => {
           to comply with them. We may update these terms from time to time, and your
           continued use of the website will signify your acceptance of any changes.
         </p>
-        <h3 className="font-readexPro mt-4 text-xl font-semibold sm:mt-6 sm:text-3xl">
+        <h3 className="mt-4 font-[Faberge] text-xl sm:mt-6 sm:text-3xl">
           2. Use of the Website
         </h3>
         <ul className="mt-2 ml-12 list-disc sm:mt-3 xl:text-lg">
@@ -29,7 +29,7 @@ export const TermsPage = () => {
             instructions we provide.
           </li>
         </ul>
-        <h3 className="font-readexPro mt-4 text-xl font-semibold sm:mt-6 sm:text-3xl">
+        <h3 className="mt-4 font-[Faberge] text-xl sm:mt-6 sm:text-3xl">
           3. Intellectual Property
         </h3>
         <p className="mt-2 sm:mt-3 xl:text-lg">
@@ -39,7 +39,7 @@ export const TermsPage = () => {
           non-commercial purposes only. Any other use requires our express written
           permission.
         </p>
-        <h3 className="font-readexPro mt-4 text-xl font-semibold sm:mt-6 sm:text-3xl">
+        <h3 className="mt-4 font-[Faberge] text-xl sm:mt-6 sm:text-3xl">
           4. Disclaimer of Warranties
         </h3>
         <p className="mt-2 sm:mt-3 xl:text-lg">
@@ -48,7 +48,7 @@ export const TermsPage = () => {
           guarantee that the content is error-free or complete. Your use of the website is
           at your own risk.
         </p>
-        <h3 className="font-readexPro mt-4 text-xl font-semibold sm:mt-6 sm:text-3xl">
+        <h3 className="mt-4 font-[Faberge] text-xl sm:mt-6 sm:text-3xl">
           5. Limitation of Liability
         </h3>
         <p className="mt-2 sm:mt-3 xl:text-lg">
@@ -57,7 +57,7 @@ export const TermsPage = () => {
           consequential damages, even if we have been advised of the possibility of such
           damages.
         </p>
-        <h3 className="font-readexPro mt-4 text-xl font-semibold sm:mt-6 sm:text-3xl">
+        <h3 className="mt-4 font-[Faberge] text-xl sm:mt-6 sm:text-3xl">
           6. External Links
         </h3>
         <p className="mt-2 sm:mt-3 xl:text-lg">
@@ -65,7 +65,7 @@ export const TermsPage = () => {
           for your convenience only. We are not responsible for the content or practices
           of these websites.
         </p>
-        <h3 className="font-readexPro mt-4 text-xl font-semibold sm:mt-6 sm:text-3xl">
+        <h3 className="mt-4 font-[Faberge] text-xl sm:mt-6 sm:text-3xl">
           7. Governing Law
         </h3>
         <p className="mt-2 sm:mt-3 xl:text-lg">
@@ -73,7 +73,7 @@ export const TermsPage = () => {
           the jurisdiction in which Gecraft operates. Any disputes arising from these
           terms will be resolved in the appropriate courts of that jurisdiction.
         </p>
-        <h3 className="font-readexPro mt-4 text-xl font-semibold sm:mt-6 sm:text-3xl">
+        <h3 className="mt-4 font-[Faberge] text-xl sm:mt-6 sm:text-3xl">
           8. Changes to These Terms
         </h3>
         <p className="mt-2 sm:mt-3 xl:text-lg">
@@ -82,9 +82,7 @@ export const TermsPage = () => {
           use of the website after changes are posted constitutes acceptance of the new
           terms.
         </p>
-        <h3 className="font-readexPro mt-4 text-xl font-semibold sm:mt-6 sm:text-3xl">
-          9. Contact Us
-        </h3>
+        <h3 className="mt-4 font-[Faberge] text-xl sm:mt-6 sm:text-3xl">9. Contact Us</h3>
         <p className="mt-2 sm:mt-3 xl:text-lg">
           If you have any questions about these Terms of Use, please contact us at:
           Contact us
