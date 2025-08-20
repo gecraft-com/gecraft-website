@@ -16,6 +16,7 @@
 
 @theme {
   --color-black-00: #FFFFFF;
+  --color-black-100: #E7E7E7;
   --color-black-200: #D1D1D1;
   --color-black-300: #B0B0B0;
   --color-black-400: #888888;
@@ -41,6 +42,7 @@
 
   --color-secondary-50: #F4F7FB;
   --color-secondary-100: #E7EFF7;
+  --color-secondary-200: #CADCED;
   --color-secondary-800: #264666;
   --color-secondary-950: #182739;
 
