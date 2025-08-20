@@ -1,9 +1,24 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
-import clsx from 'clsx'
 import { Link, useLocation } from 'react-router-dom'
 
-export const Services = ({ location = 'home' }) => {
+import services from '../../data/services.json'
+import { ArrowRightIcon } from './icons/ArrowRightIcon'
+
+const ServicesItem = ({ icon, serviceName, anchor }) => (
+  <Link
+    to={`/services#${anchor}`}
+    className="bg-secondary-100 flex h-47.5 w-36 shrink-0 cursor-pointer flex-col justify-between rounded-lg px-3 py-3.5 first:ml-4 last:mr-4 md:h-66.5 md:w-56 md:rounded-2xl md:px-4.5 md:py-4 first:md:ml-8 last:md:mr-8 xl:h-85.5 xl:w-75 xl:rounded-3xl xl:px-7 xl:py-6.5 first:xl:ml-20 last:xl:mr-20 first:2xl:ml-auto last:2xl:mr-auto"
+  >
+    <img src={icon} alt={serviceName} className="w-20 md:w-30 xl:w-40" />
+    <p className="text-sm leading-4 font-medium break-words whitespace-pre-line md:text-2xl md:leading-7 xl:text-3xl xl:leading-9">
+      {serviceName}
+    </p>
+    <ArrowRightIcon className="w-7 shrink-0 self-end md:w-8.5" />
+  </Link>
+)
+
+export const Services = () => {
   const { hash } = useLocation()
 
   useEffect(() => {
@@ -15,132 +30,107 @@ export const Services = ({ location = 'home' }) => {
     }
   }, [hash])
 
+  const containerRef = useRef(null)
+  const isDragging = useRef(false)
+  const startX = useRef(0)
+  const scrollLeftStart = useRef(0)
+
+  useEffect(() => {
+    const container = containerRef.current
+    if (!container) return
+
+    const onWheel = (e) => {
+      if (e.deltaY !== 0) {
+        e.preventDefault()
+        container.scrollLeft += e.deltaY * 0.5
+      }
+    }
+
+    container.addEventListener('wheel', onWheel, { passive: false })
+    return () => container.removeEventListener('wheel', onWheel)
+  }, [])
+
+  useEffect(() => {
+    const container = containerRef.current
+    if (!container) return
+
+    let isTouchDragging = false
+    let touchStartX = 0
+    let touchScrollLeftStart = 0
+
+    const onMouseDown = (e) => {
+      isDragging.current = true
+      startX.current = e.pageX - container.offsetLeft
+      scrollLeftStart.current = container.scrollLeft
+      container.classList.add('cursor-grabbing')
+    }
+
+    const onMouseMove = (e) => {
+      if (!isDragging.current) return
+      e.preventDefault()
+      const x = e.pageX - container.offsetLeft
+      const walk = x - startX.current
+      container.scrollLeft = scrollLeftStart.current - walk
+    }
+
+    const onMouseUp = () => {
+      isDragging.current = false
+      container.classList.remove('cursor-grabbing')
+    }
+
+    const onTouchStart = (e) => {
+      if (e.touches.length !== 1) return
+      isTouchDragging = true
+      touchStartX = e.touches[0].pageX - container.offsetLeft
+      touchScrollLeftStart = container.scrollLeft
+      container.classList.add('cursor-grabbing')
+    }
+
+    const onTouchMove = (e) => {
+      if (!isTouchDragging) return
+      if (e.touches.length !== 1) return
+      e.preventDefault()
+      const x = e.touches[0].pageX - container.offsetLeft
+      const walk = x - touchStartX
+      container.scrollLeft = touchScrollLeftStart - walk
+    }
+
+    const onTouchEnd = () => {
+      isTouchDragging = false
+      container.classList.remove('cursor-grabbing')
+    }
+
+    container.addEventListener('mousedown', onMouseDown)
+    container.addEventListener('mousemove', onMouseMove)
+    container.addEventListener('mouseleave', onMouseUp)
+    container.addEventListener('mouseup', onMouseUp)
+    container.addEventListener('touchstart', onTouchStart, { passive: false })
+    container.addEventListener('touchmove', onTouchMove, { passive: false })
+    container.addEventListener('touchend', onTouchEnd)
+    container.addEventListener('touchcancel', onTouchEnd)
+
+    return () => {
+      container.removeEventListener('mousedown', onMouseDown)
+      container.removeEventListener('mousemove', onMouseMove)
+      container.removeEventListener('mouseleave', onMouseUp)
+      container.removeEventListener('mouseup', onMouseUp)
+      container.removeEventListener('touchstart', onTouchStart)
+      container.removeEventListener('touchmove', onTouchMove)
+      container.removeEventListener('touchend', onTouchEnd)
+      container.removeEventListener('touchcancel', onTouchEnd)
+    }
+  }, [])
+
   return (
-    <div className="font-readexPro grid grid-cols-2 grid-rows-2 gap-1 font-semibold sm:grid-cols-6 sm:gap-1.5 sm:text-xl xl:gap-4 xl:text-3xl">
-      <Link
-        to="/services#management"
-        className={clsx(
-          'bg-primary-400 relative flex items-end justify-end rounded-tl-3xl px-3 py-2.5 text-right duration-1000 sm:col-span-2 sm:p-4 xl:rounded-tl-[4rem] xl:p-7',
-          location === 'home' &&
-            'group h-28 hover:scale-[1.01] hover:shadow-xl sm:h-48 xl:h-80',
-          location === 'services' &&
-            'group h-24 overflow-hidden hover:scale-[1.01] hover:shadow-xl sm:h-44 xl:h-56'
-        )}
+    <div className="absolute top-45 left-0 w-full overflow-hidden md:top-48 xl:top-64">
+      <div
+        ref={containerRef}
+        className="hide-scrollbar flex w-full max-w-full cursor-grab gap-1.5 overflow-x-auto select-none md:gap-4 xl:gap-6"
       >
-        <img
-          src="/chat.webp"
-          alt="chat"
-          className={clsx(
-            'absolute',
-            location === 'home' &&
-              'top-1 left-1 w-[4.5rem] duration-1000 group-hover:scale-125 group-hover:-rotate-12 sm:top-3 sm:left-3 sm:w-[8.3rem] xl:top-5 xl:left-7 xl:w-[15rem] 2xl:-top-3 2xl:w-[18rem]',
-            location === 'services' &&
-              '-top-2 -left-1.5 w-[6.2rem] opacity-20 sm:-top-4 sm:-left-3.5 sm:w-[12rem] xl:-top-12 xl:-left-10 xl:w-[20rem]'
-          )}
-        />
-        <span className="z-10 duration-1000 group-hover:-translate-x-6">
-          Product Management
-        </span>
-      </Link>
-      <Link
-        to="/services#design"
-        className={clsx(
-          'bg-primary-400 relative flex items-end justify-end rounded-tr-3xl px-3 py-2.5 text-right duration-1000 sm:col-span-2 sm:rounded-none xl:p-7',
-          location === 'home' &&
-            'group h-28 hover:scale-[1.01] hover:shadow-xl sm:h-48 xl:h-80',
-          location === 'services' &&
-            'group h-24 overflow-hidden hover:scale-[1.01] hover:shadow-xl sm:h-44 xl:h-56'
-        )}
-      >
-        <img
-          src="/frame.webp"
-          alt="frame"
-          className={clsx(
-            'absolute',
-            location === 'home' &&
-              'top-2 left-3 w-[3.5rem] duration-1000 group-hover:scale-125 group-hover:-rotate-12 sm:top-1 sm:left-3.5 sm:w-[8.5rem] xl:top-7 xl:left-8 xl:w-[13.5rem] 2xl:top-1 2xl:left-8 2xl:w-[16.5rem]',
-            location === 'services' &&
-              '-top-2 left-0.5 w-[5.5rem] -rotate-6 opacity-20 sm:-top-3 sm:left-0 sm:w-[11.9rem] xl:-top-9 xl:-left-16 xl:w-[18rem]'
-          )}
-        />
-        <span className="duration-1000 group-hover:-translate-x-6">Product Design</span>
-      </Link>
-      <Link
-        to="/services#quality"
-        className={clsx(
-          'bg-primary-400 relative flex items-end justify-end px-3 py-2.5 text-right duration-1000 sm:col-span-2 sm:rounded-tr-3xl xl:rounded-tr-[4rem] xl:p-7',
-          location === 'home' &&
-            'group h-28 hover:scale-[1.01] hover:shadow-xl sm:h-48 xl:h-80',
-          location === 'services' &&
-            'group h-24 overflow-hidden hover:scale-[1.01] hover:shadow-xl sm:h-44 xl:h-56'
-        )}
-      >
-        <img
-          src="/security.webp"
-          alt="security"
-          className={clsx(
-            'absolute',
-            location === 'home' &&
-              'top-2 left-2.5 w-[4rem] duration-1000 group-hover:scale-125 group-hover:-rotate-12 sm:top-3 sm:left-2 sm:w-[8rem] xl:top-7 xl:left-3 xl:w-[13rem] 2xl:top-4 2xl:left-4 2xl:w-[15rem]',
-            location === 'services' &&
-              'top-0 -left-1 w-[5.5rem] opacity-20 sm:-top-0.5 sm:-left-7 sm:w-[10rem] xl:-top-7 xl:-left-14 xl:w-[17rem]'
-          )}
-        />
-        <span className="z-10 duration-1000 group-hover:-translate-x-6">
-          Quality Assurance
-        </span>
-      </Link>
-      <Link
-        to="/services#engineering"
-        className={clsx(
-          'bg-primary-400 relative flex items-end justify-end px-3 py-2.5 text-right duration-1000 sm:col-span-3 sm:rounded-bl-3xl xl:rounded-bl-[4rem] xl:p-7',
-          location === 'home' &&
-            'group h-28 hover:scale-[1.01] hover:shadow-xl sm:h-48 xl:h-80',
-          location === 'services' &&
-            'group h-24 overflow-hidden hover:scale-[1.01] hover:shadow-xl sm:h-44 xl:h-56'
-        )}
-      >
-        <img
-          src="/code.webp"
-          alt="code"
-          className={clsx(
-            'absolute',
-            location === 'home' &&
-              'top-3 left-2 w-[3.2rem] duration-1000 group-hover:scale-125 group-hover:-rotate-12 sm:top-2.5 sm:left-5 sm:w-[8rem] xl:top-5 xl:left-10 xl:w-[14rem] 2xl:left-10 2xl:w-[17.4rem]',
-            location === 'services' &&
-              '-top-1 -left-0.5 w-[5rem] -rotate-12 opacity-20 sm:-top-3.5 sm:left-0.5 sm:w-[12rem] xl:-top-4 xl:left-5 xl:w-[16.5rem]'
-          )}
-        />
-        <span className="z-10 duration-1000 group-hover:-translate-x-6">
-          Software Engineering
-        </span>
-      </Link>
-      <Link
-        to="/services#fullCycle"
-        className={clsx(
-          'bg-primary-400 relative col-span-2 flex items-end justify-end rounded-b-3xl px-3 py-2.5 text-right duration-1000 sm:col-span-3 sm:rounded-bl-none xl:rounded-br-[4rem] xl:p-7',
-          location === 'home' &&
-            'group h-28 hover:scale-[1.01] hover:shadow-xl sm:h-48 xl:h-80',
-          location === 'services' &&
-            'group h-24 overflow-hidden hover:scale-[1.01] hover:shadow-xl sm:h-44 xl:h-56'
-        )}
-      >
-        <img
-          src="/analytics.webp"
-          alt="analytics"
-          className={clsx(
-            'absolute',
-            location === 'home' &&
-              'top-2 left-6 w-[5.6rem] duration-1000 group-hover:scale-125 group-hover:-rotate-12 sm:top-1.5 sm:left-5 sm:w-[8.5rem] xl:top-5 xl:left-10 xl:w-[14rem] 2xl:top-1 2xl:left-9 2xl:w-[16.5rem]',
-            location === 'services' &&
-              'top-0 left-6 w-[6rem] -rotate-6 opacity-20 sm:-top-3 sm:left-1 sm:w-[11rem] xl:-top-10 xl:-left-8 xl:w-[19.5rem]'
-          )}
-        />
-        <span className="z-10 duration-1000 group-hover:-translate-x-6">
-          Digital Product <br className="xl:hidden" />
-          Full-Cycle Service
-        </span>
-      </Link>
+        {services.map(({ id, icon, serviceName, anchor }) => (
+          <ServicesItem key={id} icon={icon} serviceName={serviceName} anchor={anchor} />
+        ))}
+      </div>
     </div>
   )
 }

@@ -29,14 +29,19 @@ export const Header = () => {
     setIsShow(false)
   }
 
+  const handleLogoClick = () => {
+    setIsShow(false)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     <>
       <header className="border-primary-100 bg-primary-100 fixed z-20 h-15 w-full border-b px-4 drop-shadow-xl md:px-8 md:py-2 xl:h-20 xl:px-20 2xl:px-40">
         <div className="mx-auto flex h-full max-w-[100.188rem] items-center justify-between">
-          <Link to="/" className="xl:hidden">
+          <Link to="/" onClick={handleLogoClick} className="xl:hidden">
             <LogoHeaderIcon className="h-5.5 w-22" />
           </Link>
-          <Link to="/" className="hidden xl:block">
+          <Link to="/" onClick={handleLogoClick} className="hidden xl:block">
             <LogoHeaderIcon className="h-9 w-37.5" />
           </Link>
           <div className="font-readexPro hidden justify-between md:flex md:w-44 md:items-center xl:w-48 xl:text-lg">
