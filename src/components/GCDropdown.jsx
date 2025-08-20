@@ -51,17 +51,18 @@ export const GCDropdown = ({ children, budget, value = '', onSelect }) => {
         <div className="px-4">
           <div className="custom-scrollbar overflow-y-auto">
             <div className="scrollbar-overlay"></div>
-            {budget?.map((item, index) => (
-              <label
+            {budget?.map((item) => (
+              <div
                 className="border-black-100 flex cursor-pointer items-center gap-3 border-t py-3.5 first:pt-1.5"
-                key={index}
+                key={item}
                 onClick={() => {
                   if (onSelect) onSelect(item)
                   setIsShow(false)
                 }}
+                role="option"
               >
                 <span className="hover:text-black-950 whitespace-pre-line">{item}</span>
-              </label>
+              </div>
             ))}
           </div>
         </div>

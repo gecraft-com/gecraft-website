@@ -15,40 +15,6 @@ const budget = [
   "I don't know yet",
 ]
 
-{
-  /* <div className="group relative">
-              <div
-                name="budget"
-                onChange={handleInputChange('budget')}
-                className={clsx(
-                  'border-black-500 bg-black-00 flex h-12 w-full cursor-pointer appearance-none items-center rounded-lg border-2 px-4 focus:outline-none',
-                  {
-                    'h-12': !isOpen,
-                    'h-50': isOpen,
-                  }
-                )}
-                onClick={handleOpenBudget}
-                onBlur={() => {
-                  setRotate(false)
-                }}
-              >
-                Project budget
-              </div>
-              <div
-                className={clsx(
-                  'absolute top-1/2 right-4 -translate-y-1/2',
-                  'pointer-events-none duration-200',
-                  {
-                    'rotate-180': rotate,
-                    'rotate-0': !rotate,
-                  }
-                )}
-              >
-                <ArrowIcon />
-              </div>
-            </div> */
-}
-
 export const Form = ({ onPage = false }) => {
   const {
     formData,
