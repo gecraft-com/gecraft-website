@@ -5,15 +5,49 @@ import clsx from 'clsx'
 
 import { useForm } from '../hooks/useForm'
 import { GCButton } from './GCButton'
-import { ArrowIcon } from './icons/ArrowIcon'
+import { GCDropdown } from './GCDropdown'
 
 const budget = [
-  '$5000-$10000',
-  '$10000-$50000',
-  '$50000-$250000',
-  '$250000-$500000',
-  'I don&apos;t know yet',
+  '$5000 - $10000',
+  '$10000 - $50000',
+  '$50000 - $250000',
+  '$250000 - $500000',
+  "I don't know yet",
 ]
+
+{
+  /* <div className="group relative">
+              <div
+                name="budget"
+                onChange={handleInputChange('budget')}
+                className={clsx(
+                  'border-black-500 bg-black-00 flex h-12 w-full cursor-pointer appearance-none items-center rounded-lg border-2 px-4 focus:outline-none',
+                  {
+                    'h-12': !isOpen,
+                    'h-50': isOpen,
+                  }
+                )}
+                onClick={handleOpenBudget}
+                onBlur={() => {
+                  setRotate(false)
+                }}
+              >
+                Project budget
+              </div>
+              <div
+                className={clsx(
+                  'absolute top-1/2 right-4 -translate-y-1/2',
+                  'pointer-events-none duration-200',
+                  {
+                    'rotate-180': rotate,
+                    'rotate-0': !rotate,
+                  }
+                )}
+              >
+                <ArrowIcon />
+              </div>
+            </div> */
+}
 
 export const Form = ({ onPage = false }) => {
   const {
@@ -33,9 +67,6 @@ export const Form = ({ onPage = false }) => {
     goals: false,
   })
   const [wasSubmitAttempted, setWasSubmitAttempted] = useState(false)
-
-  const [isOpen, setIsOpen] = useState(false)
-  const [rotate, setRotate] = useState(false)
 
   const handleBlur = (fieldName) => () => {
     setTouchedFields((prev) => ({
@@ -94,11 +125,6 @@ export const Form = ({ onPage = false }) => {
     return ''
   }
 
-  const handleOpenBudget = () => {
-    setRotate(!rotate)
-    setIsOpen(!isOpen)
-  }
-
   let timeoutId
 
   const handleSubmit = async (e) => {
@@ -151,7 +177,8 @@ export const Form = ({ onPage = false }) => {
         <form
           onSubmit={handleSubmit}
           className={clsx('text-black-500 text-lg', {
-            'mt-6 grid w-full grid-cols-1 gap-2 md:grid-cols-2 md:gap-4 xl:mt-0': onPage,
+            'mt-6 grid w-full grid-cols-1 gap-2 md:mt-8 md:grid-cols-2 md:gap-4 xl:mt-0':
+              onPage,
             'hidden w-72 gap-3 md:flex md:flex-col xl:w-96': !onPage,
           })}
         >
@@ -218,7 +245,7 @@ export const Form = ({ onPage = false }) => {
                 value={formData.company}
                 onChange={handleInputChange('company')}
                 type="text"
-                className="border-black-500 bg-black-00 h-12 w-full rounded-lg border-2 px-4 focus:outline-none"
+                className="border-black-500 bg-black-00 text-black-950 h-12 w-full rounded-lg border-2 px-4 focus:outline-none"
               />
               <span
                 className={clsx(
@@ -235,37 +262,13 @@ export const Form = ({ onPage = false }) => {
             </label>
           )}
           {onPage && (
-            <div className="group relative">
-              <div
-                name="budget"
-                onChange={handleInputChange('budget')}
-                className={clsx(
-                  'border-black-500 bg-black-00 flex h-12 w-full cursor-pointer appearance-none items-center rounded-lg border-2 px-4 focus:outline-none',
-                  {
-                    'h-12': !isOpen,
-                    'h-50': isOpen,
-                  }
-                )}
-                onClick={handleOpenBudget}
-                onBlur={() => {
-                  setRotate(false)
-                }}
-              >
-                Project budget
-              </div>
-              <div
-                className={clsx(
-                  'absolute top-1/2 right-4 -translate-y-1/2',
-                  'pointer-events-none duration-200',
-                  {
-                    'rotate-180': rotate,
-                    'rotate-0': !rotate,
-                  }
-                )}
-              >
-                <ArrowIcon />
-              </div>
-            </div>
+            <GCDropdown
+              budget={budget}
+              value={formData.budget}
+              onSelect={handleInputChange('budget')}
+            >
+              <span className="text-black-500">Project budget</span>
+            </GCDropdown>
           )}
           <label className="group relative md:col-span-2">
             <textarea
