@@ -13,7 +13,6 @@
   src: url('/fonts/Faberge.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-
   font-display: swap;
 }
 
@@ -75,6 +74,8 @@ html {
 
 body {
     width: 100%;
+
+    background: var(--color-secondary-50);
 
     font-family: "NeverMindCompact", sans-serif;
 
