@@ -22,7 +22,7 @@ export const Layout = () => {
   return (
     <div className="relative">
       <Header />
-      <main className="mx-auto max-w-[120.188rem] overflow-x-hidden px-4 pt-20 pb-6 sm:px-8 xl:px-20 xl:pt-28 xl:pb-9 2xl:px-40 2xl:pb-11">
+      <main className="mx-auto max-w-[120.188rem] overflow-x-hidden px-4 pt-20 pb-4 sm:px-8 xl:px-20 xl:pt-28 xl:pb-9 2xl:px-40 2xl:pb-11">
         {<Outlet />}
       </main>
       <Footer />
