@@ -5,7 +5,7 @@ export const useForm = ({ onPage }) => {
     name: '',
     email: '',
     company: '',
-    budget: 'Not search',
+    budget: '',
     goals: '',
   })
 
@@ -20,14 +20,16 @@ export const useForm = ({ onPage }) => {
     return re.test(String(email).toLowerCase())
   }
 
-  const handleInputChange = (name) => (value) => {
+  const handleInputChange = (name) => (valueOrEvent) => {
+    const nextValue =
+      valueOrEvent && valueOrEvent.target ? valueOrEvent.target.value : valueOrEvent
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value.target.value,
+      [name]: nextValue,
     }))
 
     if (name === 'email') {
-      setIsEmailValid(validateEmail(value.target.value))
+      setIsEmailValid(validateEmail(nextValue))
     }
   }
 
@@ -48,7 +50,7 @@ export const useForm = ({ onPage }) => {
       name: '',
       email: '',
       company: '',
-      budget: 'Not search',
+      budget: '',
       goals: '',
     })
     setIsEmailValid(false)
