@@ -9,9 +9,9 @@ export const Team = () => {
         <h3 className="text-center font-[Faberge] text-xl md:text-3xl xl:text-5xl">
           Our team
         </h3>
-        <Lines3 className="absolute -bottom-2.5 -left-2 w-25 md:-bottom-4.5 md:-left-3 md:w-38" />
+        <Lines3 className="absolute -bottom-2.5 -left-2 w-25 md:-bottom-4.5 md:-left-3 md:w-38 xl:-bottom-8 xl:w-57" />
       </div>
-      <ul className="min-237.5:grid-cols-4 min-360:grid-cols-5 min-437.5:gap-12 mt-4 grid grid-cols-2 gap-2 md:mt-6 md:grid-cols-3 md:gap-4 xl:mt-9 xl:gap-7 2xl:gap-7">
+      <ul className="mt-4 grid grid-cols-2 gap-2 md:mt-6 md:grid-cols-3 md:gap-4 lg:grid-cols-4 xl:mt-9 xl:gap-6.5 2xl:grid-cols-5">
         {team.map((person) => (
           <TeamItem key={person.id} person={person} />
         ))}
