@@ -5,7 +5,15 @@ import clsx from 'clsx'
 
 import { useForm } from '../hooks/useForm'
 import { GCButton } from './GCButton'
-import { ArrowIcon } from './icons/ArrowIcon'
+import { GCDropdown } from './GCDropdown'
+
+const budget = [
+  '$5000 - $10000',
+  '$10000 - $50000',
+  '$50000 - $250000',
+  '$250000 - $500000',
+  "I don't know yet",
+]
 
 export const Form = ({ onPage = false }) => {
   const {
@@ -26,8 +34,6 @@ export const Form = ({ onPage = false }) => {
   })
   const [wasSubmitAttempted, setWasSubmitAttempted] = useState(false)
 
-  const [rotate, setRotate] = useState(false)
-
   const handleBlur = (fieldName) => () => {
     setTouchedFields((prev) => ({
       ...prev,
@@ -37,12 +43,16 @@ export const Form = ({ onPage = false }) => {
 
   const getInputClassName = (fieldName, isValid) => {
     const baseClasses = clsx(
-      'w-full rounded-lg border-2 border-black-300 px-4 py-3 bg-black-00 text-black-950 focus:outline-none',
+      'w-full rounded-lg border-2 px-4 py-3 bg-black-00 text-black-950 focus:outline-none',
+      {
+        'border-black-500': onPage,
+        'border-black-300': !onPage,
+      },
       fieldName === 'goals'
         ? [
             'block',
             {
-              'min-h-36 h-40': onPage,
+              'min-h-42.5 h-42.5': onPage,
               'min-h-20 h-22': !onPage,
             },
           ]
@@ -132,8 +142,9 @@ export const Form = ({ onPage = false }) => {
       ) : (
         <form
           onSubmit={handleSubmit}
-          className={clsx('text-black', {
-            'mt-6 grid w-full grid-cols-1 gap-2 md:grid-cols-2 md:gap-4 xl:mt-0': onPage,
+          className={clsx('text-black-500 text-lg', {
+            'mt-6 grid w-full grid-cols-1 gap-2 md:mt-8 md:grid-cols-2 md:gap-4 xl:mt-0':
+              onPage,
             'hidden w-72 gap-3 md:flex md:flex-col xl:w-96': !onPage,
           })}
         >
@@ -166,7 +177,7 @@ export const Form = ({ onPage = false }) => {
               )}
             </label>
           )}
-          <label className="group text-black-300 relative">
+          <label className="group relative">
             <input
               name="email"
               value={formData.email}
@@ -179,9 +190,9 @@ export const Form = ({ onPage = false }) => {
               className={clsx(
                 'absolute top-1/2 left-4 -translate-y-1/2',
                 'cursor-text duration-200',
-                'group-focus-within:top-2.5 group-focus-within:text-xs',
+                'group-focus-within:top-2.5 group-focus-within:text-xs group-focus-within:opacity-35',
                 {
-                  'top-2.5 text-xs': formData.email,
+                  'top-2.5 text-xs opacity-35': formData.email,
                 }
               )}
             >
@@ -200,7 +211,7 @@ export const Form = ({ onPage = false }) => {
                 value={formData.company}
                 onChange={handleInputChange('company')}
                 type="text"
-                className="border-primary-600 h-12 w-full rounded-lg border-2 px-4"
+                className="border-black-500 bg-black-00 text-black-950 h-12 w-full rounded-lg border-2 px-4 focus:outline-none"
               />
               <span
                 className={clsx(
@@ -217,40 +228,15 @@ export const Form = ({ onPage = false }) => {
             </label>
           )}
           {onPage && (
-            <div className="group relative">
-              <select
-                name="budget"
-                onChange={handleInputChange('budget')}
-                className="border-primary-600 h-12 w-full cursor-pointer appearance-none rounded-lg border-2 px-4"
-                onClick={() => {
-                  setRotate(!rotate)
-                }}
-                onBlur={() => {
-                  setRotate(false)
-                }}
-              >
-                <option value="Not search">Project budget</option>
-                <option value="$5000-$10000">$5000-$10000</option>
-                <option value="$10000-$50000">$10000-$50000</option>
-                <option value="$50000-$250000">$50000-$250000</option>
-                <option value="$250000-$500000">$250000-$500000</option>
-                <option value="I don't know yet">I don&apos;t know yet</option>
-              </select>
-              <div
-                className={clsx(
-                  'absolute top-1/2 right-4 -translate-y-1/2',
-                  'pointer-events-none duration-200',
-                  {
-                    'rotate-180': rotate,
-                    'rotate-0': !rotate,
-                  }
-                )}
-              >
-                <ArrowIcon />
-              </div>
-            </div>
+            <GCDropdown
+              budget={budget}
+              value={formData.budget}
+              onSelect={handleInputChange('budget')}
+            >
+              <span className="text-black-500">Project budget</span>
+            </GCDropdown>
           )}
-          <label className="group text-black-300 relative md:col-span-2">
+          <label className="group relative md:col-span-2">
             <textarea
               name="goals"
               type="text"
@@ -263,9 +249,9 @@ export const Form = ({ onPage = false }) => {
               className={clsx(
                 'absolute left-4',
                 'cursor-text duration-200',
-                'group-focus-within:top-0.5 group-focus-within:text-xs',
+                'group-focus-within:top-0.5 group-focus-within:text-xs group-focus-within:opacity-35',
                 {
-                  'top-0.5 text-xs': formData.goals,
+                  'top-0.5 text-xs opacity-35': formData.goals,
                   'top-4': !formData.goals,
                 }
               )}
@@ -275,14 +261,14 @@ export const Form = ({ onPage = false }) => {
             {onPage && (
               <div
                 className={clsx(
-                  'absolute bottom-4 left-4',
+                  'text-black-300 absolute bottom-4 left-4',
                   'cursor-text duration-200',
                   'group-focus-within:scale-0 group-focus-within:opacity-0',
                   { 'scale-0 opacity-0': formData.goals }
                 )}
               >
-                <p className="text-primary-750">Helpful things to include:</p>
-                <ul className="text-primary-750">
+                <p>Helpful things to include:</p>
+                <ul className="leading-6">
                   <li>— Your problem</li>
                   <li>— Your location</li>
                   <li>— How you heard about us</li>
