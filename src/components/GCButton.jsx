@@ -21,7 +21,7 @@ export const GCButton = ({
 
     switch (view) {
       case 'primary':
-        return `${baseClasses} ${className} bg-primary-950 text-lg font-medium hover:bg-black-900 active:bg-black-600`
+        return `${baseClasses} ${className} bg-black-00 text-lg text-primary-500 border-2 border-primary-500 font-medium hover:bg-primary-600 active:bg-primary-700 hover:text-black-00 hover:border-primary-600 active:text-black-00 active:border-primary-700`
       case 'secondary':
         return `${baseClasses} ${className} bg-primary-500 text-lg font-medium hover:bg-primary-600 active:bg-primary-700`
       default:

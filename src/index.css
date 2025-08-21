@@ -30,17 +30,10 @@
 
   --color-primary-100: #F6F6F6;
   --color-primary-200: #B7E3C1;
-  --color-primary-300: #888888;
-  --color-primary-400: #DAF1DE;
+  --color-primary-400: #55B272;
   --color-primary-500: #25904A;
-  --color-primary-550: #3D3D3D;
   --color-primary-600: #237842;
-  --color-primary-650: #55B272;
   --color-primary-700: #1C6036;
-  --color-primary-750: #B0B0B0;
-  --color-primary-800: #237842;
-  --color-primary-850: #001D1F;
-  --color-primary-900: #E7E7E7;
   --color-primary-950: #0B2315;
 
   --color-secondary-50: #F4F7FB;
@@ -78,7 +71,5 @@ body {
     background: var(--color-secondary-50);
 
     font-family: "NeverMindCompact", sans-serif;
-
-    background: var(--color-secondary-50);
   }
 

@@ -36,7 +36,7 @@ export const Header = () => {
 
   return (
     <>
-      <header className="border-primary-100 bg-primary-100 fixed z-20 h-15 w-full border-b px-4 drop-shadow-xl md:px-8 md:py-2 xl:h-20 xl:px-20 2xl:px-40">
+      <header className="bg-black-00 fixed z-20 h-15 w-full px-4 drop-shadow-xl md:px-8 md:py-2 xl:h-20 xl:px-20 2xl:px-40">
         <div className="mx-auto flex h-full max-w-[100.188rem] items-center justify-between">
           <Link to="/" onClick={handleLogoClick} className="xl:hidden">
             <LogoHeaderIcon className="h-5.5 w-22" />
