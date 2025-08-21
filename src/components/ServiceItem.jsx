@@ -15,7 +15,7 @@ export const ServiceItem = ({ service, odd }) => {
       )}
     >
       <img src={icon} alt="logo" className="hidden xl:mr-8 xl:block xl:w-80" />
-      <div className="xl:w-11/12">
+      <div>
         <div className="flex items-center gap-4">
           <img src={icon} alt="logo" className="w-16 sm:w-24 xl:hidden" />
           <h2 className="font-[Faberge] text-lg sm:text-3xl xl:text-4xl">
@@ -23,9 +23,9 @@ export const ServiceItem = ({ service, odd }) => {
           </h2>
         </div>
         <ul className="mt-3 list-none pl-6 font-bold sm:mt-4 xl:pl-8 xl:text-lg">
-          {list.map((item, index) => (
+          {list.map((item) => (
             <li
-              key={index}
+              key={item}
               className="relative pl-3 before:absolute before:left-0 before:text-xl before:leading-4 before:content-['.']"
             >
               {item}
