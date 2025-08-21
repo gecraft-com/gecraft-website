@@ -49,7 +49,7 @@ export const PortfolioItem = ({
         </div>
         <div>
           <span
-            className={`${expanded || !shouldTruncate ? 'text-black-900 inline md:mt-4 xl:mt-10 xl:text-lg' : 'text-black-900 line-clamp-2 inline md:mt-4 xl:mt-10 xl:text-lg'}`}
+            className={`text-black-900 inline md:mt-4 xl:mt-10 xl:text-lg ${!expanded && shouldTruncate ? 'line-clamp-2' : ''}`}
           >
             {expanded || !location || window.innerWidth > 640
               ? description + ' '
