@@ -1,10 +1,10 @@
-export const MySQLIcon = () => {
+export const MySQLIcon = ({ className }) => {
   return (
     <svg
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="fill-primary-500 w-6 duration-100 group-hover:fill-white sm:w-7 xl:w-10"
+      className={className}
     >
       <mask id="path-1-inside-1_397_380">
         <path
