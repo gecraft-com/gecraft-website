@@ -7,7 +7,7 @@ export const ServiceItem = ({ service, odd }) => {
     <div
       id={anchor}
       className={clsx(
-        'bg-black-00 max-w-[78.875rem] scroll-mt-20 rounded-3xl px-4 py-3.5 sm:p-6 xl:flex xl:scroll-mt-24 xl:items-center xl:px-11 xl:py-8',
+        'bg-black-00 max-w-[78.875rem] scroll-mt-20 rounded-3xl px-4 py-3.5 md:p-6 xl:flex xl:scroll-mt-24 xl:items-center xl:px-11 xl:py-8',
         {
           'mr-auto': odd,
           'ml-auto': !odd,
@@ -17,12 +17,12 @@ export const ServiceItem = ({ service, odd }) => {
       <img src={icon} alt="logo" className="hidden xl:mr-8 xl:block xl:w-80" />
       <div>
         <div className="flex items-center gap-4">
-          <img src={icon} alt="logo" className="w-16 sm:w-24 xl:hidden" />
-          <h2 className="font-[Faberge] text-lg sm:text-3xl xl:text-4xl">
+          <img src={icon} alt="logo" className="w-16 md:w-24 xl:hidden" />
+          <h2 className="font-[Faberge] text-lg md:text-3xl xl:text-4xl">
             {serviceName}
           </h2>
         </div>
-        <ul className="mt-3 list-none pl-6 font-bold sm:mt-4 xl:pl-8 xl:text-lg">
+        <ul className="mt-3 list-none pl-6 font-bold md:mt-4 xl:pl-8 xl:text-lg">
           {list.map((item) => (
             <li
               key={item}
@@ -33,7 +33,7 @@ export const ServiceItem = ({ service, odd }) => {
           ))}
         </ul>
         {paragraph && (
-          <p className="text-black-900 mt-2 sm:mt-3 xl:text-lg">{paragraph}</p>
+          <p className="text-black-900 mt-2 md:mt-3 xl:text-lg">{paragraph}</p>
         )}
       </div>
     </div>

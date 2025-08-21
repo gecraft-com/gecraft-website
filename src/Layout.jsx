@@ -22,7 +22,7 @@ export const Layout = () => {
   return (
     <div className="relative flex min-h-screen flex-col">
       <Header />
-      <main className="mx-auto max-w-[120.188rem] flex-1 overflow-x-hidden px-4 pt-20 pb-4 sm:px-8 xl:px-20 xl:pt-28 xl:pb-9 2xl:px-40 2xl:pb-11">
+      <main className="mx-auto max-w-[120.188rem] flex-1 overflow-x-hidden px-4 pt-20 pb-4 md:px-8 xl:px-20 xl:pt-28 xl:pb-9 2xl:px-40 2xl:pb-11">
         {<Outlet />}
       </main>
       <Footer />
