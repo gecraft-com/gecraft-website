@@ -4,7 +4,7 @@ export const MySQLIcon = () => {
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="fill-primary-500 w-6 duration-100 group-hover:fill-white sm:w-7 xl:w-10"
+      className="fill-primary-500 group-hover:fill-black-00 w-6 duration-100 md:w-7 xl:w-10"
     >
       <mask id="path-1-inside-1_397_380">
         <path
