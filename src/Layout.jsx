@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react'
 
 import { Outlet } from 'react-router-dom'
 
-import CookiesBanner from './components/CookiesBanner'
-import Footer from './components/Footer'
-import Header from './components/Header'
-import GoToTopIcon from './components/icons/GoToTopIcon'
+import { CookiesBanner } from './components/CookiesBanner'
+import { Footer } from './components/Footer'
+import { Header } from './components/Header'
+import { GoToTopIcon } from './components/icons/GoToTopIcon'
 
-function Layout() {
+export const Layout = () => {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -20,16 +20,16 @@ function Layout() {
   }, [])
 
   return (
-    <div className="relative">
+    <div className="relative flex min-h-screen flex-col">
       <Header />
-      <main className="mx-auto max-w-[120.188rem] overflow-x-hidden px-4 pb-6 pt-20 sm:px-8 xl:px-20 xl:pb-9 xl:pt-28 2xl:px-40 2xl:pb-11">
+      <main className="mx-auto max-w-[120.188rem] flex-1 overflow-x-hidden px-4 pt-20 pb-4 md:px-8 xl:px-20 xl:pt-28 xl:pb-9 2xl:px-40 2xl:pb-11">
         {<Outlet />}
       </main>
       <Footer />
 
       <a
         href="#"
-        className={`fixed bottom-5 right-5 duration-200 ${visible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`}
+        className={`fixed right-5 bottom-5 duration-200 ${visible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`}
       >
         <GoToTopIcon />
       </a>
@@ -37,5 +37,3 @@ function Layout() {
     </div>
   )
 }
-
-export default Layout

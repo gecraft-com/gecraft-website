@@ -1,62 +1,61 @@
-import CapacitorIcon from '../icons/CapacitorIcon'
-import CssIcon from '../icons/CssIcon'
-import HtmlIcon from '../icons/HtmlIcon'
-import JavaScriptIcon from '../icons/JavaScriptIcon'
-import NextJsIcon from '../icons/NextJsIcon'
-import NextUiIcon from '../icons/NextUiIcon'
-import ReactIcon from '../icons/ReactIcon'
-import TailwindIcon from '../icons/TailwindIcon'
-import TypeScriptIcon from '../icons/TypeScriptIcon'
-import ViteIcon from '../icons/ViteIcon'
-import TechStackItem from './TechStackItem'
+import { ICONS_STYLES, ICONS_STYLES_STROKE } from '../../constants/Styles'
+import { CapacitorIcon } from '../icons/CapacitorIcon'
+import { CssIcon } from '../icons/CssIcon'
+import { HtmlIcon } from '../icons/HtmlIcon'
+import { JavaScriptIcon } from '../icons/JavaScriptIcon'
+import { NextJsIcon } from '../icons/NextJsIcon'
+import { NextUiIcon } from '../icons/NextUiIcon'
+import { ReactIcon } from '../icons/ReactIcon'
+import { TailwindIcon } from '../icons/TailwindIcon'
+import { TypeScriptIcon } from '../icons/TypeScriptIcon'
+import { ViteIcon } from '../icons/ViteIcon'
+import { TechStackItem } from './TechStackItem'
 
-function Frontend() {
+export const Frontend = () => {
   return (
-    <li className="rounded-3xl bg-primary-100 px-4 py-3.5 sm:p-4 xl:px-10 xl:py-9">
-      <h2 className="text-lg font-medium sm:text-xl xl:text-3xl">Frontend</h2>
-      <ul className="mt-4 grid grid-cols-3 gap-1.5 min-[434px]:grid-cols-4 min-[522px]:grid-cols-5 sm:gap-3 min-[755px]:grid-cols-6 min-[1100px]:grid-cols-7 xl:gap-4 min-[1440px]:grid-cols-8 min-[1600px]:grid-cols-9 min-[1760px]:grid-cols-10 min-[1923px]:grid-cols-11">
+    <li className="bg-black-00 rounded-3xl px-4 py-3.5 md:p-4 xl:px-10 xl:py-9">
+      <h2 className="font-[Faberge] text-lg md:text-xl xl:text-3xl">Frontend</h2>
+      <ul className="mt-4 grid grid-cols-3 gap-1.5 min-[434px]:grid-cols-4 min-[522px]:grid-cols-5 min-[755px]:grid-cols-6 min-[1100px]:grid-cols-7 min-[1440px]:grid-cols-8 min-[1600px]:grid-cols-9 min-[1760px]:grid-cols-10 min-[1923px]:grid-cols-11 md:gap-3 xl:gap-4">
         <TechStackItem title="JavaScript">
-          <JavaScriptIcon />
+          <JavaScriptIcon className={`${ICONS_STYLES} ${ICONS_STYLES_STROKE}`} />
         </TechStackItem>
 
         <TechStackItem title="TypeScript">
-          <TypeScriptIcon />
+          <TypeScriptIcon className={ICONS_STYLES} />
         </TechStackItem>
 
         <TechStackItem title="React">
-          <ReactIcon />
+          <ReactIcon className={ICONS_STYLES} />
         </TechStackItem>
 
         <TechStackItem title="Next.js">
-          <NextJsIcon />
+          <NextJsIcon className={ICONS_STYLES} />
         </TechStackItem>
 
         <TechStackItem title="CSS">
-          <CssIcon />
+          <CssIcon className={`${ICONS_STYLES} ${ICONS_STYLES_STROKE}`} />
         </TechStackItem>
 
         <TechStackItem title="HTML">
-          <HtmlIcon />
+          <HtmlIcon className={`${ICONS_STYLES} ${ICONS_STYLES_STROKE}`} />
         </TechStackItem>
 
         <TechStackItem title="Tailwind">
-          <TailwindIcon />
+          <TailwindIcon className={`${ICONS_STYLES} ${ICONS_STYLES_STROKE}`} />
         </TechStackItem>
 
         <TechStackItem title="NextUI">
-          <NextUiIcon />
+          <NextUiIcon className={`${ICONS_STYLES} ${ICONS_STYLES_STROKE}`} />
         </TechStackItem>
 
         <TechStackItem title="Vite">
-          <ViteIcon />
+          <ViteIcon className={`${ICONS_STYLES} ${ICONS_STYLES_STROKE}`} />
         </TechStackItem>
 
         <TechStackItem title="Capacitor">
-          <CapacitorIcon />
+          <CapacitorIcon className={ICONS_STYLES} />
         </TechStackItem>
       </ul>
     </li>
   )
 }
-
-export default Frontend

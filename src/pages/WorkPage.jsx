@@ -1,15 +1,12 @@
-import PortfolioList from '../components/PortfolioList'
+import { PortfolioList } from '../components/PortfolioList'
 
-function Work() {
+export const WorkPage = () => {
   return (
     <>
-      <h2 className="text-lg font-semibold sm:text-3xl xl:text-5xl xl:font-medium">
-        Innovation in action: <br className="sm:hidden" />
-        Our portfolio
+      <h2 className="text-center font-[Faberge] text-xl md:text-3xl xl:text-5xl">
+        Innovation in action: <span className="bg-primary-200">Our portfolio</span>
       </h2>
       <PortfolioList />
     </>
   )
 }
-
-export default Work

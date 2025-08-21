@@ -3,11 +3,19 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import clsx from 'clsx'
 
-import useForm from '../hooks/useForm'
-import GCButton from './GCButton'
-import ArrowIcon from './icons/ArrowIcon'
+import { useForm } from '../hooks/useForm'
+import { GCButton } from './GCButton'
+import { GCDropdown } from './GCDropdown'
 
-function Form({ onPage = false }) {
+const budget = [
+  '$5000 - $10000',
+  '$10000 - $50000',
+  '$50000 - $250000',
+  '$250000 - $500000',
+  "I don't know yet",
+]
+
+export const Form = ({ onPage = false }) => {
   const {
     formData,
     isFormValid,
@@ -26,8 +34,6 @@ function Form({ onPage = false }) {
   })
   const [wasSubmitAttempted, setWasSubmitAttempted] = useState(false)
 
-  const [rotate, setRotate] = useState(false)
-
   const handleBlur = (fieldName) => () => {
     setTouchedFields((prev) => ({
       ...prev,
@@ -37,13 +43,17 @@ function Form({ onPage = false }) {
 
   const getInputClassName = (fieldName, isValid) => {
     const baseClasses = clsx(
-      'w-full rounded-lg border-2 px-4 py-3',
+      'w-full rounded-lg border-2 px-4 py-3 bg-black-00 text-black-950 focus:outline-none',
+      {
+        'border-black-500': onPage,
+        'border-black-300': !onPage,
+      },
       fieldName === 'goals'
         ? [
-            'border-primary-600 block',
+            'block',
             {
-              'min-h-36 h-40': onPage,
-              'min-h-20 h-[5.5rem]': !onPage,
+              'min-h-42.5 h-42.5': onPage,
+              'min-h-20 h-22': !onPage,
             },
           ]
         : ['h-12']
@@ -52,17 +62,17 @@ function Form({ onPage = false }) {
     const shouldShowValidation = touchedFields[fieldName] || wasSubmitAttempted
 
     if (!shouldShowValidation) {
-      return `${baseClasses} border-primary-600`
+      return `${baseClasses}`
     }
 
     if (fieldName === 'name' || fieldName === 'email' || fieldName === 'goals') {
       return clsx(baseClasses, {
-        'border-green-600': isValid,
-        'border-red-600': !isValid,
+        'border-primary-500': isValid,
+        'border-error-1': !isValid,
       })
     }
 
-    return `${baseClasses} border-primary-600`
+    return `${baseClasses}`
   }
 
   const getErrorMessage = (fieldName) => {
@@ -122,7 +132,7 @@ function Form({ onPage = false }) {
     <>
       {submitMessage ? (
         <div className="w-full">
-          <p className="mt-10 text-3xl font-semibold text-primary-500">Thank You!</p>
+          <p className="text-primary-500 mt-10 text-3xl font-semibold">Thank You!</p>
           <p className="mt-3">
             Your form has been successfully submitted. A representative from Glokas will
             be in touch with you shortly to assist with your inquiry. We appreciate your
@@ -132,9 +142,10 @@ function Form({ onPage = false }) {
       ) : (
         <form
           onSubmit={handleSubmit}
-          className={clsx('text-black', {
-            'mt-6 grid w-full grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 xl:mt-0': onPage,
-            'hidden w-72 gap-3 sm:flex sm:flex-col xl:w-96': !onPage,
+          className={clsx('text-black-500 text-lg', {
+            'mt-6 grid w-full grid-cols-1 gap-2 md:mt-8 md:grid-cols-2 md:gap-4 xl:mt-0':
+              onPage,
+            'hidden w-72 gap-3 md:flex md:flex-col xl:w-96': !onPage,
           })}
         >
           {onPage && (
@@ -149,7 +160,7 @@ function Form({ onPage = false }) {
               />
               <span
                 className={clsx(
-                  'absolute left-4 top-1/2 -translate-y-1/2',
+                  'absolute top-1/2 left-4 -translate-y-1/2',
                   'cursor-text duration-200',
                   'group-focus-within:top-2.5 group-focus-within:text-xs group-focus-within:opacity-35',
                   {
@@ -160,7 +171,7 @@ function Form({ onPage = false }) {
                 Your name*
               </span>
               {wasSubmitAttempted && !isNameValid && (
-                <span className="absolute right-4 top-0 text-sm text-red-600">
+                <span className="text-error-1 absolute top-0 right-4 text-sm">
                   {getErrorMessage('name')}
                 </span>
               )}
@@ -177,7 +188,7 @@ function Form({ onPage = false }) {
             />
             <span
               className={clsx(
-                'absolute left-4 top-1/2 -translate-y-1/2',
+                'absolute top-1/2 left-4 -translate-y-1/2',
                 'cursor-text duration-200',
                 'group-focus-within:top-2.5 group-focus-within:text-xs group-focus-within:opacity-35',
                 {
@@ -188,7 +199,7 @@ function Form({ onPage = false }) {
               Your email*
             </span>
             {wasSubmitAttempted && !isEmailValid && (
-              <span className="absolute right-4 top-0 text-sm text-red-600">
+              <span className="text-error-1 absolute top-0 right-4 text-sm">
                 {getErrorMessage('email')}
               </span>
             )}
@@ -200,11 +211,11 @@ function Form({ onPage = false }) {
                 value={formData.company}
                 onChange={handleInputChange('company')}
                 type="text"
-                className="h-12 w-full rounded-lg border-2 border-primary-600 px-4"
+                className="border-black-500 bg-black-00 text-black-950 h-12 w-full rounded-lg border-2 px-4 focus:outline-none"
               />
               <span
                 className={clsx(
-                  'absolute left-4 top-1/2 -translate-y-1/2',
+                  'absolute top-1/2 left-4 -translate-y-1/2',
                   'cursor-text duration-200',
                   'group-focus-within:top-2.5 group-focus-within:text-xs group-focus-within:opacity-35',
                   {
@@ -217,40 +228,15 @@ function Form({ onPage = false }) {
             </label>
           )}
           {onPage && (
-            <div className="group relative">
-              <select
-                name="budget"
-                onChange={handleInputChange('budget')}
-                className="h-12 w-full cursor-pointer appearance-none rounded-lg border-2 border-primary-600 px-4"
-                onClick={() => {
-                  setRotate(!rotate)
-                }}
-                onBlur={() => {
-                  setRotate(false)
-                }}
-              >
-                <option value="Not search">Project budget</option>
-                <option value="$5000-$10000">$5000-$10000</option>
-                <option value="$10000-$50000">$10000-$50000</option>
-                <option value="$50000-$250000">$50000-$250000</option>
-                <option value="$250000-$500000">$250000-$500000</option>
-                <option value="I don't know yet">I don&apos;t know yet</option>
-              </select>
-              <div
-                className={clsx(
-                  'absolute right-4 top-1/2 -translate-y-1/2',
-                  'pointer-events-none duration-200',
-                  {
-                    'rotate-180': rotate,
-                    'rotate-0': !rotate,
-                  }
-                )}
-              >
-                <ArrowIcon />
-              </div>
-            </div>
+            <GCDropdown
+              budget={budget}
+              value={formData.budget}
+              onSelect={handleInputChange('budget')}
+            >
+              <span className="text-black-500">Project budget</span>
+            </GCDropdown>
           )}
-          <label className="group relative sm:col-span-2">
+          <label className="group relative md:col-span-2">
             <textarea
               name="goals"
               type="text"
@@ -275,14 +261,14 @@ function Form({ onPage = false }) {
             {onPage && (
               <div
                 className={clsx(
-                  'absolute bottom-4 left-4',
+                  'text-black-300 absolute bottom-4 left-4',
                   'cursor-text duration-200',
                   'group-focus-within:scale-0 group-focus-within:opacity-0',
                   { 'scale-0 opacity-0': formData.goals }
                 )}
               >
-                <p className="text-primary-750">Helpful things to include:</p>
-                <ul className="text-primary-750">
+                <p>Helpful things to include:</p>
+                <ul className="leading-6">
                   <li>— Your problem</li>
                   <li>— Your location</li>
                   <li>— How you heard about us</li>
@@ -290,13 +276,13 @@ function Form({ onPage = false }) {
               </div>
             )}
             {wasSubmitAttempted && !isGoalsValid && (
-              <span className="absolute right-4 top-0 text-sm text-red-600">
+              <span className="text-error-1 absolute top-0 right-4 text-sm">
                 {getErrorMessage('goals')}
               </span>
             )}
           </label>
-          <div className="sm:col-span-2">
-            <GCButton type="submit" view="green-form">
+          <div className="md:col-span-2">
+            <GCButton type="submit" view="secondary" className="h-12 w-full">
               {onPage ? 'Submit' : 'Contact us'}
             </GCButton>
           </div>
@@ -305,5 +291,3 @@ function Form({ onPage = false }) {
     </>
   )
 }
-
-export default Form

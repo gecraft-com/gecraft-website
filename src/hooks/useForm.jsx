@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 
-function useForm({ onPage }) {
+export const useForm = ({ onPage }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
-    budget: 'Not search',
+    budget: '',
     goals: '',
   })
 
@@ -20,14 +20,16 @@ function useForm({ onPage }) {
     return re.test(String(email).toLowerCase())
   }
 
-  const handleInputChange = (name) => (value) => {
+  const handleInputChange = (name) => (valueOrEvent) => {
+    const nextValue =
+      valueOrEvent && valueOrEvent.target ? valueOrEvent.target.value : valueOrEvent
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value.target.value,
+      [name]: nextValue,
     }))
 
     if (name === 'email') {
-      setIsEmailValid(validateEmail(value.target.value))
+      setIsEmailValid(validateEmail(nextValue))
     }
   }
 
@@ -48,7 +50,7 @@ function useForm({ onPage }) {
       name: '',
       email: '',
       company: '',
-      budget: 'Not search',
+      budget: '',
       goals: '',
     })
     setIsEmailValid(false)
@@ -66,5 +68,3 @@ function useForm({ onPage }) {
     setFormData,
   }
 }
-
-export default useForm

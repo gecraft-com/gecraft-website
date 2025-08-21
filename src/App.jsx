@@ -1,18 +1,17 @@
-import { lazy, Suspense } from 'react'
+import { Suspense } from 'react'
 
 import { Route, Routes } from 'react-router-dom'
 
-import Layout from './Layout'
-import AboutPage from './pages/AboutPage'
-import ContactUsPage from './pages/ContactUsPage'
-import HomePage from './pages/HomePage'
-import ServicesPage from './pages/ServicesPage'
-import WorkPage from './pages/WorkPage'
+import { Layout } from './Layout'
+import { AboutPage } from './pages/AboutPage'
+import { ContactUsPage } from './pages/ContactUsPage'
+import { HomePage } from './pages/HomePage'
+import { PrivacyPage } from './pages/PrivacyPage'
+import { ServicesPage } from './pages/ServicesPage'
+import { TermsPage } from './pages/TermsPage'
+import { WorkPage } from './pages/WorkPage'
 
-const TermsPage = lazy(() => import('./pages/TermsPage'))
-const PrivacyPage = lazy(() => import('./pages/PrivacyPage'))
-
-function App() {
+export const App = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
@@ -30,5 +29,3 @@ function App() {
     </Suspense>
   )
 }
-
-export default App

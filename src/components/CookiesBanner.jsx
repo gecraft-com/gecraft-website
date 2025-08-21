@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 
 import Cookies from 'js-cookie'
+import { Link } from 'react-router-dom'
 
-import CookiesModal from './CookiesModal'
-import GCButton from './GCButton'
+import { CookiesModal } from './CookiesModal'
+import { GCButton } from './GCButton'
 
-function CookiesBanner() {
+export const CookiesBanner = () => {
   const [showBanner, setShowBanner] = useState(false)
 
   const handleAcceptAll = () => {
@@ -30,21 +31,27 @@ function CookiesBanner() {
   return (
     <>
       {showBanner && (
-        <div className="fixed bottom-0 left-0 right-0 z-40 bg-primary-400/80 p-4">
+        <div className="bg-secondary-200/90 fixed right-0 bottom-0 left-0 z-40 p-4">
           <div className="container mx-auto flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p className="select-none text-sm">
+            <p className="text-sm select-none">
               We use cookies to improve your experience and deliver personalized content.
               You can customize the use of cookies or accept all cookies. Read more in our{' '}
-              <a href="/privacy" className="underline">
+              <Link to="/privacy" className="underline">
                 Privacy Policy
-              </a>
+              </Link>
               .
             </p>
-            <div className="mt-3 flex gap-4 md:mt-0">
+            <div className="mt-3 flex w-full flex-col gap-4 md:mt-0 md:w-max md:flex-row">
               <CookiesModal handleAfterClick={() => setShowBanner(false)}>
-                <GCButton view="cookies-first">Manage Cookies</GCButton>
+                <GCButton view="primary" className="w-full py-2 md:w-50">
+                  Manage Cookies
+                </GCButton>
               </CookiesModal>
-              <GCButton view="cookies-second" onClick={handleAcceptAll}>
+              <GCButton
+                view="secondary"
+                className="w-full py-2.5 md:w-50"
+                onClick={handleAcceptAll}
+              >
                 Accept All
               </GCButton>
             </div>
@@ -54,5 +61,3 @@ function CookiesBanner() {
     </>
   )
 }
-
-export default CookiesBanner

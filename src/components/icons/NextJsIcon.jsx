@@ -1,10 +1,10 @@
-function NextJsIcon() {
+export const NextJsIcon = ({ className }) => {
   return (
     <svg
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-6 fill-primary-500 duration-100 group-hover:fill-white sm:w-7 xl:w-10"
+      className={className}
     >
       <g clipPath="url(#clip0_397_2736)">
         <g>
@@ -19,5 +19,3 @@ function NextJsIcon() {
     </svg>
   )
 }
-
-export default NextJsIcon

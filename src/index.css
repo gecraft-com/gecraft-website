@@ -1,10 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@font-face {
+  font-family: 'NeverMindCompact';
+  src: url('/fonts/NeverMindCompact-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
+@font-face {
+  font-family: 'Faberge';
+  src: url('/fonts/Faberge.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-black-00: #FFFFFF;
+  --color-black-50: #F6F6F6;
+  --color-black-100: #E7E7E7;
+  --color-black-200: #D1D1D1;
+  --color-black-300: #B0B0B0;
+  --color-black-400: #888888;
+  --color-black-500: #6D6D6D;
+  --color-black-600: #5D5D5D;
+  --color-black-900: #3D3D3D;
+  --color-black-950: #000000;
+
+  --color-primary-100: #F6F6F6;
+  --color-primary-200: #B7E3C1;
+  --color-primary-400: #55B272;
+  --color-primary-500: #25904A;
+  --color-primary-600: #237842;
+  --color-primary-700: #1C6036;
+  --color-primary-950: #0B2315;
+
+  --color-secondary-50: #F4F7FB;
+  --color-secondary-100: #E7EFF7;
+  --color-secondary-200: #CADCED;
+  --color-secondary-800: #264666;
+  --color-secondary-950: #182739;
+
+  --color-error-1: #ED6262;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   :root {
@@ -29,21 +68,8 @@ html {
 body {
     width: 100%;
 
-    font-family: "Lato", sans-serif;
+    background: var(--color-secondary-50);
 
-    color: #000000;
-    background: #ffffff;
+    font-family: "NeverMindCompact", sans-serif;
   }
 
-.item:nth-child(odd) {
-  order: 1
-}
-
-.item:nth-child(even) {
-  order: 2
-}
-
-.animation-timeline {
-  animation-timeline: view();
-  animation-range: entry 0 cover 30%;
-}
