@@ -1,10 +1,10 @@
-export const GraphQLIcon = () => {
+export const GraphQLIcon = ({ className }) => {
   return (
     <svg
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="fill-primary-500 group-hover:fill-black-00 w-6 duration-100 md:w-7 xl:w-10"
+      className={className}
     >
       <path
         d="M4.70862 17.2004L4.02853 16.8077L12.1768 2.69503L12.8569 3.08769L4.70862 17.2004Z"

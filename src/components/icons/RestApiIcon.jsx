@@ -1,10 +1,10 @@
-export const RestApiIcon = () => {
+export const RestApiIcon = ({ className }) => {
   return (
     <svg
       viewBox="0 0 38 38"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="fill-primary-500 stroke-primary-500 group-hover:fill-black-00 group-hover:stroke-black-00 w-6 duration-100 md:w-7 xl:w-10"
+      className={className}
     >
       <path
         fillRule="evenodd"
