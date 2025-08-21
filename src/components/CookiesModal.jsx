@@ -67,16 +67,16 @@ export const CookiesModal = ({ handleAfterClick, children }) => {
       {childrenWithClick}
       {modal && (
         <Modal setModal={setModal}>
-          <h4 className="mb-8 text-lg font-semibold sm:text-3xl xl:text-4xl">
+          <h4 className="mb-8 text-lg font-semibold md:text-3xl xl:text-4xl">
             Manage Cookies
           </h4>
-          <div className="mb-5 flex items-center justify-between gap-4 text-sm font-semibold sm:text-lg xl:text-xl">
+          <div className="mb-5 flex items-center justify-between gap-4 text-sm font-semibold md:text-lg xl:text-xl">
             <p>Essential Cookies</p>
             <p className="mr-5">Always On</p>
           </div>
 
           <div className="text-medium mb-5">
-            <label className="flex cursor-pointer items-center justify-between gap-4 text-sm sm:text-lg xl:text-xl">
+            <label className="flex cursor-pointer items-center justify-between gap-4 text-sm md:text-lg xl:text-xl">
               Analytics Cookies
               <input
                 type="checkbox"
@@ -85,11 +85,11 @@ export const CookiesModal = ({ handleAfterClick, children }) => {
                 }}
                 className="peer hidden"
               />
-              <span className="border-primary-500 after:text-primary-700 peer-checked:border-primary-700 sm:hover:border-primary-700 relative mr-10 inline-block h-8 w-8 cursor-pointer rounded-md border-4 duration-100 after:absolute after:-top-6 after:left-0 after:hidden after:text-5xl after:content-['\2713'] peer-checked:after:block"></span>
+              <span className="border-primary-500 after:text-primary-600 peer-checked:border-primary-600 md:hover:border-primary-600 relative mr-10 inline-block h-8 w-8 cursor-pointer rounded-md border-4 duration-100 after:absolute after:-top-6 after:left-0 after:hidden after:text-5xl after:content-['\2713'] peer-checked:after:block"></span>
             </label>
           </div>
           <div className="text-medium mb-5">
-            <label className="flex cursor-pointer items-center justify-between gap-4 text-sm sm:text-lg xl:text-xl">
+            <label className="flex cursor-pointer items-center justify-between gap-4 text-sm md:text-lg xl:text-xl">
               Advertising Cookies
               <input
                 type="checkbox"
@@ -98,14 +98,22 @@ export const CookiesModal = ({ handleAfterClick, children }) => {
                 }}
                 className="peer hidden"
               />
-              <span className="border-primary-500 after:text-primary-700 peer-checked:border-primary-700 sm:hover:border-primary-700 relative mr-10 inline-block h-8 w-8 cursor-pointer rounded-md border-4 duration-100 after:absolute after:-top-6 after:left-0 after:hidden after:text-5xl after:content-['\2713'] peer-checked:after:block"></span>
+              <span className="border-primary-500 after:text-primary-600 peer-checked:border-primary-600 md:hover:border-primary-600 relative mr-10 inline-block h-8 w-8 cursor-pointer rounded-md border-4 duration-100 after:absolute after:-top-6 after:left-0 after:hidden after:text-5xl after:content-['\2713'] peer-checked:after:block"></span>
             </label>
           </div>
           <div className="mt-12 flex flex-col justify-center gap-6 md:flex-row">
-            <GCButton view="cookies-first" onClick={savePreferenceHandler}>
+            <GCButton
+              view="primary"
+              className="w-full py-2 md:w-50"
+              onClick={savePreferenceHandler}
+            >
               Save Preferences
             </GCButton>
-            <GCButton view="cookies-second" onClick={acceptAllHandler}>
+            <GCButton
+              view="secondary"
+              className="w-full py-2.5 md:w-50"
+              onClick={acceptAllHandler}
+            >
               Accept All Cookies
             </GCButton>
           </div>

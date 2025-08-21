@@ -6,7 +6,7 @@ export const PortfolioList = ({ location = '' }) => {
   const windowWidth = useWindowWidth()
 
   return (
-    <div className="mt-4 grid w-full gap-3 sm:mt-6 sm:gap-4 xl:mt-9 xl:grid-cols-2 xl:gap-6">
+    <div className="mt-4 grid w-full gap-3 md:mt-6 md:gap-4 xl:mt-9 xl:grid-cols-2 xl:gap-6">
       {portfolio.map(
         ({
           id,
