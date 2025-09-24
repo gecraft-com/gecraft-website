@@ -1,4 +1,5 @@
 import { Backend } from './Backend'
+import { Design } from './Design'
 import { Frontend } from './Frontend'
 import { Testing } from './Testing'
 
@@ -9,6 +10,7 @@ export const TechStack = () => {
         Our tech stack
       </h2>
       <ul className="flex flex-col gap-3 md:gap-6 2xl:gap-9">
+        <Design />
         <Frontend />
         <Backend />
         <Testing />
