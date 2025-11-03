@@ -6,7 +6,9 @@ const MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID
 let isInitialized = false
 
 const getCookieConsent = () => {
-  if (typeof window === 'undefined') return null
+  if (typeof window === 'undefined') {
+    return null
+  }
 
   try {
     const consentCookie = Cookies.get('userConsent')
@@ -25,31 +27,39 @@ export const hasAnalyticsConsent = () => {
 }
 
 export const initGA = () => {
-  if (typeof window === 'undefined') return
+  if (typeof window === 'undefined') {
+    return false
+  }
 
   if (!MEASUREMENT_ID) {
     console.warn(
       'Google Analytics Measurement ID is not set. Please set VITE_GA_MEASUREMENT_ID in .env file'
     )
-    return
+    return false
   }
 
   if (isInitialized) {
-    return
+    return true
   }
 
   if (hasAnalyticsConsent()) {
     try {
       ReactGA.initialize(MEASUREMENT_ID)
       isInitialized = true
+      return true
     } catch (error) {
       console.error('Error initializing Google Analytics:', error)
+      return false
     }
   }
+
+  return false
 }
 
 export const trackPageView = (path) => {
-  if (typeof window === 'undefined') return
+  if (typeof window === 'undefined') {
+    return
+  }
 
   if (!hasAnalyticsConsent()) {
     return
@@ -69,7 +79,9 @@ export const trackPageView = (path) => {
 }
 
 export const trackEvent = (eventName, eventParams = {}) => {
-  if (typeof window === 'undefined') return
+  if (typeof window === 'undefined') {
+    return
+  }
 
   if (!hasAnalyticsConsent()) {
     return
@@ -89,28 +101,20 @@ export const trackEvent = (eventName, eventParams = {}) => {
 }
 
 export const enableGA = () => {
-  if (typeof window === 'undefined') return
-
-  if (!MEASUREMENT_ID) {
-    console.warn('Google Analytics Measurement ID is not set')
+  if (typeof window === 'undefined') {
     return
   }
 
-  if (!isInitialized) {
-    try {
-      ReactGA.initialize(MEASUREMENT_ID)
-      isInitialized = true
+  const initialized = initGA()
 
-      const currentPath = window.location.pathname + window.location.search
-      ReactGA.send({ hitType: 'pageview', page: currentPath })
-    } catch (error) {
-      console.error('Error enabling Google Analytics:', error)
-    }
+  if (initialized) {
+    const currentPath = window.location.pathname + window.location.search
+    trackPageView(currentPath)
   }
 }
 
 export const disableGA = () => {
-  if (typeof window === 'undefined') return
-
-  isInitialized = false
+  if (typeof window === 'undefined') {
+    return
+  }
 }

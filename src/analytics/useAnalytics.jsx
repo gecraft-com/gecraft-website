@@ -1,23 +1,27 @@
 import { useCallback } from 'react'
 
-import { hasAnalyticsConsent, trackEvent, trackPageView } from './analytics'
+import {
+  trackEvent as analyticsTrackEvent,
+  trackPageView as analyticsTrackPageView,
+  hasAnalyticsConsent,
+} from './analytics'
 
 export const useAnalytics = () => {
   const hasConsent = useCallback(() => {
     return hasAnalyticsConsent()
   }, [])
 
-  const trackCustomEvent = useCallback((eventName, eventParams = {}) => {
-    trackEvent(eventName, eventParams)
+  const trackEvent = useCallback((eventName, eventParams = {}) => {
+    analyticsTrackEvent(eventName, eventParams)
   }, [])
 
-  const trackCustomPageView = useCallback((path) => {
-    trackPageView(path)
+  const trackPageView = useCallback((path) => {
+    analyticsTrackPageView(path)
   }, [])
 
   return {
-    trackEvent: trackCustomEvent,
-    trackPageView: trackCustomPageView,
+    trackEvent,
+    trackPageView,
     hasConsent,
   }
 }
