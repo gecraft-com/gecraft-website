@@ -8,9 +8,12 @@ import './index.css'
 
 import { BrowserRouter } from 'react-router-dom'
 
+import { RouteTracker } from './analytics/RouteTracker'
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
+      <RouteTracker />
       <App />
     </BrowserRouter>
   </StrictMode>

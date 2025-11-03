@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import Cookies from 'js-cookie'
 import { Link } from 'react-router-dom'
 
+import { enableGA } from '../analytics/analytics'
 import { CookiesModal } from './CookiesModal'
 import { GCButton } from './GCButton'
 
@@ -19,6 +20,7 @@ export const CookiesBanner = () => {
       }),
       { expires: 365 }
     )
+    enableGA()
     setShowBanner(false)
   }
 
