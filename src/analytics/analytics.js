@@ -117,4 +117,5 @@ export const disableGA = () => {
   if (typeof window === 'undefined') {
     return
   }
+  isInitialized = false
 }
