@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import Cookies from 'js-cookie'
 
+import { disableGA, enableGA } from '../analytics/analytics'
 import { GCButton } from './GCButton'
 import { Modal } from './Modal'
 
@@ -26,9 +27,6 @@ export const CookiesModal = ({ handleAfterClick, children }) => {
   const handleCustomize = (consent) => {
     Cookies.set('userConsent', JSON.stringify(consent), { expires: 365 })
     setModal(false)
-    if (typeof handleAfterClick === 'function') {
-      handleAfterClick()
-    }
   }
 
   const childrenWithClick = React.Children.map(children, (child) => {
@@ -46,6 +44,7 @@ export const CookiesModal = ({ handleAfterClick, children }) => {
       ads: true,
       functional: true,
     })
+    enableGA()
     if (typeof handleAfterClick === 'function') {
       handleAfterClick()
     }
@@ -57,6 +56,12 @@ export const CookiesModal = ({ handleAfterClick, children }) => {
       analytics,
       ads,
     })
+    // Enable or disable GA based on user preference
+    if (analytics) {
+      enableGA()
+    } else {
+      disableGA()
+    }
     if (typeof handleAfterClick === 'function') {
       handleAfterClick()
     }
@@ -80,6 +85,7 @@ export const CookiesModal = ({ handleAfterClick, children }) => {
               Analytics Cookies
               <input
                 type="checkbox"
+                checked={analytics}
                 onChange={() => {
                   setAnalytics((prev) => !prev)
                 }}
@@ -93,6 +99,7 @@ export const CookiesModal = ({ handleAfterClick, children }) => {
               Advertising Cookies
               <input
                 type="checkbox"
+                checked={ads}
                 onChange={() => {
                   setAds((prev) => !prev)
                 }}
