@@ -5,6 +5,8 @@ import dotenv from 'dotenv'
 import express from 'express'
 import { Resend } from 'resend'
 
+import { escapeHtml } from '../src/utils/escapeHtml'
+
 dotenv.config()
 
 const app = express()
@@ -45,7 +47,14 @@ app.all('/api/contact', (req, res, next) => {
 })
 
 app.post('/api/contact', async (req, res) => {
-  const { name, email, company, budget, goals, onPage } = req.body || {}
+  const {
+    name = '',
+    email = '',
+    company = '',
+    budget = '',
+    goals = '',
+    onPage = false,
+  } = req.body
 
   if (!email || !goals) {
     return res.status(400).json({ success: false, error: 'Missing required fields.' })
@@ -61,12 +70,12 @@ app.post('/api/contact', async (req, res) => {
   }
 
   const html = `
-    <h2>Message from GeCraft Website by ${name} - ${email}</h2>
-    <p><strong>Name:</strong> ${name}</p>
-    <p><strong>Email:</strong> ${email}</p>
-    <p><strong>Company:</strong> ${company}</p>
-    <p><strong>Project budget:</strong> ${budget}</p>
-    <p><strong>Message:</strong><br>${goals.replace(/\n/g, '<br>')}</p>
+    <h2>Message from GeCraft Website by ${escapeHtml(name)} - ${escapeHtml(email)}</h2>
+    <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+    <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+    <p><strong>Company:</strong> ${escapeHtml(company)}</p>
+    <p><strong>Project budget:</strong> ${escapeHtml(budget)}</p>
+    <p><strong>Message:</strong><br>${escapeHtml(goals)}</p>
   `
 
   try {

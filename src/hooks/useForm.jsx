@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 
+import { EMAIL_REGEX, NAME_REGEX } from '../constants/ContactForm'
+
 export const useForm = ({ onPage }) => {
   const [formData, setFormData] = useState({
     name: '',
@@ -14,10 +16,6 @@ export const useForm = ({ onPage }) => {
   const [isNameValid, setIsNameValid] = useState(false)
   const [isFormValid, setIsFormValid] = useState(false)
   const [isGoalsValid, setIsGoalsValid] = useState(false)
-
-  const NAME_REGEX = /^[A-Za-zА-Яа-яЁё\s-]{2,}$/
-  const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
-  const GOALS_REGEX = /^.{10,}$/
 
   const handleInputChange = (name) => (valueOrEvent) => {
     const nextValue =
@@ -36,12 +34,12 @@ export const useForm = ({ onPage }) => {
     setIsNameValid(isNameValid)
     const isEmailValid = EMAIL_REGEX.test(String(email).toLowerCase())
     setIsEmailValid(isEmailValid)
-    const isGoalsValid = GOALS_REGEX.test(String(goals).toLowerCase())
+    const isGoalsValid = goals.toString().length > 10
     setIsGoalsValid(isGoalsValid)
 
     const isValid = isNameValid && isEmailValid && isGoalsValid
     setIsFormValid(isValid)
-  }, [formData, isEmailValid, onPage, NAME_REGEX, EMAIL_REGEX, GOALS_REGEX])
+  }, [formData, onPage])
 
   const resetForm = () => {
     setFormData({

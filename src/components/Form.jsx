@@ -104,20 +104,12 @@ export const Form = ({ onPage = false }) => {
     }
 
     try {
-      // Отправка на сервер
       const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          company: formData.company,
-          budget: formData.budget,
-          goals: formData.goals,
-          onPage: formData.onPage,
-        }),
+        body: JSON.stringify(formData),
       })
 
       const data = await response.json()
@@ -126,7 +118,6 @@ export const Form = ({ onPage = false }) => {
         throw new Error(data.error || 'Something went wrong')
       }
 
-      // Успешная отправка
       setSubmitMessage(true)
       resetForm()
       setWasSubmitAttempted(false)
