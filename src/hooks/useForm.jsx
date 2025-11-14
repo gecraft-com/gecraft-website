@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 
+import { EMAIL_REGEX, NAME_REGEX } from '../constants/ContactForm'
+
 export const useForm = ({ onPage }) => {
   const [formData, setFormData] = useState({
     name: '',
@@ -7,6 +9,7 @@ export const useForm = ({ onPage }) => {
     company: '',
     budget: '',
     goals: '',
+    onPage: onPage,
   })
 
   const [isEmailValid, setIsEmailValid] = useState(false)
@@ -14,36 +17,29 @@ export const useForm = ({ onPage }) => {
   const [isFormValid, setIsFormValid] = useState(false)
   const [isGoalsValid, setIsGoalsValid] = useState(false)
 
-  const validateEmail = (email) => {
-    const re =
-      /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
-    return re.test(String(email).toLowerCase())
-  }
-
   const handleInputChange = (name) => (valueOrEvent) => {
     const nextValue =
       valueOrEvent && valueOrEvent.target ? valueOrEvent.target.value : valueOrEvent
     setFormData((prevData) => ({
       ...prevData,
       [name]: nextValue,
+      onPage,
     }))
-
-    if (name === 'email') {
-      setIsEmailValid(validateEmail(nextValue))
-    }
   }
 
   useEffect(() => {
-    const { name, goals } = formData
+    const { name, email, goals } = formData
 
-    const isNameValid = onPage ? name.trim() !== '' : true
+    const isNameValid = onPage ? NAME_REGEX.test(String(name).toLowerCase()) : true
     setIsNameValid(isNameValid)
-    const isGoalsValid = goals.trim() !== ''
+    const isEmailValid = EMAIL_REGEX.test(String(email).toLowerCase())
+    setIsEmailValid(isEmailValid)
+    const isGoalsValid = goals.toString().length > 10
     setIsGoalsValid(isGoalsValid)
 
     const isValid = isNameValid && isEmailValid && isGoalsValid
     setIsFormValid(isValid)
-  }, [formData, isEmailValid, onPage])
+  }, [formData, onPage])
 
   const resetForm = () => {
     setFormData({
@@ -52,6 +48,7 @@ export const useForm = ({ onPage }) => {
       company: '',
       budget: '',
       goals: '',
+      onPage: onPage,
     })
     setIsEmailValid(false)
     setIsFormValid(false)
