@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 
-import axios from 'axios'
 import clsx from 'clsx'
 
 import { useForm } from '../hooks/useForm'
@@ -27,6 +26,7 @@ export const Form = ({ onPage = false }) => {
   } = useForm({ onPage })
 
   const [submitMessage, setSubmitMessage] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
   const [touchedFields, setTouchedFields] = useState({
     name: false,
     email: false,
@@ -86,7 +86,7 @@ export const Form = ({ onPage = false }) => {
       return 'Please enter a valid name'
     }
     if (fieldName === 'goals' && !isGoalsValid) {
-      return 'Please enter a valid goals'
+      return 'Goals must be at least 10 characters long'
     }
     return ''
   }
@@ -97,13 +97,36 @@ export const Form = ({ onPage = false }) => {
     e.preventDefault()
 
     setWasSubmitAttempted(true)
+    setErrorMessage('')
 
     if ((onPage && !formData.name) || !formData.email || !isFormValid) {
       return
     }
 
     try {
-      await axios.post(import.meta.env.VITE_FORMSPREE_ENDPOINT, formData)
+      // Отправка на сервер
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          budget: formData.budget,
+          goals: formData.goals,
+          onPage: formData.onPage,
+        }),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Something went wrong')
+      }
+
+      // Успешная отправка
       setSubmitMessage(true)
       resetForm()
       setWasSubmitAttempted(false)
@@ -112,11 +135,13 @@ export const Form = ({ onPage = false }) => {
         email: false,
         goals: false,
       })
+
       timeoutId = setTimeout(() => {
         setSubmitMessage(false)
       }, 10000)
     } catch (error) {
       console.error('Error submitting form:', error)
+      setErrorMessage(error.message || 'Failed to send message. Please try again.')
     }
   }
 
@@ -281,6 +306,11 @@ export const Form = ({ onPage = false }) => {
               </span>
             )}
           </label>
+          {errorMessage && (
+            <div className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-600 md:col-span-2">
+              {errorMessage}
+            </div>
+          )}
           <div className="md:col-span-2">
             <GCButton type="submit" view="secondary" className="h-12 w-full">
               {onPage ? 'Submit' : 'Contact us'}

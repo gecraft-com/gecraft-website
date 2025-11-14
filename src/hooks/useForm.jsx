@@ -7,6 +7,7 @@ export const useForm = ({ onPage }) => {
     company: '',
     budget: '',
     goals: '',
+    onPage: onPage,
   })
 
   const [isEmailValid, setIsEmailValid] = useState(false)
@@ -14,11 +15,9 @@ export const useForm = ({ onPage }) => {
   const [isFormValid, setIsFormValid] = useState(false)
   const [isGoalsValid, setIsGoalsValid] = useState(false)
 
-  const validateEmail = (email) => {
-    const re =
-      /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
-    return re.test(String(email).toLowerCase())
-  }
+  const NAME_REGEX = /^[A-Za-zА-Яа-яЁё\s-]{2,}$/
+  const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+  const GOALS_REGEX = /^.{10,}$/
 
   const handleInputChange = (name) => (valueOrEvent) => {
     const nextValue =
@@ -26,24 +25,23 @@ export const useForm = ({ onPage }) => {
     setFormData((prevData) => ({
       ...prevData,
       [name]: nextValue,
+      onPage,
     }))
-
-    if (name === 'email') {
-      setIsEmailValid(validateEmail(nextValue))
-    }
   }
 
   useEffect(() => {
-    const { name, goals } = formData
+    const { name, email, goals } = formData
 
-    const isNameValid = onPage ? name.trim() !== '' : true
+    const isNameValid = onPage ? NAME_REGEX.test(String(name).toLowerCase()) : true
     setIsNameValid(isNameValid)
-    const isGoalsValid = goals.trim() !== ''
+    const isEmailValid = EMAIL_REGEX.test(String(email).toLowerCase())
+    setIsEmailValid(isEmailValid)
+    const isGoalsValid = GOALS_REGEX.test(String(goals).toLowerCase())
     setIsGoalsValid(isGoalsValid)
 
     const isValid = isNameValid && isEmailValid && isGoalsValid
     setIsFormValid(isValid)
-  }, [formData, isEmailValid, onPage])
+  }, [formData, isEmailValid, onPage, NAME_REGEX, EMAIL_REGEX, GOALS_REGEX])
 
   const resetForm = () => {
     setFormData({
@@ -52,6 +50,7 @@ export const useForm = ({ onPage }) => {
       company: '',
       budget: '',
       goals: '',
+      onPage: onPage,
     })
     setIsEmailValid(false)
     setIsFormValid(false)
