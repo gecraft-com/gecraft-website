@@ -5,7 +5,7 @@ import dotenv from 'dotenv'
 import express from 'express'
 import { Resend } from 'resend'
 
-import { escapeHtml } from '../src/utils/escapeHtml'
+import { escapeHtml } from '../src/utils/escapeHtml.js'
 
 dotenv.config()
 
@@ -60,7 +60,7 @@ app.post('/api/contact', async (req, res) => {
     return res.status(400).json({ success: false, error: 'Missing required fields.' })
   }
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
   if (!emailRegex.test(email)) {
     return res.status(400).json({ success: false, error: 'Invalid email format.' })
   }

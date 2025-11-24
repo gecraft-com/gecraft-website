@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import clsx from 'clsx'
 
@@ -33,6 +33,9 @@ export const Form = ({ onPage = false }) => {
     goals: false,
   })
   const [wasSubmitAttempted, setWasSubmitAttempted] = useState(false)
+  const [sending, setSending] = useState(false)
+
+  const timeoutRef = useRef(null)
 
   const handleBlur = (fieldName) => () => {
     setTouchedFields((prev) => ({
@@ -91,8 +94,6 @@ export const Form = ({ onPage = false }) => {
     return ''
   }
 
-  let timeoutId
-
   const handleSubmit = async (e) => {
     e.preventDefault()
 
@@ -104,6 +105,7 @@ export const Form = ({ onPage = false }) => {
     }
 
     try {
+      setSending(true)
       const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/contact`, {
         method: 'POST',
         headers: {
@@ -113,6 +115,7 @@ export const Form = ({ onPage = false }) => {
       })
 
       const data = await response.json()
+      setSending(false)
 
       if (!response.ok) {
         throw new Error(data.error || 'Something went wrong')
@@ -127,10 +130,11 @@ export const Form = ({ onPage = false }) => {
         goals: false,
       })
 
-      timeoutId = setTimeout(() => {
+      timeoutRef.current = setTimeout(() => {
         setSubmitMessage(false)
-      }, 10000)
+      }, 60000)
     } catch (error) {
+      setSending(false)
       console.error('Error submitting form:', error)
       setErrorMessage(error.message || 'Failed to send message. Please try again.')
     }
@@ -138,11 +142,11 @@ export const Form = ({ onPage = false }) => {
 
   useEffect(() => {
     return () => {
-      if (timeoutId) {
-        clearTimeout(timeoutId)
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
       }
     }
-  }, [timeoutId])
+  }, [])
 
   return (
     <>
@@ -304,7 +308,7 @@ export const Form = ({ onPage = false }) => {
           )}
           <div className="md:col-span-2">
             <GCButton type="submit" view="secondary" className="h-12 w-full">
-              {onPage ? 'Submit' : 'Contact us'}
+              {sending ? 'Sending...' : onPage ? 'Submit' : 'Contact us'}
             </GCButton>
           </div>
         </form>

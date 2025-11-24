@@ -50,8 +50,10 @@ export const useForm = ({ onPage }) => {
       goals: '',
       onPage: onPage,
     })
+    setIsNameValid(false)
     setIsEmailValid(false)
     setIsFormValid(false)
+    setIsGoalsValid(false)
   }
 
   return {
