@@ -4,7 +4,7 @@ import clsx from 'clsx'
 
 import { ArrowIcon } from './icons/ArrowIcon'
 
-export const GCDropdown = ({ children, budget, value = '', onSelect }) => {
+export const GCDropdown = ({ children, budget, value = '', onSelect, name }) => {
   const [isShow, setIsShow] = useState(false)
 
   const handleClick = () => {
@@ -56,7 +56,7 @@ export const GCDropdown = ({ children, budget, value = '', onSelect }) => {
                 className="border-black-100 flex cursor-pointer items-center gap-3 border-t py-3.5 first:pt-1.5"
                 key={item}
                 onClick={() => {
-                  if (onSelect) onSelect(item)
+                  if (onSelect) onSelect({ target: { name, value: item } })
                   setIsShow(false)
                 }}
                 role="option"

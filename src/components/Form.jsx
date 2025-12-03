@@ -188,6 +188,7 @@ export const Form = ({ onPage = false }) => {
           )}
           {onPage && (
             <GCDropdown
+              name="budget"
               budget={budget}
               value={formData.budget}
               onSelect={handleInputChange}
@@ -206,6 +207,7 @@ export const Form = ({ onPage = false }) => {
             errorText={touchedFields.goals ? errors.goals : undefined}
             isTextarea
             isOnPage={onPage}
+            className="md:col-span-2"
           />
           {submitErrors && (
             <div className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-600 md:col-span-2">

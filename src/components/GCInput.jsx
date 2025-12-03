@@ -12,6 +12,7 @@ export const GCInput = ({
   variant = 'secondary',
   type = 'text',
   isOnPage = true,
+  className,
 }) => {
   const baseStyles =
     'w-full rounded-lg border-2 px-4 py-3 bg-black-00 text-black-950 focus:outline-none placeholder:text-black-300'
@@ -29,9 +30,9 @@ export const GCInput = ({
 
   return (
     <>
-      {isTextarea ? (
-        <div className="col-span-2">
-          <label className="group relative">
+      <label className={clsx('group relative', className)}>
+        {isTextarea ? (
+          <>
             <textarea
               id={inputId}
               name={name}
@@ -80,38 +81,38 @@ export const GCInput = ({
                 {errorText}
               </span>
             )}
-          </label>
-        </div>
-      ) : (
-        <label className="group relative">
-          <input
-            id={inputId}
-            name={name}
-            value={value}
-            type={type}
-            onChange={onChange}
-            onBlur={onBlur}
-            className={clsx(baseStyles, inputStyles, variantStyles[variant])}
-          />
-          <span
-            className={clsx(
-              'absolute top-1/2 left-4 -translate-y-1/2',
-              'cursor-text duration-200',
-              'group-focus-within:top-2.5 group-focus-within:text-xs group-focus-within:opacity-35',
-              {
-                'top-2.5 text-xs opacity-35': value,
-              }
-            )}
-          >
-            {placeholder}
-          </span>
-          {hasError && errorText && (
-            <span className="text-error-1 absolute top-0 right-4 text-sm">
-              {errorText}
+          </>
+        ) : (
+          <>
+            <input
+              id={inputId}
+              name={name}
+              value={value}
+              type={type}
+              onChange={onChange}
+              onBlur={onBlur}
+              className={clsx(baseStyles, inputStyles, variantStyles[variant])}
+            />
+            <span
+              className={clsx(
+                'absolute top-1/2 left-4 -translate-y-1/2',
+                'cursor-text duration-200',
+                'group-focus-within:top-2.5 group-focus-within:text-xs group-focus-within:opacity-35',
+                {
+                  'top-2.5 text-xs opacity-35': value,
+                }
+              )}
+            >
+              {placeholder}
             </span>
-          )}
-        </label>
-      )}
+            {hasError && errorText && (
+              <span className="text-error-1 absolute top-0 right-4 text-sm">
+                {errorText}
+              </span>
+            )}
+          </>
+        )}
+      </label>
     </>
     // <div className={clsx('relative w-full', className)}>
     //   {showLabel && (
