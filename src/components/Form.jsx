@@ -34,6 +34,7 @@ export const Form = ({ onPage = false }) => {
     name: '',
     email: '',
     company: '',
+    budget: '',
     goals: '',
   })
   const [errors, setErrors] = useState({})
@@ -65,6 +66,7 @@ export const Form = ({ onPage = false }) => {
       name: '',
       email: '',
       company: '',
+      budget: '',
       goals: '',
     })
   }
@@ -95,7 +97,7 @@ export const Form = ({ onPage = false }) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, onPage }),
       })
 
       const data = await response.json()

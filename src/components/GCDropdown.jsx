@@ -56,8 +56,10 @@ export const GCDropdown = ({ children, budget, value = '', onSelect, name }) => 
                 className="border-black-100 flex cursor-pointer items-center gap-3 border-t py-3.5 first:pt-1.5"
                 key={item}
                 onClick={() => {
-                  if (onSelect) onSelect({ target: { name, value: item } })
-                  setIsShow(false)
+                  if (onSelect) {
+                    onSelect({ target: { name, value: item } })
+                    setIsShow(false)
+                  }
                 }}
                 role="option"
               >

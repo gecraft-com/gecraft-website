@@ -1,3 +1,5 @@
+/* global process */
+
 import { Resend } from 'resend'
 
 import { escapeHtml } from '../../src/shared/escapeHtml'
@@ -74,7 +76,7 @@ export const handler = async (event) => {
       }
     }
 
-    const { name, email, company, budget, goals } = body
+    const { name, email, company, budget, goals, onPage } = body
 
     const safeName = name ?? ''
     const safeEmail = email ?? ''
@@ -86,7 +88,7 @@ export const handler = async (event) => {
     const emailError = validateEmail(safeEmail)
     const goalsError = validateGoals(safeGoals)
 
-    if (nameError || emailError || goalsError) {
+    if ((onPage && nameError) || emailError || goalsError) {
       return {
         statusCode: 400,
         headers,
