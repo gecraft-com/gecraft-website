@@ -2,9 +2,15 @@ import { useEffect, useRef, useState } from 'react'
 
 import clsx from 'clsx'
 
-import { useForm } from '../hooks/useForm'
+import {
+  validateEmail,
+  validateField,
+  validateGoals,
+  validateName,
+} from '../shared/validateForm'
 import { GCButton } from './GCButton'
 import { GCDropdown } from './GCDropdown'
+import { GCInput } from './GCInput'
 
 const budget = [
   '$5000 - $10000',
@@ -15,98 +21,76 @@ const budget = [
 ]
 
 export const Form = ({ onPage = false }) => {
-  const {
-    formData,
-    isFormValid,
-    isNameValid,
-    isEmailValid,
-    isGoalsValid,
-    handleInputChange,
-    resetForm,
-  } = useForm({ onPage })
-
   const [submitMessage, setSubmitMessage] = useState(false)
-  const [errorMessage, setErrorMessage] = useState('')
+  const [submitErrors, setSubmitErrors] = useState(null)
   const [touchedFields, setTouchedFields] = useState({
     name: false,
     email: false,
     goals: false,
   })
-  const [wasSubmitAttempted, setWasSubmitAttempted] = useState(false)
   const [sending, setSending] = useState(false)
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    goals: '',
+  })
+  const [errors, setErrors] = useState({})
+
+  const apiBase = import.meta.env.DEV ? '/.netlify/functions' : '/api'
 
   const timeoutRef = useRef(null)
 
-  const handleBlur = (fieldName) => () => {
-    setTouchedFields((prev) => ({
+  const handleInputChange = (e) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({
       ...prev,
-      [fieldName]: true,
+      [name]: value,
     }))
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: undefined }))
+    }
   }
 
-  const getInputClassName = (fieldName, isValid) => {
-    const baseClasses = clsx(
-      'w-full rounded-lg border-2 px-4 py-3 bg-black-00 text-black-950 focus:outline-none',
-      {
-        'border-black-500': onPage,
-        'border-black-300': !onPage,
-      },
-      fieldName === 'goals'
-        ? [
-            'block',
-            {
-              'min-h-42.5 h-42.5': onPage,
-              'min-h-20 h-22': !onPage,
-            },
-          ]
-        : ['h-12']
-    )
-
-    const shouldShowValidation = touchedFields[fieldName] || wasSubmitAttempted
-
-    if (!shouldShowValidation) {
-      return `${baseClasses}`
-    }
-
-    if (fieldName === 'name' || fieldName === 'email' || fieldName === 'goals') {
-      return clsx(baseClasses, {
-        'border-primary-500': isValid,
-        'border-error-1': !isValid,
-      })
-    }
-
-    return `${baseClasses}`
+  const handleBlur = (e) => {
+    const { name, value } = e.target
+    setTouchedFields((prev) => ({ ...prev, [name]: true }))
+    const error = validateField(name, value, onPage)
+    setErrors((prev) => ({ ...prev, [name]: error }))
   }
 
-  const getErrorMessage = (fieldName) => {
-    if (!formData[fieldName]) {
-      return 'This field is required'
-    }
-    if (fieldName === 'email' && !isEmailValid) {
-      return 'Please enter a valid email'
-    }
-    if (fieldName === 'name' && !isNameValid) {
-      return 'Please enter a valid name'
-    }
-    if (fieldName === 'goals' && !isGoalsValid) {
-      return 'Goals must be at least 10 characters long'
-    }
-    return ''
+  const resetForm = () => {
+    setFormData({
+      name: '',
+      email: '',
+      company: '',
+      goals: '',
+    })
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setTouchedFields({
+      name: true,
+      email: true,
+      goals: true,
+    })
+    setErrors({})
+    setSubmitErrors(null)
 
-    setWasSubmitAttempted(true)
-    setErrorMessage('')
+    const nameError = validateName(formData.name, onPage)
+    const emailError = validateEmail(formData.email)
+    const goalsError = validateGoals(formData.goals)
 
-    if ((onPage && !formData.name) || !formData.email || !isFormValid) {
+    if ((onPage && nameError) || emailError || goalsError) {
+      setErrors({ name: nameError, email: emailError, goals: goalsError })
       return
     }
 
     try {
       setSending(true)
-      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/contact`, {
+      const response = await fetch(`${apiBase}/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -123,7 +107,6 @@ export const Form = ({ onPage = false }) => {
 
       setSubmitMessage(true)
       resetForm()
-      setWasSubmitAttempted(false)
       setTouchedFields({
         name: false,
         email: false,
@@ -136,7 +119,7 @@ export const Form = ({ onPage = false }) => {
     } catch (error) {
       setSending(false)
       console.error('Error submitting form:', error)
-      setErrorMessage(error.message || 'Failed to send message. Please try again.')
+      setSubmitErrors(error.message || 'Failed to send message. Please try again.')
     }
   }
 
@@ -151,9 +134,11 @@ export const Form = ({ onPage = false }) => {
   return (
     <>
       {submitMessage ? (
-        <div className="w-full">
-          <p className="text-primary-500 mt-10 text-3xl font-semibold">Thank You!</p>
-          <p className="mt-3">
+        <div className="w-full max-w-120">
+          <p className="text-primary-500 mt-10 text-center text-3xl font-semibold">
+            Thank You!
+          </p>
+          <p className="mt-3 text-center">
             Your form has been successfully submitted. A representative from Glokas will
             be in touch with you shortly to assist with your inquiry. We appreciate your
             interest and look forward to connecting with you soon.
@@ -169,141 +154,62 @@ export const Form = ({ onPage = false }) => {
           })}
         >
           {onPage && (
-            <label className="group relative">
-              <input
-                name="name"
-                value={formData.name}
-                type="text"
-                onChange={handleInputChange('name')}
-                onBlur={handleBlur('name')}
-                className={getInputClassName('name', isNameValid)}
-              />
-              <span
-                className={clsx(
-                  'absolute top-1/2 left-4 -translate-y-1/2',
-                  'cursor-text duration-200',
-                  'group-focus-within:top-2.5 group-focus-within:text-xs group-focus-within:opacity-35',
-                  {
-                    'top-2.5 text-xs opacity-35': formData.name,
-                  }
-                )}
-              >
-                Your name*
-              </span>
-              {wasSubmitAttempted && !isNameValid && (
-                <span className="text-error-1 absolute top-0 right-4 text-sm">
-                  {getErrorMessage('name')}
-                </span>
-              )}
-            </label>
-          )}
-          <label className="group relative">
-            <input
-              name="email"
-              value={formData.email}
-              type="text"
-              onChange={handleInputChange('email')}
-              onBlur={handleBlur('email')}
-              className={getInputClassName('email', isEmailValid)}
+            <GCInput
+              inputId="name"
+              name="name"
+              value={formData.name}
+              onChange={handleInputChange}
+              onBlur={handleBlur}
+              placeholder="Your name*"
+              variant={touchedFields.name && errors.name ? 'danger' : 'secondary'}
+              errorText={touchedFields.name ? errors.name : undefined}
             />
-            <span
-              className={clsx(
-                'absolute top-1/2 left-4 -translate-y-1/2',
-                'cursor-text duration-200',
-                'group-focus-within:top-2.5 group-focus-within:text-xs group-focus-within:opacity-35',
-                {
-                  'top-2.5 text-xs opacity-35': formData.email,
-                }
-              )}
-            >
-              Your email*
-            </span>
-            {wasSubmitAttempted && !isEmailValid && (
-              <span className="text-error-1 absolute top-0 right-4 text-sm">
-                {getErrorMessage('email')}
-              </span>
-            )}
-          </label>
+          )}
+          <GCInput
+            inputId="email"
+            name="email"
+            value={formData.email}
+            onChange={handleInputChange}
+            onBlur={handleBlur}
+            placeholder="Your email*"
+            variant={touchedFields.email && errors.email ? 'danger' : 'secondary'}
+            errorText={touchedFields.email ? errors.email : undefined}
+          />
           {onPage && (
-            <label className="group relative">
-              <input
-                name="company"
-                value={formData.company}
-                onChange={handleInputChange('company')}
-                type="text"
-                className="border-black-500 bg-black-00 text-black-950 h-12 w-full rounded-lg border-2 px-4 focus:outline-none"
-              />
-              <span
-                className={clsx(
-                  'absolute top-1/2 left-4 -translate-y-1/2',
-                  'cursor-text duration-200',
-                  'group-focus-within:top-2.5 group-focus-within:text-xs group-focus-within:opacity-35',
-                  {
-                    'top-2.5 text-xs opacity-35': formData.company,
-                  }
-                )}
-              >
-                Your company
-              </span>
-            </label>
+            <GCInput
+              inputId="company"
+              name="company"
+              value={formData.company}
+              onChange={handleInputChange}
+              onBlur={handleBlur}
+              placeholder="Your company"
+              variant="secondary"
+            />
           )}
           {onPage && (
             <GCDropdown
               budget={budget}
               value={formData.budget}
-              onSelect={handleInputChange('budget')}
+              onSelect={handleInputChange}
             >
               <span className="text-black-500">Project budget</span>
             </GCDropdown>
           )}
-          <label className="group relative md:col-span-2">
-            <textarea
-              name="goals"
-              type="text"
-              value={formData.goals}
-              onChange={handleInputChange('goals')}
-              onBlur={handleBlur('goals')}
-              className={getInputClassName('goals', isGoalsValid)}
-            />
-            <span
-              className={clsx(
-                'absolute left-4',
-                'cursor-text duration-200',
-                'group-focus-within:top-0.5 group-focus-within:text-xs group-focus-within:opacity-35',
-                {
-                  'top-0.5 text-xs opacity-35': formData.goals,
-                  'top-4': !formData.goals,
-                }
-              )}
-            >
-              {onPage ? 'Project Goals*' : 'Your question*'}
-            </span>
-            {onPage && (
-              <div
-                className={clsx(
-                  'text-black-300 absolute bottom-4 left-4',
-                  'cursor-text duration-200',
-                  'group-focus-within:scale-0 group-focus-within:opacity-0',
-                  { 'scale-0 opacity-0': formData.goals }
-                )}
-              >
-                <p>Helpful things to include:</p>
-                <ul className="leading-6">
-                  <li>— Your problem</li>
-                  <li>— Your location</li>
-                  <li>— How you heard about us</li>
-                </ul>
-              </div>
-            )}
-            {wasSubmitAttempted && !isGoalsValid && (
-              <span className="text-error-1 absolute top-0 right-4 text-sm">
-                {getErrorMessage('goals')}
-              </span>
-            )}
-          </label>
-          {errorMessage && (
+          <GCInput
+            inputId="goals"
+            name="goals"
+            value={formData.goals}
+            onChange={handleInputChange}
+            onBlur={handleBlur}
+            placeholder={onPage ? 'Your goals*' : 'Your questions*'}
+            variant={touchedFields.goals && errors.goals ? 'danger' : 'secondary'}
+            errorText={touchedFields.goals ? errors.goals : undefined}
+            isTextarea
+            isOnPage={onPage}
+          />
+          {submitErrors && (
             <div className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-600 md:col-span-2">
-              {errorMessage}
+              {submitErrors}
             </div>
           )}
           <div className="md:col-span-2">
