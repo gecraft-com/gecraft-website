@@ -141,7 +141,7 @@ export const Form = ({ onPage = false }) => {
             Thank You!
           </p>
           <p className="mt-3 text-center">
-            Your form has been successfully submitted. A representative from Glokas will
+            Your form has been successfully submitted. A representative from GeCraft will
             be in touch with you shortly to assist with your inquiry. We appreciate your
             interest and look forward to connecting with you soon.
           </p>
