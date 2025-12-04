@@ -84,7 +84,7 @@ export const handler = async (event) => {
     const safeBudget = budget ?? ''
     const safeGoals = goals ?? ''
 
-    const nameError = validateName(safeName)
+    const nameError = validateName(safeName, onPage)
     const emailError = validateEmail(safeEmail)
     const goalsError = validateGoals(safeGoals)
 

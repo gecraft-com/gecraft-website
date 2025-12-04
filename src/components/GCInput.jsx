@@ -39,12 +39,7 @@ export const GCInput = ({
               value={value}
               onChange={onChange}
               onBlur={onBlur}
-              className={clsx(
-                baseStyles,
-                inputStyles,
-                variantStyles[variant],
-                textAreaStyles
-              )}
+              className={clsx(baseStyles, variantStyles[variant], textAreaStyles)}
             />
             <span
               className={clsx(
