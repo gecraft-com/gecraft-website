@@ -16,11 +16,12 @@ export const validateField = (name, value, onPage) => {
 
 export const validateName = (name, onPage) => {
   if (!name?.trim()) {
-    return onPage ? 'Name is required' : ''
+    return onPage ? 'Name is required' : undefined
   }
   if (!NAME_REGEX.test(name)) {
     return 'Invalid name format'
   }
+  return undefined
 }
 
 export const validateEmail = (email) => {
